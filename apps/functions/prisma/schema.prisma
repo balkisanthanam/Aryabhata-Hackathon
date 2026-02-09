@@ -1,0 +1,89 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-3.0.x", "linux-musl-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  // url      = env("DATABASE_URL")
+}
+
+model chapterdata {
+  chapterid        Int                @id @default(autoincrement())
+  class            String             @db.VarChar(100)
+  subject          String             @db.VarChar(255)
+  chapternumber    String             @db.VarChar(50)
+  chaptertitle     String             @db.VarChar(255)
+  pdffileurl       String?            @db.VarChar(500)
+  board            String?            @db.VarChar(100)
+  exercisedata     exercisedata[]
+  userexercisedata userexercisedata[]
+
+  @@unique([class, subject, chapternumber], map: "uq_chapterdata_class_subject_chapternumber")
+  @@index([class, subject, chapternumber], map: "ix_chapterdata_chapternumber")
+}
+
+model classsubjectdata {
+  classsubjectid Int    @id @default(autoincrement())
+  class          String @db.VarChar(100)
+  subject        String @db.VarChar(255)
+  board          String @db.VarChar(100)
+
+  @@unique([class, subject, board])
+  @@index([class], map: "ix_classsubjectdata_class")
+}
+
+model exercisedata {
+  exerciseid       Int                @id @default(autoincrement())
+  chapterid        Int
+  exercise         String             @db.VarChar(255)
+  totalquestions   Int?
+  otherdata        Json?
+  chapterdata      chapterdata        @relation(fields: [chapterid], references: [chapterid], onDelete: NoAction, onUpdate: NoAction)
+  questiondata     questiondata[]
+  userexercisedata userexercisedata[]
+
+  @@unique([chapterid, exercise], map: "uq_exercisedata_chapter_exercise")
+  @@index([exercise], map: "ix_exercisedata_exercise")
+}
+
+model questiondata {
+  questionid       Int                @id @default(autoincrement())
+  exerciseid       Int
+  question_ref     String             @db.VarChar(255)
+  content          Json
+  solution         Json?
+  exercisedata     exercisedata       @relation(fields: [exerciseid], references: [exerciseid], onDelete: NoAction, onUpdate: NoAction)
+  userexercisedata userexercisedata[]
+
+  @@unique([exerciseid, question_ref], map: "uq_questiondata_exercise_ref")
+  @@index([question_ref], map: "ix_questiondata_questionref")
+}
+
+model userexercisedata {
+  userexerciseid  Int             @id @default(autoincrement())
+  userid          Int
+  chapterid       Int
+  exerciseid      Int
+  questionid      Int
+  attemptedat     DateTime        @default(now()) @db.Timestamp(6)
+  chapterdata     chapterdata     @relation(fields: [chapterid], references: [chapterid], onDelete: NoAction, onUpdate: NoAction)
+  exercisedata    exercisedata    @relation(fields: [exerciseid], references: [exerciseid], onDelete: NoAction, onUpdate: NoAction)
+  questiondata    questiondata    @relation(fields: [questionid], references: [questionid], onDelete: NoAction, onUpdate: NoAction)
+  userprofiledata userprofiledata @relation(fields: [userid], references: [userid], onDelete: NoAction, onUpdate: NoAction)
+
+  @@index([userid], map: "ix_userexercisedata_userid")
+}
+
+model userprofiledata {
+  userid           Int                @id @default(autoincrement())
+  username         String             @db.VarChar(500)
+  class            String             @db.VarChar(100)
+  board            String             @db.VarChar(100)
+  goal             String?            @db.VarChar(1000)
+  email            String?            @db.VarChar(500)
+  userexercisedata userexercisedata[]
+
+  @@index([email], map: "ix_userprofiledata_email")
+  @@index([username], map: "ix_userprofiledata_username")
+}

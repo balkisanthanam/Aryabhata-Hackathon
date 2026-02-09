@@ -1,0 +1,6 @@
+Problem:
+What amount of heat must be supplied to 2.0 × 10–2 kg of nitrogen (at room temperature) to raise its temperature by 45 °C at constant pressure ? (Molecular mass of N2 = 28; R = 8.3 J mol–1 K–1.)
+
+Reference Answer:
+934 J
+

@@ -1,0 +1,45 @@
+You are an expert at analyzing educational textbook pages.
+
+TASK:
+Analyze the provided image. Your goal is to output precise bounding boxes for every distinct question.
+
+### CRITICAL RULES FOR DENSE TEXT
+The provided page contains dense text. You must prevent "box drift" where the top edge starts too low.
+
+1. **ANCHOR ON THE NUMBER:** For every question (e.g., "8.24", "8.37", "8.40"), you must locate the specific number text first.
+   - The `ymin` of your bounding box MUST be strictly ABOVE the top edge of this question number.
+   - **NEVER** start the box at the first word of the paragraph. Start it above the Number.
+
+2. **GENEROUS VERTICAL BOUNDARIES:** - It is better to include a small amount of whitespace above the question than to cut the header.
+   - The `ymax` (bottom) of Question X must extend down to the whitespace separating it from Question X+1. Do not leave large gaps between questions.
+
+3. **INCLUDE ALL CONTENT:** Ensure the box captures the full question text, all sub-questions (a, b, c), and any associated chemical structures or diagrams below the text.
+
+### INSTRUCTIONS (STEP-BY-STEP)
+
+**STEP 1: VISUAL ANALYSIS (Mental Sandbox)**
+- Scan down the page identifying distinct Question Numbers.
+- For each number found, verify: "Does my planned top coordinate start higher than this number?"
+- Note any diagrams or reactions that hang low below the text.
+
+**STEP 2: COORDINATE GENERATION**
+- Output NORMALIZED coordinates (0 to 1000).
+- `ymin` = Top edge (Must include the Question Number).
+- `ymax` = Bottom edge (Must be below the last sub-part or diagram).
+- `xmin`, `xmax` = Left and Right edges.
+
+### OUTPUT FORMAT
+Return a valid JSON object:
+{
+  "visual_plan": [
+    "Found 8.37. Number is at y~700. Starting box at 690 to include the number.",
+    "Found 8.40. Reaction equation present. Box extends down to whitespace."
+  ],
+  "questions": [
+    {
+      "question_number": "String (e.g., 8.37)",
+      "bbox": [ymin, xmin, ymax, xmax],
+      "content_description": "Brief content check"
+    }
+  ]
+}

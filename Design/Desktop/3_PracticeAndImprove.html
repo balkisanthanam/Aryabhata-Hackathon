@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aryabhata - Problem &amp; Solution</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#312E81", // Vedic Indigo (Deep Indigo)
+                        "primary-light": "#4338CA", // Slightly lighter for hover/active
+                        "primary-bg": "#EEF2FF", // Very light indigo for backgrounds
+                        accent: "#F59E0B", // Glowing Turmeric Yellow
+                        "accent-light": "#FEF3C7", // Light Turmeric for backgrounds
+                        "accent-hover": "#D97706", // Darker Turmeric for interactions
+                        "background-light": "#F8FAFC", // Slate-50, clean and modern
+                        "background-dark": "#0F172A", // Slate-900
+                        "card-light": "#FFFFFF",
+                        "card-dark": "#1E293B", // Slate-800
+                        "border-light": "#E2E8F0", // Slate-200
+                        "border-dark": "#334155", // Slate-700
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        mono: ['Space Mono', 'monospace'],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        'xl': '1rem',
+                        '2xl': '1.5rem',
+                    },
+                    boxShadow: {
+                        'glow': '0 0 15px -3px rgba(245, 158, 11, 0.3)',
+                    }
+                },
+            },
+        };
+    </script>
+<style>
+        .math-font {
+            font-family: 'Times New Roman', serif;
+            font-style: italic;
+        }
+        .solution-step {
+            position: relative;
+            padding-left: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-left: 2px solid #E2E8F0;
+        }
+        .dark .solution-step {
+            border-color: #334155;
+        }
+        .solution-step:last-child {
+            border-left: none;
+            padding-bottom: 0;
+        }
+        .solution-step::before {
+            content: '';
+            position: absolute;
+            left: -0.35rem;top: 0.25rem;
+            width: 0.75rem;
+            height: 0.75rem;
+            background-color: #312E81;border: 2px solid white;
+            border-radius: 50%;
+            z-index: 10;
+        }
+        .dark .solution-step::before {
+            border-color: #1E293B;
+            background-color: #4338CA;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200 font-sans min-h-screen transition-colors duration-200 flex flex-col">
+<header class="bg-primary text-white sticky top-0 z-40 shadow-md border-b border-indigo-900">
+<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<img alt="Aryabhata Logo" class="w-10 h-10 rounded-lg shadow-sm object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBz4b-scWzyLi0-qKBNWXrLAsbo6Jd8ZPH9hIm5Ta5AgC6eFPJDVazJWvK4lD2dFsAsQIZQsskruqVXAMXB4k6wo_25S70EkHWTcWA2ZxPS4JMpYzu3TKZqbm6X0wu3hdcd9-T0wh2kR6daP26IhSysk6fUH4JhElKcEKdZlBGzGD-w96H1AKwmDB5mNcr_0aXDsTBAFNWbD9RrjVJ6H6fyO_rsW2cW95f2sp8fCPBGf2xT84GFIw8xsqrZMxYLVgwdqkIclyWAufY"/>
+<div class="flex flex-col">
+<img alt="Aryabhata" class="h-8 w-auto object-contain object-left mb-0.5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6jY9ACWRbFhe8SYty-tQKmJG4uakBJDYL3R2JmDzwPdBw9a4LakY2X0gnrBjxFuzITCUHsla2PByuYAra5b6htEWXV7LXEqyVuVN2tifw5zF4DUm-JI4__rKBaOHtCHxWzY2BzCuC288TqSiykUQdS4lXb-x9hCLpvbVGKDo6lwTa2Gb_h7jCi16nQRY1XXRbRaFJ1TlPHeQlM5hptK8UDz5Puji0pKYOOnMuWZ3dot8RbI5why-abuaqQbKdibYaIAiRIChoBwY"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-8 h-8 rounded-full bg-indigo-700 flex items-center justify-center border border-indigo-500 text-sm font-semibold">
+                    V
+                </div>
+</div>
+</div>
+</header>
+<main class="flex-grow flex flex-col items-center py-8 px-4 sm:px-6 lg:px-8">
+<div class="w-full max-w-5xl space-y-6">
+<div class="flex items-center justify-start">
+<button class="flex items-center gap-2 text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-white transition-colors font-medium text-sm">
+<span class="material-symbols-outlined text-lg">arrow_back</span>
+                Back to Dashboard
+            </button>
+</div>
+<div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 bg-card-light dark:bg-card-dark rounded-xl shadow-sm border border-border-light dark:border-border-dark p-4">
+<div class="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
+<div class="relative group">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-slate-400 text-lg group-hover:text-primary transition-colors">science</span>
+</span>
+<select class="pl-10 pr-10 py-2 w-full sm:w-40 rounded-lg border-border-light dark:border-border-dark bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-primary transition-shadow cursor-pointer hover:bg-white dark:hover:bg-slate-700">
+<option>Physics</option>
+<option>Chemistry</option>
+<option>Math</option>
+<option>Biology</option>
+</select>
+</div>
+<div class="relative group">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-slate-400 text-lg group-hover:text-primary transition-colors">menu_book</span>
+</span>
+<select class="pl-10 pr-10 py-2 w-full sm:w-56 rounded-lg border-border-light dark:border-border-dark bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-primary transition-shadow cursor-pointer hover:bg-white dark:hover:bg-slate-700">
+<option>Thermodynamics</option>
+<option>Kinematics</option>
+<option>Electrostatics</option>
+</select>
+</div>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-xl shadow-lg border border-border-light dark:border-border-dark overflow-hidden">
+<div class="bg-gradient-to-r from-slate-50 to-white dark:from-slate-800 dark:to-slate-800/50 p-6 border-b border-border-light dark:border-border-dark">
+<div class="flex items-start gap-4">
+<span class="bg-primary text-white font-mono text-xs font-bold px-2.5 py-1.5 rounded-md mt-1 shadow-sm border border-primary-light">11.8</span>
+<div class="prose dark:prose-invert max-w-none text-slate-800 dark:text-slate-200">
+<p class="mb-0 text-lg leading-relaxed font-medium font-serif">
+                                A thermodynamic system is taken from an original state to an intermediate state by the linear process shown in Fig. Its volume is then reduced to the original value from E to F by an isobaric process. Calculate the total work done by the gas from D to E to F.
+                            </p>
+</div>
+</div>
+</div>
+<div class="p-8 flex justify-center bg-white dark:bg-slate-900 border-b border-border-light dark:border-border-dark">
+<div class="relative w-full max-w-md h-64 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4 shadow-inner">
+<svg class="w-full h-full font-sans text-xs" viewBox="0 0 300 200">
+<line class="text-slate-300 dark:text-slate-600" stroke="currentColor" stroke-width="1.5" x1="40" x2="280" y1="160" y2="160"></line>
+<line class="text-slate-300 dark:text-slate-600" stroke="currentColor" stroke-width="1.5" x1="40" x2="40" y1="20" y2="160"></line>
+<text class="text-slate-600 dark:text-slate-300 font-bold" fill="currentColor" x="280" y="175">V (m³)</text>
+<text class="text-slate-600 dark:text-slate-300 transform -rotate-90 origin-center font-bold" fill="currentColor" x="25" y="20">P (N/m²)</text>
+<text class="text-slate-400 font-mono" fill="currentColor" x="35" y="175">0</text>
+<text class="text-slate-500 font-mono" fill="currentColor" x="115" y="175">2.0</text>
+<text class="text-slate-500 font-mono" fill="currentColor" x="235" y="175">5.0</text>
+<text class="text-slate-500 font-mono" fill="currentColor" x="5" y="103">300</text>
+<text class="text-slate-500 font-mono" fill="currentColor" x="5" y="43">600</text>
+<circle cx="120" cy="40" fill="#312E81" r="3.5"></circle>
+<text class="text-primary dark:text-indigo-300 font-bold text-sm" fill="currentColor" x="110" y="30">D</text>
+<circle cx="240" cy="100" fill="#312E81" r="3.5"></circle>
+<text class="text-primary dark:text-indigo-300 font-bold text-sm" fill="currentColor" x="245" y="100">E</text>
+<circle cx="120" cy="100" fill="#312E81" r="3.5"></circle>
+<text class="text-primary dark:text-indigo-300 font-bold text-sm" fill="currentColor" x="100" y="100">F</text>
+<path d="M 120 40 L 240 100" fill="none" marker-end="url(#arrow)" stroke="#312E81" stroke-width="2.5"></path>
+<path d="M 240 100 L 120 100" fill="none" marker-end="url(#arrow)" stroke="#312E81" stroke-width="2.5"></path>
+<line class="text-indigo-200 dark:text-slate-600" stroke="currentColor" stroke-dasharray="4" x1="120" x2="40" y1="40" y2="40"></line>
+<line class="text-indigo-200 dark:text-slate-600" stroke="currentColor" stroke-dasharray="4" x1="120" x2="40" y1="100" y2="100"></line>
+<line class="text-indigo-200 dark:text-slate-600" stroke="currentColor" stroke-dasharray="4" x1="240" x2="40" y1="100" y2="100"></line>
+<line class="text-indigo-200 dark:text-slate-600" stroke="currentColor" stroke-dasharray="4" x1="120" x2="120" y1="100" y2="160"></line>
+<line class="text-indigo-200 dark:text-slate-600" stroke="currentColor" stroke-dasharray="4" x1="240" x2="240" y1="100" y2="160"></line>
+<defs>
+<marker id="arrow" markerHeight="8" markerUnits="strokeWidth" markerWidth="8" orient="auto" refX="7" refY="3">
+<path d="M0,0 L0,6 L9,3 z" fill="#312E81"></path>
+</marker>
+</defs>
+</svg>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-border-light dark:divide-border-dark">
+<div class="p-6 bg-slate-50/80 dark:bg-slate-800/30 flex flex-col gap-6">
+<div class="rounded-xl border border-amber-200 bg-accent-light dark:bg-amber-900/20 dark:border-amber-800/50 overflow-hidden">
+<div class="px-4 py-3 bg-accent/10 border-b border-amber-200 dark:border-amber-800/50 flex items-center gap-2">
+<span class="material-symbols-outlined text-accent">lightbulb</span>
+<h3 class="text-base font-bold text-amber-900 dark:text-amber-100 font-serif">Key Concept: Area Under the Curve</h3>
+</div>
+<div class="p-4">
+<ul class="space-y-3 text-sm text-amber-900/80 dark:text-amber-100/80">
+<li class="flex items-start">
+<span class="mr-2 mt-1.5 w-1.5 h-1.5 bg-accent rounded-full flex-shrink-0"></span>
+<span>
+<strong class="text-amber-900 dark:text-white">Expansion (V↑):</strong> Work is positive (+).<br/>
+                                            Gas does work on surroundings.
+                                        </span>
+</li>
+<li class="flex items-start">
+<span class="mr-2 mt-1.5 w-1.5 h-1.5 bg-accent rounded-full flex-shrink-0"></span>
+<span>
+<strong class="text-amber-900 dark:text-white">Compression (V↓):</strong> Work is negative (-).<br/>
+                                            Work is done ON the gas.
+                                        </span>
+</li>
+</ul>
+</div>
+</div>
+<div class="p-4 bg-white dark:bg-slate-800 rounded-lg border border-indigo-100 dark:border-indigo-900 shadow-sm">
+<h4 class="text-sm font-bold text-primary dark:text-indigo-300 mb-2 border-b border-indigo-50 dark:border-indigo-900 pb-1">Step 1 Setup: Process D → E</h4>
+<p class="text-sm text-slate-700 dark:text-slate-300 math-font mb-2">
+                                W<sub>DE</sub> = Area of Trapezoid = ½ × (P<sub>D</sub> + P<sub>E</sub>) × (V<sub>E</sub> - V<sub>D</sub>)
+                            </p>
+<p class="text-sm text-slate-700 dark:text-slate-300 math-font pl-4 border-l-2 border-accent/30">
+                                = ½ × (600 + 300) × (5.0 - 2.0)
+                            </p>
+</div>
+<div class="mt-auto p-3 bg-amber-50 dark:bg-amber-900/10 border-l-4 border-accent text-sm text-amber-800 dark:text-amber-200 italic flex items-start gap-2">
+<span class="material-symbols-outlined text-lg mt-0.5">help</span>
+<span><strong>Hint:</strong> Since volume increases from 2.0 to 5.0, the gas is expanding. Expect a positive work value.</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-serif font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">calculate</span>
+                            Full Solution
+                        </h3>
+<div class="space-y-6">
+<div class="solution-step pt-1">
+<p class="text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400 font-bold mb-1">Calculation for W<sub>DE</sub></p>
+<p class="font-mono text-slate-900 dark:text-slate-100 text-sm bg-slate-50 dark:bg-slate-800 inline-block px-3 py-1 rounded border border-slate-200 dark:border-slate-700">
+                                    = ½ × 900 × 3.0 = <span class="text-primary font-bold">+1350 J</span>
+</p>
+</div>
+<div class="solution-step">
+<h4 class="font-bold text-slate-900 dark:text-white mb-1 flex items-center justify-between">
+<span>Step 2: Process E → F</span>
+<span class="text-[10px] bg-slate-100 dark:bg-slate-700 px-2 py-0.5 rounded-full text-slate-500">Isobaric</span>
+</h4>
+<p class="text-sm text-slate-700 dark:text-slate-300 math-font mb-2">
+                                    W<sub>EF</sub> = Area of Rectangle = P × (V<sub>F</sub> - V<sub>E</sub>)
+                                </p>
+<div class="bg-accent-light dark:bg-amber-900/20 p-2 rounded-lg text-xs text-amber-900 dark:text-amber-100 mb-2 flex items-center gap-2 border border-amber-100 dark:border-amber-800/30">
+<span class="material-symbols-outlined text-sm text-accent">warning</span>
+<span>Volume decreases → Work done ON gas (negative)</span>
+</div>
+<p class="font-mono text-slate-900 dark:text-slate-100 pl-4 border-l-2 border-slate-200 dark:border-slate-700 text-sm">
+                                    = 300 × (2.0 - 5.0)<br/>
+                                    = 300 × (-3.0)<br/>
+                                    = <span class="text-red-500 font-bold">-900 J</span>
+</p>
+</div>
+<div class="solution-step">
+<h4 class="font-bold text-slate-900 dark:text-white mb-1">Step 3: Total Work Done (W<sub>total</sub>)</h4>
+<p class="text-sm text-slate-700 dark:text-slate-300 math-font">
+                                    W<sub>total</sub> = W<sub>DE</sub> + W<sub>EF</sub>
+</p>
+<p class="font-mono text-slate-900 dark:text-slate-100 pl-4 mt-1 text-sm">
+                                    = 1350 J + (-900 J)
+                                </p>
+</div>
+<div class="mt-8 p-5 bg-white dark:bg-slate-800 rounded-xl border-2 border-primary dark:border-indigo-400 shadow-[4px_4px_0px_0px_rgba(49,46,129,1)] dark:shadow-[4px_4px_0px_0px_rgba(99,102,241,0.5)] transform transition-all hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_rgba(49,46,129,1)]">
+<p class="text-center font-serif text-lg text-slate-900 dark:text-white flex flex-col items-center">
+<span class="text-xs uppercase tracking-widest text-slate-500 mb-1">Final Result</span>
+<span>Total Work Done = <span class="text-primary dark:text-indigo-400 font-bold text-2xl ml-1">450 J</span></span>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4 py-6 border-t border-slate-200 dark:border-slate-800 mt-4">
+<button class="group flex items-center gap-3 text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors">
+<div class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 shadow-sm border border-slate-200 dark:border-slate-700 flex items-center justify-center group-hover:border-primary group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<span class="font-medium font-serif">Prev Problem</span>
+</button>
+<button class="bg-primary-bg dark:bg-indigo-900/40 hover:bg-indigo-100 dark:hover:bg-indigo-900/60 text-primary dark:text-indigo-200 px-8 py-3 rounded-xl font-semibold shadow-sm transition-colors w-full sm:w-auto text-center border border-primary/20 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">dataset</span>
+                    Show Similar Problems
+                </button>
+<button class="group flex items-center gap-3 text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors">
+<span class="font-medium font-serif">Next Problem</span>
+<div class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 shadow-sm border border-slate-200 dark:border-slate-700 flex items-center justify-center group-hover:border-primary group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined">arrow_forward</span>
+</div>
+</button>
+</div>
+</div>
+</main>
+<div class="fixed bottom-6 right-6 z-50">
+<button class="bg-primary dark:bg-accent text-white dark:text-slate-900 p-3 rounded-full shadow-lg shadow-indigo-500/30 hover:scale-110 transition-transform duration-200" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-symbols-outlined block dark:hidden">dark_mode</span>
+<span class="material-symbols-outlined hidden dark:block">light_mode</span>
+</button>
+</div>
+</body></html>

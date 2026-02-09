@@ -1,0 +1,4 @@
+The attached image is an extract from a JEE Main Question Paper. 
+This could belong to a Question (or an Option for a Question). The Subject could be Physics, Mathematics or Chemistry.
+Please identity if the image contains a figure used to elucidate a concept or a problem.
+Just answer "Yes" or "No". No need to elaborate or extract any further info

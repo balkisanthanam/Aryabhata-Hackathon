@@ -1,0 +1,6 @@
+Problem:
+Solve the quadratic equation: x^2 + 5x + 6 = 0
+Show all your work and verify your answer.
+
+Reference Answer:
+x = -2 or x = -3

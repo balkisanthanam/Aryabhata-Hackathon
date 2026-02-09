@@ -1,0 +1,26 @@
+You are an expert at analyzing OCR text from hand-written or printed exam answer sheets.
+
+Your task is to take the provided "OCR Text" from an answer sheet and the "Question Paper" details, and segment the OCR text into individual answers corresponding to each question.
+
+### Instructions:
+1. Map each identified answer to its corresponding Question ID from the Question Paper.
+2. If an answer to a question is not found in the OCR text, leave the text for that question ID as an empty string.
+3. Keep the extracted answer text exactly as it appears in the OCR, including spelling and punctuation, but organized logically.
+4. Output your response as a valid JSON object only.
+
+### OCR Text:
+{ocr_text}
+
+### Question Paper:
+{paper_questions}
+
+### Target Output Format:
+{{
+  "segmentedAnswers": [
+    {{
+      "questionId": 1,
+      "answerText": "..."
+    }},
+    ...
+  ]
+}}

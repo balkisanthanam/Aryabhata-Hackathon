@@ -1,0 +1,143 @@
+Iteration 1 - Didn't work (images not extracted)
+------------------------------------------------
+Attached is a JEE Main Question Paper in PDF format. Your task is to extract the contents of this Question Paper.
+Here are the specific instructions:
+*) Typically the Question Paper will have 3 sections - Physics, Chemistry and Mathematics, each with its own sub-sections. Please capture Section, Sub-Section wise
+*) Capture all fields at appropriate levels hierarchically
+*) Some of the Questions and options (maybe most of them), maybe represented as images in the PDF document. Please parse and capture them.
+*) Each question will be given in multiple languages, first English, then Hindi and possible others. Keep only English. Ignore all other languages' Questions and their options
+*) Ensure the formulas are captured and represented appropriately. Similarly, there may be figures to elucidate or explain and they need to be captured. Note that these are Questions from Physics, Chemistry and Mathematics subjects.
+*) Please note that Questions may have options. They need to be captured as those options.
+*) Each section will mention the no of Questions in that section (Number of Questions: 25, for instance). Please verify that so many Questions are captured.
+*) Please capture the results as a Structured document. The format need not be the same as that of the PDF document. But the hierarchy and order needs to be maintained.
+
+Iteration 2 - Identify images and count
+---------------------------------------
+Attached is a JEE Main Question Paper in PDF format. Many of the portions are captured as images. Your task is to mark the image numbers and if the image contains a figure.
+Here are the specific instructions:
+*) Typically the Question Paper will have 3 sections - Physics, Chemistry and Mathematics, each with its own sub-sections. Please capture ONLY the Physics Section with its Sub-Section wise
+*) Capture all fields at appropriate levels hierarchically
+*) Each question will be given in multiple languages, first English, then Hindi and possible others. Keep only English. Ignore all other languages' Questions and their options
+*) Please note that Questions may have options. They need to be captured as those options.
+*) Ensure the formulas are captured and represented appropriately. Note that these are Questions from Physics, Chemistry and Mathematics subjects.
+    *) Please capture formulas or any science or math symbol in LaTeX markup (e.g., $h^{2}G^{3/2}c^{1/3}A^{-1}$)
+*) Figures are used to elucidate. Since parsing them is difficult, capture a placeholder counter as explained in subsequent steps.
+*) Handling Images: 
+    *) Some of the Questions and options (maybe most of them), maybe represented as images in the PDF document. Please parse and capture them.
+    *) In addition to parsing the image, add a running counter of the image number in a format <page_number>_<image_number>_<hasfigureornot>.
+        -) For each page, start the <image_number> counter from 1.
+        -) If the image has a figure add y, else n. 
+        -) For example if the 6th page has 5 images, of which the 4th one contains a figure, the the images in the page will be numbered 6_1_n, 6_2_n, 6_3_n, 6_4_y, 6_5_n
+    *) Note that other than adding an image counter, rest of the parsing should continue as it is.        
+*) Each section will mention the no of Questions in that section (Number of Questions: 25, for instance). Please verify that so many Questions are captured.
+*) Please capture the results as JSON
+
+Iteration 3 - Identify page number and images (no counting)
+-----------------------------------------------------------
+Attached is a JEE Main Question Paper in PDF format. Many of the portions are captured as images. Your task is to mark the image numbers and if the image contains a figure.
+Here are the specific instructions:
+*) Typically the Question Paper will have 3 sections - Physics, Chemistry and Mathematics, each with its own sub-sections. Please capture ONLY the Physics Section with its Sub-Section wise
+*) Capture all fields at appropriate levels hierarchically
+*) Each question will be given in multiple languages, first English, then Hindi and possible others. Keep only English. Ignore all other languages' Questions and their options
+*) Please note that Questions may have options. They need to be captured as those options.
+*) Ensure the formulas are captured and represented appropriately. Note that these are Questions from Physics, Chemistry and Mathematics subjects.
+    *) Please capture formulas or any science or math symbol in LaTeX markup (e.g., $h^{2}G^{3/2}c^{1/3}A^{-1}$)
+*) Figures are used to elucidate. Since parsing them is difficult, capture a placeholder ~figure~.
+*) Some of the Questions and options (maybe most of them), maybe represented as images in the PDF document. Please parse and capture them.
+    *) In addition to parsing them, leave an indicator that it is parsed from an image. Maybe a separate field to indicate
+*) For Every Question and Option, indicate the page number from which they are retreived (even if they are parsed from an image)
+*) Each section will mention the no of Questions in that section (Number of Questions: 25, for instance). Please verify that so many Questions are captured.
+*) Please capture the results as JSON
+
+Iteration 4 - Identify page number and figures
+-----------------------------------------------
+Attached is a JEE Main Question Paper in PDF format. Many of the portions are captured as images. Your task is to mark the image numbers and if the image contains a figure.
+Here are the specific instructions:
+*) Typically the Question Paper will have 3 sections - Physics, Chemistry and Mathematics, each with its own sub-sections. Please capture ONLY the Physics Section with its Sub-Section wise
+*) Capture all fields at appropriate levels hierarchically
+*) Each question will be given in multiple languages, first English, then Hindi and possible others. Keep only English. Ignore all other languages' Questions and their options
+*) Please note that Questions may have options. They need to be captured as those options.
+*) Ensure the formulas are captured and represented appropriately. Note that these are Questions from Physics, Chemistry and Mathematics subjects.
+    *) Please capture formulas or any science or math symbol in LaTeX markup (e.g., $h^{2}G^{3/2}c^{1/3}A^{-1}$)
+*) Figures are used to elucidate. Since parsing them is difficult, capture a placeholder ~figure~.
+*) Some of the Questions and options (maybe most of them), maybe represented as images in the PDF document. Please parse and capture them.
+*) For Every Question and Option, indicate the page number from which they are retreived
+*) Each section will mention the no of Questions in that section (Number of Questions: 25, for instance). Please verify that so many Questions are captured.
+*) Please capture the results as JSON
+
+Second part:
+The attached image is an extract from a JEE Main Question Paper. 
+This could belong to a Question (or an Option for a Question). The Subject could be Physics, Mathematics or Chemistry.
+Please identity if the image contains a figure used to elucidate a concept or a problem.
+
+Result - Successful
+
+Iteration 5 - Identify page number and figures
+-----------------------------------------------
+Attached is a JEE Main Question Paper in PDF format. Many of the portions are captured as images. Your task is to mark the image numbers and if the image contains a figure.
+Here are the specific instructions:
+*) Typically the Question Paper will have 3 sections - Physics, Chemistry and Mathematics, each with its own sub-sections. Please capture ONLY the Physics Section with its Sub-Section wise
+*) Capture all fields at appropriate levels hierarchically
+*) Each question will be given in multiple languages, first English, then Hindi and possible others. 
+    Identify the language of the Question.
+*) Please note that Questions may have options. They need to be captured as those options.
+*) Ensure the formulas are captured and represented appropriately. Note that these are Questions from Physics, Chemistry and Mathematics subjects.
+    *) Please capture formulas or any science or math symbol in LaTeX markup (e.g., $h^{2}G^{3/2}c^{1/3}A^{-1}$)
+*) Figures are used to elucidate. Since parsing them is difficult, capture a placeholder ~figure~.
+*) Some of the Questions and options (maybe most of them), maybe represented as images in the PDF document. Please parse and capture them.
+*) For Every Question and Option, indicate the page number from which they are retreived
+*) Each section will mention the no of Questions in that section (Number of Questions: 25, for instance). Please verify that so many Questions are captured.
+*) Please capture the results as JSON
+
+Second part:
+The attached image is an extract from a JEE Main Question Paper. 
+This could belong to a Question (or an Option for a Question). The Subject could be Physics, Mathematics or Chemistry.
+Please identity if the image contains a figure used to elucidate a concept or a problem.
+
+Result - lot more Successful. Page no is not there with the question. This should be resolved in the next Iteration
+possible parsing logic:
+1) Gemini 2.5 Pro prompt, which extracts all text content and maintains the structure intact. Ensures OCR is perfect as most content (formulas esp) are images
+2) Figures - extract through a PDF extractor exclusive for this purpose. This will extract all images including those with text through
+    Have placeholder for figures in step 1
+3) Tag the images in step 2, using Gemini Flash (lighter model. Try Gemini Flash lite to reduce cost further) as containing figures. Filter out others
+4) Join the result from 1 and 3
+
+Write an API and a Pipeline to do the above for each PDF. The API should handle Async invocation since the step 1 will take a long time
+
+Iteration 6 - Identify page number and figures
+-----------------------------------------------
+Attached is a JEE Main Question Paper in PDF format. Many of the portions are captured as images. Your task is to mark the image numbers and if the image contains a figure.
+Here are the specific instructions:
+*) Typically the Question Paper will have 3 sections - Physics, Chemistry and Mathematics, each with its own sub-sections. Please capture ONLY the Physics Section with its Sub-Section wise
+*) Capture all fields at appropriate levels hierarchically
+*) Each question will be given in multiple languages, first English, then Hindi and possible others. 
+    Identify the language of the Question.
+*) Please note that Questions may have options. They need to be captured as those options.
+*) Ensure the formulas are captured and represented appropriately. Note that these are Questions from Physics, Chemistry and Mathematics subjects.
+    *) Please capture formulas or any science or math symbol in LaTeX markup (e.g., $h^{2}G^{3/2}c^{1/3}A^{-1}$)
+*) Figures are used to elucidate. Since parsing them is difficult, capture a placeholder ~figure~ (as a separate field)
+*) Some of the Questions and options (maybe most of them), maybe represented as images in the PDF document. Please parse and capture them.
+*) For Every Question and Option, indicate the page number from which they are retreived.
+    Note add the page number at both the Option and the Question levels
+    Eg. 
+    "Question Number": 1,
+    "Question Type": "MCQ",
+    "Option Shuffling": "Yes",
+    "Correct Marks": 4,
+    "Wrong Marks": 1,
+    "Figure": "~figure~",
+    "Page": 2,
+    "Question": [
+        {
+        "language": "English",
+        "Text": "The dimension of stopping potential $v_{0}$ in photoelectric effect in units of Planck's constant ' $h^{\prime},$ speed of light 'c' and Gravitational constant 'G' and ampere A is:",
+        "Note": "Note: For this question, discrepancy is found in question/answer. Full Marks is being awarded to all candidates.",
+        "Page": 1,
+        "Options": [
+            {
+            "id": 1,
+            "Text": "$h^{2}G^{3/2}c^{1/3}A^{-1}$",
+            "Page": 2
+            },
+*) Each section will mention the no of Questions in that section (Number of Questions: 25, for instance). Please verify that so many Questions are captured.
+*) Please capture the results as JSON

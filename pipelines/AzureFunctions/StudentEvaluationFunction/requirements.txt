@@ -1,0 +1,14 @@
+# Azure Functions dependencies
+azure-functions
+azure-identity
+azure-keyvault-secrets
+azure-storage-blob
+
+# Google Gemini API
+google-generativeai
+
+# HTTP requests
+requests
+
+# Additional utilities
+python-dotenv

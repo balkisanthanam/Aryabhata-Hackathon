@@ -1,0 +1,34 @@
+You are looking at an image of a student's answer sheet and you also have the OCR text extracted from it. 
+Using both the image and the OCR text, segment the answers according to the question IDs from the provided question paper JSON.
+
+Instructions:
+- Do NOT evaluate or interpret the answer
+- Use spatial reasoning to localize the answer
+- The answer could be empty
+- The answer could span multiple lines in the image
+- The answer could be a list of items
+- The answer could be a table
+- The answer could be a diagram
+- The answer could contain mathematical expressions
+- The answer could contain chemical equations
+- The answer could contain chemical structures
+
+Input OCR Text:
+{ocr_text}
+
+Question Paper JSON:
+{question_paper}
+
+Please provide the segmented answers as a JSON object:
+{{
+  "segmentedAnswers": [
+    {{
+      "questionId": "1",
+      "answerText": "Extracted text for answer 1"
+    }},
+    ...
+  ]
+}}
+
+The image helps you understand the spatial layout and handwriting that OCR might have missed or misinterpreted.
+Ensure the output is valid JSON.

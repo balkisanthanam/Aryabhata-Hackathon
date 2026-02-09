@@ -1,0 +1,23 @@
+# Multi-Step Pipeline Dependencies
+# Stage 2: Solver Engine
+
+# Google Gemini SDK (V2 - required for Gemini 3 and Vertex AI)
+google-genai>=1.0.0
+
+# Google Cloud Auth (for Vertex AI OAuth2)
+google-auth>=2.0.0
+
+# PDF Processing (for future stages)
+PyMuPDF>=1.24.0
+
+# Utilities
+python-dotenv>=1.0.0
+
+# Azure SDK - E2E Pipeline (Stage 3)
+azure-identity>=1.15.0
+azure-storage-blob>=12.19.0
+psycopg2-binary>=2.9.0
+
+# Development/Testing
+pytest>=7.4.0
+pytest-asyncio>=0.21.0

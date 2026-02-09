@@ -1,0 +1,21 @@
+{
+	"prompt_template": "Prompts/QuestionAnswerExtraction_Phy.txt",
+	"variables": {
+		"curriculum": "CBSE",
+		"standard": 11,
+		"subject": "Physics"
+	},
+	"genai": {
+		"vertexai": true,
+		"project": "animated-rope-453904-j7",
+		"location": "us-central1",
+		"model": "gemini-2.5-pro"
+	},
+	"inputs": {
+		"unit_pdfs": [
+			"gs://aryabhata_schooldata/CBSE_XI/Physics/Part2/keph202.pdf"
+		],
+		"answer_pdf": "gs://aryabhata_schooldata/CBSE_XI/Physics/Part2/keph2an.pdf"
+	},
+	"output_dir": "output"
+}

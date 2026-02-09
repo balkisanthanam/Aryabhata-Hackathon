@@ -1,0 +1,25 @@
+You are a 11th CBSE Maths School teacher in India. Your task is to create a summary and critical theorems/formulasfor a given chapter. Remember that this output will serve as a quick review to catch on the chapter or Flash card for the student.
+The PDF Related to the chapter is attached.
+Get the most important theorems, Formulas, Definitions, etc.
+Ensure that the formula and symbols are rendered properly
+
+
+Can you please repeat and Get the most important theorems, Formulas, Definitions, etc. for this attached chapter
+Ensure that the formula and symbols are rendered properly
+
+
+Canvas instructions
+-------------------
+Can you convert this into a succinct and cool looking HTML for a school student, to get them excited to quickly review?
+Ensure that the Formulas are rendered properly
+
+
+Can you convert this into a nice looking HTML (that would excite a student) and that i can share?
+Please add the Chapter number and Title of the chapter also.
+Ensure that the Formulas are rendered properly
+
+Please create a flashcard summary for [Chapter Name] using the same design and theme as the 'Mechanical Properties of Solids' file. Attached the template
+
+Can you get all the above chapter's results generated into a nice looking HTML (that would excite a student) and that i can share?
+Organise it Chapterwise
+Ensure that the Formulas are rendered properly

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment Viewer</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; background: #f5f5f5; }
+        .container { max-width: 1400px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        h1 { margin-top: 0; color: #333; }
+        
+        /* Controls */
+        .controls { margin-bottom: 20px; padding: 15px; background: #eee; border-radius: 4px; display: flex; gap: 20px; align-items: center; }
+        select { padding: 8px; font-size: 16px; min-width: 200px; border-radius: 4px; border: 1px solid #ccc; }
+        
+        /* Input Gallery */
+        .section-title { font-size: 1.2em; font-weight: bold; margin: 20px 0 10px; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        .gallery { display: flex; gap: 10px; overflow-x: auto; padding: 10px 0; border: 1px solid #eee; background: #fafafa; }
+        .gallery-item { flex: 0 0 auto; text-align: center; }
+        .gallery-img { max-height: 200px; border: 1px solid #ddd; box-shadow: 0 1px 3px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.2s; }
+        .gallery-img:hover { transform: scale(1.05); }
+        
+        /* Comparison Table */
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; table-layout: fixed; }
+        th, td { border: 1px solid #ddd; padding: 10px; vertical-align: top; text-align: center; }
+        th { background: #f9f9f9; }
+        
+        .version-select { width: 100%; padding: 5px; font-weight: bold; }
+        
+        .crop-img { max-width: 100%; max-height: 400px; border: 1px solid #eee; display: block; margin: 0 auto; }
+        .missing { color: #888; font-style: italic; padding: 20px; }
+        
+        .warn { border: 2px solid orange; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Experiment Viewer</h1>
+    
+    <div class="controls">
+        <label><strong>Select Log Folder:</strong></label>
+        <select id="folderSelect">
+            <option value="">Loading...</option>
+        </select>
+    </div>
+
+    <div id="content" style="display:none;">
+        <div class="section-title">Input Images</div>
+        <div class="gallery" id="inputGallery"></div>
+
+        <div class="section-title">Output Comparison</div>
+        <table>
+            <thead>
+                <tr>
+                    <th width="15%">Solution ID</th>
+                    <th>
+                        Version A: 
+                        <select id="verA" class="version-select"></select>
+                    </th>
+                    <th>
+                        Version B: 
+                        <select id="verB" class="version-select"></select>
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="comparisonBody">
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    const API_BASE = '/api';
+    let currentData = null;
+
+    // init
+    fetch(`${API_BASE}/list`)
+        .then(r => r.json())
+        .then(data => {
+            const sel = document.getElementById('folderSelect');
+            sel.innerHTML = '<option value="">-- Select Folder --</option>';
+            
+            for (const [cat, items] of Object.entries(data)) {
+                const grp = document.createElement('optgroup');
+                grp.label = cat;
+                items.forEach(item => {
+                    const opt = document.createElement('option');
+                    opt.value = `${cat}|${item}`;
+                    opt.textContent = item;
+                    grp.appendChild(opt);
+                });
+                sel.appendChild(grp);
+            }
+            
+            sel.addEventListener('change', loadDetails);
+        });
+
+    function loadDetails() {
+        const val = document.getElementById('folderSelect').value;
+        if (!val) {
+            document.getElementById('content').style.display = 'none';
+            return;
+        }
+        
+        const [cat, sub] = val.split('|');
+        
+        fetch(`${API_BASE}/details/${cat}/${sub}`)
+            .then(r => r.json())
+            .then(data => {
+                currentData = data;
+                currentData.category = cat;
+                currentData.sub = sub;
+                renderView();
+            });
+    }
+
+    function renderView() {
+        if (!currentData) return;
+        
+        document.getElementById('content').style.display = 'block';
+        
+        // 1. Inputs
+        const gal = document.getElementById('inputGallery');
+        gal.innerHTML = '';
+        currentData.input_images.forEach(img => {
+            const div = document.createElement('div');
+            div.className = 'gallery-item';
+            div.innerHTML = `
+                <a href="/input/${currentData.category}/${currentData.sub}/${img}" target="_blank">
+                    <img src="/input/${currentData.category}/${currentData.sub}/${img}" class="gallery-img">
+                </a>
+                <div>${img}</div>
+            `;
+            gal.appendChild(div);
+        });
+        
+        // 2. Setup Versions
+        const versions = Object.keys(currentData.versions).sort((a,b) => {
+            // Sort V1, V2, V10 correctly
+            const numA = parseInt(a.replace(/\D/g, '')) || 0;
+            const numB = parseInt(b.replace(/\D/g, '')) || 0;
+            return numA - numB;
+        });
+
+        const verA = document.getElementById('verA');
+        const verB = document.getElementById('verB');
+        
+        // Save current selections if re-rendering, else default
+        const oldA = verA.value;
+        const oldB = verB.value;
+        
+        const opts = versions.map(v => `<option value="${v}">${v}</option>`).join('');
+        verA.innerHTML = opts;
+        verB.innerHTML = opts;
+        
+        // Default: Last vs Prev
+        if (versions.length > 0) {
+            verA.value = versions[versions.length - 1]; // Last
+            if (versions.length > 1) {
+                verB.value = versions[versions.length - 2]; // Prev
+            } else {
+                verB.value = versions[0];
+            }
+        }
+        
+        // Listeners for dynamic update
+        verA.onchange = renderTable;
+        verB.onchange = renderTable;
+        
+        renderTable();
+    }
+    
+    function renderTable() {
+        const vA = document.getElementById('verA').value;
+        const vB = document.getElementById('verB').value;
+        const tbody = document.getElementById('comparisonBody');
+        tbody.innerHTML = '';
+        
+        // Union of all crop names from both versions
+        const cropsA = currentData.versions[vA] || [];
+        const cropsB = currentData.versions[vB] || [];
+        const allCrops = new Set([...cropsA, ...cropsB]);
+        
+        // Sort crops naturally
+        const sortedCrops = Array.from(allCrops).sort((a,b) => {
+             const numA = parseInt(a.match(/\d+/)?.[0] || "0");
+             const numB = parseInt(b.match(/\d+/)?.[0] || "0");
+             
+             // Handle "part" inside
+             if (numA !== numB) return numA - numB;
+             return a.localeCompare(b);
+        });
+        
+        sortedCrops.forEach(crop => {
+            const row = document.createElement('tr');
+            
+            // ID
+            const idCell = document.createElement('td');
+            idCell.innerHTML = `<strong>${crop.split('.')[0]}</strong><br><small>${crop}</small>`;
+            row.appendChild(idCell);
+            
+            // Col A
+            row.appendChild(createImageCell(vA, crop));
+            
+            // Col B
+            row.appendChild(createImageCell(vB, crop));
+            
+            tbody.appendChild(row);
+        });
+        
+        // Highlight logic check
+        if (vA === vB) {
+            document.getElementById('verB').classList.add('warn');
+        } else {
+            document.getElementById('verB').classList.remove('warn');
+        }
+    }
+    
+    function createImageCell(ver, filename) {
+        const td = document.createElement('td');
+        const exists = (currentData.versions[ver] || []).includes(filename);
+        
+        if (exists) {
+            const src = `/output/${currentData.category}/${ver}/${currentData.sub}/${filename}`;
+            td.innerHTML = `
+                <a href="${src}" target="_blank">
+                    <img src="${src}" class="crop-img">
+                </a>
+            `;
+        } else {
+            td.innerHTML = '<div class="missing">Not found in ' + ver + '</div>';
+        }
+        return td;
+    }
+</script>
+
+</body>
+</html>

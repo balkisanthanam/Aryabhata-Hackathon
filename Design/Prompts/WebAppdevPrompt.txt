@@ -1,0 +1,77 @@
+
+1. I am building a multi-page React 18 + Vite frontend using Tailwind CSS and TypeScript. I am on the UX branch
+2. The project overview is given in this pptx - @Design\Branding\Aryabhata WebApp.pptx
+3. The designs created using Google Stitch is given in the folders: @Design\Desktop, @Design\Mobile, @Design\Tablet. The png files along with the html could be found in the Desktop folder.
+	Note that the png files for mobile and tablet are screenshots
+	For the Desktop views, prioritize the CSS/HTML properties in the provided .html files for layout accuracy, and use the .png files for visual validation
+4. The logo and color palate are provided in the folder - @Design\Branding
+	@ExtendedColorPalate.png - Color Palate
+	Main Logo - @MainLogo.png (@MainLogoAssets.png will give in different sizes)
+	@typographiclogo.png - Typographic logo (@typographiclogo_assets.png will give in different sizes)
+5. In the designs, the logo and typographic logo are not captured. Please replace them in the appropriate placeholders.
+	Use @Design/Branding/MainLogo.png for the icon and @Design/Branding/typographiclogo.png for the header text
+6. The broad architecture components to use are provided in this pdf - @Design\Architecture\ArchitectureForWebApp.pdf
+7. The flow of the app typically would be:
+	a) The user starts in the Main dashboard (@1_MainDashboard.png). Note we will have login and intro screens later. For now we will start here.
+	b) The user can use Practice & Improve to go through solutions of an Exercise - they land in @2_PracticeAndImroveDashboard.png, where user can pick the subject and the specific chapter, upon which they land in @3_PracticeAndImprove.png
+	c) If user comes back after breaking during an exercise review, they can directly jump using relevant option provided (if there's a break. Else let's not show that option)
+	d) For all other options have a placeholder for now, with a message popup probably or no action. We will build them in due course
+8. Note that these are for Maths, Chemistry and Physics. Hence the actual data (generated from models like Gemini) will have formulas, equations, etc. Hence we would need to handle LaTex (MathJax or equivalents for Chemistry, Physics)
+	Use Katex for LaTeX rendering as it is lightweight and performant for React/Vite environments.
+9. Please respect the rules as in @.agent\rules\scope-protection.md
+10. Sample Data. I have provided some Sample data for you to use while painting the UX. We will hook actual data later. Here's a small explanation:
+	@Design\SampleData\UserProfileSample.txt - User profile that you can use
+	@Design\SampleData\ChapterData.csv - use this to list the chapters in the screen @2_PracticeAndImroveDashboard.png
+	@Design\SampleData\SampleQuestion_Phy_Chap_11.json and @Design\SampleData\SampleSolutionForThatQuestion_Phy_Chap_11.json - for the screen @3_PracticeAndImprove.png
+	@Design\SampleData\UserUploadProblemSample.png (user provided problem), @Design\SampleData\UserUploadProblemSolutionForSample.jpg (user provided solution) & @Design\SampleData\UserUploadProblemSample_FeedbackFromSystem.png (Feedback from the system - model) - for @4_SolutionFeedbackCorrection.png
+11. Stop after generating an 'Implementation Plan' so I can review the file structure before you write the code.
+
+
+We need to iterate Problem & Solution View implemented as @apps\FrontEnd\src\pages\PracticeSession.tsx. The "Full Solution" section now uses a progressive reveal accordion. By default, only Step 1 is expanded, while subsequent steps are collapsed but show a title and an optional hint, encouraging an active learning approach. The collapsed steps are designed as clear, tappable elements for easy expansion on all devices.
+Have iterated the design with Stitch and the latest designs are Design\Desktop\3_PracticeAndImprove_iter2.html, Design\Desktop\3_PracticeAndImprove_iter2.png, Design\Mobile\3_PracticeAndImprove_iter2.png, Design\Tablet\3_PracticeAndImprove_iter2.png
+
+
+
+We need to wire the Solutions screen @apps\FrontEnd\src\pages\SolutionFeedback.tsx with the page @apps\FrontEnd\src\pages\PracticeDashboard.tsx.
+
+The Practice Dashboard needs a design update as given in @Design\Desktop\2_PracticeAndImroveDashboard_iter2.html and @Design\Desktop\2_PracticeAndImroveDashboard_iter2.png. We are getting the Desktop also inline with mobile and table designs. On click it will uniformly goto he solution feedback screen and not invoke the upload option currently.
+
+The Solution screen needs a design update. We are providing option to user to either point to a NCERT book problem or upload their problem, upload their solution and then seek feedback. Please refer to the designs
+@.Design\Desktop\4_SolutionFeedbackCorrection_iter2.png
+@Design\Desktop\4_SolutionFeedbackCorrection_iter2.html
+@Design\Mobile\4_SolutionFeedbackCorrection_iter2.png
+@Design\Tablet\4_SolutionFeedbackCorrection_iter2.png
+
+"We are iterating on the @PracticeDashboard.tsx and @SolutionFeedback.tsx pages.
+
+Dashboard Update: Update 
+PracticeDashboard.tsx
+  using 
+2_PracticeAndImroveDashboard_iter2.png
+  and 
+2_PracticeAndImroveDashboard_iter2.html
+ Desktop should now be inline with mobile/tablet layouts.
+
+Wiring: Configure the dashboard cards to navigate directly to the Solution Feedback screen using react-router-dom.
+
+Feedback Screen Update: Update 
+SolutionFeedback.tsx
+ based on the 
+4_SolutionFeedbackCorrection_iter2.png
+ designs.
+
+Logic: Implement a toggle or 'Choice' state to switch between 'NCERT Book Problem' and 'Upload Problem/Solution'. For now, focus on the visual layout of both paths.
+
+Math Support: Ensure the LaTeX rendering remains active for any NCERT problem text displayed.
+
+Safety: Follow @scope-protection rules strictly."
+
+The apps\FrontEnd\src\pages\SolutionFeedback.tsx page needs to use the following sample data to display real sample data. The design shows the depiction for illustration. Let's replace with the sample data.
+Design\Desktop\4_SolutionFeedbackCorrection_iter2.png is the original design.
+Design\SampleData\UserUploadProblemSolutionForSample.jpg is the handwritten solution uploaded by the user as an image. this should be shown in the Left hand side of the solution pane. This is the answer that the system is verifying and on the right side the system's correction is shown Design\SampleData\UserUploadProblemSample_FeedbackFromSystem.json
+Note that the solution by system should handle formats like LaTex, etc as it could be for Maths, Physics or Chemistry (Formulas, equations etc.)
+
+
+
+
+

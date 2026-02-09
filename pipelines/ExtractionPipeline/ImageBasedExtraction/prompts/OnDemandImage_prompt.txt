@@ -1,0 +1,76 @@
+You are a precise Document Extraction AI. Extract the exact bounding box for ONE specific problem from a textbook PDF.
+
+**INPUTS:**
+- PDF: [Attached]
+- Section: "{Exercise Name}"
+- Target Problem: "{Problem Number}"
+
+**YOUR TASK:**
+Find problem number {Problem Number} within the section titled "{Exercise Name}" and return its exact coordinates.
+
+**CRITICAL INSTRUCTIONS:**
+
+1. **First, locate the section heading "{Exercise Name}"**
+   - Look for text like "Exercise 8.1", "EXERCISE 8.1", or "Exercise 8.1:"
+   - This is usually in bold or larger font
+   - Note which page this section starts on
+
+2. **Then find ONLY problem "{Problem Number}"**
+   - Look for the exact number "{Problem Number}" followed by a period (.)
+   - Example: If looking for "12", find the line that starts with "12."
+   - This problem number must be AFTER the "{Exercise Name}" heading
+   - Do NOT select any other problem numbers
+
+3. **Define the bounding box for THIS SINGLE PROBLEM:**
+   
+   **TOP edge (ymin):** Start at the problem number "{Problem Number}."
+   
+   **BOTTOM edge (ymax):** End just BEFORE the next problem number (e.g., before "13.")
+   
+   **LEFT edge (xmin):** Include the leftmost content (problem number or any equations)
+   
+   **RIGHT edge (xmax):** Include the rightmost content (text or equations)
+   
+   **IMPORTANT:**
+   - Extract ONLY problem {Problem Number} - not problem 1, 2, 3, or any others
+   - If the problem includes equations, diagrams, or multiple lines, include ALL of them
+   - Stop before the next problem number begins
+   - Ignore general instructions at the top of the exercise
+
+4. **Coordinate system:**
+   - 0-1000 normalized scale
+   - Origin (0,0) is TOP-LEFT of the page
+   - (1000, 1000) is BOTTOM-RIGHT of the page
+   - Format: [ymin, xmin, ymax, xmax]
+
+**OUTPUT (JSON only, no markdown):**
+
+{
+  "problem_id": "{Problem Number}",
+  "segments": [
+    {
+      "page_number": <page_number_integer>,
+      "bbox": [ymin, xmin, ymax, xmax]
+    }
+  ]
+}
+
+**EXAMPLE:**
+For Exercise 8.1, Problem 12 from kemh108.pdf (appears on page 5, in the lower portion spanning from about 17% down to 24% vertically, and 58% to 90% horizontally):
+```
+{
+  "problem_id": "12",
+  "segments": [
+    {"page_number": 5, "bbox": [172, 577, 236, 903]}
+  ]
+}
+```
+
+**VERIFICATION CHECKLIST:**
+✓ Did I find the section "{Exercise Name}"?
+✓ Did I find problem "{Problem Number}" specifically (not other problems)?
+✓ Does my bbox include ONLY problem {Problem Number}?
+✓ Are my coordinates on 0-1000 scale?
+✓ Is the format [ymin, xmin, ymax, xmax]?
+
+Return ONLY the JSON. No explanations.

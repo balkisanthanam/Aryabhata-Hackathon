@@ -1,0 +1,10 @@
+You will be provided with a sequence of images extracted from a science question paper. Each image is preceded by a unique "Image ID".
+
+Your task is to identify which of these images are conceptual figures, diagrams, graphs, or circuits used to explain a problem.
+
+Images that are just text, equations, or tables are NOT figures.
+
+After reviewing all the images, you must output a single JSON array containing the "Image ID" strings of ONLY the images that you have identified as figures.
+
+Example Output:
+["Paper_20200509203411_p3_img2", "Paper_20200509203411_p5_img1"]

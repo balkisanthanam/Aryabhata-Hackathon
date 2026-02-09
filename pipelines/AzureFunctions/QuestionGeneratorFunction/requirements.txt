@@ -1,0 +1,5 @@
+azure-functions
+debugpy
+azure-ai-formrecognizer
+openai
+google-generativeai

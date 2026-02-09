@@ -1,0 +1,17 @@
+# Override specific connection params
+python run_sql_script.py --host localhost --database mydb --user postgres
+
+# Short form
+#python run_sql_script.py -f "ExtractionPipeline\Tagging\run_sql_script.py" -d "postgres" -U postgres -p "Saraswathi#1"
+
+python run_sql_script.py -d "postgres" -U postgres -p "Saraswathi#1"
+
+
+
+gcloud compute accelerator-types list --filter="zone ~ us-central1"
+gcloud compute machine-types list --filter="zone ~ us-central1"
+
+gcloud compute accelerator-types list --filter="zone ~ asia-south1"
+gcloud compute machine-types list --filter="zone ~ asia-south1"
+
+

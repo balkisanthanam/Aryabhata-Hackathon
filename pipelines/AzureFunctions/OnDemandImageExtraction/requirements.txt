@@ -1,0 +1,18 @@
+# Azure Functions dependencies
+azure-functions
+azure-identity
+azure-keyvault-secrets
+azure-storage-blob
+
+# Google Gemini API
+google-generativeai
+
+# PDF and Image processing
+PyMuPDF
+Pillow
+
+# HTTP requests
+requests
+
+# Additional utilities
+python-dotenv

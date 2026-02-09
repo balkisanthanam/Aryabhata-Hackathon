@@ -1,0 +1,56 @@
+{
+    "input": {
+        "pdf_folder": "input/pdfs/",
+        "file_extensions": [".pdf"]
+    },
+    "output": {
+        "base_folder": "output/ImageBasedExtraction/",
+        "page_images_folder": "page_images",
+        "questions_folder": "questions",
+        "metadata_file": "metadata.json"
+    },
+    "step1_page_detection": {
+        "method": "gemini",
+        "gemini_model": "gemini-2.5-flash",
+        "prompt_template": "prompts/page_detection_prompt.txt",
+        "keywords": ["Exercise", "Exercises", "Questions", "Problems", "Practice"],
+        "use_ocr": false,
+        "comment": "Gemini method: Single API call for entire PDF (faster, cheaper). Pattern method: Local keyword search (no API cost)"
+    },
+    "step2_page_conversion": {
+        "library": "pymupdf",
+        "dpi": 300,
+        "format": "PNG",
+        "poppler_path": null,
+        "comment": "Use 'pdf2image' for best quality (requires Poppler), or 'pymupdf' for no dependencies"
+    },
+    "step3_bounding_box": {
+        "gemini_model": "gemini-3-pro-preview",
+        "prompt_template": "prompts/bounding_box_prompt.txt",
+        "max_retries": 3,
+        "confidence_threshold": 0.7,
+        "top_buffer": 3,
+        "bottom_buffer": 1,
+        "left_buffer": 3,
+        "right_buffer": 3,
+        "comment": "Safety buffers in normalized space (0-1000) - top is larger to catch question numbers"
+    },
+    "step4_cropping": {
+        "padding_pixels": 0,
+        "output_format": "PNG",
+        "quality": 95,
+        "naming_convention": "q_{page}_{number}.png",
+        "comment": "padding_pixels set to 0 - relying on Step 3 normalized safety buffer. Increase if needed."
+    },
+    "gemini": {
+        "api_key_env": "GOOGLE_API_KEY",
+        "rate_limit_delay": 3.0,
+        "max_tokens": 120002,
+        "temperature": 0.0,
+        "top_p": 0.95
+    },
+    "logging": {
+        "level": "INFO",
+        "log_file": "extraction.log"
+    }
+}

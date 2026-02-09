@@ -1,0 +1,22 @@
+For PDF Extraction
+------------------
+
+Write a new program to extract the exercises from pdf documents using LLM using API
+This program should loop on pdf documents in the folder 'Extraction\Data\XI\Math' except the file 'Extraction\Data\XI\Math\kemh1an.pdf'
+For each pdf document execute the Prompt Template 'Extraction\Prompts\ExerciseAndAnswers.txt' on the LLM API 
+Wrap invocation of each PDF extraction (and invocation of Prompt) into a Function for better readability (and testing)
+The Prompt Template should be filled with the the following:
+    {Curriculum} - 'CBSE'
+    {Standard} - 11
+    {Subject} - 'MATHEMATICS'
+    {Chapter_PDF} the pdf document to be attached
+    {Answer_PDF} the pdf document 'Extraction\Data\XI\Math\kemh1an.pdf' to be attached. This will be the file for all pdfs being looped.
+Also wrap the LLM API calls into separate Abstracted Function.
+The LLM API call could be for either 
+    Vertex AI API using Gemini 2.5 pro model.
+    or
+    GPT 5 using OpenAI API
+
+    The program 'HowToAPIs\TestGemini.py' has some reference to Vertex AI API invocation
+    The Program 'ExtractionInitExperiments\ExtractQuestions_GPT.py has some reference to OpenAI API invocation
+    The above are for samples only. Please select the best implementation for the API calls as needed.

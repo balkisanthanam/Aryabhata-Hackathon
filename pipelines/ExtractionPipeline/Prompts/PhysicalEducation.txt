@@ -1,0 +1,30 @@
+Content
+-------
+Your task is to prepare Questions and Answers for a chapter in Physical Education Subject for CBSE in 11th standard, in such a way that the entire chapter is covered and will serve the student as a Revision
+* The PDF is attached for context. 
+* However please feel free to check online if additional context is required. But keep the scope strictly to CBSE 11th standard Physical Education Subject.
+* Restrict your focus only to one chapter - Unit III Physical Fitness, Wellness and Lifestyle. Ignore other Chapters
+* Get topic wise key points and summary
+* Convert them into different Questions - MCQ, short, long like 1 mark, 2 marks, 5 marks
+* Generate Answers for these Questions as well.
+* Provide the results as a properly Formatted Text
+
+
+Presentation
+------------
+Can you convert this into an exciting HTML for a 16 year old school boy?
+Remember this subject is a dry one for students. We are trying to make it exciting
+Please include provisions to show and hide answer for Questions
+
+
+Old Prompt
+----------
+Your task is to prepare Questions and Answers for a chapter in Physical Education Subject for CBSE in 11th standard.
+* The PDF is attached for context. 
+* However please feel free to check online if additional context is required. But keep the scope strictly to CBSE 11th standard Physical Education Subject.
+* Restrict your focus only to one chapter - Unit I Changing Trends and Career in Physical Education. Ignore other Chapters
+* Prepare different Questions - MCQ, short, long like 1 mark, 2 marks, 5 marks
+    * We can Restrict it to 25 Questions
+* Generate Answers for these Questions as well.
+* Provide the results as a properly Formatted Text
+

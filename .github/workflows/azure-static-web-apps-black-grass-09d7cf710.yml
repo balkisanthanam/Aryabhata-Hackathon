@@ -1,0 +1,148 @@
+name: Azure Static Web Apps CI/CD
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+    branches:
+      - master
+
+jobs:
+  # Deploy Frontend to Static Web Apps
+  deploy_frontend:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+    runs-on: ubuntu-latest
+    name: Deploy Frontend
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: true
+          lfs: false
+
+      - name: Build And Deploy Frontend
+        id: builddeploy
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_BLACK_GRASS_09D7CF710 }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          action: "upload"
+          app_location: "apps/FrontEnd"
+          api_location: "" # No managed functions - using linked Functions App
+          output_location: "dist"
+        env:
+          VITE_API_BASE_URL: "/api"
+
+  # Deploy Functions to standalone Azure Functions App
+  deploy_functions:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+    runs-on: ubuntu-latest
+    name: Deploy Functions
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies and build
+        run: |
+          cd apps/functions
+          npm ci
+          npx prisma generate
+          npm run build
+        env:
+          DATABASE_URL: "postgresql://dummy:dummy@localhost:5432/dummy"
+
+      - name: Prepare deployment package
+        run: |
+          cd apps/functions
+          # Install production dependencies only (this overwrites node_modules)
+          npm ci --omit=dev
+          # Regenerate Prisma client (required after npm ci --omit=dev)
+          npx prisma generate
+          # Show package size
+          echo "=== Package info ==="
+          du -sh node_modules/
+          ls -la dist/src/functions/
+        env:
+          DATABASE_URL: "postgresql://dummy:dummy@localhost:5432/dummy"
+
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Deploy to Azure Functions
+        run: |
+          cd apps/functions
+          # Create deployment zip
+          zip -r ../deploy.zip dist node_modules host.json package.json
+          
+          echo "Zip file size:"
+          ls -lh ../deploy.zip
+          
+          # Upload zip to blob storage
+          STORAGE_ACCOUNT="staryabhattafunc"
+          CONTAINER="deployments"
+          BLOB_NAME="deploy-$(date +%Y%m%d%H%M%S).zip"
+          
+          # Create container if not exists
+          az storage container create \
+            --account-name $STORAGE_ACCOUNT \
+            --name $CONTAINER \
+            --auth-mode login \
+            2>/dev/null || true
+          
+          # Upload the zip
+          echo "Uploading to blob storage..."
+          az storage blob upload \
+            --account-name $STORAGE_ACCOUNT \
+            --container-name $CONTAINER \
+            --name $BLOB_NAME \
+            --file ../deploy.zip \
+            --auth-mode login \
+            --overwrite
+          
+          # Generate SAS URL (valid for 1 year) using account key
+          EXPIRY=$(date -u -d "+1 year" '+%Y-%m-%dT%H:%MZ')
+          ACCOUNT_KEY=$(az storage account keys list \
+            --account-name $STORAGE_ACCOUNT \
+            --query "[0].value" -o tsv)
+          
+          SAS_URL=$(az storage blob generate-sas \
+            --account-name $STORAGE_ACCOUNT \
+            --account-key "$ACCOUNT_KEY" \
+            --container-name $CONTAINER \
+            --name $BLOB_NAME \
+            --permissions r \
+            --expiry $EXPIRY \
+            --full-uri \
+            -o tsv)
+          
+          echo "Setting WEBSITE_RUN_FROM_PACKAGE to blob URL..."
+          az functionapp config appsettings set \
+            --name func-aryabhatta-api \
+            --resource-group rg-aryabhata-app \
+            --settings "WEBSITE_RUN_FROM_PACKAGE=$SAS_URL"
+          
+          # Restart to apply
+          az functionapp restart \
+            --name func-aryabhatta-api \
+            --resource-group rg-aryabhata-app
+          
+          echo "Deployment completed!"
+
+  close_pull_request_job:
+    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    name: Close Pull Request Job
+    steps:
+      - name: Close Pull Request
+        id: closepullrequest
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_BLACK_GRASS_09D7CF710 }}
+          action: "close"

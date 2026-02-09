@@ -1,0 +1,6 @@
+# Requirements for JEE Extraction Evaluation Tool
+# Install with: pip install -r evaluate_requirements.txt
+
+# Image comparison libraries (optional but recommended)
+Pillow>=10.0.0
+imagehash>=4.3.1

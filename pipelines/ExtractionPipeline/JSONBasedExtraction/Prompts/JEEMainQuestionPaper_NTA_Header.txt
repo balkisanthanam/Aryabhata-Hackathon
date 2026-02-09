@@ -1,0 +1,24 @@
+Attached is a JEE Main Question Paper in PDF format. Your task is to extract only the headers in the 1st Page.
+Here are the specific instructions:
+*) The first two portions in the 1st page contains the Meta deta - The agency and the Target Test. Extract those fields. 
+    Here's an example.
+    Agency - National Testing Agency
+    Question Paper Name: BTECH 8th Jan 2020 Shift 1
+    Subject Name: BTECH
+    Creation Date: 2020-01-08 15:09:15
+    Duration: 180
+    Total Marks: 300
+    Display Marks: Yes
+    Target Test - BTECH
+    Group Number : 1
+    Group Id : 40503618
+    Group Maximum Duration : 0
+    Group Minimum Duration : 180
+    Show Attended Group? : No
+    Edit Attended Group? : No
+    Break time: 0
+    Group Marks: 300
+    Is this Group for Examiner?: No
+*) Note that some of the fields might be images. You need to extract the same.
+*) No Need to capture the Last Subject Section in the 1st page
+*) Please capture the results as JSON

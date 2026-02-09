@@ -1,0 +1,3 @@
+# Ignore folders that shouldn't be scanned for platform detection
+apps/backend/**
+pipelines/**

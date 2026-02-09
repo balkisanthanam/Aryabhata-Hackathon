@@ -1,0 +1,37 @@
+This is a new program we are writing, in the folder ExtractionPipeline
+    No  need to verify other folders in this workspace. Assume that the folder ExtractionPipeline is self contained
+    If any for reference (not to refer in program, check HowToAPIs\TestGemini2.py which was successful)
+This program invokes Gemini model through Google Cloud GenAI API and gets results as JSON.
+The Program needs to do the following:
+	Read a Config file
+        The Config file provides 
+            The Prompt Template file path
+                default 'ExtractionPipeline\Prompts\QuestionAnswerExtraction_Chem.txt'
+            Prompt Template variable
+                curriculum - default value 'CBSE'
+                standard - default value 11
+                subject - default value 'Chemistry'
+            Google Cloud and Gemini model invocation parameters
+                vertexai - default True
+                project - default 'animated-rope-453904-j7'
+                location - default 'us-central1'
+                model - default 'gemini-2.5-pro'
+            Input pdf files (URLs) - List of files to process. These are typically Google storage urls gs:
+                default value ['gs://aryabhata_schooldata/CBSE_XI/Chemistry/Chemistry1/kech104.pdf']
+            Answer pdf file (URL) - answer file name
+                default value 'gs://aryabhata_schooldata/CBSE_XI/Chemistry/Chemistry1/kech1an.pdf'
+    Read the prompt Template file and replace the values for curriculum, subject using the values from config file
+    Invoke Google genai client to generate_content.
+        Use the config values Read
+        Use the Prompt text
+        Use the Input pdf files and Answer pdf file
+        Maybe we can wrap this all in a function that returns the response text for all the input files
+    Store the response text (this is JSON) in corresponding files for each of the input pdf file
+Whenever i need to modify the parameters, i will just change the config file and run the program
+
+
+Follow up Correction
+--------------------
+Do not use vertexai. Use from google.genai import types
+from google import genai and client.models.generate_content as in the file HowToAPIs\TestGemini2.py. Change the files accordingly
+

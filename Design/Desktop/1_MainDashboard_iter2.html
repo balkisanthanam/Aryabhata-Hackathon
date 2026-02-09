@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aryabhata Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Kalam:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              // Vedic Modern Indigo Shades
+              "vedic-indigo-lighter": "#5C86C0",
+              "vedic-indigo-hover": "#3949AB",
+              "vedic-indigo-main": "#1A237E",
+              "vedic-indigo-deep": "#0D1560",
+              "vedic-indigo-darkest": "#000040",
+              // Glowing Turmeric Yellow Shades
+              "vedic-yellow-lighter": "#FFF176",
+              "vedic-yellow-highlight": "#FBDC35",
+              "vedic-yellow-main": "#FBC02D",
+              "vedic-yellow-warm": "#F57F17",
+              "vedic-yellow-darkest": "#E65100",
+              primary: "#1A237E", 
+              secondary: "#FBC02D", 
+              "background-light": "#F0F4F8", // Slightly cooler/richer white
+              "background-dark": "#050A30", // Very deep indigo
+              "surface-light": "#FFFFFF",
+              "surface-dark": "#121840", // Slightly lighter than background
+              "text-main-light": "#000040", 
+              "text-main-dark": "#F9FAFB",
+              "text-muted-light": "#5C86C0", 
+              "text-muted-dark": "#9FA8DA",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              hand: ["Kalam", "cursive"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              xl: "1rem",
+              "2xl": "1.5rem",
+              "3xl": "2rem",
+            },
+            boxShadow: {
+              'soft': '0 4px 20px -2px rgba(26, 35, 126, 0.05)',
+              'card': '0 10px 25px -5px rgba(26, 35, 126, 0.1), 0 8px 10px -6px rgba(26, 35, 126, 0.1)',
+              'glow': '0 0 20px rgba(251, 192, 45, 0.5)',
+              'glow-indigo': '0 0 20px rgba(26, 35, 126, 0.3)',
+            }
+          },
+        },
+      };
+    </script>
+<style>
+        body {
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .dark .glass-panel {
+            background: rgba(13, 21, 96, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(26, 35, 126, 0.15), 0 10px 10px -5px rgba(26, 35, 126, 0.06);
+        }
+        .mesh-bg {
+            background-color: #F0F4F8;
+            background-image: radial-gradient(at 0% 0%, hsla(237,49%,88%,1) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(44,100%,89%,1) 0, transparent 50%);
+        }
+        .dark .mesh-bg {
+            background-color: #050A30;
+            background-image: radial-gradient(at 0% 0%, hsla(237,49%,15%,1) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(44,100%,10%,1) 0, transparent 50%);
+        }
+    </style>
+</head>
+<body class="mesh-bg dark:bg-background-dark text-text-main-light dark:text-text-main-dark min-h-screen font-sans flex flex-col items-center py-1 md:py-4 px-3 sm:px-6 md:px-8 transition-colors duration-300">
+<header class="w-full max-w-6xl mb-1 md:mb-6 flex flex-col items-center justify-center">
+<div class="relative group p-0 md:p-2">
+<div class="absolute inset-0 bg-gradient-to-tr from-vedic-yellow-main/40 via-vedic-indigo-lighter/20 to-vedic-indigo-main/40 rounded-full blur-2xl opacity-60 group-hover:opacity-80 transition-opacity duration-700"></div>
+<div class="absolute inset-0 bg-vedic-indigo-lighter/10 rounded-full blur-3xl animate-pulse"></div>
+<img alt="Aryabhata Logo" class="relative h-8 md:h-20 w-auto dark:brightness-110 object-contain drop-shadow-xl transform transition-transform duration-500 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDF8BtpzbYVH1JEk7VVXBAY4kacQQtwOUcL6F0oL-ZGfJnuy31Cq6jG3PQAr1Wig-IxpGaZZvrFz2K-8NP7Q_H-2L_WQYCerIsDcp2pwLY0KJ3HS1HFHH96vmem83nW4tw47-1zgfMwlPLxLL2MeI6TX_fbonL-b6BRVtx1kxqa4BV8MVuPWziEhOk8QI3Gh966W_ksOwxPjq7vSu6H4HeUBGevkDIToPe2QhbUAayGzYPekGRa7ZraNXsFtkR1R4dfzwb43f8Fu9k"/>
+</div>
+</header>
+<main class="w-full max-w-6xl space-y-2 md:space-y-6">
+<section class="glass-panel rounded-xl md:rounded-2xl shadow-sm px-3 py-2 md:px-6 md:py-3 relative overflow-hidden group">
+<div class="flex flex-row md:flex-row justify-between items-center gap-2 md:gap-6 relative z-10 w-full">
+<div class="flex-shrink-0">
+<div class="w-8 h-8 rounded-full bg-vedic-indigo-main text-white flex items-center justify-center text-xs font-bold shadow-md">
+                        V
+                    </div>
+</div>
+<div class="md:hidden flex flex-col flex-1 min-w-0 ml-1 justify-center">
+<div class="flex items-center gap-1.5">
+<h2 class="text-sm font-bold text-vedic-indigo-darkest dark:text-white leading-tight truncate">Viswanathan</h2>
+<button aria-label="Edit Profile" class="text-text-muted-light dark:text-text-muted-dark hover:text-vedic-yellow-warm dark:hover:text-vedic-yellow-main transition-colors leading-none">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</button>
+</div>
+<p class="text-[10px] font-semibold text-text-muted-light dark:text-text-muted-dark leading-tight truncate">
+                        11th CBSE <span class="mx-0.5 opacity-50">|</span> JEE Advanced
+                    </p>
+</div>
+<div class="hidden md:flex items-center gap-4">
+<h2 class="text-lg font-bold text-vedic-indigo-darkest dark:text-white tracking-tight">Viswanathan</h2>
+</div>
+<div class="hidden md:block w-px h-6 bg-gray-300 dark:bg-white/10"></div>
+<div class="hidden md:flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-vedic-indigo-main dark:text-vedic-yellow-main text-lg">school</span>
+<span class="text-vedic-indigo-darkest dark:text-white font-medium">Class 11, CBSE</span>
+</div>
+<div class="hidden md:block w-px h-4 bg-gray-300 dark:bg-white/10"></div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-vedic-indigo-main dark:text-vedic-yellow-main text-lg">flag</span>
+<span class="text-vedic-indigo-darkest dark:text-white font-medium">JEE Advanced</span>
+</div>
+</div>
+<div class="hidden md:block w-px h-6 bg-gray-300 dark:bg-white/10 ml-auto mr-0"></div>
+<div class="flex-shrink-0">
+<div class="flex items-center gap-1 px-2 py-0.5 md:px-3 md:py-1 bg-vedic-yellow-lighter/20 dark:bg-vedic-yellow-main/10 rounded-full border border-vedic-yellow-main/20">
+<span class="material-symbols-outlined text-sm md:text-lg text-vedic-yellow-warm dark:text-vedic-yellow-main fill-1">emoji_events</span>
+<span class="text-xs md:text-sm font-bold text-vedic-indigo-darkest dark:text-white whitespace-nowrap">12 Days</span>
+</div>
+</div>
+</div>
+</section>
+<section class="flex justify-center transform hover:-translate-y-1 transition-transform duration-300">
+<button class="group w-full md:w-11/12 lg:w-4/5 bg-white dark:bg-vedic-indigo-main border border-vedic-indigo-lighter/20 dark:border-vedic-yellow-main/30 rounded-3xl p-1 shadow-lg hover:shadow-glow-indigo dark:hover:shadow-glow transition-all duration-300 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-r from-vedic-indigo-main to-vedic-indigo-hover dark:from-vedic-indigo-deep dark:to-vedic-indigo-main opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="bg-white dark:bg-surface-dark group-hover:bg-opacity-0 rounded-[1.3rem] p-3 md:p-8 flex items-center justify-between relative z-10 h-full transition-colors duration-300">
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 mix-blend-multiply pointer-events-none"></div>
+<div class="flex items-center gap-3 md:gap-6 w-full">
+<div class="h-10 w-10 md:h-16 md:w-16 bg-vedic-yellow-main text-vedic-indigo-darkest rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:bg-white group-hover:text-vedic-indigo-main transition-all duration-300 flex-shrink-0">
+<span class="material-symbols-outlined text-xl md:text-4xl fill-1">play_arrow</span>
+</div>
+<div class="text-left flex-1 min-w-0">
+<p class="text-[0.65rem] md:text-xs font-bold uppercase tracking-widest text-vedic-indigo-lighter dark:text-vedic-yellow-lighter group-hover:text-vedic-yellow-lighter dark:group-hover:text-vedic-yellow-main mb-0.5 md:mb-1 flex items-center gap-1">
+                                Resume Learning <span class="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-vedic-yellow-main animate-pulse"></span>
+</p>
+<h3 class="text-sm md:text-lg lg:text-2xl font-bold text-vedic-indigo-darkest dark:text-white group-hover:text-white transition-colors line-clamp-1 md:line-clamp-none">Physics 11th Chapter Exercise</h3>
+</div>
+</div>
+<div class="block pl-2 md:pl-4">
+<span class="material-symbols-outlined text-xl md:text-4xl text-vedic-indigo-lighter dark:text-vedic-indigo-hover group-hover:text-white transform group-hover:translate-x-2 transition-all">arrow_forward_ios</span>
+</div>
+</div>
+</button>
+</section>
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 md:px-8">
+<a class="card-hover flex flex-col h-full bg-surface-light dark:bg-surface-dark rounded-xl md:rounded-3xl p-1 shadow-soft relative group" href="#">
+<div class="absolute inset-0 bg-gradient-to-b from-secondary/20 to-transparent rounded-xl md:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<div class="bg-white dark:bg-surface-dark/95 h-full rounded-lg md:rounded-[1.3rem] p-4 md:p-6 flex flex-row md:flex-col items-center md:items-start relative z-10 border border-transparent group-hover:border-secondary/30 transition-colors gap-3 md:gap-0">
+<div class="flex md:w-full justify-between items-start md:mb-6">
+<div class="p-2 md:p-3.5 bg-green-50 dark:bg-secondary/10 text-secondary rounded-lg md:rounded-2xl shadow-sm group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-xl md:text-3xl">edit_note</span>
+</div>
+<div class="hidden md:block bg-gray-50 dark:bg-white/5 rounded-full p-2 group-hover:bg-secondary group-hover:text-vedic-indigo-darkest transition-colors duration-300">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-inherit transition-colors text-xl">arrow_outward</span>
+</div>
+</div>
+<div class="flex-1 md:w-full">
+<h4 class="text-sm md:text-xl font-bold text-vedic-indigo-darkest dark:text-white md:mb-3 group-hover:text-secondary transition-colors">Practice &amp; Improve</h4>
+<p class="hidden md:block text-sm text-text-muted-light dark:text-text-muted-dark leading-relaxed font-medium">
+                            NCERT Solutions, practice problems &amp; teacher-like corrections. Master the basics.
+                        </p>
+</div>
+<div class="md:hidden text-text-muted-light dark:text-text-muted-dark group-hover:text-secondary transition-colors">
+<span class="material-symbols-outlined text-xl">arrow_forward_ios</span>
+</div>
+<div class="hidden md:flex mt-4 pt-4 border-t border-gray-100 dark:border-white/5 w-full items-center gap-2 text-xs font-bold text-secondary uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">
+                        Start Practice
+                    </div>
+</div>
+</a>
+<a class="card-hover flex flex-col h-full bg-surface-light dark:bg-surface-dark rounded-xl md:rounded-3xl p-1 shadow-soft relative group" href="#">
+<div class="absolute inset-0 bg-gradient-to-b from-vedic-indigo-main/20 to-transparent rounded-xl md:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<div class="bg-white dark:bg-surface-dark/95 h-full rounded-lg md:rounded-[1.3rem] p-4 md:p-6 flex flex-row md:flex-col items-center md:items-start relative z-10 border border-transparent group-hover:border-vedic-indigo-main/30 transition-colors gap-3 md:gap-0">
+<div class="flex md:w-full justify-between items-start md:mb-6">
+<div class="p-2 md:p-3.5 bg-indigo-50 dark:bg-vedic-indigo-main/20 text-vedic-indigo-main dark:text-vedic-indigo-lighter rounded-lg md:rounded-2xl shadow-sm group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-xl md:text-3xl">trending_up</span>
+</div>
+<div class="hidden md:block bg-gray-50 dark:bg-white/5 rounded-full p-2 group-hover:bg-vedic-indigo-main group-hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-inherit transition-colors text-xl">arrow_outward</span>
+</div>
+</div>
+<div class="flex-1 md:w-full">
+<h4 class="text-sm md:text-xl font-bold text-vedic-indigo-darkest dark:text-white md:mb-3 group-hover:text-vedic-indigo-main dark:group-hover:text-vedic-indigo-lighter transition-colors">Step-up &amp; Challenge</h4>
+<p class="hidden md:block text-sm text-text-muted-light dark:text-text-muted-dark leading-relaxed font-medium">
+                            Take up tests - NCERT &amp; JEE Main/Advanced. Topic wise challenge levels.
+                        </p>
+</div>
+<div class="md:hidden text-text-muted-light dark:text-text-muted-dark group-hover:text-vedic-indigo-main transition-colors">
+<span class="material-symbols-outlined text-xl">arrow_forward_ios</span>
+</div>
+<div class="hidden md:flex mt-4 pt-4 border-t border-gray-100 dark:border-white/5 w-full items-center gap-2 text-xs font-bold text-vedic-indigo-main dark:text-vedic-indigo-lighter uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">
+                        Take Challenge
+                    </div>
+</div>
+</a>
+<a class="card-hover flex flex-col h-full bg-surface-light dark:bg-surface-dark rounded-xl md:rounded-3xl p-1 shadow-soft relative group" href="#">
+<div class="absolute inset-0 bg-gradient-to-b from-vedic-yellow-warm/20 to-transparent rounded-xl md:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<div class="bg-white dark:bg-surface-dark/95 h-full rounded-lg md:rounded-[1.3rem] p-4 md:p-6 flex flex-row md:flex-col items-center md:items-start relative z-10 border border-transparent group-hover:border-vedic-yellow-warm/30 transition-colors gap-3 md:gap-0">
+<div class="flex md:w-full justify-between items-start md:mb-6">
+<div class="p-2 md:p-3.5 bg-orange-50 dark:bg-vedic-yellow-warm/20 text-vedic-yellow-warm rounded-lg md:rounded-2xl shadow-sm group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-xl md:text-3xl">analytics</span>
+</div>
+<div class="hidden md:block bg-gray-50 dark:bg-white/5 rounded-full p-2 group-hover:bg-vedic-yellow-warm group-hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-inherit transition-colors text-xl">arrow_outward</span>
+</div>
+</div>
+<div class="flex-1 md:w-full">
+<h4 class="text-sm md:text-xl font-bold text-vedic-indigo-darkest dark:text-white md:mb-3 group-hover:text-vedic-yellow-warm transition-colors">Where do I stand?</h4>
+<p class="hidden md:block text-sm text-text-muted-light dark:text-text-muted-dark leading-relaxed font-medium">
+                            Statistical simulation of where you stand and your gaps. Visual analytics.
+                        </p>
+</div>
+<div class="md:hidden text-text-muted-light dark:text-text-muted-dark group-hover:text-vedic-yellow-warm transition-colors">
+<span class="material-symbols-outlined text-xl">arrow_forward_ios</span>
+</div>
+<div class="hidden md:flex mt-4 pt-4 border-t border-gray-100 dark:border-white/5 w-full items-center gap-2 text-xs font-bold text-vedic-yellow-warm uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">
+                        View Analytics
+                    </div>
+</div>
+</a>
+</section>
+<section class="w-full flex justify-center pt-2 md:pt-6">
+<div class="w-full max-w-2xl group cursor-pointer relative">
+<div class="absolute inset-0 bg-gradient-to-r from-vedic-indigo-lighter/20 to-vedic-yellow-lighter/20 rounded-2xl transform rotate-1 group-hover:rotate-2 transition-transform duration-300"></div>
+<div class="relative bg-white dark:bg-surface-dark rounded-2xl border-2 border-dashed border-vedic-indigo-lighter/30 dark:border-vedic-indigo-hover p-4 md:p-8 flex items-center gap-4 md:gap-6 shadow-sm group-hover:shadow-lg group-hover:border-vedic-indigo-main dark:group-hover:border-vedic-yellow-main transition-all">
+<div class="flex-shrink-0">
+<div class="bg-vedic-indigo-main/5 dark:bg-vedic-indigo-deep p-3 md:p-4 rounded-full group-hover:scale-110 transition-transform duration-300 group-hover:bg-vedic-indigo-main group-hover:text-white text-vedic-indigo-main dark:text-vedic-yellow-main">
+<span class="material-symbols-outlined text-2xl md:text-4xl">smart_display</span>
+</div>
+</div>
+<div class="flex-1">
+<h5 class="text-base md:text-lg font-bold text-vedic-indigo-darkest dark:text-white group-hover:text-vedic-indigo-main dark:group-hover:text-vedic-yellow-main transition-colors mb-1">Introduction</h5>
+<p class="text-xs md:text-sm text-text-muted-light dark:text-text-muted-dark font-medium">Learn how to make the best use of Aryabhata</p>
+</div>
+<div class="hidden sm:block">
+<span class="material-symbols-outlined text-gray-300 group-hover:text-vedic-indigo-main dark:group-hover:text-vedic-yellow-main transition-colors">play_circle</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<div class="fixed bottom-8 right-8 z-50">
+<button class="bg-vedic-indigo-main dark:bg-vedic-yellow-main text-white dark:text-vedic-indigo-darkest p-4 rounded-full shadow-lg hover:shadow-glow hover:-translate-y-1 transition-all duration-300 focus:outline-none" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-symbols-outlined block dark:hidden">dark_mode</span>
+<span class="material-symbols-outlined hidden dark:block">light_mode</span>
+</button>
+</div>
+</body></html>

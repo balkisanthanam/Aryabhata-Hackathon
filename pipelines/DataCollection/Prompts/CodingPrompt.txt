@@ -1,0 +1,12 @@
+Please help write a program for the following scenario.
+I want to automatically download Question Paper PDFs from the site https://www.nta.ac.in/Downloads
+The page has two drop downs 'Year' and 'Exam Type'. For all the years (one by one), I want to select JEE Main, hit the 'Search' Button to get the results.
+Amongst the results (for some years, there may not be any listing), loop through them (this is in table), hit the download one row at a time to down.
+For each row, we check the column headed 'PaperName' and if they contain 'Arch' or 'Planning' we don't download that row.
+Also note that the table is paginated. We need to go through the pages and download all of them.
+Let's download one at a time and not flood the site. Download in the folder 'DataCollection\JEEMain'
+With each file downloaded, collect the following meta information (columns in the table):
+ExamName, PaperName, Year, Date of Exam, Shift
+Insert the meta data collected, along with the file name in the table exam_papers in to a postgresql table. Read the connection params from environment
+
+Let the program/function/variable names be generic

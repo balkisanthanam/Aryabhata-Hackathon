@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fix for excessive equation spacing */
+.katex-display {
+  margin: 0.5em 0 !important;
+}
+
+/* Fix for disproportionate font size */
+.katex {
+  font-size: 1.25em !important;
+}
+
+@layer base {
+  body {
+    @apply transition-colors duration-300;
+  }
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass-panel {
+  background: rgba(13, 21, 96, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(26, 35, 126, 0.15), 0 10px 10px -5px rgba(26, 35, 126, 0.06);
+}
+
+.mesh-bg {
+  background-color: #F0F4F8;
+  background-image: radial-gradient(at 0% 0%, hsla(237, 49%, 88%, 1) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(44, 100%, 89%, 1) 0, transparent 50%);
+}
+
+.dark .mesh-bg {
+  background-color: #050A30;
+  background-image: radial-gradient(at 0% 0%, hsla(237, 49%, 15%, 1) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(44, 100%, 10%, 1) 0, transparent 50%);
+}
+@keyframes move-stripe {
+    from { background-position: 1rem 0; }
+    to { background-position: 0 0; }
+}
+
+/* BRAND UTILITIES */
+
+/* Sirorekha Accent (Top Border) */
+.sirorekha-card {
+  @apply border-t-2 border-brand-amber;
+}
+
+/* Academic Serif for long-form text */
+.academic-serif {
+  font-family: 'Lora', serif;
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+/* Dark Mode Typography Adjustments */
+.dark .academic-serif {
+  font-weight: 500;
+  /* Increase weight for readability in dark mode */
+  color: #E2E8F0;
+  /* slight off-white for less eye strain */
+}
