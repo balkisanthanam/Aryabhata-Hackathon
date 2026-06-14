@@ -1,4 +1,4 @@
-import { ContainerClient } from "@azure/storage-blob";
+import { BlobClient, BlockBlobClient, ContainerClient } from "@azure/storage-blob";
 import { azureConfig } from "../config/azureConfig";
 
 export const uploadFilesToBlob = async (files: File[]): Promise<string[]> => {
@@ -73,4 +73,57 @@ export const getBlobContent = async (url: string): Promise<any> => {
         throw new Error(`Failed to fetch blob content: ${response.statusText}`);
     }
     return response.json();
+};
+
+export const deletePaperBlob = async (paperId: number | string): Promise<void> => {
+    if (!azureConfig.sasUrl) {
+        throw new Error("Azure Storage SAS URL is not configured.");
+    }
+
+    const containerClient = new ContainerClient(azureConfig.sasUrl);
+    const fileName = `${paperId}.json`;
+    const candidatePaths = [`answersheet/papers/${fileName}`, `papers/${fileName}`];
+
+    let deleted = false;
+    for (const blobPath of candidatePaths) {
+        try {
+            const blockBlobClient = containerClient.getBlockBlobClient(blobPath);
+            const result = await blockBlobClient.deleteIfExists();
+            if (result.succeeded) {
+                deleted = true;
+                break;
+            }
+        } catch {
+            // Try next candidate path before failing.
+        }
+    }
+
+    if (!deleted) {
+        throw new Error("Could not delete paper from storage.");
+    }
+};
+
+export const deleteBlobByUrl = async (blobUrl: string): Promise<void> => {
+    if (!blobUrl) {
+        throw new Error("Blob URL is required for deletion.");
+    }
+
+    const blobClient = new BlobClient(blobUrl);
+    const result = await blobClient.deleteIfExists();
+    if (!result.succeeded) {
+        throw new Error("Could not delete paper from storage URL.");
+    }
+};
+
+export const overwriteJsonAtBlobUrl = async (blobUrl: string, data: any): Promise<void> => {
+    if (!blobUrl) {
+        throw new Error("Blob URL is required.");
+    }
+
+    const blockBlobClient = new BlockBlobClient(blobUrl);
+    const jsonString = JSON.stringify(data);
+    const blob = new Blob([jsonString], { type: 'application/json' });
+    await blockBlobClient.uploadBrowserData(blob, {
+        blobHTTPHeaders: { blobContentType: 'application/json' }
+    });
 };

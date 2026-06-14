@@ -1,138 +1,105 @@
-# Azure Function: Student Answer Evaluation
+# Student Evaluation — Azure Durable Function (Python)
 
-This Azure Function evaluates student answers using Google Gemini AI model.
+Fully standalone Python Azure Durable Function that evaluates student homework solutions against textbook problems using Google Gemini AI.
 
-## Features
+## Architecture (v4 — Unified Flow)
 
-- Accepts student's handwritten answer as image
-- Compares against reference answer
-- Uses chapter PDF for context
-- Provides detailed feedback and solution
-- Integrates with Azure Key Vault for secure API key storage
+```
+feedback-jobs queue → Queue Trigger → Durable Orchestrator
+    → read_evaluation (DB: PENDING → PROCESSING)
+    → fetch_student_images (download student HW pages)
+    → fetch textbook images (optional — reuses fetch_student_images)
+    → parse_text_ref (Gemini text parsing — always required)
+    → validate_inputs (resolve class/board/subject/chapter)
+    → get_chapter_pdf (DB lookup + blob fetch)
+    → evaluate_batch ×N (fan-out, EVAL_BATCH_SIZE per call, default 3)
+        ↑ ALL student pages sent to each batch
+        ↑ Optional textbook page images as additional context
+        ↑ Gemini locates relevant work on the pages
+    → update_evaluation (DB: → COMPLETED/FAILED)
+```
+
+> **v4 Unified Flow**: `problem_text_ref` is always required.
+> `problem_image_url` is optional — if provided, the textbook page image
+> is fetched and sent to Gemini as additional visual context alongside
+> student pages. No split/crop for either student or textbook images.
+
+**Interface**: `solution_evaluations` table only. No HTTP calls to/from TS server.
 
 ## Prerequisites
 
-1. Azure Functions Core Tools
-2. Python 3.9 or higher
-3. Azure Key Vault with `GOOGLEAPIKEY` secret
-4. Google Gemini API access
+- Python 3.10+
+- Azure Functions Core Tools v4
+- Azure CLI (logged in for `DefaultAzureCredential`)
+- `feedback-jobs` queue exists in Azure Storage
 
-## Installation
+## Local Development
 
-1. Install dependencies:
 ```bash
+# Install dependencies
 pip install -r requirements.txt
-```
 
-2. Update `local.settings.json` with your Key Vault URL
-
-3. Ensure you have access to Azure Key Vault with the Google API key stored as `GOOGLEAPIKEY`
-
-## Configuration
-
-Update the following in `function_app.py`:
-- `KEY_VAULT_URL`: Your Azure Key Vault URL
-
-The prompt template is automatically fetched from:
-`https://<YOUR_STORAGE>.blob.core.windows.net/feedback/Evaluation.txt`
-
-## API Endpoint
-
-**POST** `/api/evaluate`
-
-### Request Body
-
-```json
-{
-  "image_bytes": "base64_encoded_student_answer_image",
-  "class": "10",
-  "subject": "Mathematics",
-  "problem": "Solve the quadratic equation: x^2 + 5x + 6 = 0",
-  "reference_answer": "x = -2, x = -3",
-  "pdf_bytes": "base64_encoded_pdf_optional",
-  "pdf_blob_url": "https://your-blob-url.com/chapter.pdf"
-}
-```
-
-### Required Fields
-
-- `image_bytes`: Base64 encoded image of student's answer (JPEG/PNG)
-- `class`: Student's class (e.g., "10", "12", "JEEMain")
-- `subject`: Subject name (e.g., "Mathematics", "Physics")
-- `problem`: The problem statement (can include LaTeX formulas)
-- `reference_answer`: Expected answer for comparison
-
-### Optional Fields (one required)
-
-- `pdf_bytes`: Base64 encoded PDF of the chapter
-- `pdf_blob_url`: Azure Blob Storage URL of the chapter PDF
-
-### Response
-
-#### Success (200)
-```json
-{
-  "success": true,
-  "evaluation": "Detailed evaluation feedback from Gemini..."
-}
-```
-
-#### Error (400/500)
-```json
-{
-  "success": false,
-  "error": "Error message"
-}
-```
-
-## Local Testing
-
-1. Start the function locally:
-```bash
+# Start the function app
 func start
 ```
 
-2. Send a test request:
+## Testing
+
 ```bash
-curl -X POST http://localhost:7071/api/evaluate \
-  -H "Content-Type: application/json" \
-  -d @test_request.json
+# Manual test: insert a test row + push to queue
+python tests/test_durable_e2e.py --test manual
+
+# Check status
+python tests/test_durable_e2e.py --status <job_id>
+
+# Full automated test
+python tests/test_durable_e2e.py --test all
+
+# Cleanup
+python tests/test_durable_e2e.py --cleanup-only <job_id>
 ```
 
-## Deployment
+## File Structure
 
-Deploy to Azure:
-```bash
-func azure functionapp publish <YOUR_FUNCTION_APP_NAME>
+```
+├── function_app.py           — Queue trigger + Durable Functions registration
+├── orchestrator.py           — Orchestrator logic (v4 unified single flow)
+├── host.json                 — Azure Functions host config
+├── requirements.txt          — Python dependencies
+├── local.settings.json       — Local environment variables
+├── utils/
+│   ├── gemini_client.py      — Gemini API with retry + Key Vault
+│   ├── db.py                 — PostgreSQL with Azure AD token
+│   ├── blob_storage.py       — Blob fetch with Managed Identity
+│   ├── image_processing.py   — PIL crop/stitch (legacy, used by split_textbook)
+│   └── prompt_loader.py      — Prompt loading + template fill
+├── activities/
+│   ├── read_evaluation.py    — Read DB record, set PROCESSING
+│   ├── fetch_student_images.py — Download images (reused for textbook pages)
+│   ├── split_student_hw.py   — Legacy: Gemini bounding box + PIL crop (unused)
+│   ├── parse_text_ref.py     — Parse text reference to problem numbers
+│   ├── split_textbook.py     — Legacy: Split textbook page image (unused in v4)
+│   ├── validate_inputs.py    — Validate class/board/subject/chapter (v4: always requires parsed_ref)
+│   ├── get_chapter_pdf.py    — Fetch chapter PDF
+│   ├── evaluate_batch.py     — Unified multi-problem eval (v4: optional textbook pages)
+│   ├── evaluate_batch_v1_split_based.py — Backup of pre-v3 eval
+│   └── update_evaluation.py  — Update DB with results
+├── prompts/
+│   └── Evaluation.txt        — v4 evaluation prompt template
+└── tests/
+    ├── test_activities.py    — CLI tool for isolated activity testing (v4)
+    ├── test_durable_e2e.py   — End-to-end test script
+    └── ...                   — Legacy test helpers
 ```
 
-## Security Notes
+## Gemini Models
 
-- API key is stored securely in Azure Key Vault
-- Function uses Function-level authentication
-- Use Azure Managed Identity for production deployments
-- Ensure blob storage has appropriate access controls
+| Task | Model |
+|------|-------|
+| Evaluation | `gemini-3-pro-image-preview` |
+| Textbook bounding boxes | `gemini-3-pro-preview` |
+| Text parsing | `gemini-2.5-flash-lite` |
 
-## Future Enhancements
+## Key Decisions
 
-- Support for `problem_images` (additional images for problem)
-- Support for `reference_answer_images` (additional images for reference answer)
-- Batch evaluation support
-- Response caching
-
-## Troubleshooting
-
-### Key Vault Access Issues
-Ensure your Azure Function has proper permissions:
-- Enable Managed Identity on Function App
-- Grant "Key Vault Secrets User" role to the identity
-
-### Gemini API Issues
-- Verify API key is valid
-- Check Gemini model availability (update model name if needed)
-- Review API quotas and limits
-
-## Model Information
-
-Currently using: `gemini-2.0-flash-exp`
-Update to `gemini-2.5-pro` when available.
+See [PLAN.md](PLAN.md) for full architecture decisions and rationale.

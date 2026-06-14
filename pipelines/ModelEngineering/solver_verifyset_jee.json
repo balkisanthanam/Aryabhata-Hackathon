@@ -1,0 +1,5027 @@
+{
+  "meta": {
+    "seed": 7,
+    "n": 226
+  },
+  "records": [
+    {
+      "source": "jee",
+      "id": 2213,
+      "subject": "Maths",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "Let $A = \\begin{bmatrix} 2 & 0 & 1 \\\\ 1 & 1 & 0 \\\\ 1 & 0 & 1 \\end{bmatrix}, B = [B_1, B_2, B_3]$, where $B_1, B_2, B_3$ are column matrics, and $AB_1 = \\begin{bmatrix} 1 \\\\ 0 \\\\ 0 \\end{bmatrix}, AB_2 = \\begin{bmatrix} 2 \\\\ 3 \\\\ 0 \\end{bmatrix}, AB_3 = \\begin{bmatrix} 3 \\\\ 2 \\\\ 1 \\end{bmatrix}$. If $\\alpha = |B|$ and $\\beta$ is the sum of all the diagonal elements of $B$, then $\\alpha^3 + \\beta^3$ is equal to _________.",
+        "options": []
+      },
+      "answer_key": "28",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 1215,
+      "subject": "Maths",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "Let Ajay will not appear in JEE exam with probability $p = \\frac{2}{7}$, while both Ajay and Vijay will appear in the exam with probability $q = \\frac{1}{5}$. Then the probability, that Ajay will appear in the exam and Vijay will not appear is :",
+        "options": [
+          {
+            "text": "$\\frac{3}{35}$",
+            "nta_option_id": "9561772619"
+          },
+          {
+            "text": "$\\frac{24}{35}$",
+            "nta_option_id": "9561772620"
+          },
+          {
+            "text": "$\\frac{18}{35}$",
+            "nta_option_id": "9561772621"
+          },
+          {
+            "text": "$\\frac{9}{35}$",
+            "nta_option_id": "9561772622"
+          }
+        ]
+      },
+      "answer_key": "C",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 674,
+      "subject": "Maths",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "Let $\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1, a > b$ be an ellipse, whose eccentricity is $\\frac{1}{\\sqrt{2}}$ and the length of the latusrectum is $\\sqrt{14}$. Then the square of the eccentricity of $\\frac{x^2}{a^2} - \\frac{y^2}{b^2} = 1$ is :",
+        "options": [
+          {
+            "text": "$\\frac{3}{2}$",
+            "nta_option_id": "9561772059"
+          },
+          {
+            "text": "$3$",
+            "nta_option_id": "9561772060"
+          },
+          {
+            "text": "$\\frac{5}{2}$",
+            "nta_option_id": "9561772061"
+          },
+          {
+            "text": "$\\frac{7}{2}$",
+            "nta_option_id": "9561772062"
+          }
+        ]
+      },
+      "answer_key": "A",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 2824,
+      "subject": "Maths",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "If $z_1, z_2$ are two distinct complex number such that $\\left| \\frac{z_1 - 2z_2}{\\frac{1}{2} - z_1\\bar{z}_2} \\right| = 2$, then",
+        "options": [
+          {
+            "text": "both $z_1$ and $z_2$ lie on the same circle.",
+            "nta_option_id": "878270219599"
+          },
+          {
+            "text": "$z_1$ lies on a circle of radius $\\frac{1}{2}$ and $z_2$ lies on a circle of radius $1$.",
+            "nta_option_id": "878270219600"
+          },
+          {
+            "text": "either $z_1$ lies on a circle of radius $\\frac{1}{2}$ or $z_2$ lies on a circle of radius $1$.",
+            "nta_option_id": "878270219601"
+          },
+          {
+            "text": "either $z_1$ lies on a circle of radius $1$ or $z_2$ lies on a circle of radius $\\frac{1}{2}$.",
+            "nta_option_id": "878270219602"
+          }
+        ]
+      },
+      "answer_key": "D",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3352,
+      "subject": "Maths",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "Let the maximum and minimum values of $\\left(\\sqrt{8x - x^2 - 12} - 4\\right)^2 + (x - 7)^2$, $x \\in \\mathbb{R}$ be M and m, respectively. Then $M^2 - m^2$ is equal to _________.",
+        "options": []
+      },
+      "answer_key": "1600",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 756,
+      "subject": "Maths",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "$\\lim_{a \\rightarrow \\infty} \\frac{a(a+1)}{2} \\tan^{-1}\\left(\\frac{1}{a}\\right) + a^2 f\\left(\\frac{1}{a}\\right) - \\frac{a}{2}$",
+        "options": []
+      },
+      "answer_key": "D",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 533,
+      "subject": "Physics",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "A parallel plate capacitor with plate separation $5\\text{ mm}$ is charged up by a battery. It is found that on introducing a dielectric sheet of thickness $2\\text{ mm}$ , while keeping the battery connections intact, the capacitor draws $25\\%$ more charge from the battery than before. The dielectric constant of the sheet is ______.",
+        "options": []
+      },
+      "answer_key": "2",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 286,
+      "subject": "Chemistry",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "$NaCl$ reacts with conc. $H_2SO_4$ and $K_2Cr_2O_7$ to give reddish fumes $(B)$, which react with $NaOH$ to give yellow solution $(C)$. $(B)$ and $(C)$ respectively are :",
+        "options": [
+          {
+            "text": "$CrO_2Cl_2, KHSO_4$",
+            "nta_option_id": "5335431617"
+          },
+          {
+            "text": "$CrO_2Cl_2, Na_2CrO_4$",
+            "nta_option_id": "5335431618"
+          },
+          {
+            "text": "$CrO_2Cl_2, Na_2Cr_2O_7$",
+            "nta_option_id": "5335431619"
+          },
+          {
+            "text": "$Na_2CrO_4, CrO_2Cl_2$",
+            "nta_option_id": "5335431620"
+          }
+        ]
+      },
+      "answer_key": "B",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 801,
+      "subject": "Maths",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "For three vectors $\\vec{A} = (-x\\hat{i} - 6\\hat{j} - 2\\hat{k})$, $\\vec{B} = (-\\hat{i} + 4\\hat{j} + 3\\hat{k})$ and $\\vec{C} = (-8\\hat{i} - \\hat{j} + 3\\hat{k})$, if $\\vec{A} \\cdot (\\vec{B} \\times \\vec{C}) = 0$, then value of $x$ is ______.",
+        "options": []
+      },
+      "answer_key": "4",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 1078,
+      "subject": "Chemistry",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "Compare the energies of following sets of quantum numbers for multielectron system.\n(A) $n = 4, l = 1$\n(B) $n = 4, l = 2$\n(C) $n = 3, l = 1$\n(D) $n = 3, l = 2$\n(E) $n = 4, l = 0$\nChoose the correct answer from the options given below :",
+        "options": [
+          {
+            "text": "$(E) > (C) > (A) > (D) > (B)$",
+            "nta_option_id": "878270220581"
+          },
+          {
+            "text": "$(C) < (E) < (D) < (A) < (B)$",
+            "nta_option_id": "878270220582"
+          },
+          {
+            "text": "$(E) < (C) < (D) < (A) < (B)$",
+            "nta_option_id": "878270220583"
+          },
+          {
+            "text": "$(B) > (A) > (C) > (E) > (D)$",
+            "nta_option_id": "878270220584"
+          }
+        ]
+      },
+      "answer_key": "B",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 2728,
+      "subject": "Chemistry",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "The number of white coloured salts, among the following is ________.\n(a) $\\text{SrSO}_4$ (b) $\\text{Mg}(\\text{NH}_4)\\text{PO}_4$ (c) $\\text{BaCrO}_4$ (d) $\\text{Mn}(\\text{OH})_2$\n(e) $\\text{PbSO}_4$ (f) $\\text{PbCrO}_4$ (g) $\\text{AgBr}$ (h) $\\text{PbI}_2$\n(i) $\\text{CaC}_2\\text{O}_4$ (j) $[\\text{Fe}(\\text{OH})_2(\\text{CH}_3\\text{COO})]$ ",
+        "options": []
+      },
+      "answer_key": "5",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 2105,
+      "subject": "Maths",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "Let the range of the function $f(x) = \\frac{1}{2 + \\sin 3x + \\cos 3x}, x \\in \\mathbb{R}$ be $[a, b]$. If $\\alpha$ and $\\beta$ are respectively the A.M. and the G.M. of $a$ and $b$, then $\\frac{\\alpha}{\\beta}$ is equal to",
+        "options": [
+          {
+            "text": "2",
+            "nta_option_id": null
+          },
+          {
+            "text": "$\\sqrt{2}$",
+            "nta_option_id": null
+          },
+          {
+            "text": "$\\pi$",
+            "nta_option_id": null
+          },
+          {
+            "text": "$\\sqrt{\\pi}$",
+            "nta_option_id": null
+          }
+        ]
+      },
+      "answer_key": "68019156802",
+      "image_urls": [],
+      "has_figure": false,
+      "corrupt_key": true
+    },
+    {
+      "source": "jee",
+      "id": 1064,
+      "subject": "Physics",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "The energy equivalent of $1\\text{ g}$ of substance is :",
+        "options": [
+          {
+            "text": "$5.6\\text{ eV}$",
+            "nta_option_id": "878270220555"
+          },
+          {
+            "text": "$5.6 \\times 10^{12}\\text{ MeV}$",
+            "nta_option_id": "878270220556"
+          },
+          {
+            "text": "$11.2 \\times 10^{24}\\text{ MeV}$",
+            "nta_option_id": "878270220557"
+          },
+          {
+            "text": "$5.6 \\times 10^{26}\\text{ MeV}$",
+            "nta_option_id": "878270220558"
+          }
+        ]
+      },
+      "answer_key": "D",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 2956,
+      "subject": "Physics",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "The output Y of following circuit for given inputs is :\n\n[Figure: A logic circuit diagram with two inputs A and B. Input A is connected to one input of an OR gate and through a NOT gate to one input of an AND gate. Input B is connected through a NOT gate to the other input of the OR gate and directly to the other input of the AND gate. The outputs of the OR gate and the AND gate are connected to the inputs of a final AND gate, whose output is Y.]",
+        "options": [
+          {
+            "text": "0",
+            "nta_option_id": "68019156145"
+          },
+          {
+            "text": "$A \\cdot B$",
+            "nta_option_id": "68019156146"
+          },
+          {
+            "text": "$\\bar{A} \\cdot B$",
+            "nta_option_id": "68019156147"
+          },
+          {
+            "text": "$A \\cdot B(A + B)$",
+            "nta_option_id": "68019156148"
+          }
+        ]
+      },
+      "answer_key": "A",
+      "image_urls": [],
+      "has_figure": true
+    },
+    {
+      "source": "jee",
+      "id": 1197,
+      "subject": "Chemistry",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "Consider the following test for a group-IV cation.\n\n$M^{2+} + H_2S \\rightarrow A \\text{ (Black precipitate)} + \\text{byproduct}$\n\n$A + \\text{aqua regia} \\rightarrow B + NOCl + S + H_2O$\n\n$B + KNO_2 + CH_3COOH \\rightarrow C + \\text{byproduct}$\n\nThe spin-only magnetic moment value of the metal complex C is ______ BM (Nearest integer)",
+        "options": []
+      },
+      "answer_key": "0",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 1208,
+      "subject": "Maths",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "Let $P$ be a point on the ellipse $\\frac{x^2}{9} + \\frac{y^2}{4} = 1$. Let the line passing through $P$ and parallel to $y$-axis meet the circle $x^2 + y^2 = 9$ at point $Q$ such that $P$ and $Q$ are on the same side of the $x$-axis. Then, the eccentricity of the locus of the point $R$ on $PQ$ such that $PR : RQ = 4 : 3$ as $P$ moves on the ellipse, is :",
+        "options": [
+          {
+            "text": "\\frac{\\sqrt{13}}{7}",
+            "nta_option_id": "9561772599"
+          },
+          {
+            "text": "\\frac{11}{19}",
+            "nta_option_id": "9561772600"
+          },
+          {
+            "text": "\\frac{\\sqrt{139}}{23}",
+            "nta_option_id": "9561772601"
+          },
+          {
+            "text": "\\frac{13}{21}",
+            "nta_option_id": "9561772602"
+          }
+        ]
+      },
+      "answer_key": "A",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3322,
+      "subject": "Chemistry",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "Considering acetic acid dissociates in water, its dissociation constant is $6.25 \\times 10^{-5}$. If $5 \\text{ mL}$ of acetic acid is dissolved in 1 litre water, the solution will freeze at $-x \\times 10^{-2} ^\\circ\\text{C}$, provided pure water freezes at $0 ^\\circ\\text{C}$.\n$x = $________. (Nearest integer)\nGiven : $(K_f)_{\\text{water}} = 1.86 \\text{ K kg mol}^{-1}$.\ndensity of acetic acid is $1.2 \\text{ g mL}^{-1}$.\nmolar mass of water $= 18 \\text{ g mol}^{-1}$.\nmolar mass of acetic acid $= 60 \\text{ g mol}^{-1}$.\ndensity of water $= 1 \\text{ g cm}^{-3}$\nAcetic acid dissociates as $\\text{CH}_3\\text{COOH} \\rightleftharpoons \\text{CH}_3\\text{COO}^\\ominus + \\text{H}^\\oplus$",
+        "options": []
+      },
+      "answer_key": "19",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3412,
+      "subject": "Chemistry",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "$2.5 \\text{ g}$ of a non-volatile, non-electrolyte is dissolved in $100 \\text{ g}$ of water at $25^{\\circ}\\text{C}$. The solution showed a boiling point elevation by $2^{\\circ}\\text{C}$. Assuming the solute concentration is negligible with respect to the solvent concentration, the vapor pressure of the resulting aqueous solution is ______ $\\text{mm}$ of $\\text{Hg}$ (nearest integer)\n[Given : Molal boiling point elevation constant of water ($K_b$) = $0.52 \\text{ K. kg mol}^{-1}$,\n$1 \\text{ atm pressure} = 760 \\text{ mm of Hg}$, molar mass of water = $18 \\text{ g mol}^{-1}$]",
+        "options": []
+      },
+      "answer_key": "707",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3124,
+      "subject": "Physics",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "A real gas within a closed chamber at $27^\\circ\\text{C}$ undergoes the cyclic process as shown in figure. The gas obeys $PV^3 = RT$ equation for the path $A$ to $B$. The net work done in the complete cycle is (assuming $R = 8\\text{ J/mol K}$) :",
+        "options": [
+          {
+            "text": "20 J",
+            "nta_option_id": "68019156911"
+          },
+          {
+            "text": "-20 J",
+            "nta_option_id": "68019156912"
+          },
+          {
+            "text": "205 J",
+            "nta_option_id": "68019156913"
+          },
+          {
+            "text": "225 J",
+            "nta_option_id": "68019156914"
+          }
+        ]
+      },
+      "answer_key": "C",
+      "image_urls": [],
+      "has_figure": true
+    },
+    {
+      "source": "jee",
+      "id": 3559,
+      "subject": "Physics",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "A body moves on a frictionless plane starting from rest. If $S_n$ is distance moved between $t=n-1$ and $t=n$ and $S_{n-1}$ is distance moved between $t=n-2$ and $t=n-1$, then the ratio $\\frac{S_{n-1}}{S_n}$ is $\\left(1-\\frac{2}{x}\\right)$ for $n=10$. The value of $x$ is ________.",
+        "options": []
+      },
+      "answer_key": "19",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 958,
+      "subject": "Maths",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "Three balls are drawn at random from a bag containing 5 blue and 4 yellow balls. Let the random variables $X$ and $Y$ respectively denote the number of blue and yellow balls. If $\\bar{X}$ and $\\bar{Y}$ are the means of $X$ and $Y$ respectively, then $7\\bar{X} + 4\\bar{Y}$ is equal to ________.",
+        "options": []
+      },
+      "answer_key": "17",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 2975,
+      "subject": "Chemistry",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "Thiosulphate reacts differently with iodine and bromine in the reactions given below:\n\n$2S_2O_3^{2-} + I_2 \\rightarrow S_4O_6^{2-} + 2I^-$\n$S_2O_3^{2-} + 4Br_2 + 5H_2O \\rightarrow 2SO_4^{2-} + 8Br^- + 10H^+$\n\nWhich of the following statement justifies the above dual behaviour of thiosulphate?",
+        "options": [
+          {
+            "text": "Bromine is a stronger oxidant than iodine",
+            "nta_option_id": "68019156183"
+          },
+          {
+            "text": "Bromine is a weaker oxidant than iodine",
+            "nta_option_id": "68019156184"
+          },
+          {
+            "text": "Thiosulphate undergoes oxidation by bromine and reduction by iodine in these reactions",
+            "nta_option_id": "68019156185"
+          },
+          {
+            "text": "Bromine undergoes oxidation and iodine undergoes reduction in these reactions",
+            "nta_option_id": "68019156186"
+          }
+        ]
+      },
+      "answer_key": "A",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 365,
+      "subject": "Chemistry",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "Diamagnetic Lanthanoid ions are :",
+        "options": [
+          {
+            "text": "$Nd^{3+} \\text{ & } Ce^{4+}$",
+            "nta_option_id": "5335432915"
+          },
+          {
+            "text": "$La^{3+} \\text{ & } Ce^{4+}$",
+            "nta_option_id": "5335432916"
+          },
+          {
+            "text": "$Lu^{3+} \\text{ & } Eu^{3+}$",
+            "nta_option_id": "5335432917"
+          },
+          {
+            "text": "$Nd^{3+} \\text{ & } Eu^{3+}$",
+            "nta_option_id": "5335432918"
+          }
+        ]
+      },
+      "answer_key": "B",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3460,
+      "subject": "Physics",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "An electric bulb rated $50\\text{ W} - 200\\text{ V}$ is connected across a $100\\text{ V}$ supply. The power dissipation of the bulb is:",
+        "options": [
+          {
+            "text": "$12.5\\text{ W}$",
+            "nta_option_id": "68019154505"
+          },
+          {
+            "text": "$50\\text{ W}$",
+            "nta_option_id": "68019154506"
+          },
+          {
+            "text": "$100\\text{ W}$",
+            "nta_option_id": "68019154507"
+          },
+          {
+            "text": "$25\\text{ W}$",
+            "nta_option_id": "68019154508"
+          }
+        ]
+      },
+      "answer_key": "A",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3076,
+      "subject": "Chemistry",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "Identify the product A and product B in the following set of reactions.\n\n[Figure: A reaction scheme starting with propene ($CH_3 - CH = CH_2$). One pathway uses $H_2O, H^+$ to yield 'major Product A'. The other pathway uses $(BH_3)_2$ followed by $H_2O, H_2O_2, \\bar{OH}$ to yield 'major Product B'.]",
+        "options": [
+          {
+            "text": "$A - CH_3CH_2CH_2 - OH \\quad B - CH_3CH_2CH_2 - OH$",
+            "nta_option_id": "878270220641"
+          },
+          {
+            "text": "$A - CH_3 - \\underset{\\text{OH}}{\\text{CH}} - CH_3 \\quad B - CH_3CH_2CH_2 - OH$",
+            "nta_option_id": "878270220642"
+          },
+          {
+            "text": "$A - CH_3CH_2CH_2 - OH \\quad B - CH_3\\underset{\\text{OH}}{\\text{CH}} - CH_3$",
+            "nta_option_id": "878270220643"
+          },
+          {
+            "text": "$A - CH_3CH_2CH_3 \\quad B - CH_3CH_2CH_3$",
+            "nta_option_id": "878270220644"
+          }
+        ]
+      },
+      "answer_key": "B",
+      "image_urls": [],
+      "has_figure": true
+    },
+    {
+      "source": "jee",
+      "id": 652,
+      "subject": "Chemistry",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "Number of isomeric products formed by monochlorination of $2$-methylbutane in presence of sunlight is _______.",
+        "options": []
+      },
+      "answer_key": "6",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3080,
+      "subject": "Chemistry",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "For the given compounds, the correct order of increasing $pK_a$ value :\n\n(A) [Figure: Phenol]\n(B) [Figure: 4-nitrophenol]\n(C) [Figure: 3-methoxyphenol]\n(D) [Figure: 2-nitrophenol]\n(E) [Figure: 4-methoxyphenol]\n\nChoose the correct answer from the options given below :",
+        "options": [
+          {
+            "text": "$(E) < (D) < (C) < (B) < (A)$",
+            "nta_option_id": "878270220645"
+          },
+          {
+            "text": "$(E) < (D) < (B) < (A) < (C)$",
+            "nta_option_id": "878270220646"
+          },
+          {
+            "text": "$(B) < (D) < (A) < (C) < (E)$",
+            "nta_option_id": "878270220647"
+          },
+          {
+            "text": "$(D) < (E) < (C) < (B) < (A)$",
+            "nta_option_id": "878270220648"
+          }
+        ]
+      },
+      "answer_key": "C",
+      "image_urls": [],
+      "has_figure": true
+    },
+    {
+      "source": "jee",
+      "id": 3542,
+      "subject": "Physics",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "A body of mass $50\\text{ kg}$ is lifted to a height of $20\\text{ m}$ from the ground in the two different ways as shown in the figures. The ratio of work done against the gravity in both the respective cases, will be :",
+        "options": [
+          {
+            "text": "$1:2$",
+            "nta_option_id": "878270218883"
+          },
+          {
+            "text": "$2:1$",
+            "nta_option_id": "878270218884"
+          },
+          {
+            "text": "$\\sqrt{3}:2$",
+            "nta_option_id": "878270218885"
+          },
+          {
+            "text": "$1:1$",
+            "nta_option_id": "878270218886"
+          }
+        ]
+      },
+      "answer_key": "D",
+      "image_urls": [],
+      "has_figure": true
+    },
+    {
+      "source": "jee",
+      "id": 3388,
+      "subject": "Physics",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "A hydrogen atom changes its state from n=3 to n=2. Due to recoil, the percentage change in the wave length of emitted light is approximately $1\\times10^{-n}$. The value of n is _________.\n[Given $\\text{Rhc}=13.6 \\text{ eV}$, $\\text{hc}=1242 \\text{ eV nm}$, $h=6.6\\times10^{-34} \\text{ J s}$ mass of the hydrogen atom = $1.6\\times10^{-27} \\text{ kg}$]",
+        "options": []
+      },
+      "answer_key": "7",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3435,
+      "subject": "Maths",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "Let the point, on the line passing through the points $P(1, -2, 3)$ and $Q(5, -4, 7)$, farther from the origin and at a distance of 9 units from the point $P$, be $(\\alpha, \\beta, \\gamma)$. Then $\\alpha^2 + \\beta^2 + \\gamma^2$ is equal to :",
+        "options": [
+          {
+            "text": "150",
+            "nta_option_id": "878270218305"
+          },
+          {
+            "text": "165",
+            "nta_option_id": "878270218306"
+          },
+          {
+            "text": "160",
+            "nta_option_id": "878270218307"
+          },
+          {
+            "text": "155",
+            "nta_option_id": "878270218308"
+          }
+        ]
+      },
+      "answer_key": "D",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3313,
+      "subject": "Chemistry",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "Identify A and B in the given chemical reaction sequence :",
+        "options": [
+          {
+            "text": "A - 4-oxo-4-phenylbutanoic acid, B - 4-phenylbutanoic acid",
+            "nta_option_id": "878270219287"
+          },
+          {
+            "text": "A - 4-oxo-4-phenylbutanoic acid, B - 4-phenylbutan-1-ol",
+            "nta_option_id": "878270219288"
+          },
+          {
+            "text": "A - 1,4-naphthoquinone, B - 1,4-naphthalenediol",
+            "nta_option_id": "878270219289"
+          },
+          {
+            "text": "A - 1,4-naphthoquinone, B - naphthalene",
+            "nta_option_id": "878270219290"
+          }
+        ]
+      },
+      "answer_key": "A",
+      "image_urls": [],
+      "has_figure": true
+    },
+    {
+      "source": "jee",
+      "id": 794,
+      "subject": "Physics",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "The ratio of the shortest wavelength of Balmer series to the shortest wavelength of Lyman series for hydrogen atom is :",
+        "options": [
+          {
+            "text": "$1 : 2$",
+            "nta_option_id": "68019155339"
+          },
+          {
+            "text": "$2 : 1$",
+            "nta_option_id": "68019155340"
+          },
+          {
+            "text": "$1 : 4$",
+            "nta_option_id": "68019155341"
+          },
+          {
+            "text": "$4 : 1$",
+            "nta_option_id": "68019155342"
+          }
+        ]
+      },
+      "answer_key": "D",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 509,
+      "subject": "Maths",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "Let $\\vec{a}$ and $\\vec{b}$ be two vectors such that $|\\vec{a}|=1, |\\vec{b}|=4$, and $\\vec{a} \\cdot \\vec{b} = 2$. If $\\vec{c} = (2\\vec{a} \\times \\vec{b}) - 3\\vec{b}$ and the angle between $\\vec{b}$ and $\\vec{c}$ is $\\alpha$, then $192 \\sin^2 \\alpha$ is equal to",
+        "options": []
+      },
+      "answer_key": "48",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 827,
+      "subject": "Chemistry",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "Which among the following aldehydes is most reactive towards nucleophilic addition reactions?",
+        "options": [
+          {
+            "text": "$H - \\overset{O}{\\parallel} C - H$",
+            "nta_option_id": "68019155433"
+          },
+          {
+            "text": "$CH_3 - \\overset{O}{\\parallel} C - H$",
+            "nta_option_id": "68019155434"
+          },
+          {
+            "text": "$C_2H_5 - \\overset{O}{\\parallel} C - H$",
+            "nta_option_id": "68019155435"
+          },
+          {
+            "text": "$C_3H_7 - \\overset{O}{\\parallel} C - H$",
+            "nta_option_id": "68019155436"
+          }
+        ]
+      },
+      "answer_key": "A",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3548,
+      "subject": "Physics",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "A simple pendulum doing small oscillations at a place R height above earth surface has time period of $T_1 = 4\\text{ s}$. $T_2$ would be it's time period if it is brought to a point which is at a height 2R from earth surface. Choose the correct relation [R = radius of earth] :",
+        "options": [
+          {
+            "text": "$T_1 = T_2$",
+            "nta_option_id": "878270218907"
+          },
+          {
+            "text": "$2T_1 = T_2$",
+            "nta_option_id": "878270218908"
+          },
+          {
+            "text": "$3T_1 = 2T_2$",
+            "nta_option_id": "878270218909"
+          },
+          {
+            "text": "$2T_1 = 3T_2$",
+            "nta_option_id": "878270218910"
+          }
+        ]
+      },
+      "answer_key": "C",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 823,
+      "subject": "Chemistry",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "Given below are two statements :\n\nStatement I : Picric acid is 2,4,6 - trinitrotoluene.\n\nStatement II : Phenol - 2,4 - disulphonic acid is treated with Conc. $HNO_3$ to get picric acid.\n\nIn the light of the above statements, choose the most appropriate answer from the options given below :",
+        "options": [
+          {
+            "text": "Both Statement I and Statement II are correct",
+            "nta_option_id": "68019155425"
+          },
+          {
+            "text": "Both Statement I and Statement II are incorrect",
+            "nta_option_id": "68019155426"
+          },
+          {
+            "text": "Statement I is correct but Statement II is incorrect",
+            "nta_option_id": "68019155427"
+          },
+          {
+            "text": "Statement I is incorrect but Statement II is correct",
+            "nta_option_id": "68019155428"
+          }
+        ]
+      },
+      "answer_key": "D",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 1054,
+      "subject": "Physics",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "An astronaut takes a ball of mass $m$ from earth to space. He throws the ball into a circular orbit about earth at an altitude of $318.5$ km. From earth's surface to the orbit, the change in total mechanical energy of the ball is $x \frac{GM_e m}{21R_e}$. The value of $x$ is (take $R_e = 6370$ km) :",
+        "options": [
+          {
+            "text": "9",
+            "nta_option_id": "878270220511"
+          },
+          {
+            "text": "10",
+            "nta_option_id": "878270220512"
+          },
+          {
+            "text": "11",
+            "nta_option_id": "878270220513"
+          },
+          {
+            "text": "12",
+            "nta_option_id": "878270220514"
+          }
+        ]
+      },
+      "answer_key": "C",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 780,
+      "subject": "Maths",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "Let $L_1, L_2$ be the lines passing through the point $P(0, 1)$ and touching the parabola $9x^2 + 12x + 18y - 14 = 0$. Let $Q$ and $R$ be the points on the lines $L_1$ and $L_2$ such that the $\\Delta PQR$ is an isosceles triangle with base $QR$. If the slopes of the lines $QR$ are $m_1$ and $m_2$, then $16(m_1^2 + m_2^2)$ is equal to _________.",
+        "options": []
+      },
+      "answer_key": "68",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3294,
+      "subject": "Physics",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "A wire of resistance $20 \\,\\Omega$ is divided into 10 equal parts, resulting pairs. A combination of two parts are connected in parallel and so on. Now resulting pairs of parallel combination are connected in series. The equivalent resistance of final combination is _________ $\\Omega$.",
+        "options": []
+      },
+      "answer_key": "5",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 2727,
+      "subject": "Chemistry",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "Total number of deactivating groups in aromatic electrophilic substitution reaction among the following is ________.\\n\\n[Figure: Five chemical groups are shown: $-C(=O)OCH_3$, $-NHC(=O)CH_3$, $-NHCH_3$, $-C \\equiv N$, and $-OCH_3$.]",
+        "options": []
+      },
+      "answer_key": "2",
+      "image_urls": [],
+      "has_figure": true
+    },
+    {
+      "source": "jee",
+      "id": 578,
+      "subject": "Maths",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "Let a variable line passing through the centre of the circle $x^2 + y^2 - 16x - 4y = 0$, meet the positive co-ordinate axes at the points $A$ and $B$. Then the minimum value of $OA + OB$, where $O$ is the origin, is equal to",
+        "options": [
+          {
+            "text": "12",
+            "nta_option_id": "4058593807"
+          },
+          {
+            "text": "18",
+            "nta_option_id": "4058593808"
+          },
+          {
+            "text": "20",
+            "nta_option_id": "4058593809"
+          },
+          {
+            "text": "24",
+            "nta_option_id": "4058593810"
+          }
+        ]
+      },
+      "answer_key": "B",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 492,
+      "subject": "Maths",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "Let $\\alpha, \\beta, \\gamma, \\delta \\in Z$ and let $A(\\alpha, \\beta), B(1, 0), C(\\gamma, \\delta)$ and $D(1, 2)$ be the vertices of a parallelogram $ABCD$. If $AB = \\sqrt{10}$ and the points $A$ and $C$ lie on the line $3y = 2x + 1$, then $2(\\alpha + \\beta + \\gamma + \\delta)$ is equal to",
+        "options": [
+          {
+            "text": "5",
+            "nta_option_id": "4058593553"
+          },
+          {
+            "text": "8",
+            "nta_option_id": "4058593554"
+          },
+          {
+            "text": "10",
+            "nta_option_id": "4058593555"
+          },
+          {
+            "text": "12",
+            "nta_option_id": "4058593556"
+          }
+        ]
+      },
+      "answer_key": "B",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 1101,
+      "subject": "Chemistry",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "The heat of solution of anhydrous $\\text{CuSO}_4$ and $\\text{CuSO}_4 \\cdot 5\\text{H}_2\\text{O}$ are $-70 \\text{ kJ mol}^{-1}$ and $+12 \\text{ kJ mol}^{-1}$ respectively.\nThe heat of hydration of $\\text{CuSO}_4$ to $\\text{CuSO}_4 \\cdot 5\\text{H}_2\\text{O}$ is $-x \\text{ kJ}$. The value of $x$ is ________.\n(nearest integer).",
+        "options": []
+      },
+      "answer_key": "82",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 2936,
+      "subject": "Maths",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "Let $\\vec{a} = 9\\hat{i} - 13\\hat{j} + 25\\hat{k}, \\vec{b} = 3\\hat{i} + 7\\hat{j} - 13\\hat{k}$ and $\\vec{c} = 17\\hat{i} - 2\\hat{j} + \\hat{k}$ be three given vectors. If $\\vec{r}$ is a vector such that $\\vec{r} \\times \\vec{a} = (\\vec{b} + \\vec{c}) \\times \\vec{a}$ and $\\vec{r} \\cdot (\\vec{b} - \\vec{c}) = 0$, then $\\frac{|593\\vec{r} + 67\\vec{a}|^2}{(593)^2}$ is equal to _______.",
+        "options": []
+      },
+      "answer_key": "569",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 678,
+      "subject": "Maths",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "Let $A = \\{1, 2, 3, \\dots, 20\\}$. Let $R_1$ and $R_2$ two relation on $A$ such that\n$R_1 = \\{(a, b) : b \\text{ is divisible by } a\\}$\n$R_2 = \\{(a, b) : a \\text{ is an integral multiple of } b\\}$.\nThen, number of elements in $R_1 - R_2$ is equal to ________.",
+        "options": []
+      },
+      "answer_key": "46",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 2091,
+      "subject": "Chemistry",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "O}_7^{2-}$, in aqueous solution is _________.\n\nWait, I should use `\\text{...}` for chemical symbols to be safe, or just standard LaTeX.\n$\\text{Cr}_2\\text{O}_7^{2-}$ is better as $\\text{Cr}_2\\text{O}_7^{2-}$.\nLet's use standard chemical notation in LaTeX.\n$\\text{Cr}_2\\text{O}_7^{2-} + 14\\text{H}^+ + 6\\text{e}^- \\rightarrow 2\\text{Cr}^{3+} + 7\\text{H}_2\\text{O}, \\text{E}^\\circ = 1.33\\text{V}$",
+        "options": []
+      },
+      "answer_key": "3",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3450,
+      "subject": "Physics",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "Applying the principle of homogeneity of dimensions, determine which one is correct,\n\nwhere $T$ is time period, $G$ is gravitational constant, $M$ is mass, $r$ is radius of orbit.",
+        "options": [
+          {
+            "text": "$T^2 = \\frac{4\\pi^2 r^3}{GM}$",
+            "nta_option_id": "68019154465"
+          },
+          {
+            "text": "$T^2 = \\frac{4\\pi^2 r^2}{GM}$",
+            "nta_option_id": "68019154466"
+          },
+          {
+            "text": "$T^2 = 4\\pi^2 r^3$",
+            "nta_option_id": "68019154467"
+          },
+          {
+            "text": "$T^2 = \\frac{4\\pi^2 r}{GM^2}$",
+            "nta_option_id": "68019154468"
+          }
+        ]
+      },
+      "answer_key": "A",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3481,
+      "subject": "Chemistry",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "The equilibrium constant for the reaction\n\n$\\text{SO}_3(\\text{g}) \\rightleftharpoons \\text{SO}_2(\\text{g}) + \\frac{1}{2}\\text{O}_2(\\text{g})$\n\nis $\\text{K}_c = 4.9 \\times 10^{-2}$. The value of $\\text{K}_c$ for the reaction given below is\n\n$2 \\text{SO}_2(\\text{g}) + \\text{O}_2(\\text{g}) \\rightleftharpoons 2\\text{SO}_3(\\text{g})$ is :",
+        "options": [
+          {
+            "text": "4.9",
+            "nta_option_id": "68019154559"
+          },
+          {
+            "text": "416",
+            "nta_option_id": "68019154560"
+          },
+          {
+            "text": "41.6",
+            "nta_option_id": "68019154561"
+          },
+          {
+            "text": "49",
+            "nta_option_id": "68019154562"
+          }
+        ]
+      },
+      "answer_key": "B",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 772,
+      "subject": "Maths",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "Let the first term of a series be $T_1 = 6$ and its $r^{\\text{th}}$ term $T_r = 3 T_{r-1} + 6^r, r = 2, 3, \\dots, n$. If the sum of the first $n$ terms of this series is $\\frac{1}{5} (n^2 - 12n + 39) (4 \\cdot 6^n - 5 \\cdot 3^n + 1)$, then $n$ is equal to _________.",
+        "options": []
+      },
+      "answer_key": "6",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3283,
+      "subject": "Physics",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "Given below are two statements :\nStatement I : When the white light passed through a prism, the red light bends lesser than yellow and violet.\nStatement II : The refractive indices are different for different wavelengths in dispersive medium.\nIn the light of the above statements, chose the correct answer from the options given below :",
+        "options": [
+          {
+            "text": "Both Statement I and Statement II are true",
+            "nta_option_id": "878270219197"
+          },
+          {
+            "text": "Both Statement I and Statement II are false",
+            "nta_option_id": "878270219198"
+          },
+          {
+            "text": "Statement I is true but Statement II is false",
+            "nta_option_id": "878270219199"
+          },
+          {
+            "text": "Statement I is false but Statement II is true",
+            "nta_option_id": "878270219200"
+          }
+        ]
+      },
+      "answer_key": "A",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 1033,
+      "subject": "Maths",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "The shortest distance between the lines $\\frac{x - 3}{4} = \\frac{y + 7}{-11} = \\frac{z - 1}{5}$ and $\\frac{x - 5}{3} = \\frac{y - 9}{-6} = \\frac{z + 2}{1}$ is :",
+        "options": [
+          {
+            "text": "$\\frac{178}{\\sqrt{563}}$",
+            "nta_option_id": "878270220461"
+          },
+          {
+            "text": "$\\frac{179}{\\sqrt{563}}$",
+            "nta_option_id": "878270220462"
+          },
+          {
+            "text": "$\\frac{185}{\\sqrt{563}}$",
+            "nta_option_id": "878270220463"
+          },
+          {
+            "text": "$\\frac{187}{\\sqrt{563}}$",
+            "nta_option_id": "878270220464"
+          }
+        ]
+      },
+      "answer_key": "D",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 296,
+      "subject": "Chemistry",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "3-Methylhex-2-ene on reaction with $\\text{HBr}$ in presence of peroxide forms an addition product $(A)$. The number of possible stereoisomers for $'A'$ is _______.",
+        "options": []
+      },
+      "answer_key": "4",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 673,
+      "subject": "Maths",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "A bag contains 8 balls, whose colours are either white or black. 4 balls are drawn at random without replacement and it was found that 2 balls are white and other 2 balls are black. The probability that the bag contains equal number of white and black balls is :",
+        "options": [
+          {
+            "text": "$\\frac{1}{7}$",
+            "nta_option_id": "9561772075"
+          },
+          {
+            "text": "$\\frac{1}{5}$",
+            "nta_option_id": "9561772076"
+          },
+          {
+            "text": "$\\frac{2}{5}$",
+            "nta_option_id": "9561772077"
+          },
+          {
+            "text": "$\\frac{2}{7}$",
+            "nta_option_id": "9561772078"
+          }
+        ]
+      },
+      "answer_key": "D",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3538,
+      "subject": "Maths",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "In a tournament, a team plays 10 matches with probabilities of winning and losing each match as $\\frac{1}{3}$ and $\\frac{2}{3}$ respectively. Let $x$ be the number of matches that the team wins, and $y$ be the number of matches that team loses. If the probability $P(|x - y| \\leq 2)$ is $p$, then $3^9 p$ equals _________",
+        "options": []
+      },
+      "answer_key": "8288",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3441,
+      "subject": "Maths",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "Let $a = 1 + \\frac{^2C_2}{3!} + \\frac{^3C_2}{4!} + \\frac{^4C_2}{5!} + \\dots$,\n\n$b = 1 + \\frac{^1C_0 + ^1C_1}{1!} + \\frac{^2C_0 + ^2C_1 + ^2C_2}{2!} + \\frac{^3C_0 + ^3C_1 + ^3C_2 + ^3C_3}{3!} + \\dots$\n\nThen $\\frac{2b}{a^2}$ is equal to ________.",
+        "options": []
+      },
+      "answer_key": "8",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3344,
+      "subject": "Maths",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "Let $A(-1, 1)$ and $B(2, 3)$ be two points and P be a variable point above the line AB such that the area of $\\Delta PAB$ is 10. If the locus of P is $ax + by = 15$, then $5a + 2b$ is :",
+        "options": [
+          {
+            "text": "4",
+            "nta_option_id": "878270219111"
+          },
+          {
+            "text": "6",
+            "nta_option_id": "878270219112"
+          },
+          {
+            "text": "$-\\frac{6}{5}$",
+            "nta_option_id": "878270219113"
+          },
+          {
+            "text": "$-\\frac{12}{5}$",
+            "nta_option_id": "878270219114"
+          }
+        ]
+      },
+      "answer_key": "D",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 2880,
+      "subject": "Physics",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "A particle moves in a straight line so that its displacement $x$ at any time $t$ is given by $x^2=1+t^2$. Its acceleration at any time $t$ is $x^{-n}$ where $n = \\_\\_\\_\\_\\_\\_\\_\\_.$",
+        "options": []
+      },
+      "answer_key": "3",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 758,
+      "subject": "Maths",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "$\\int_{0}^{\\pi/4} \\frac{\\cos^2 x \\sin^2 x}{(\\cos^3 x + \\sin^3 x)^2} dx$ is equal to",
+        "options": [
+          {
+            "text": "$1/3$",
+            "nta_option_id": "68019155221"
+          },
+          {
+            "text": "$1/6$",
+            "nta_option_id": "68019155222"
+          },
+          {
+            "text": "$1/9$",
+            "nta_option_id": "68019155223"
+          },
+          {
+            "text": "$1/12$",
+            "nta_option_id": "68019155224"
+          }
+        ]
+      },
+      "answer_key": "B",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3337,
+      "subject": "Maths",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "If the constant term in the expansion of $\\left(\\frac{\\sqrt[5]{3}}{x} + \\frac{2x}{\\sqrt[3]{5}}\\right)^{12}, x \\neq 0$, is $\\alpha \\times 2^8 \\times \\sqrt[5]{3}$, then $25\\alpha$ is equal to :",
+        "options": [
+          {
+            "text": "742",
+            "nta_option_id": "878270219083"
+          },
+          {
+            "text": "639",
+            "nta_option_id": "878270219084"
+          },
+          {
+            "text": "724",
+            "nta_option_id": "878270219085"
+          },
+          {
+            "text": "693",
+            "nta_option_id": "878270219086"
+          }
+        ]
+      },
+      "answer_key": "D",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 783,
+      "subject": "Physics",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "A small ball of mass $m$ and density $\rho$ is dropped in a viscous liquid of density $\rho_0$. After sometime, the ball falls with constant velocity. The viscous force on the ball is :",
+        "options": [
+          {
+            "text": "$mg \\left( 1 - \\frac{\\rho_0}{\\rho} \\right)$",
+            "nta_option_id": "68019155287"
+          },
+          {
+            "text": "$mg \\left( \\frac{\\rho_0}{\\rho} - 1 \\right)$",
+            "nta_option_id": "68019155288"
+          },
+          {
+            "text": "$mg(1 - \\rho\\rho_0)$",
+            "nta_option_id": "68019155289"
+          },
+          {
+            "text": "$mg \\left( 1 + \\frac{\\rho}{\\rho_0} \\right)$",
+            "nta_option_id": "68019155290"
+          }
+        ]
+      },
+      "answer_key": "A",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 2783,
+      "subject": "Physics",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "When a $dc$ voltage of $100\\text{ V}$ is applied to an inductor, a $dc$ current of $5\\text{ A}$ flows through it. When an $ac$ voltage of $200\\text{ V}$ peak value is connected to inductor, its inductive reactance is found to be $20\\sqrt{3}\\ \\Omega$. The power dissipated in the circuit is ______ $W$.",
+        "options": []
+      },
+      "answer_key": "250",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 1095,
+      "subject": "Chemistry",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "Correct order of basic strength of Pyrrole [Figure: Pyrrole structure], Pyridine [Figure: Pyridine structure] and Piperidine [Figure: Piperidine structure] is :",
+        "options": [
+          {
+            "text": "Piperidine $>$ Pyridine $>$ Pyrrole",
+            "nta_option_id": "878270220649"
+          },
+          {
+            "text": "Pyrrole $>$ Pyridine $>$ Piperidine",
+            "nta_option_id": "878270220650"
+          },
+          {
+            "text": "Pyrrole $>$ Piperidine $>$ Pyridine",
+            "nta_option_id": "878270220651"
+          },
+          {
+            "text": "Pyridine $>$ Piperidine $>$ Pyrrole",
+            "nta_option_id": "878270220652"
+          }
+        ]
+      },
+      "answer_key": "A",
+      "image_urls": [],
+      "has_figure": true
+    },
+    {
+      "source": "jee",
+      "id": 1088,
+      "subject": "Chemistry",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "Given below are two statements : one is labelled as Assertion (A) and the other is labelled as Reason (R).\nAssertion (A) : $S_N2$ reaction of $C_6H_5CH_2Br$ occurs more readily than the $S_N2$ reaction of $CH_3CH_2Br$.\nReason (R) : The partially bonded unhybridized p-orbital that develops in the trigonal bipyramidal transition state is stabilized by conjugation with the phenyl ring.\nIn the light of the above statements, choose the most appropriate answer from the options given below :",
+        "options": [
+          {
+            "text": "Both (A) and (R) are correct and (R) is the correct explanation of (A)",
+            "nta_option_id": "878270220629"
+          },
+          {
+            "text": "Both (A) and (R) are correct but (R) is not the correct explanation of (A)",
+            "nta_option_id": "878270220630"
+          },
+          {
+            "text": "(A) is correct but (R) is not correct",
+            "nta_option_id": "878270220631"
+          },
+          {
+            "text": "(A) is not correct but (R) is correct",
+            "nta_option_id": "878270220632"
+          }
+        ]
+      },
+      "answer_key": "A",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3433,
+      "subject": "Maths",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "A square is inscribed in the circle $x^2+y^2-10x-6y+30=0$. One side of this square is parallel to $y=x+3$. If $(x_i, y_i)$ are the vertices of the square, then $\\sum (x_i^2 + y_i^2)$ is equal to :",
+        "options": [
+          {
+            "text": "148",
+            "nta_option_id": "878270218297"
+          },
+          {
+            "text": "152",
+            "nta_option_id": "878270218298"
+          },
+          {
+            "text": "156",
+            "nta_option_id": "878270218299"
+          },
+          {
+            "text": "160",
+            "nta_option_id": "878270218300"
+          }
+        ]
+      },
+      "answer_key": "B",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 1013,
+      "subject": "Chemistry",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "Consider the following reaction\n\n$A + B \\rightarrow C$\n\nThe time taken for A to become $\\frac{1}{4}^{\\text{th}}$ of its initial concentration is twice the time taken to become $\\frac{1}{2}$ of the same. Also, when the change of concentration of B is plotted against time, the resulting graph gives a straight line with a negative slope and a positive intercept on the concentration axis.\n\nThe overall order of the reaction is _________.",
+        "options": []
+      },
+      "answer_key": "1",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3291,
+      "subject": "Physics",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "In a single slit experiment, a parallel beam of green light of wavelength $550 \\text{ nm}$ passes through a slit of width $0.20 \\text{ mm}$. The transmitted light is collected on a screen $100 \\text{ cm}$ away. The distance of first order minima from the central maximum will be $x \\times 10^{-5} \\text{ m}$. The value of $x$ is :",
+        "options": []
+      },
+      "answer_key": "275",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3510,
+      "subject": "Maths",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "The area (in sq. units) of the region\n$S = \\{z \\in \\mathbb{C} : |z - 1| \\le 2; (z + \\bar{z}) + i(z - \\bar{z}) \\le 2, \\text{Im}(z) \\ge 0\\}$ is",
+        "options": [
+          {
+            "text": "$\\frac{3\\pi}{2}$",
+            "nta_option_id": "68019154375"
+          },
+          {
+            "text": "$\\frac{7\\pi}{3}$",
+            "nta_option_id": "68019154376"
+          },
+          {
+            "text": "$\\frac{7\\pi}{4}$",
+            "nta_option_id": "68019154377"
+          },
+          {
+            "text": "$\\frac{17\\pi}{8}$",
+            "nta_option_id": "68019154378"
+          }
+        ]
+      },
+      "answer_key": "A",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3288,
+      "subject": "Physics",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "The output (Y) of logic circuit given below is 0 only when :",
+        "options": [
+          {
+            "text": "A=0, B=0",
+            "nta_option_id": "878270219217"
+          },
+          {
+            "text": "A=1, B=0",
+            "nta_option_id": "878270219218"
+          },
+          {
+            "text": "A=0, B=1",
+            "nta_option_id": "878270219219"
+          },
+          {
+            "text": "A=1, B=1",
+            "nta_option_id": "878270219220"
+          }
+        ]
+      },
+      "answer_key": "A",
+      "image_urls": [],
+      "has_figure": true
+    },
+    {
+      "source": "jee",
+      "id": 1098,
+      "subject": "Chemistry",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "The total number of species from the following in which one unpaired electron is present, is _________.\n$N_2, O_2, C_2^-, O_2^-, O_2^{2-}, H_2^+, CN^-, He_2^+$",
+        "options": []
+      },
+      "answer_key": "4",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3401,
+      "subject": "Chemistry",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "Which of the following nitrogen containing compound does not give Lassaigne's test ?",
+        "options": [
+          {
+            "text": "Urea",
+            "nta_option_id": "878270218469"
+          },
+          {
+            "text": "Glycene",
+            "nta_option_id": "878270218470"
+          },
+          {
+            "text": "Hydrazine",
+            "nta_option_id": "878270218471"
+          },
+          {
+            "text": "Phenyl hydrazine",
+            "nta_option_id": "878270218472"
+          }
+        ]
+      },
+      "answer_key": "C",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 283,
+      "subject": "Chemistry",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "Highest enol content will be shown by :",
+        "options": [
+          {
+            "text": "[Figure: cyclohexane-1,2,3-trione]",
+            "nta_option_id": "5335431601"
+          },
+          {
+            "text": "[Figure: cyclohexane-1,4-dione]",
+            "nta_option_id": "5335431602"
+          },
+          {
+            "text": "[Figure: cyclohexane-1,3,5-trione]",
+            "nta_option_id": "5335431603"
+          },
+          {
+            "text": "[Figure: cyclohexane-1,3-dione]",
+            "nta_option_id": "5335431604"
+          }
+        ]
+      },
+      "answer_key": "C",
+      "image_urls": [],
+      "has_figure": true
+    },
+    {
+      "source": "jee",
+      "id": 854,
+      "subject": "Maths",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "Let $P(\\alpha, \\beta, \\gamma)$ be the image of the point $Q(3, -3, 1)$ in the line $\\frac{x-0}{1} = \\frac{y-3}{1} = \\frac{z-1}{-1}$ and $R$ be the point $(2, 5, -1)$. If the area of the triangle $PQR$ is $\\lambda$ and $\\lambda^2 = 14K$, then $K$ is equal to :",
+        "options": [
+          {
+            "text": "18",
+            "nta_option_id": "878270219655"
+          },
+          {
+            "text": "36",
+            "nta_option_id": "878270219656"
+          },
+          {
+            "text": "72",
+            "nta_option_id": "878270219657"
+          },
+          {
+            "text": "81",
+            "nta_option_id": "878270219658"
+          }
+        ]
+      },
+      "answer_key": "D",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 2714,
+      "subject": "Chemistry",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "If one strand of a DNA has the sequence ATGCTTCA, sequence of the bases in complementary strand is :",
+        "options": [
+          {
+            "text": "TACGAAGT",
+            "nta_option_id": "9561772263"
+          },
+          {
+            "text": "ATGCGACT",
+            "nta_option_id": "9561772264"
+          },
+          {
+            "text": "GTACTTAC",
+            "nta_option_id": "9561772265"
+          },
+          {
+            "text": "CATTAGCT",
+            "nta_option_id": "9561772266"
+          }
+        ]
+      },
+      "answer_key": "A",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 2496,
+      "subject": "Physics",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "In the given arrangement of a doubly inclined plane two blocks of masses $M$ and $m$ are placed. The blocks are connected by a light string passing over an ideal pulley as shown. The coefficient of friction between the surface of the plane and the blocks is $0.25$. The value of $m$, for which $M = 10\\text{ kg}$ will move down with an acceleration of $2\\text{ m/s}^2$, is: (take $g = 10\\text{ m/s}^2$ and $\\tan 37^\\circ = 3/4$)",
+        "options": [
+          {
+            "text": "4.5 kg",
+            "nta_option_id": "4058593603"
+          },
+          {
+            "text": "9 kg",
+            "nta_option_id": "4058593604"
+          },
+          {
+            "text": "2.25 kg",
+            "nta_option_id": "4058593605"
+          },
+          {
+            "text": "6.5 kg",
+            "nta_option_id": "4058593606"
+          }
+        ]
+      },
+      "answer_key": "A",
+      "image_urls": [],
+      "has_figure": true
+    },
+    {
+      "source": "jee",
+      "id": 3447,
+      "subject": "Maths",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "If the shortest distance between the lines $\\frac{x + 2}{2} = \\frac{y + 3}{3} = \\frac{z - 5}{4}$ and $\\frac{x - 3}{1} = \\frac{y - 2}{-3} = \\frac{z + 4}{2}$ is $\\frac{38}{3\\sqrt{5}} k$, and $\\int_0^k [x^2] dx = \\alpha - \\sqrt{\\alpha}$, where $[x]$ denotes the greatest integer function, then $6\\alpha^3$ is equal to ________.",
+        "options": []
+      },
+      "answer_key": "48",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 2665,
+      "subject": "Maths",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "Let $P = \\{z \\in \\mathbb{C} : |z + 2 - 3i| \\le 1\\}$ and $Q = \\{z \\in \\mathbb{C} : z(1 + i) + \\bar{z} (1 - i) \\le -8\\}$. Let in $P \\cap Q$, $|z - 3 + 2i|$ be maximum and minimum at $z_1$ and $z_2$ respectively. If $|z_1|^2 + 2|z_2|^2 = \\alpha + \\beta \\sqrt{2}$, where $\\alpha, \\beta$ are integers, then $\\alpha + \\beta$ equals ________.",
+        "options": []
+      },
+      "answer_key": "36",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3350,
+      "subject": "Maths",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "If $1 + \\frac{\\sqrt{3}-\\sqrt{2}}{2\\sqrt{3}} + \\frac{5-2\\sqrt{6}}{18} + \\frac{9\\sqrt{3}-11\\sqrt{2}}{36\\sqrt{3}} + \\frac{49-20\\sqrt{6}}{180} + \\dots \\text{upto } \\infty = 2 + \\left(\\sqrt{\\frac{b}{a}} + 1\\right) \\log_e \\left(\\frac{a}{b}\\right)$, where a and b are integers with $\\text{gcd}(a, b) = 1$, then $11a + 18b$ is equal to _________.",
+        "options": []
+      },
+      "answer_key": "76",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 668,
+      "subject": "Maths",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "The value of the intergral $\\int_{0}^{\\pi/4} \\frac{x \\, dx}{\\sin^4(2x) + \\cos^4(2x)}$ equals :",
+        "options": [
+          {
+            "text": "$\\frac{\\sqrt{2} \\pi^2}{16}$",
+            "nta_option_id": "9561772047"
+          },
+          {
+            "text": "$\\frac{\\sqrt{2} \\pi^2}{32}$",
+            "nta_option_id": "9561772048"
+          },
+          {
+            "text": "$\\frac{\\sqrt{2} \\pi^2}{8}$",
+            "nta_option_id": "9561772049"
+          },
+          {
+            "text": "$\\frac{\\sqrt{2} \\pi^2}{64}$",
+            "nta_option_id": "9561772050"
+          }
+        ]
+      },
+      "answer_key": "B",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 2818,
+      "subject": "Chemistry",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "The major products from the following reaction sequence are product A and product B.\n\n[Figure: A reaction scheme starting from cyclohexene. An arrow pointing left to product B has reagents (i) $Br_2$ and (ii) alc. $KOH$ (3 eq.). An arrow pointing right to product A has reagents (i) $Br_2$ and (ii) $\\equiv \\text{---} O^- Na^+$ (1.0 eq.).]\n\nThe total sum of $\\pi$ electrons in product A and product B are ________ (nearest integer)",
+        "options": []
+      },
+      "answer_key": "8",
+      "image_urls": [],
+      "has_figure": true
+    },
+    {
+      "source": "jee",
+      "id": 3382,
+      "subject": "Physics",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "An elastic spring under tension of $3 \\text{ N}$ has a length $a$. Its length is $b$ under tension $2 \\text{ N}$. For its length $(3a - 2b)$, the value of tension will be _________ N.",
+        "options": []
+      },
+      "answer_key": "5",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 950,
+      "subject": "Maths",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "Let $A = \\begin{bmatrix} 2 & -1 \\\\ 1 & 1 \\end{bmatrix}$. If the sum of the diagonal elements of $A^{13}$ is $3^n$, then $n$ is equal to",
+        "options": []
+      },
+      "answer_key": "7",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 931,
+      "subject": "Maths",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "The sum of all the solutions of the equation $(8)^{2x} - 16 \\cdot (8)^x + 48 = 0$ is :",
+        "options": [
+          {
+            "text": "$\\log_8(4)$",
+            "nta_option_id": "68019155999"
+          },
+          {
+            "text": "$\\log_8(6)$",
+            "nta_option_id": "68019156000"
+          },
+          {
+            "text": "$1 + \\log_6(8)$",
+            "nta_option_id": "68019156001"
+          },
+          {
+            "text": "$1 + \\log_8(6)$",
+            "nta_option_id": "68019156002"
+          }
+        ]
+      },
+      "answer_key": "D",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3262,
+      "subject": "Chemistry",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "The amount of electricity in Coulomb required for the oxidation of 1 mol of $\\text{H}_2\\text{O}$ to $\\text{O}_2$ is $\\_\\_\\_\\_\\_\\_\\_\\_ \\times 10^5 \\text{C}$.",
+        "options": []
+      },
+      "answer_key": "2",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 2608,
+      "subject": "Physics",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "Light from a point source in air falls on a convex curved surface of radius $20\\text{ cm}$ and refractive index $1.5$. If the source is located at $100\\text{ cm}$ from the convex surface, the image will be formed at ______ $\\text{cm}$ from the object.",
+        "options": []
+      },
+      "answer_key": "200",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 2668,
+      "subject": "Maths",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "Let the line $L : \\sqrt{2}x + y = \\alpha$ pass through the point of the intersection $P$ (in the first quadrant) of the circle $x^2 + y^2 = 3$ and the parabola $x^2 = 2y$. Let the line $L$ touch two circles $C_1$ and $C_2$ of equal radius $2\\sqrt{3}$. If the centres $Q_1$ and $Q_2$ of the circles $C_1$ and $C_2$ lie on the $y$-axis, then the square of the area of the triangle $PQ_1Q_2$ is equal to ________.",
+        "options": []
+      },
+      "answer_key": "72",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 711,
+      "subject": "Physics",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "A tuning fork resonates with a sonometer wire of length $1\\text{ m}$ stretched with a tension of $6\\text{ N}$. When the tension in the wire is changed to $54\\text{ N}$, the same tuning fork produces $12$ beats per second with it. The frequency of the tuning fork is ______ $\\text{Hz}$.",
+        "options": []
+      },
+      "answer_key": "6",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 335,
+      "subject": "Physics",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "Young's modules of material of a wire of length '$L$' and cross-sectional area $A$ is $Y$. If the length of the wire is doubled and cross-sectional area is halved then Young's modules will be :",
+        "options": [
+          {
+            "text": "$4 Y$",
+            "nta_option_id": "5335432825"
+          },
+          {
+            "text": "$\\frac{Y}{4}$",
+            "nta_option_id": "5335432826"
+          },
+          {
+            "text": "$Y$",
+            "nta_option_id": "5335432827"
+          },
+          {
+            "text": "$2 Y$",
+            "nta_option_id": "5335432828"
+          }
+        ]
+      },
+      "answer_key": "C",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 2704,
+      "subject": "Chemistry",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "In acidic medium, $K_2Cr_2O_7$ shows oxidising action as represented in the half reaction :\n$Cr_2O_7^{2-} + XH^+ + Ye^\\ominus \\rightarrow 2A + ZH_2O$\n$X, Y, Z$ and $A$ are respectively are :",
+        "options": [
+          {
+            "text": "$8, 6, 4$ and $Cr_2O_3$",
+            "nta_option_id": "9561772215"
+          },
+          {
+            "text": "$14, 7, 6$ and $Cr^{3+}$",
+            "nta_option_id": "9561772216"
+          },
+          {
+            "text": "$14, 6, 7$ and $Cr^{3+}$",
+            "nta_option_id": "9561772217"
+          },
+          {
+            "text": "$8, 4, 6$ and $Cr_2O_3$",
+            "nta_option_id": "9561772218"
+          }
+        ]
+      },
+      "answer_key": "C",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 266,
+      "subject": "Physics",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "Two long, straight wires carry equal currents in opposite directions as shown in figure. The separation between the wires is $5.0\\text{ cm}$. The magnitude of the magnetic field at a point $P$ midway between the wires is ______ $\\mu\\text{T}$. (Given : $\\mu_0 = 4\\pi \\times 10^{-7}\\text{ TmA}^{-1}$)",
+        "options": []
+      },
+      "answer_key": "160",
+      "image_urls": [],
+      "has_figure": true
+    },
+    {
+      "source": "jee",
+      "id": 1234,
+      "subject": "Physics",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "A disc of radius $R$ and mass $M$ is rolling horizontally without slipping with speed $v$. It then moves up an inclined smooth surface as shown in figure. The maximum height that the disc can go up the incline is :",
+        "options": [
+          {
+            "text": "$\\frac{v^2}{g}$",
+            "nta_option_id": "9561772657"
+          },
+          {
+            "text": "$\\frac{1}{2} \\frac{v^2}{g}$",
+            "nta_option_id": "9561772658"
+          },
+          {
+            "text": "$\\frac{2}{3} \\frac{v^2}{g}$",
+            "nta_option_id": "9561772659"
+          },
+          {
+            "text": "$\\frac{3}{4} \\frac{v^2}{g}$",
+            "nta_option_id": "9561772660"
+          }
+        ]
+      },
+      "answer_key": "D",
+      "image_urls": [],
+      "has_figure": true
+    },
+    {
+      "source": "jee",
+      "id": 502,
+      "subject": "Maths",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "Let $S = (-1, \\infty)$ and $f : S \\rightarrow \\mathbb{R}$ be defined as\n$f(x) = \\int_{-1}^{x} (e^t - 1)^{11} (2t - 1)^5 (t - 2)^7 (t - 3)^{12} (2t - 10)^{61} dt$,\nLet $p =$ Sum of squares of the values of $x$, where $f(x)$ attains local maxima on $S$, and $q =$ Sum of the values of $x$, where $f(x)$ attains local minima on $S$. Then, the value of $p^2 + 2q$ is ________",
+        "options": []
+      },
+      "answer_key": "27",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 1248,
+      "subject": "Physics",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "A uniform rod AB of mass 2 kg and length 30 cm at rest on a smooth horizontal surface. An impulse of force 0.2 Ns is applied to end B. The time taken by the rod to turn through at right angles will be $\\frac{\\pi}{x}$ s, where $x=$ ________.",
+        "options": []
+      },
+      "answer_key": "4",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3183,
+      "subject": "Maths",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "Consider the relations $R_1$ and $R_2$ defined as $aR_1b \\Leftrightarrow a^2+b^2=1$ for all $a, b \\in R$ and $(a, b)R_2(c, d) \\Leftrightarrow a+d=b+c$ for all $(a, b), (c, d) \\in N \\times N$. Then",
+        "options": [
+          {
+            "text": "Only $R_1$ is an equivalence relation",
+            "nta_option_id": "9561772555"
+          },
+          {
+            "text": "Only $R_2$ is an equivalence relation",
+            "nta_option_id": "9561772556"
+          },
+          {
+            "text": "$R_1$ and $R_2$ both are equivalence relations",
+            "nta_option_id": "9561772557"
+          },
+          {
+            "text": "Neither $R_1$ nor $R_2$ is an equivalence relation",
+            "nta_option_id": "9561772558"
+          }
+        ]
+      },
+      "answer_key": "B",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3527,
+      "subject": "Maths",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "If the mean of the following probability distribution of a radam variable X:\n\n$\\begin{array}{|c|c|c|c|c|c|} \\hline X & 0 & 2 & 4 & 6 & 8 \\\\ \\hline P(X) & a & 2a & a + b & 2b & 3b \\\\ \\hline \\end{array}$\n\nis $\\frac{46}{9}$, then the variance of the distribution is",
+        "options": [
+          {
+            "text": "$\\frac{151}{27}$",
+            "nta_option_id": "68019154443"
+          },
+          {
+            "text": "$\\frac{566}{81}$",
+            "nta_option_id": "68019154444"
+          },
+          {
+            "text": "$\\frac{581}{81}$",
+            "nta_option_id": "68019154445"
+          },
+          {
+            "text": "$\\frac{173}{27}$",
+            "nta_option_id": "68019154446"
+          }
+        ]
+      },
+      "answer_key": "B",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 1832,
+      "subject": "Maths",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "Let $0 \\le r \\le n$. If ${}^{n+1}C_{r+1} : {}^nC_r : {}^{n-1}C_{r-1} = 55 : 35 : 21$, then $2n + 5r$ is equal to :",
+        "options": [
+          {
+            "text": "50",
+            "nta_option_id": "878270219611"
+          },
+          {
+            "text": "55",
+            "nta_option_id": "878270219612"
+          },
+          {
+            "text": "60",
+            "nta_option_id": "878270219613"
+          },
+          {
+            "text": "62",
+            "nta_option_id": "878270219614"
+          }
+        ]
+      },
+      "answer_key": "A",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 897,
+      "subject": "Chemistry",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "Molality $(m)$ of $3\\text{ M}$ aqueous solution of $\\text{NaCl}$ is :\n(Given : Density of solution $= 1.25\\text{ g mL}^{-1}$, Molar mass in $\\text{g mol}^{-1}$ : $\\text{Na-}23, \\text{Cl-}35.5$)",
+        "options": [
+          {
+            "text": "$2.79\\text{ m}$",
+            "nta_option_id": "878270219771"
+          },
+          {
+            "text": "$3.85\\text{ m}$",
+            "nta_option_id": "878270219772"
+          },
+          {
+            "text": "$2.90\\text{ m}$",
+            "nta_option_id": "878270219773"
+          },
+          {
+            "text": "$1.90\\text{ m}$",
+            "nta_option_id": "878270219774"
+          }
+        ]
+      },
+      "answer_key": "A",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 278,
+      "subject": "Chemistry",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "The electronic configuration for Neodymium is :\n[Atomic Number for Neodymium 60]",
+        "options": [
+          {
+            "text": "$[Xe] 4f^3 5d^1 6s^2$",
+            "nta_option_id": "5335431569"
+          },
+          {
+            "text": "$[Xe] 4f^4 6s^2$",
+            "nta_option_id": "5335431570"
+          },
+          {
+            "text": "$[Xe] 4f^6 6s^2$",
+            "nta_option_id": "5335431571"
+          },
+          {
+            "text": "$[Xe] 5f^7 7s^2$",
+            "nta_option_id": "5335431572"
+          }
+        ]
+      },
+      "answer_key": "B",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 453,
+      "subject": "Chemistry",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "Given below are two statements:\nStatement - I: Along the period, the chemical reactivity of the elements gradually increases from group 1 to group 18.\nStatement - II: The nature of oxides formed by group 1 elements is basic while that of group 17 elements is acidic.\nIn the light of the above statements, choose the *most appropriate* from the options given below:",
+        "options": [
+          {
+            "text": "Both Statement I and Statement II are True",
+            "nta_option_id": "4058593431"
+          },
+          {
+            "text": "Both Statement I and Statement II are False",
+            "nta_option_id": "4058593432"
+          },
+          {
+            "text": "Statement I is True But Statement II is False",
+            "nta_option_id": "4058593433"
+          },
+          {
+            "text": "Statement I is False but statement I is true",
+            "nta_option_id": "4058593434"
+          }
+        ]
+      },
+      "answer_key": "D",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 2795,
+      "subject": "Physics",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "Three infinitely long charged thin sheets are placed as shown in figure. The magnitude of electric field at the point $P$ is $\\frac{x\\sigma}{\\epsilon_0}$. The value of $x$ is ________ (all quantities are measured in SI units).",
+        "options": []
+      },
+      "answer_key": "2",
+      "image_urls": [],
+      "has_figure": true
+    },
+    {
+      "source": "jee",
+      "id": 889,
+      "subject": "Physics",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "A capacitor of $10\\ \\mu\\text{F}$ capacitance whose plates are separated by $10\\ \\text{mm}$ through air and each plate has area $4\\ \\text{cm}^2$ is now filled equally with two dielectric media of $K_1 = 2, K_2 = 3$ respectively as shown in figure. If new force between the plates is $8\\ \\text{N}$. The supply voltage is ______ V.",
+        "options": []
+      },
+      "answer_key": "80",
+      "image_urls": [],
+      "has_figure": true
+    },
+    {
+      "source": "jee",
+      "id": 871,
+      "subject": "Maths",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "In a triangle $ABC$, $BC=7$, $AC=8$, $AB=\\alpha \\in \\mathbb{N}$ and $\\cos A = \\frac{2}{3}$. If $49 \\cos(3C) + 42 = \\frac{m}{n}$, where $\\gcd(m,n)=1$, then $m+n$ is equal to __________.",
+        "options": []
+      },
+      "answer_key": "39",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 2030,
+      "subject": "Maths",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "The remainder when $428^{2024}$ is divided by $21$ is ______.",
+        "options": []
+      },
+      "answer_key": "1",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3624,
+      "subject": "Maths",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "Let $f$ be a differentiable function in the interval $(0, \\infty)$ such that $f(1) = 1$ and $\\lim_{t \\to x} \\frac{t^2 f(x) - x^2 f(t)}{t - x} = 1$ for each $x > 0$. Then $2f(2) + 3f(3)$ is equal to _________.",
+        "options": []
+      },
+      "answer_key": "24",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 1213,
+      "subject": "Maths",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "Let $\\alpha$ be a non-zero real number. Suppose $f : R \\to R$ is a differentiable function such that $f(0) = 2$ and $\\lim_{x \\to -\\infty} f(x) = 1$. If $f'(x) = \\alpha f(x) + 3$, for all $x \\in R$, then $f(-\\log_e 2)$ is equal to ________.",
+        "options": [
+          {
+            "text": "3",
+            "nta_option_id": "9561772595"
+          },
+          {
+            "text": "5",
+            "nta_option_id": "9561772596"
+          },
+          {
+            "text": "7",
+            "nta_option_id": "9561772597"
+          },
+          {
+            "text": "9",
+            "nta_option_id": "9561772598"
+          }
+        ]
+      },
+      "answer_key": "D",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 471,
+      "subject": "Chemistry",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "Total number of species from the following which can undergo disproportionation reaction is _________.\n\n$H_2O_2, ClO_3^-, P_4, Cl_2, Ag, Cu^{+1}, F_2, NO_2, K^+$",
+        "options": []
+      },
+      "answer_key": "6",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 1396,
+      "subject": "Maths",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "Let $M$ denote the median of the following frequency distribution\n\n\\begin{tabular}{|l|c|c|c|c|c|}\n\\hline\nClass & $0-4$ & $4-8$ & $8-12$ & $12-16$ & $16-20$ \\\\\n\\hline\nFrequency & $3$ & $9$ & $10$ & $8$ & $6$ \\\\\n\\hline\n\\end{tabular}\n\nThen $20M$ is equal to :",
+        "options": [
+          {
+            "text": "52",
+            "nta_option_id": "5335432783"
+          },
+          {
+            "text": "104",
+            "nta_option_id": "5335432784"
+          },
+          {
+            "text": "208",
+            "nta_option_id": "5335432785"
+          },
+          {
+            "text": "416",
+            "nta_option_id": "5335432786"
+          }
+        ]
+      },
+      "answer_key": "C",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3445,
+      "subject": "Maths",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "Let A be a square matrix of order 2 such that $|A| = 2$ and the sum of its diagonal elements is $-3$. If the points $(x, y)$ satisfying $A^2 + xA + yI = O$ lie on a hyperbola, whose transverse axis is parallel to the $x$-axis, eccentricity is $e$ and the length of the latus rectum is $l$, then $e^4 + l^4$ is equal to ________.",
+        "options": []
+      },
+      "answer_key": "D",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 1335,
+      "subject": "Physics",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "Identify the physical quantity that cannot be measured using spherometer :",
+        "options": [
+          {
+            "text": "Radius of curvature of convex surface",
+            "nta_option_id": "5335431523"
+          },
+          {
+            "text": "Thickness of thin plates",
+            "nta_option_id": "5335431524"
+          },
+          {
+            "text": "Specific rotation of liquids",
+            "nta_option_id": "5335431525"
+          },
+          {
+            "text": "Radius of curvature of concave surface",
+            "nta_option_id": "5335431526"
+          }
+        ]
+      },
+      "answer_key": "C",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 499,
+      "subject": "Maths",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "Let $A = \\{1, 2, 3, 4\\}$ and $R = \\{(1, 2), (2, 3), (1, 4)\\}$ be a relation on $A$. Let $S$ be the equivalence relation on $A$ such that $R \\subset S$ and the number of elements in $S$ is $n$. Then, the minimum value of $n$ is ______",
+        "options": []
+      },
+      "answer_key": "16",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3497,
+      "subject": "Chemistry",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "$\\text{CH}_3 - \\text{CH}_2 - \\text{CH}_2 - \\text{Br} + \\text{NaOH} \\xrightarrow{\\text{C}_2\\text{H}_5\\text{OH}} \\text{Product 'A'}$\n\n$\\text{Product A} \\xrightarrow{\\text{H}_2\\text{O}/\\text{H}^+} \\text{Product \"B\"}$\n\n$\\text{Product A} \\xrightarrow{\\text{Diborane}, \\text{H}_2\\text{O}/\\text{H}_2\\text{O}_2/\\text{OH}^-} \\text{Product \"C\"}$\n\nConsider the above reactions, identify product B and product C.",
+        "options": [
+          {
+            "text": "B = 2-Propanol C = 1-Propanol",
+            "nta_option_id": "68019154623"
+          },
+          {
+            "text": "B = 1-Propanol C = 2-Propanol",
+            "nta_option_id": "68019154624"
+          },
+          {
+            "text": "B = C = 2-Propanol",
+            "nta_option_id": "68019154625"
+          },
+          {
+            "text": "B = C = 1-Propanol",
+            "nta_option_id": "68019154626"
+          }
+        ]
+      },
+      "answer_key": "A",
+      "image_urls": [],
+      "has_figure": true
+    },
+    {
+      "source": "jee",
+      "id": 3309,
+      "subject": "Chemistry",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "The number of complexes from the following with no electrons in the $\\text{t}_2$ orbital is _________.\n$\\text{TiCl}_4, [\\text{MnO}_4]^-, [\\text{FeO}_4]^{2-}, [\\text{FeCl}_4]^-, [\\text{CoCl}_4]^{2-}$",
+        "options": [
+          {
+            "text": "4",
+            "nta_option_id": "878270219271"
+          },
+          {
+            "text": "3",
+            "nta_option_id": "878270219272"
+          },
+          {
+            "text": "2",
+            "nta_option_id": "878270219273"
+          },
+          {
+            "text": "1",
+            "nta_option_id": "878270219274"
+          }
+        ]
+      },
+      "answer_key": "B",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 2319,
+      "subject": "Physics",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "Two thermodynamical processes are shown in the figure. The molar heat capacity for process A and B are $C_A$ and $C_B$. The molar heat capacity at constant pressure and constant volume are represented by $C_P$ and $C_V$, respectively. Choose the correct statement.",
+        "options": [
+          {
+            "text": "$C_A > C_P > C_V$",
+            "nta_option_id": "5335432829"
+          },
+          {
+            "text": "$C_P > C_V > C_A = C_B$",
+            "nta_option_id": "5335432830"
+          },
+          {
+            "text": "$C_A = 0$ and $C_B = \\infty$",
+            "nta_option_id": "5335432831"
+          },
+          {
+            "text": "$C_B = \\infty, C_A = 0$",
+            "nta_option_id": "5335432832"
+          }
+        ]
+      },
+      "answer_key": "C",
+      "image_urls": [],
+      "has_figure": true
+    },
+    {
+      "source": "jee",
+      "id": 3070,
+      "subject": "Chemistry",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "Relative stability of the contributing structures is :\n\n[Figure: Three resonance structures of propenal labeled (I), (II), and (III). Structure (I) is neutral with a $C=O$ double bond. Structure (II) has a positive charge on the terminal carbon and a negative charge on oxygen. Structure (III) has a negative charge on the terminal carbon and a positive charge on oxygen.]",
+        "options": [
+          {
+            "text": "$(III) > (II) > (I)$",
+            "nta_option_id": "878270220621"
+          },
+          {
+            "text": "$(II) > (I) > (III)$",
+            "nta_option_id": "878270220622"
+          },
+          {
+            "text": "$(I) > (III) > (II)$",
+            "nta_option_id": "878270220623"
+          },
+          {
+            "text": "$(I) > (II) > (III)$",
+            "nta_option_id": "878270220624"
+          }
+        ]
+      },
+      "answer_key": "D",
+      "image_urls": [],
+      "has_figure": true
+    },
+    {
+      "source": "jee",
+      "id": 2879,
+      "subject": "Physics",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "A wire of cross sectional area $A$, modulus of elasticity $2 \\times 10^{11} \\text{ Nm}^{-2}$ and length $2 \\text{ m}$ is stretched between two vertical rigid supports. When a mass of $2 \\text{ kg}$ is suspended at the middle it sags lower from its original position making angle $\\theta = \\frac{1}{100} \\text{ radian}$ on the points of support. The value of $A$ is $\\_\\_\\_\\_\\_\\_ \\times 10^{-4} \\text{ m}^2$ (consider $x \\ll L$). (given : $g = 10 \\text{ m/s}^2$)\\n\\n[Figure: A diagram showing a wire of length $2L$ stretched between two vertical supports. A $2 \\text{ kg}$ mass is suspended from the midpoint, causing the wire to sag by a distance $x$ and form an angle $\\theta$ with the horizontal at each support.]",
+        "options": []
+      },
+      "answer_key": "1",
+      "image_urls": [],
+      "has_figure": true
+    },
+    {
+      "source": "jee",
+      "id": 2443,
+      "subject": "Chemistry",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "IUPAC name of following compound is :\n\n$CH_3 - \\underset{\\underset{NH_2}{|}}{CH} - CH_2 - CN$",
+        "options": [
+          {
+            "text": "3-Aminopropanenitrile",
+            "nta_option_id": "4058593463"
+          },
+          {
+            "text": "3-Aminobutanenitrile",
+            "nta_option_id": "4058593464"
+          },
+          {
+            "text": "2-Aminobutanenitrile",
+            "nta_option_id": "4058593465"
+          },
+          {
+            "text": "2-Aminopentanenitrile",
+            "nta_option_id": "4058593466"
+          }
+        ]
+      },
+      "answer_key": "B",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 1224,
+      "subject": "Maths",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "If $\\frac{dx}{dy} = \\frac{1 + x - y^2}{y}$, $x(1) = 1$, then $5x(2)$ is equal to _________.",
+        "options": []
+      },
+      "answer_key": "5",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 961,
+      "subject": "Physics",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "A stationary particle breaks into two parts of masses $m_A$ and $m_B$ which move with velocities $v_A$ and $v_B$ respectively. The ratio of their kinetic energies $(K_B : K_A)$ is :",
+        "options": [
+          {
+            "text": "$v_B : v_A$",
+            "nta_option_id": "68019156089"
+          },
+          {
+            "text": "$m_B : m_A$",
+            "nta_option_id": "68019156090"
+          },
+          {
+            "text": "$m_B v_B : m_A v_A$",
+            "nta_option_id": "68019156091"
+          },
+          {
+            "text": "$1 : 1$",
+            "nta_option_id": "68019156092"
+          }
+        ]
+      },
+      "answer_key": "A",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 597,
+      "subject": "Maths",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "A line passes through $A (4, -6, -2)$ and $B (16, -2, 4)$. The point $P (a, b, c)$, where $a, b, c$ are non-negative integers, on the line $AB$ lies at a distance of $21$ units, from the point $A$. The distance between the points $P (a, b, c)$ and $Q (4, -12, 3)$ is equal to ________.",
+        "options": []
+      },
+      "answer_key": "22",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 1162,
+      "subject": "Physics",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "Monochromatic light of wavelength $500 \\text{ nm}$ is used in Young's double slit experiment. An interference pattern is obtained on a screen. When one of the slits is covered with a very thin glass plate (refractive index $= 1.5$), the central maximum is shifted to a position previously occupied by the $4^{\\text{th}}$ bright fringe. The thickness of the glass-plate is ______ $\\mu\\text{m}$.",
+        "options": []
+      },
+      "answer_key": "4",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3274,
+      "subject": "Physics",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "A vernier callipers has 20 divisions on the vernier scale, which coincides with $19^{\\text{th}}$ division on the main scale. The least count of the instrument is 0.1 mm. One main scale division is equal to _________ mm.",
+        "options": [
+          {
+            "text": "5",
+            "nta_option_id": "878270219161"
+          },
+          {
+            "text": "2",
+            "nta_option_id": "878270219162"
+          },
+          {
+            "text": "1",
+            "nta_option_id": "878270219163"
+          },
+          {
+            "text": "0.5",
+            "nta_option_id": "878270219164"
+          }
+        ]
+      },
+      "answer_key": "B",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 1055,
+      "subject": "Physics",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "The volume of an ideal gas ($\\gamma = 1.5$) is changed adiabatically from 5 litres to 4 litres. The ratio of initial pressure to final pressure is :",
+        "options": [
+          {
+            "text": "$\\frac{2}{\\sqrt{5}}$",
+            "nta_option_id": "878270220523"
+          },
+          {
+            "text": "$\\frac{8}{5\\sqrt{5}}$",
+            "nta_option_id": "878270220524"
+          },
+          {
+            "text": "$\\frac{4}{5}$",
+            "nta_option_id": "878270220525"
+          },
+          {
+            "text": "$\\frac{16}{25}$",
+            "nta_option_id": "878270220526"
+          }
+        ]
+      },
+      "answer_key": "B",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 430,
+      "subject": "Physics",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "If the total energy transferred to a surface in time $t$ is $6.48 \\times 10^5 \\text{ J}$, then the magnitude of the total momentum delivered to this surface for complete absorption will be:",
+        "options": [
+          {
+            "text": "$2.16 \\times 10^{-3} \\text{ kg m/s}$",
+            "nta_option_id": "4058593373"
+          },
+          {
+            "text": "$4.32 \\times 10^{-3} \\text{ kg m/s}$",
+            "nta_option_id": "4058593374"
+          },
+          {
+            "text": "$1.58 \\times 10^{-3} \\text{ kg m/s}$",
+            "nta_option_id": "4058593375"
+          },
+          {
+            "text": "$2.46 \\times 10^{-3} \\text{ kg m/s}$",
+            "nta_option_id": "4058593376"
+          }
+        ]
+      },
+      "answer_key": "A",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 527,
+      "subject": "Physics",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "A body starts falling freely from height $H$ hits an inclined plane in its path at height $h$. As a result of this perfectly elastic impact, the direction of the velocity of the body becomes horizontal. The value of $\\frac{H}{h}$ for which the body will take the maximum time to reach the ground is ________.",
+        "options": []
+      },
+      "answer_key": "2",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 2590,
+      "subject": "Physics",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "Given below are two statements:\nStatement I: Electromagnetic waves carry energy as they travel through space and this energy is equally shared by the electric and magnetic fields.\nStatement II: When electromagnetic waves strike a surface, a pressure is exerted on the surface.\nIn the light of the above statements, choose the most appropriate answer from the options given below:",
+        "options": [
+          {
+            "text": "Both Statement I and Statement II are correct.",
+            "nta_option_id": "4058593913"
+          },
+          {
+            "text": "Both Statement I and Statement II are incorrect.",
+            "nta_option_id": "4058593914"
+          },
+          {
+            "text": "Statement I is correct but Statement II is incorrect.",
+            "nta_option_id": "4058593915"
+          },
+          {
+            "text": "Statement I is incorrect but Statement II is correct.",
+            "nta_option_id": "4058593916"
+          }
+        ]
+      },
+      "answer_key": "A",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 378,
+      "subject": "Chemistry",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "The total number of molecular orbitals formed from $2s$ and $2p$ atomic orbitals of a diatomic molecule is ________.",
+        "options": []
+      },
+      "answer_key": "8",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 1107,
+      "subject": "Chemistry",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "How many compounds among the following compounds show inductive, mesomeric as well as hyperconjugation effects ?",
+        "options": []
+      },
+      "answer_key": "4",
+      "image_urls": [],
+      "has_figure": true
+    },
+    {
+      "source": "jee",
+      "id": 603,
+      "subject": "Physics",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "A small spherical ball of radius $r$, falling through a viscous medium of negligible density has terminal velocity '$v$'. Another ball of the same mass but of radius $2r$, falling through the same viscous medium will have terminal velocity:",
+        "options": [
+          {
+            "text": "$\\frac{v}{2}$",
+            "nta_option_id": "4058593885"
+          },
+          {
+            "text": "$\\frac{v}{4}$",
+            "nta_option_id": "4058593886"
+          },
+          {
+            "text": "$2v$",
+            "nta_option_id": "4058593887"
+          },
+          {
+            "text": "$4v$",
+            "nta_option_id": "4058593888"
+          }
+        ]
+      },
+      "answer_key": "A",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 2485,
+      "subject": "Maths",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "Let $f : \\mathbb{R} \\rightarrow \\mathbb{R}$ be a function defined by $f(x) = \\frac{4^x}{4^x + 2}$ and $M = \\int_{f(a)}^{f(1-a)} x \\sin^4(x(1-x)) \\, dx, N = \\int_{f(a)}^{f(1-a)} \\sin^4(x(1-x)) \\, dx; a \\neq \\frac{1}{2}$. If $\\alpha M = \\beta N, \\alpha, \\beta \\in \\mathbb{N}$, then the least value of $\\alpha^2 + \\beta^2$ is equal to ______",
+        "options": []
+      },
+      "answer_key": "5",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 923,
+      "subject": "Chemistry",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "Consider the following reactions\n$NiS + HNO_3 + HCl \\rightarrow A + NO + S + H_2O$\n$A + NH_4OH + \\begin{array}{c} H_3C-C=N-OH \\\\ | \\\\ H_3C-C=N-OH \\end{array} \\rightarrow B + NH_4Cl + H_2O$\nThe number of protons that do not involve in hydrogen bonding in the product B is _________.",
+        "options": []
+      },
+      "answer_key": "12",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3563,
+      "subject": "Physics",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "The electric field between the two parallel plates of a capacitor of $1.5\\text{ }\\mu\\text{F}$ capacitance drops to one third of its initial value in $6.6\\text{ }\\mu\\text{s}$ when the plates are connected by a thin wire.\nThe resistance of this wire is ________ $\\Omega$. (Given, $\\log 3 = 1.1$)",
+        "options": []
+      },
+      "answer_key": "4",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3410,
+      "subject": "Chemistry",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "Number of molecules/species from the following having one unpaired electron is ______ .\n$\\text{O}_2, \\text{O}_2^{-1}, \\text{NO}, \\text{CN}^{-1}, \\text{O}_2^{2-}$",
+        "options": []
+      },
+      "answer_key": "2",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3516,
+      "subject": "Maths",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "If the function\n$f(x) = \\begin{cases} \\frac{72^x - 9^x - 8^x + 1}{\\sqrt{2} - \\sqrt{1 + \\cos x}}, & x \\neq 0 \\\\ a \\log_e 2 \\log_e 3, & x = 0 \\end{cases}$\nis continuous at $x = 0$, then the value of $a^2$ is equal to",
+        "options": [
+          {
+            "text": "746",
+            "nta_option_id": "68019154399"
+          },
+          {
+            "text": "968",
+            "nta_option_id": "68019154400"
+          },
+          {
+            "text": "1152",
+            "nta_option_id": "68019154401"
+          },
+          {
+            "text": "1250",
+            "nta_option_id": "68019154402"
+          }
+        ]
+      },
+      "answer_key": "C",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3525,
+      "subject": "Maths",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "Let $\\vec{a} = \\hat{i} + \\hat{j} + \\hat{k}, \\vec{b} = 2\\hat{i} + 4\\hat{j} - 5\\hat{k}$ and $\\vec{c} = x\\hat{i} + 2\\hat{j} + 3\\hat{k}, x \\in \\mathbb{R}$.\nIf $\\vec{d}$ is the unit vector in the direction of $\\vec{b} + \\vec{c}$ such that $\\vec{a} \\cdot \\vec{d} = 1$, then $(\\vec{a} \\times \\vec{b}) \\cdot \\vec{c}$ is equal to",
+        "options": [
+          {
+            "text": "3",
+            "nta_option_id": "68019154435"
+          },
+          {
+            "text": "6",
+            "nta_option_id": "68019154436"
+          },
+          {
+            "text": "9",
+            "nta_option_id": "68019154437"
+          },
+          {
+            "text": "11",
+            "nta_option_id": "68019154438"
+          }
+        ]
+      },
+      "answer_key": "D",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3625,
+      "subject": "Maths",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "The area of the region enclosed by the parabolas $y = x^2 - 5x$ and $y = 7x - x^2$ is _________.",
+        "options": []
+      },
+      "answer_key": "72",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 768,
+      "subject": "Maths",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "If the second, third and fourth terms in the expansion of $(x + y)^n$ are $135, 30$ and $\\frac{10}{3}$, respectively, then $6(n^3 + x^2 + y)$ is equal to ________",
+        "options": []
+      },
+      "answer_key": "806",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 805,
+      "subject": "Physics",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "A wire of resistance $R$ and radius $r$ is stretched till its radius became $r/2$. If new resistance of the stretched wire is $x R$, then value of $x$ is ________.",
+        "options": []
+      },
+      "answer_key": "16",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 2871,
+      "subject": "Physics",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "In finding out refractive index of glass slab the following observations were made through travelling microscope $50 \\text{ vernier scale division} = 49 \\text{ MSD}$; $20 \\text{ divisions on main scale in each cm}$\\nFor mark on paper\\n$\\text{MSR} = 8.45 \\text{ cm}, \\text{VC} = 26$\\nFor mark on paper seen through slab\\n$\\text{MSR} = 7.12 \\text{ cm}, \\text{VC} = 41$\\nFor powder particle on the top surface of the glass slab\\n$\\text{MSR} = 4.05 \\text{ cm}, \\text{VC} = 1$\\n$(\\text{MSR} = \\text{Main Scale Reading}, \\text{VC} = \\text{Vernier Coincidence})$\\nRefractive index of the glass slab is :",
+        "options": [
+          {
+            "text": "1.24",
+            "nta_option_id": null
+          },
+          {
+            "text": "1.42",
+            "nta_option_id": null
+          },
+          {
+            "text": "1.35",
+            "nta_option_id": null
+          },
+          {
+            "text": "1.52",
+            "nta_option_id": null
+          }
+        ]
+      },
+      "answer_key": "878270219758",
+      "image_urls": [],
+      "has_figure": false,
+      "corrupt_key": true
+    },
+    {
+      "source": "jee",
+      "id": 476,
+      "subject": "Chemistry",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "2-chlorobutane + $Cl_2 \rightarrow C_4H_8Cl_2$ (isomers)\n\nTotal number of optically active isomers shown by $C_4H_8Cl_2$, obtained in the above reaction is ______.",
+        "options": []
+      },
+      "answer_key": "3",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3526,
+      "subject": "Maths",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "For $\\lambda > 0$, let $\\theta$ be the angle between the vectors $\\vec{a} = \\hat{i} + \\lambda\\hat{j} - 3\\hat{k}$ and $\\vec{b} = 3\\hat{i} - \\hat{j} + 2\\hat{k}$. If the vectors $\\vec{a} + \\vec{b}$ and $\\vec{a} - \\vec{b}$ are mutually perpendicular, then the value of $(14 \\cos \\theta)^2$ is equal to",
+        "options": [
+          {
+            "text": "25",
+            "nta_option_id": "68019154439"
+          },
+          {
+            "text": "20",
+            "nta_option_id": "68019154440"
+          },
+          {
+            "text": "50",
+            "nta_option_id": "68019154441"
+          },
+          {
+            "text": "40",
+            "nta_option_id": "68019154442"
+          }
+        ]
+      },
+      "answer_key": "A",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 2694,
+      "subject": "Physics",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "A regular polygon of 6 sides is formed by bending a wire of length $4\\pi$ meter. If an electric current of $4\\pi\\sqrt{3}$ A is flowing through the sides of the polygon, the magnetic field at the centre of the polygon would be $x \\times 10^{-7}$ T. The value of $x$ is _________.",
+        "options": []
+      },
+      "answer_key": "72",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 833,
+      "subject": "Chemistry",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "An ideal gas, $\\bar{C}_v = \\frac{5}{2}R$, is expanded adiabatically against a constant pressure of $1$ atm untill it doubles in volume. If the initial temperature and pressure is $298$ K and $5$ atm, respectively then the final temperature is ______ K (nearest integer).\n$[\\bar{C}_v \\text{ is the molar heat capacity at constant volume}]$",
+        "options": []
+      },
+      "answer_key": "274",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3437,
+      "subject": "Maths",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "Three urns A, B and C contain 7 red, 5 black; 5 red, 7 black and 6 red, 6 black balls, respectively. One of the urn is selected at random and a ball is drawn from it. If the ball drawn is black, then the probability that it is drawn from urn A is :",
+        "options": [
+          {
+            "text": "$\\frac{5}{16}$",
+            "nta_option_id": "878270218313"
+          },
+          {
+            "text": "$\\frac{4}{17}$",
+            "nta_option_id": "878270218314"
+          },
+          {
+            "text": "$\\frac{5}{18}$",
+            "nta_option_id": "878270218315"
+          },
+          {
+            "text": "$\\frac{7}{18}$",
+            "nta_option_id": "878270218316"
+          }
+        ]
+      },
+      "answer_key": "C",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 1217,
+      "subject": "Maths",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "Consider 10 observations $x_1, x_2, \\dots, x_{10}$ such that $\\sum_{i=1}^{10} (x_i - \\alpha) = 2$ and $\\sum_{i=1}^{10} (x_i - \\beta)^2 = 40$, where $\\alpha, \\beta$ are positive integers. Let the mean and the variance of the observations be $\\frac{6}{5}$ and $\\frac{84}{25}$ respectively. Then $\\frac{\\beta}{\\alpha}$ is equal to :",
+        "options": [
+          {
+            "text": "1",
+            "nta_option_id": "9561772623"
+          },
+          {
+            "text": "2",
+            "nta_option_id": "9561772624"
+          },
+          {
+            "text": "$\\frac{3}{2}$",
+            "nta_option_id": "9561772625"
+          },
+          {
+            "text": "$\\frac{5}{2}$",
+            "nta_option_id": "9561772626"
+          }
+        ]
+      },
+      "answer_key": "B",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 1913,
+      "subject": "Chemistry",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "2/3^{rd}$ and $4/5^{th}$\".\nActually, it's a vertical fraction.\nOkay, `\\frac{2}{3}^{rd}` it is.\n\nOne more check: \"log10(3)\" - the 10 is a subscript.\nYes.\n\nFinal JSON:\n{\n  \"raw_text\": \"Consider the two different first order reactions given below\\n$A + B \\\\rightarrow C$ (Reaction 1)\\n$P \\\\rightarrow Q$ (Reaction 2)\\nThe ratio of the half life of Reaction 1 : Reaction 2 is $5 : 2$. If $t_1$ and $t_2$ represent the time taken to complete $\\\\frac{2}{3}^{rd",
+        "options": []
+      },
+      "answer_key": "17",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3489,
+      "subject": "Chemistry",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "If an iron (III) complex with the formula $\\left[\\text{Fe}(\\text{NH}_3)_x(\\text{CN})_y\\right]^-$ has no electron in its $\\text{e}_g$ orbital, then the value of $x + y$ is",
+        "options": [
+          {
+            "text": "3",
+            "nta_option_id": "68019154591"
+          },
+          {
+            "text": "4",
+            "nta_option_id": "68019154592"
+          },
+          {
+            "text": "5",
+            "nta_option_id": "68019154593"
+          },
+          {
+            "text": "6",
+            "nta_option_id": "68019154594"
+          }
+        ]
+      },
+      "answer_key": "D",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 352,
+      "subject": "Physics",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "In a closed organ pipe, the frequency of fundamental note is $30\\text{ Hz}$. A certain amount of water is now poured in the organ pipe so that the fundamental frequency is increased to $110\\text{ Hz}$. If the organ pipe has a cross-sectional area of $2\\text{ cm}^2$, the amount of water poured in the organ tube is ______ g. (Take speed of sound in air is $330\\text{ m/s}$)",
+        "options": []
+      },
+      "answer_key": "400",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3361,
+      "subject": "Physics",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "A wooden block, initially at rest on the ground, is pushed by a force which increases linearly with time $t$. Which of the following curve best describes acceleration of the block with time :",
+        "options": [
+          {
+            "text": "Graph showing acceleration 'a' increasing non-linearly with time 't' (concave up curve starting from origin).",
+            "nta_option_id": "878270218339"
+          },
+          {
+            "text": "Graph showing acceleration 'a' increasing linearly with time 't' (straight line passing through origin).",
+            "nta_option_id": "878270218340"
+          },
+          {
+            "text": "Graph showing acceleration 'a' increasing linearly with time 't' (straight line starting from a positive value on the a-axis).",
+            "nta_option_id": "878270218341"
+          },
+          {
+            "text": "Graph showing constant positive acceleration 'a' over time 't' (horizontal line).",
+            "nta_option_id": "878270218342"
+          }
+        ]
+      },
+      "answer_key": "B",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3364,
+      "subject": "Physics",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "A metal wire of uniform mass density having length $L$ and mass $M$ is bent to form a semicircular arc and a particle of mass $m$ is placed at the centre of the arc. The gravitational force on the particle by the wire is :",
+        "options": [
+          {
+            "text": "$0$",
+            "nta_option_id": "878270218351"
+          },
+          {
+            "text": "$\\frac{GMm\\pi^2}{L^2}$",
+            "nta_option_id": "878270218352"
+          },
+          {
+            "text": "$\\frac{2GMm\\pi}{L^2}$",
+            "nta_option_id": "878270218353"
+          },
+          {
+            "text": "$\\frac{GMm\\pi}{2L^2}$",
+            "nta_option_id": "878270218354"
+          }
+        ]
+      },
+      "answer_key": "C",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3343,
+      "subject": "Maths",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "Let the circle $C_1 : x^2 + y^2 - 2(x + y) + 1 = 0$ and $C_2$ be a circle having centre at $(-1, 0)$ and radius 2. If the line of the common chord of $C_1$ and $C_2$ intersects the $y$-axis at the point P, then the square of the distance of P from the centre of $C_1$ is :",
+        "options": [
+          {
+            "text": "1",
+            "nta_option_id": "878270219107"
+          },
+          {
+            "text": "2",
+            "nta_option_id": "878270219108"
+          },
+          {
+            "text": "4",
+            "nta_option_id": "878270219109"
+          },
+          {
+            "text": "6",
+            "nta_option_id": "878270219110"
+          }
+        ]
+      },
+      "answer_key": "B",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 1053,
+      "subject": "Physics",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "A light unstretchable string passing over a smooth light pulley connects two blocks of masses $m_1$ and $m_2$. If the acceleration of the system is $\\frac{g}{8}$, then the ratio of the masses $\\frac{m_2}{m_1}$ is :",
+        "options": [
+          {
+            "text": "$8 : 1$",
+            "nta_option_id": "878270220503"
+          },
+          {
+            "text": "$9 : 7$",
+            "nta_option_id": "878270220504"
+          },
+          {
+            "text": "$4 : 3$",
+            "nta_option_id": "878270220505"
+          },
+          {
+            "text": "$5 : 3$",
+            "nta_option_id": "878270220506"
+          }
+        ]
+      },
+      "answer_key": "B",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3385,
+      "subject": "Physics",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "The magnetic field existing in a region is given by $\\vec{B} = 0.2 (1 + 2x)\\hat{k} \\text{ T}$. A square loop of edge $50 \\text{ cm}$ carrying $0.5 \\text{ A}$ current is placed in $x-y$ plane with its edges parallel to the $x-y$ axes, as shown in figure. The magnitude of the net magnetic force experienced by the loop is _________ mN.",
+        "options": []
+      },
+      "answer_key": "50",
+      "image_urls": [],
+      "has_figure": true
+    },
+    {
+      "source": "jee",
+      "id": 3393,
+      "subject": "Chemistry",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "What pressure (bar) of $\\text{H}_2$ would be required to make emf of hydrogen electrode zero in pure water at $25^{\\circ}\\text{C}$ ?",
+        "options": [
+          {
+            "text": "$10^{-7}$",
+            "nta_option_id": "878270218437"
+          },
+          {
+            "text": "$10^{-14}$",
+            "nta_option_id": "878270218438"
+          },
+          {
+            "text": "$1$",
+            "nta_option_id": "878270218439"
+          },
+          {
+            "text": "$0.5$",
+            "nta_option_id": "878270218440"
+          }
+        ]
+      },
+      "answer_key": "B",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 2295,
+      "subject": "Maths",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "Let $g : R \\rightarrow R$ be a non constant twice differentiable function such that $g'\\left(\\frac{1}{2}\\right) = g'\\left(\\frac{3}{2}\\right)$. If a real valued function $f$ is defined as $f(x) = \\frac{1}{2}[g(x) + g(2 - x)]$, then",
+        "options": [
+          {
+            "text": "$f''(x) = 0$ for atleast two $x$ in $(0, 2)$ ",
+            "nta_option_id": "5335432743"
+          },
+          {
+            "text": "$f''(x) = 0$ for exactly one $x$ in $(0, 1)$ ",
+            "nta_option_id": "5335432744"
+          },
+          {
+            "text": "$f''(x) = 0$ for no $x$ in $(0, 1)$ ",
+            "nta_option_id": "5335432745"
+          },
+          {
+            "text": "$f'\\left(\\frac{3}{2}\\right) + f'\\left(\\frac{1}{2}\\right) = 1$",
+            "nta_option_id": "5335432746"
+          }
+        ]
+      },
+      "answer_key": "A",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 959,
+      "subject": "Maths",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "In an expression $a \\times 10^b$:",
+        "options": [
+          {
+            "text": "$a$ is order of magnitude for $b \\le 5$",
+            "nta_option_id": "68019156081"
+          },
+          {
+            "text": "$b$ is order of magnitude for $5 < a \\le 10$",
+            "nta_option_id": "68019156082"
+          },
+          {
+            "text": "$b$ is order of magnitude for $a \\le 5$",
+            "nta_option_id": "68019156083"
+          },
+          {
+            "text": "$b$ is order of magnitude for $a \\ge 5$",
+            "nta_option_id": "68019156084"
+          }
+        ]
+      },
+      "answer_key": "C",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3348,
+      "subject": "Maths",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "If $y(\\theta) = \\frac{2\\cos\\theta + \\cos 2\\theta}{\\cos 3\\theta + 4\\cos 2\\theta + 5\\cos\\theta + 2}$, then at $\\theta = \\frac{\\pi}{2}, y'' + y' + y$ is equal to :",
+        "options": [
+          {
+            "text": "$\\frac{1}{2}$",
+            "nta_option_id": "878270219127"
+          },
+          {
+            "text": "1",
+            "nta_option_id": "878270219128"
+          },
+          {
+            "text": "$\\frac{3}{2}$",
+            "nta_option_id": "878270219129"
+          },
+          {
+            "text": "2",
+            "nta_option_id": "878270219130"
+          }
+        ]
+      },
+      "answer_key": "D",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 1263,
+      "subject": "Chemistry",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "The transition metal having highest $3^{\\text{rd}}$ ionisation enthalpy is :",
+        "options": [
+          {
+            "text": "V",
+            "nta_option_id": "9561772759"
+          },
+          {
+            "text": "Cr",
+            "nta_option_id": "9561772760"
+          },
+          {
+            "text": "Mn",
+            "nta_option_id": "9561772761"
+          },
+          {
+            "text": "Fe",
+            "nta_option_id": "9561772762"
+          }
+        ]
+      },
+      "answer_key": "C",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 2176,
+      "subject": "Chemistry",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "Total number of stereo isomers possible for the given structure :\n\n[Figure: A chemical structure of a branched alkene with two double bonds and three bromine atoms.]",
+        "options": [
+          {
+            "text": "8",
+            "nta_option_id": "68019157041"
+          },
+          {
+            "text": "3",
+            "nta_option_id": "68019157042"
+          },
+          {
+            "text": "2",
+            "nta_option_id": "68019157043"
+          },
+          {
+            "text": "4",
+            "nta_option_id": "68019157044"
+          }
+        ]
+      },
+      "answer_key": "A",
+      "image_urls": [],
+      "has_figure": true
+    },
+    {
+      "source": "jee",
+      "id": 559,
+      "subject": "Chemistry",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "The ionization energy of sodium in $\\text{kJ mol}^{-1}$, if electromagnetic radiation of wavelength $242\\text{ nm}$ is just sufficient to ionize sodium atom is ______.",
+        "options": []
+      },
+      "answer_key": "494",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 2859,
+      "subject": "Physics",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "Match List-I with List-II :\\n\\nList-I\\n$Y$ vs $X$\\n(A) $Y = \\text{magnetic susceptibility}$\\n$X = \\text{magnetising field}$\\n(B) $Y = \\text{magnetic field}$\\n$X = \\text{distance from centre of a current carrying wire for } x < a$\\n(where $a = \\text{radius of wire}$)\\n(C) $Y = \\text{magnetic field}$\\n$X = \\text{distance from centre of a current carrying wire for } x > a$\\n(where $a = \\text{radius of wire}$)\\n(D) $Y = \\text{magnetic field inside solenoid}$\\n$X = \\text{distance from centre}$\\n\\nList-II\\nShape of Graph\\n(I) [Figure: A graph of $Y$ vs $X$ showing a straight line passing through the origin with a positive slope.]\\n(II) [Figure: A graph of $Y$ vs $X$ showing a horizontal line that curves downwards at the right end.]\\n(III) [Figure: A graph of $Y$ vs $X$ showing a horizontal straight line.]\\n(IV) [Figure: A graph of $Y$ vs $X$ showing a curve that decreases as $X$ increases, resembling a rectangular hyperbola.]\\n\\nChoose the correct answer from the options given below :",
+        "options": []
+      },
+      "answer_key": "878270219698",
+      "image_urls": [],
+      "has_figure": false,
+      "corrupt_key": true
+    },
+    {
+      "source": "jee",
+      "id": 3505,
+      "subject": "Chemistry",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "From $6.55\\text{ g}$ of aniline, the maximum amount of acetanilide that can be prepared will be ________ $\\times 10^{-1}\\text{ g}$.",
+        "options": []
+      },
+      "answer_key": "95",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3506,
+      "subject": "Chemistry",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "The total number of 'sigma' and 'Pi' bonds in 2-oxohex-4-ynoic acid is ________.",
+        "options": []
+      },
+      "answer_key": "18",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3353,
+      "subject": "Maths",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "If $f(t) = \\int_0^{\\pi} \\frac{2x \\, dx}{1 - \\cos^2 t \\sin^2 x}$, $0 < t < \\pi$, then the value of $\\int_0^{\\frac{\\pi}{2}} \\frac{\\pi^2 \\, dt}{f(t)}$ equals _________.",
+        "options": []
+      },
+      "answer_key": "1",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 874,
+      "subject": "Physics",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "Pressure inside a soap bubble is greater than the pressure outside by an amount :\n(given : $R$ = Radius of bubble, $S$ = Surface tension of bubble)",
+        "options": [
+          {
+            "text": "$\\frac{2S}{R}$",
+            "nta_option_id": "878270219709"
+          },
+          {
+            "text": "$\\frac{4S}{R}$",
+            "nta_option_id": "878270219710"
+          },
+          {
+            "text": "$\\frac{S}{R}$",
+            "nta_option_id": "878270219711"
+          },
+          {
+            "text": "$\\frac{4R}{S}$",
+            "nta_option_id": "878270219712"
+          }
+        ]
+      },
+      "answer_key": "B",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 1059,
+      "subject": "Physics",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "Given below are two statements :\nStatement (I) : When currents vary with time, Newton's third law is valid only if momentum carried by the electromagnetic field is taken into account.\nStatement (II) : Ampere's circuital law does not depend on Biot-Savart's law.\nIn the light of the above statements, choose the correct answer from the options given below :",
+        "options": [
+          {
+            "text": "Both Statement I and Statement II are true",
+            "nta_option_id": "878270220535"
+          },
+          {
+            "text": "Both Statement I and Statement II are false",
+            "nta_option_id": "878270220536"
+          },
+          {
+            "text": "Statement I is true but Statement II is false",
+            "nta_option_id": "878270220537"
+          },
+          {
+            "text": "Statement I is false but Statement II is true",
+            "nta_option_id": "878270220538"
+          }
+        ]
+      },
+      "answer_key": "C",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 1284,
+      "subject": "Chemistry",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "Total number of isomeric compounds (including stereoisomers) formed by monochlorination of 2-methylbutane is ________.",
+        "options": []
+      },
+      "answer_key": "6",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 1137,
+      "subject": "Maths",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "Let the inverse trigonometric functions take principal values. The number of real solutions of the equation $2 \\sin^{-1} x + 3 \\cos^{-1} x = \\frac{2\\pi}{5}$ is ________.",
+        "options": []
+      },
+      "answer_key": "0",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 404,
+      "subject": "Maths",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "Let $\\vec{a}$ and $\\vec{b}$ be two vectors such that $|\\vec{b}| = 1$ and $|\\vec{b} \\times \\vec{a}| = 2$. Then $|(\\vec{b} \\times \\vec{a}) - \\vec{b}|^2$ is equal to",
+        "options": [
+          {
+            "text": "1",
+            "nta_option_id": "4058593299"
+          },
+          {
+            "text": "3",
+            "nta_option_id": "4058593300"
+          },
+          {
+            "text": "4",
+            "nta_option_id": "4058593301"
+          },
+          {
+            "text": "5",
+            "nta_option_id": "4058593302"
+          }
+        ]
+      },
+      "answer_key": "D",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 2560,
+      "subject": "Maths",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "The temperature $T(t)$ of a body at time $t = 0$ is $160^\\circ\\text{ F}$ and it decreases continuously as per the differential equation $\\frac{dT}{dt} = -K(T - 80)$, where $K$ is a positive constant. If $T(15) = 120^\\circ\\text{ F}$, then $T(45)$ is equal to",
+        "options": [
+          {
+            "text": "$80^\\circ\\text{ F}$",
+            "nta_option_id": null
+          },
+          {
+            "text": "$85^\\circ\\text{ F}$",
+            "nta_option_id": null
+          },
+          {
+            "text": "$90^\\circ\\text{ F}$",
+            "nta_option_id": null
+          },
+          {
+            "text": "$95^\\circ\\text{ F}$",
+            "nta_option_id": null
+          }
+        ]
+      },
+      "answer_key": "4058593821",
+      "image_urls": [],
+      "has_figure": false,
+      "corrupt_key": true
+    },
+    {
+      "source": "jee",
+      "id": 2251,
+      "subject": "Physics",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "The charge accumulated on the capacitor connected in the following circuit is ______ $\\mu\\text{C}$.\n(Given $C = 150\\text{ }\\mu\\text{F}$)\n\n[Figure: A circuit diagram showing a $10\\text{ V}$ battery connected to a bridge network of four resistors. The left branch has $R_1 = 1\\text{ }\\Omega$ and $R_2 = 2\\text{ }\\Omega$ in series, and the right branch has $R_3 = 6\\text{ }\\Omega$ and $R_4 = 4\\text{ }\\Omega$ in series. A capacitor $C$ is connected between node $A$ (the junction of $R_1$ and $R_2$) and node $B$ (the junction of $R_3$ and $R_4$).]",
+        "options": []
+      },
+      "answer_key": "400",
+      "image_urls": [],
+      "has_figure": true
+    },
+    {
+      "source": "jee",
+      "id": 986,
+      "subject": "Physics",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "In an alpha particle scattering experiment distance of closest approach for the $\\alpha$ particle is $4.5 \\times 10^{-14}\\text{m}$. If target nucleus has atomic number $80$, then maximum velocity of $\\alpha$- particle is ______ $\\times 10^5 \\text{ m/s}$ approximately.\n$(\\frac{1}{4\\pi \\epsilon_0} = 9 \\times 10^9 \\text{ SI unit, mass of } \\alpha \\text{ particle} = 6.72 \\times 10^{-27} \\text{ kg})$",
+        "options": []
+      },
+      "answer_key": "156",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 2788,
+      "subject": "Physics",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "A circular coil having $200$ turns, $2.5 \\times 10^{-4} \\text{ m}^2$ area and carrying $100 \\text{ \\mu A}$ current is placed in a uniform magnetic field of $1\\text{T}$. Initially the magnetic dipole moment $(\\vec{M})$ was directed along $\\vec{B}$. Amount of work, required to rotate the coil through $90^\\circ$ from its initial orientation such that $\\vec{M}$ becomes perpendicular to $\\vec{B}$, is ________ $\\mu\\text{J}$.",
+        "options": []
+      },
+      "answer_key": "5",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3209,
+      "subject": "Physics",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "Match List - I with List - II.\n\nList - I (Number)\n(A) $1001$\n(B) $010.1$\n(C) $100.100$\n(D) $0.0010010$\n\nList - II (Significant figure)\n(I) $3$\n(II) $4$\n(III) $5$\n(IV) $6$\n\nChoose the correct answer from the options given below :",
+        "options": [
+          {
+            "text": "(A)-(I), (B)-(II), (C)-(III), (D)-(IV)",
+            "nta_option_id": "9561772641"
+          },
+          {
+            "text": "(A)-(II), (B)-(I), (C)-(IV), (D)-(III)",
+            "nta_option_id": "9561772642"
+          },
+          {
+            "text": "(A)-(III), (B)-(IV), (C)-(II), (D)-(I)",
+            "nta_option_id": "9561772643"
+          },
+          {
+            "text": "(A)-(IV), (B)-(III), (C)-(I), (D)-(II)",
+            "nta_option_id": "9561772644"
+          }
+        ]
+      },
+      "answer_key": "B",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3394,
+      "subject": "Chemistry",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "The correct order of first ionization enthalpy values of the following elements is :\n(A) O\n(B) N\n(C) Be\n(D) F\n(E) B\nChoose the correct answer from the options given below :",
+        "options": [
+          {
+            "text": "A < B < D < C < E",
+            "nta_option_id": "878270218441"
+          },
+          {
+            "text": "B < D < C < E < A",
+            "nta_option_id": "878270218442"
+          },
+          {
+            "text": "E < C < A < B < D",
+            "nta_option_id": "878270218443"
+          },
+          {
+            "text": "C < E < A < B < D",
+            "nta_option_id": "878270218444"
+          }
+        ]
+      },
+      "answer_key": "C",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3305,
+      "subject": "Chemistry",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "Match List - I with List - II.\nList - I\n(A) $\\text{ICl}$\n(B) $\\text{ICl}_3$\n(C) $\\text{ClF}_5$\n(D) $\\text{IF}_7$\nList - II\n(I) T - shape\n(II) Square pyramidal\n(III) Pentagonal bipyramidal\n(IV) Linear\nChoose the correct answer from the options given below :",
+        "options": [
+          {
+            "text": "(A)-(I), (B)-(III), (C)-(II), (D)-(IV)",
+            "nta_option_id": "878270219255"
+          },
+          {
+            "text": "(A)-(I), (B)-(IV), (C)-(III), (D)-(II)",
+            "nta_option_id": "878270219256"
+          },
+          {
+            "text": "(A)-(IV), (B)-(III), (C)-(II), (D)-(I)",
+            "nta_option_id": "878270219257"
+          },
+          {
+            "text": "(A)-(IV), (B)-(I), (C)-(II), (D)-(III)",
+            "nta_option_id": "878270219258"
+          }
+        ]
+      },
+      "answer_key": "D",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3376,
+      "subject": "Physics",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "The value of net resistance of the network as shown in the given figure is :",
+        "options": [
+          {
+            "text": "$(30/11) \\ \\Omega$",
+            "nta_option_id": "878270218399"
+          },
+          {
+            "text": "$(15/4) \\ \\Omega$",
+            "nta_option_id": "878270218400"
+          },
+          {
+            "text": "$(5/2) \\ \\Omega$",
+            "nta_option_id": "878270218401"
+          },
+          {
+            "text": "$6 \\ \\Omega$",
+            "nta_option_id": "878270218402"
+          }
+        ]
+      },
+      "answer_key": "D",
+      "image_urls": [],
+      "has_figure": true
+    },
+    {
+      "source": "jee",
+      "id": 1099,
+      "subject": "Chemistry",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "Molarity (M) of an aqueous solution containing $x$ g of anhyd. $\\text{CuSO}_4$ in $500\\text{ mL}$ solution at $32^\\circ\\text{C}$ is $2 \\times 10^{-1}\\text{ M}$. Its molality will be ______ $\\times 10^{-3}\\text{ m}$. (nearest integer).\n[Given density of the solution $= 1.25\\text{ g/mL}$]",
+        "options": []
+      },
+      "answer_key": "164",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 786,
+      "subject": "Physics",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "The specific heat at constant pressure of a real gas obeying $PV^2 = RT$ equation is:",
+        "options": [
+          {
+            "text": "$C_V + \\frac{R}{2V}$",
+            "nta_option_id": "68019155291"
+          },
+          {
+            "text": "$C_V + R$",
+            "nta_option_id": "68019155292"
+          },
+          {
+            "text": "$R$",
+            "nta_option_id": "68019155293"
+          },
+          {
+            "text": "$\\frac{R}{3} + C_V$",
+            "nta_option_id": "68019155294"
+          }
+        ]
+      },
+      "answer_key": "A",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3494,
+      "subject": "Chemistry",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "Find out the major product formed from the following reaction. $[\\text{Me} : -\\text{CH}_3]$",
+        "options": [
+          {
+            "text": "Image of chemical structure",
+            "nta_option_id": "68019154611"
+          },
+          {
+            "text": "Image of chemical structure",
+            "nta_option_id": "68019154612"
+          },
+          {
+            "text": "Image of chemical structure",
+            "nta_option_id": "68019154613"
+          },
+          {
+            "text": "Image of chemical structure",
+            "nta_option_id": "68019154614"
+          }
+        ]
+      },
+      "answer_key": "B",
+      "image_urls": [],
+      "has_figure": true
+    },
+    {
+      "source": "jee",
+      "id": 1139,
+      "subject": "Physics",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "A nucleus at rest disintegrates into two smaller nuclei with their masses in the ratio of $2:1$. After disintegration they will move :",
+        "options": [
+          {
+            "text": "in the same direction with same speed.",
+            "nta_option_id": "68019156899"
+          },
+          {
+            "text": "in opposite directions with speed in the ratio of $1:2$ respectively.",
+            "nta_option_id": "68019156900"
+          },
+          {
+            "text": "in opposite directions with speed in the ratio of $2:1$ respectively.",
+            "nta_option_id": "68019156901"
+          },
+          {
+            "text": "in opposite directions with the same speed.",
+            "nta_option_id": "68019156902"
+          }
+        ]
+      },
+      "answer_key": "B",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 1269,
+      "subject": "Chemistry",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "Lassaigne's test is used for detection of :",
+        "options": [
+          {
+            "text": "Nitrogen and Sulphur only",
+            "nta_option_id": "9561772775"
+          },
+          {
+            "text": "Phosphorous and halogens only",
+            "nta_option_id": "9561772776"
+          },
+          {
+            "text": "Nitrogen, Sulphur and Phosphorous only",
+            "nta_option_id": "9561772777"
+          },
+          {
+            "text": "Nitrogen, Sulphur, phosphorous and halogens",
+            "nta_option_id": "9561772778"
+          }
+        ]
+      },
+      "answer_key": "D",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 841,
+      "subject": "Maths",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "If $A$ is a square matrix of order $3$ such that $\\det(A) = 3$ and $\\det(\\text{adj}(-4 \\text{ adj}(-3 \\text{ adj}(3 \\text{ adj}((2A)^{-1}))))) = 2^m 3^n$, then $m + 2n$ is equal to :",
+        "options": [
+          {
+            "text": "2",
+            "nta_option_id": "878270219603"
+          },
+          {
+            "text": "4",
+            "nta_option_id": "878270219604"
+          },
+          {
+            "text": "3",
+            "nta_option_id": "878270219605"
+          },
+          {
+            "text": "6",
+            "nta_option_id": "878270219606"
+          }
+        ]
+      },
+      "answer_key": "B",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 386,
+      "subject": "Chemistry",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "The compound formed by the reaction of ethanal with semicarbazide contains ________ number of nitrogen atoms.",
+        "options": []
+      },
+      "answer_key": "3",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 2699,
+      "subject": "Physics",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "A rectangular loop of sides $12\\text{ cm}$ and $5\\text{ cm}$, with its sides parallel to the $x$-axis and $y$-axis respectively, moves with a velocity of $5\\text{ cm/s}$ in the positive $x$ axis direction, in a space containing a variable magnetic field in the positive $z$ direction. The field has a gradient of $10^{-3}\\text{ T/cm}$ along the negative $x$ direction and it is decreasing with time at the rate of $10^{-3}\\text{ T/s}$. If the resistance of the loop is $6\\text{ m}\\Omega$, the power dissipated by the loop as heat is $\\text{\\textunderscore\\textunderscore\\textunderscore\\textunderscore\\textunderscore\\textunderscore} \\times 10^{-9}\\text{ W}$.",
+        "options": []
+      },
+      "answer_key": "216",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 2601,
+      "subject": "Physics",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "A body of mass '$m$' is projected with a speed '$u$' making an angle of $45^\\circ$ with the ground. The angular momentum of the body about the point of projection, at the highest point is expressed as $\\frac{\\sqrt{2}mu^3}{Xg}$. The value of '$X$' is _______.",
+        "options": []
+      },
+      "answer_key": "8",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3065,
+      "subject": "Chemistry",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "The molar conductivity for electrolytes A and B are plotted against $C^{1/2}$ as shown below. Electrolytes A and B respectively are :\\n\\n[Figure: A graph of molar conductivity $\\Lambda_m$ (S cm$^2$ mol$^{-1}$) versus the square root of concentration $C^{1/2}$ (mol L$^{-1}$)$^{1/2}$. Curve A shows a steep increase in $\\Lambda_m$ at low concentrations, while curve B shows a linear decrease in $\\Lambda_m$ with increasing $C^{1/2}$.]\\n\\nA B",
+        "options": [
+          {
+            "text": "weak electrolyte strong electrolyte",
+            "nta_option_id": null
+          },
+          {
+            "text": "strong electrolyte weak electrolyte",
+            "nta_option_id": null
+          },
+          {
+            "text": "weak electrolyte weak electrolyte",
+            "nta_option_id": null
+          },
+          {
+            "text": "strong electrolyte strong electrolyte",
+            "nta_option_id": null
+          }
+        ]
+      },
+      "answer_key": "878270220593",
+      "image_urls": [],
+      "has_figure": true,
+      "corrupt_key": true
+    },
+    {
+      "source": "jee",
+      "id": 384,
+      "subject": "Chemistry",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "The rate of First order reaction is $0.04\\text{ mol L}^{-1}\\text{ s}^{-1}$ at $10$ minutes and $0.03\\text{ mol L}^{-1}\\text{ s}^{-1}$ at $20$ minutes after initiation. Half life of the reaction is ______ minutes. (Given $\\log 2 = 0.3010, \\log 3 = 0.4771$)",
+        "options": []
+      },
+      "answer_key": "24",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3333,
+      "subject": "Maths",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "Let $\\alpha\\beta \\neq 0$ and $A = \\begin{bmatrix} \\beta & \\alpha & 3 \\\\ \\alpha & \\alpha & \\beta \\\\ -\\beta & \\alpha & 2\\alpha \\end{bmatrix}$. If $B = \\begin{bmatrix} 3\\alpha & -9 & 3\\alpha \\\\ -\\alpha & 7 & -2\\alpha \\\\ -2\\alpha & 5 & -2\\beta \\end{bmatrix}$ is the matrix of cofactors of the elements of $A$, then $\\det(AB)$ is equal to :",
+        "options": [
+          {
+            "text": "125",
+            "nta_option_id": "878270219067"
+          },
+          {
+            "text": "64",
+            "nta_option_id": "878270219068"
+          },
+          {
+            "text": "216",
+            "nta_option_id": "878270219069"
+          },
+          {
+            "text": "343",
+            "nta_option_id": "878270219070"
+          }
+        ]
+      },
+      "answer_key": "C",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3292,
+      "subject": "Physics",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "A hydraulic press containing water has two arms with diameters as mentioned in the figure. A force of $10 \\text{ N}$ is applied on the surface of water in the thinner arm. The force required to be applied on the surface of water in the thicker arm to maintain equilibrium of water is _________ $\\text{N}$.",
+        "options": []
+      },
+      "answer_key": "1000",
+      "image_urls": [],
+      "has_figure": true
+    },
+    {
+      "source": "jee",
+      "id": 725,
+      "subject": "Chemistry",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "Given below are two statements : one is labelled as Assertion (A) and the other is labelled as Reason (R).\nAssertion (A) : $PH_3$ has lower boiling point than $NH_3$.\nReason (R) : In liquid state $NH_3$ molecules are associated through vander Waal's forces, but $PH_3$ molecules are associated through hydrogen bonding.\nIn the light of the above statements, choose the most appropriate answer from the options given below :",
+        "options": [
+          {
+            "text": "Both (A) and (R) are correct and (R) is the correct explanation of (A)",
+            "nta_option_id": "9561772211"
+          },
+          {
+            "text": "Both (A) and (R) are correct but (R) is not the correct explanation of (A)",
+            "nta_option_id": "9561772212"
+          },
+          {
+            "text": "(A) is correct but (R) is not correct",
+            "nta_option_id": "9561772213"
+          },
+          {
+            "text": "(A) is not correct but (R) is correct",
+            "nta_option_id": "9561772214"
+          }
+        ]
+      },
+      "answer_key": "C",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3614,
+      "subject": "Maths",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "If the line $\\frac{2-x}{3} = \\frac{3y-2}{4\\lambda+1} = 4-z$ makes a right angle with the line $\\frac{x+3}{3\\mu} = \\frac{1-2y}{6} = \\frac{5-z}{7}$, then $4\\lambda + 9\\mu$ is equal to :",
+        "options": [
+          {
+            "text": "4",
+            "nta_option_id": "878270218841"
+          },
+          {
+            "text": "5",
+            "nta_option_id": "878270218842"
+          },
+          {
+            "text": "6",
+            "nta_option_id": "878270218843"
+          },
+          {
+            "text": "13",
+            "nta_option_id": "878270218844"
+          }
+        ]
+      },
+      "answer_key": "C",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 555,
+      "subject": "Chemistry",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "Given below are two statements: One is labelled as Assertion A and the other is labelled as Reason R:\nAssertion A: $pK_a$ value of phenol is $10.0$ while that of ethanol is $15.9$.\nReason R: Ethanol is stronger acid than phenol.\nIn the light of the above statements, choose the correct answer from the options given below:",
+        "options": [
+          {
+            "text": "Both A and R are true and R is the correct explanation of A.",
+            "nta_option_id": "4058593745"
+          },
+          {
+            "text": "Both A and R are true but R is NOT the correct explanation of A.",
+            "nta_option_id": "4058593746"
+          },
+          {
+            "text": "A is true but R is false.",
+            "nta_option_id": "4058593747"
+          },
+          {
+            "text": "A is false but R is true.",
+            "nta_option_id": "4058593748"
+          }
+        ]
+      },
+      "answer_key": "C",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 1077,
+      "subject": "Physics",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "A star has 100% helium composition. It starts to convert three $^4\\text{He}$ into one $^{12}\\text{C}$ via triple alpha process as $^4\\text{He} + ^4\\text{He} + ^4\\text{He} \\rightarrow ^{12}\\text{C} + Q$. The mass of the star is $2.0 \\times 10^{32}\\text{ kg}$ and it generates energy at the rate of $5.808 \\times 10^{30}\\text{ W}$. The rate of converting these $^4\\text{He}$ to $^{12}\\text{C}$ is $n \\times 10^{42}\\text{ s}^{-1}$, where $n$ is ________\n\n[ Take, mass of $^4\\text{He} = 4.0026\\text{ u}$, mass of $^{12}\\text{C} = 12\\text{ u}$ ]",
+        "options": []
+      },
+      "answer_key": "5",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 654,
+      "subject": "Chemistry",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "$r = k [A]$ for a reaction, $50\\%$ of $A$ is decomposed in $120$ minutes. The time taken for $90\\%$ decomposition of $A$ is _______ minutes.",
+        "options": []
+      },
+      "answer_key": "399",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 411,
+      "subject": "Maths",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "In an examination of Mathematics paper, there are 20 questions of equal marks and the question paper is divided into three sections : $A$, $B$ and $C$. A student is required to attempt total 15 questions taking at least 4 questions from each section. If section $A$ has 8 questions, section $B$ has 6 questions and section $C$ has 6 questions, then the total number of ways a student can select 15 questions is _______.",
+        "options": []
+      },
+      "answer_key": "11376",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 925,
+      "subject": "Chemistry",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "An amine (X) is prepared by ammonolysis of benzyl chloride. On adding p-toluenesulphonyl chloride to it the solution remains clear. Molar mass of the amine (X) formed is _______ $\\text{g mol}^{-1}$.\n(Given molar mass in $\\text{gmol}^{-1}$ $\\text{C} : 12, \\text{H} : 1, \\text{O} : 16, \\text{N} : 14$)",
+        "options": []
+      },
+      "answer_key": "287",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 864,
+      "subject": "Maths",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "Let $[t]$ denote the largest integer less than or equal to $t$. If $\\int_{0}^{3} \\left( [x^2] + \\left[ \\frac{x^2}{2} \\right] \\right) dx = a + b\\sqrt{2} - \\sqrt{3} - \\sqrt{5} + c\\sqrt{6} - \\sqrt{7}$, where $a, b, c \\in Z$, then $a + b + c$ is equal to",
+        "options": []
+      },
+      "answer_key": "23",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3612,
+      "subject": "Maths",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "Let two straight lines drawn from the origin O intersect the line $3x + 4y = 12$ at the points P and Q such that $\\Delta OPQ$ is an isosceles triangle and $\\angle POQ = 90^\\circ$. If $l = OP^2 + PQ^2 + QO^2$, then the greatest integer less than or equal to $l$ is :",
+        "options": [
+          {
+            "text": "48",
+            "nta_option_id": "878270218833"
+          },
+          {
+            "text": "42",
+            "nta_option_id": "878270218834"
+          },
+          {
+            "text": "44",
+            "nta_option_id": "878270218835"
+          },
+          {
+            "text": "46",
+            "nta_option_id": "878270218836"
+          }
+        ]
+      },
+      "answer_key": "D",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3627,
+      "subject": "Maths",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "Let $\\vec{a} = \\hat{i} - 3\\hat{j} + 7\\hat{k}$, $\\vec{b} = 2\\hat{i} - \\hat{j} + \\hat{k}$ and $\\vec{c}$ be a vector such that $(\\vec{a} + 2\\vec{b}) \\times \\vec{c} = 3(\\vec{c} \\times \\vec{a})$.\nIf $\\vec{a} \\cdot \\vec{c} = 130$, then $\\vec{b} \\cdot \\vec{c}$ is equal to _________.",
+        "options": []
+      },
+      "answer_key": "30",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 798,
+      "subject": "Physics",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "A particle is doing simple harmonic motion of amplitude $0.06 \\text{ m}$ and time period $3.14 \\text{ s}$. The maximum velocity of the particle is ______ $\\text{cm/s}$.",
+        "options": []
+      },
+      "answer_key": "12",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3282,
+      "subject": "Physics",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "Match List-I with List-II :\nList-I\nEM-Wave\n(A) Infra-red\n(B) Ultraviolet\n(C) X-rays\n(D) Gamma rays\nList-II\nWavelength Range\n(I) $< 10^{-3}$ nm\n(II) 400 nm to 1 nm\n(III) 1 mm to 700 nm\n(IV) 1 nm to $10^{-3}$ nm\nChoose the correct answer from the options given below :",
+        "options": [
+          {
+            "text": "(A)-(II), (B)-(I), (C)-(IV), (D)-(III)",
+            "nta_option_id": "878270219193"
+          },
+          {
+            "text": "(A)-(III), (B)-(II), (C)-(IV), (D)-(I)",
+            "nta_option_id": "878270219194"
+          },
+          {
+            "text": "(A)-(I), (B)-(III), (C)-(II), (D)-(IV)",
+            "nta_option_id": "878270219195"
+          },
+          {
+            "text": "(A)-(IV), (B)-(III), (C)-(II), (D)-(I)",
+            "nta_option_id": "878270219196"
+          }
+        ]
+      },
+      "answer_key": "B",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3606,
+      "subject": "Maths",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "Let $f(x) = x^5 + 2x^3 + 3x + 1$, $x \\in \\mathbb{R}$, and $g(x)$ be a function such that $g(f(x)) = x$ for all $x \\in \\mathbb{R}$. Then $\\frac{g(7)}{g'(7)}$ is equal to :",
+        "options": [
+          {
+            "text": "1",
+            "nta_option_id": "878270218809"
+          },
+          {
+            "text": "7",
+            "nta_option_id": "878270218810"
+          },
+          {
+            "text": "14",
+            "nta_option_id": "878270218811"
+          },
+          {
+            "text": "42",
+            "nta_option_id": "878270218812"
+          }
+        ]
+      },
+      "answer_key": "C",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 1413,
+      "subject": "Physics",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "The gravitational potential at a point above the surface of earth is $-5.12 \\times 10^7 \\text{ J/kg}$ and the acceleration due to gravity at that point is $6.4 \\text{ m/s}^2$. Assume that the mean radius of earth to be $6400 \\text{ km}$. The height of this point above the earth's surface is :",
+        "options": [
+          {
+            "text": "1600 km",
+            "nta_option_id": "5335432821"
+          },
+          {
+            "text": "1000 km",
+            "nta_option_id": "5335432822"
+          },
+          {
+            "text": "540 km",
+            "nta_option_id": "5335432823"
+          },
+          {
+            "text": "1200 km",
+            "nta_option_id": "5335432824"
+          }
+        ]
+      },
+      "answer_key": "A",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3476,
+      "subject": "Physics",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "In a system two particles of masses $m_1 = 3 \\text{ kg}$ and $m_2 = 2 \\text{ kg}$ are placed at certain distance from each other. The particle of mass $m_1$ is moved towards the center of mass of the system through a distance $2 \\text{ cm}$. In order to keep the center of mass of the system at the original position, the particle of mass $m_2$ should move towards the center of mass by the distance ________ cm.",
+        "options": []
+      },
+      "answer_key": "3",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 778,
+      "subject": "Maths",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "For $n \\in \\mathbb{N}$, if $\\cot^{-1}3 + \\cot^{-1}4 + \\cot^{-1}5 + \\cot^{-1}n = \\frac{\\pi}{4}$, then $n$ is equal to ______.",
+        "options": []
+      },
+      "answer_key": "47",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 2742,
+      "subject": "Maths",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "Let $C$ be the circle of minimum area touching the parabola $y = 6 - x^2$ and the lines $y = \\sqrt{3} |x|$. Then, which one of the following points lies on the circle $C$?",
+        "options": [
+          {
+            "text": "$(2, 4)$",
+            "nta_option_id": null
+          },
+          {
+            "text": "$(1, 2)$",
+            "nta_option_id": null
+          },
+          {
+            "text": "$(2, 2)$",
+            "nta_option_id": null
+          },
+          {
+            "text": "$(1, 1)$",
+            "nta_option_id": null
+          }
+        ]
+      },
+      "answer_key": "D",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 2519,
+      "subject": "Physics",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "A small square loop of wire of side $l$ is placed inside a large square loop of wire of side $L$ ($L = l^2$). The loops are coplanar and their centers coincide. The value of the mutual inductance of the system is $\\sqrt{x} \\times 10^{-7} \\text{ H}$, where $x = \\_\\_\\_\\_\\_\\_.$",
+        "options": []
+      },
+      "answer_key": "128",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 1121,
+      "subject": "Maths",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "Let the foci of a hyperbola $H$ coincide with the foci of the ellipse $E : \\frac{(x-1)^2}{100} + \\frac{(y-1)^2}{75} = 1$ and the eccentricity of the hyperbola $H$ be the reciprocal of the eccentricity of the ellipse $E$. If the length of the transverse axis of $H$ is $\\alpha$ and the length of its conjugate axis is $\\beta$, then $3\\alpha^2 + 2\\beta^2$ is equal to",
+        "options": [
+          {
+            "text": "205",
+            "nta_option_id": "68019156857"
+          },
+          {
+            "text": "242",
+            "nta_option_id": "68019156858"
+          },
+          {
+            "text": "237",
+            "nta_option_id": "68019156859"
+          },
+          {
+            "text": "225",
+            "nta_option_id": "68019156860"
+          }
+        ]
+      },
+      "answer_key": "D",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 2968,
+      "subject": "Physics",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "Resistance of a wire at $0^\\circ\\text{C}$, $100^\\circ\\text{C}$ and $t^\\circ\\text{C}$ is found to be $10\\text{ }\\Omega$, $10.2\\text{ }\\Omega$ and $10.95\\text{ }\\Omega$ respectively. The temperature $t$ in Kelvin scale is _______.",
+        "options": []
+      },
+      "answer_key": "748",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 751,
+      "subject": "Maths",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "Let the relations $R_1$ and $R_2$ on the set $X = \\{1, 2, 3, \\dots, 20\\}$ be given by $R_1 = \\{(x, y) : 2x - 3y = 2\\}$ and $R_2 = \\{(x, y) : -5x + 4y = 0\\}$. If $M$ and $N$ be the minimum number of elements required to be added in $R_1$ and $R_2$, respectively, in order to make the relations symmetric, then $M+N$ equals",
+        "options": [
+          {
+            "text": "8",
+            "nta_option_id": "68019155181"
+          },
+          {
+            "text": "10",
+            "nta_option_id": "68019155182"
+          },
+          {
+            "text": "12",
+            "nta_option_id": "68019155183"
+          },
+          {
+            "text": "16",
+            "nta_option_id": "68019155184"
+          }
+        ]
+      },
+      "answer_key": "B",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 2072,
+      "subject": "Chemistry",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "The $F^-$ ions make the enamel on teeth much harder by converting hydroxyapatite (the enamel on the surface of teeth) into much harder fluoroapatite having the formula.",
+        "options": []
+      },
+      "answer_key": "878270220607",
+      "image_urls": [],
+      "has_figure": false,
+      "corrupt_key": true
+    },
+    {
+      "source": "jee",
+      "id": 1149,
+      "subject": "Physics",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "The temperature of a gas is $-78^\\circ\\text{C}$ and the average translational kinetic energy of its molecules is $K$. The temperature at which the average translational kinetic energy of the molecules of the same gas becomes $2K$ is :",
+        "options": [
+          {
+            "text": "$117^\\circ\\text{C}$",
+            "nta_option_id": "68019156931"
+          },
+          {
+            "text": "$127^\\circ\\text{C}$",
+            "nta_option_id": "68019156932"
+          },
+          {
+            "text": "$-78^\\circ\\text{C}$",
+            "nta_option_id": "68019156933"
+          },
+          {
+            "text": "$-39^\\circ\\text{C}$",
+            "nta_option_id": "68019156934"
+          }
+        ]
+      },
+      "answer_key": "A",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 1178,
+      "subject": "Chemistry",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "List II:\nI. $Tl > In > Ga > Al > B$\nII. $B > Tl > Al \\approx Ga > In$\nIII. $Tl > In > Al > Ga > B$\nIV. $B > Al > Tl > In > Ga$\n\n(A) A-IV, B-I, C-II, D-III\n(B) A-III, B-IV, C-I, D-II\n(C) A-II, B-III, C-IV, D-I\n(D) A-I, B-II, C-III, D-IV",
+        "options": []
+      },
+      "answer_key": "68019157009",
+      "image_urls": [],
+      "has_figure": false,
+      "corrupt_key": true
+    },
+    {
+      "source": "jee",
+      "id": 3431,
+      "subject": "Maths",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "One of the points of intersection of the curves $y = 1 + 3x - 2x^2$ and $y = \\frac{1}{x}$ is $\\left(\\frac{1}{2}, 2\\right)$. Let the area of the region enclosed by these curves be $\\frac{1}{24}(l\\sqrt{5} + m) - n \\log_e(1 + \\sqrt{5})$, where $l, m, n \\in \\mathbb{N}$. Then $l+m+n$ is equal to",
+        "options": [
+          {
+            "text": "30",
+            "nta_option_id": "878270218289"
+          },
+          {
+            "text": "29",
+            "nta_option_id": "878270218290"
+          },
+          {
+            "text": "31",
+            "nta_option_id": "878270218291"
+          },
+          {
+            "text": "32",
+            "nta_option_id": "878270218292"
+          }
+        ]
+      },
+      "answer_key": "A",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 731,
+      "subject": "Chemistry",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "Given below are two statements : one is labelled as Assertion (A) and the other is labelled as Reason (R).\nAssertion (A) : Haloalkanes react with $KCN$ to form alkyl cyanides as a main product while with $AgCN$ form isocyanide as the main product.\nReason (R) : $KCN$ and $AgCN$ both are highly ionic compounds.\nIn the light of the above statements, choose the most appropriate answer from the options given below :",
+        "options": [
+          {
+            "text": "Both (A) and (R) are correct and (R) is the correct explanation of (A)",
+            "nta_option_id": "9561772243"
+          },
+          {
+            "text": "Both (A) and (R) are correct but (R) is not the correct explanation of (A)",
+            "nta_option_id": "9561772244"
+          },
+          {
+            "text": "(A) is correct but (R) is not correct",
+            "nta_option_id": "9561772245"
+          },
+          {
+            "text": "(A) is not correct but (R) is correct",
+            "nta_option_id": "9561772246"
+          }
+        ]
+      },
+      "answer_key": "C",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 912,
+      "subject": "Chemistry",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "The incorrect statement regarding the geometrical isomers of $2$-butene is :",
+        "options": [
+          {
+            "text": "cis-$2$-butene and trans-$2$-butene are stereoisomers.",
+            "nta_option_id": "878270219827"
+          },
+          {
+            "text": "cis-$2$-butene and trans-$2$-butene are not interconvertible at room temperature.",
+            "nta_option_id": "878270219828"
+          },
+          {
+            "text": "trans-$2$-butene is more stable than cis-$2$-butene.",
+            "nta_option_id": "878270219829"
+          },
+          {
+            "text": "cis-$2$-butene has less dipole moment than trans-$2$-butene.",
+            "nta_option_id": "878270219830"
+          }
+        ]
+      },
+      "answer_key": "D",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 2299,
+      "subject": "Maths",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "If $2\\sin^3 x + \\sin 2x \\cos x + 4\\sin x - 4 = 0$ has exactly 3 solutions in the interval $[0, \\frac{n\\pi}{2}], n \\in \\mathbb{N}$, then the roots of the equation $x^2 + nx + (n - 3) = 0$ belong to :",
+        "options": [
+          {
+            "text": "$\\mathbb{Z}$",
+            "nta_option_id": "5335432787"
+          },
+          {
+            "text": "$(0, \\infty)$",
+            "nta_option_id": "5335432788"
+          },
+          {
+            "text": "$(-\\infty, 0)$",
+            "nta_option_id": "5335432789"
+          },
+          {
+            "text": "$(-\\frac{\\sqrt{17}}{2}, \\frac{\\sqrt{17}}{2})$",
+            "nta_option_id": "5335432790"
+          }
+        ]
+      },
+      "answer_key": "C",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3414,
+      "subject": "Chemistry",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "Consider the following reaction\n$\\text{MnO}_2 + \\text{KOH} + \\text{O}_2 \\rightarrow \\text{A} + \\text{H}_2\\text{O}$.\nProduct 'A' in neutral or acidic medium disproportionate to give products 'B' and 'C' along with water. The sum of spin-only magnetic moment values of B and C is ______ $\\text{BM}$. (nearest integer) (Given atomic number of Mn is 25)",
+        "options": []
+      },
+      "answer_key": "4",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 3406,
+      "subject": "Chemistry",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "Given below are two statements :\nStatement I : Acidity of $\\alpha$-hydrogens of aldehydes and ketones is responsible for Aldol reaction.\nStatement II : Reaction between benzaldehyde and ethanal will NOT give Cross - Aldol product.\nIn the light of the above statements, choose the most appropriate answer from the options given below :",
+        "options": [
+          {
+            "text": "Both Statement I and Statement II are correct",
+            "nta_option_id": "878270218489"
+          },
+          {
+            "text": "Both Statement I and Statement II are incorrect",
+            "nta_option_id": "878270218490"
+          },
+          {
+            "text": "Statement I is correct but Statement II is incorrect",
+            "nta_option_id": "878270218491"
+          },
+          {
+            "text": "Statement I is incorrect but Statement II is correct",
+            "nta_option_id": "878270218492"
+          }
+        ]
+      },
+      "answer_key": "C",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 991,
+      "subject": "Chemistry",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "For the given hypothetical reactions, the equilibrium constants are as follows :\n\n$X \\rightleftharpoons Y; K_1 = 1.0$\n$Y \\rightleftharpoons Z; K_2 = 2.0$\n$Z \\rightleftharpoons W; K_3 = 4.0$\n\nThe equilibrium constant for the reaction $X \\rightleftharpoons W$ is",
+        "options": [
+          {
+            "text": "7.0",
+            "nta_option_id": "68019156179"
+          },
+          {
+            "text": "8.0",
+            "nta_option_id": "68019156180"
+          },
+          {
+            "text": "12.0",
+            "nta_option_id": "68019156181"
+          },
+          {
+            "text": "6.0",
+            "nta_option_id": "68019156182"
+          }
+        ]
+      },
+      "answer_key": "B",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 836,
+      "subject": "Chemistry",
+      "difficulty": "MEDIUM",
+      "problem_payload": {
+        "problem_text": "The major product of the following reaction is P.\n\n$CH_3C \\equiv C - CH_3 \\xrightarrow[(ii) \\text{ dil. } KMnO_4, 273 \\text{ K}]{(i) \\text{ Na/liq. } NH_3} \\text{'P'}$\n\nNumber of oxygen atoms present in product 'P' is _______. (nearest integer)",
+        "options": []
+      },
+      "answer_key": "2",
+      "image_urls": [],
+      "has_figure": true
+    },
+    {
+      "source": "jee",
+      "id": 3618,
+      "subject": "Maths",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "Suppose $\\theta \\in \\left[0, \\frac{\\pi}{4}\\right]$ is a solution of $4 \\cos \\theta - 3 \\sin \\theta = 1$. Then $\\cos \\theta$ is equal to :",
+        "options": [
+          {
+            "text": "$\\frac{6 - \\sqrt{6}}{3\\sqrt{6} - 2}$",
+            "nta_option_id": "878270218857"
+          },
+          {
+            "text": "$\\frac{4}{3\\sqrt{6} - 2}$",
+            "nta_option_id": "878270218858"
+          },
+          {
+            "text": "$\\frac{4}{3\\sqrt{6} + 2}$",
+            "nta_option_id": "878270218859"
+          },
+          {
+            "text": "$\\frac{6 + \\sqrt{6}}{3\\sqrt{6} + 2}$",
+            "nta_option_id": "878270218860"
+          }
+        ]
+      },
+      "answer_key": "B",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 983,
+      "subject": "Physics",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "An electric field, $\\vec{E} = \\frac{2\\hat{i} + 6\\hat{j} + 8\\hat{k}}{\\sqrt{6}}$ passes through the surface of $4\\text{ m}^2$ area having unit vector $\\hat{n} = \\left( \\frac{2\\hat{i} + \\hat{j} + \\hat{k}}{\\sqrt{6}} \\right)$. The electric flux for that surface is ______ V m.",
+        "options": []
+      },
+      "answer_key": "12",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 2610,
+      "subject": "Chemistry",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "The four quantum numbers for the electron in the outer most orbital of potassium (atomic no. 19) are",
+        "options": [
+          {
+            "text": "$n = 2, l = 0, m = 0, s = +\\frac{1}{2}$",
+            "nta_option_id": "4058593955"
+          },
+          {
+            "text": "$n = 3, l = 0, m = 1, s = +\\frac{1}{2}$",
+            "nta_option_id": "4058593956"
+          },
+          {
+            "text": "$n = 4, l = 0, m = 0, s = +\\frac{1}{2}$",
+            "nta_option_id": "4058593957"
+          },
+          {
+            "text": "$n = 4, l = 2, m = -1, s = +\\frac{1}{2}$",
+            "nta_option_id": "4058593958"
+          }
+        ]
+      },
+      "answer_key": "C",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 1005,
+      "subject": "Chemistry",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "Which among the following compounds will undergo fastest $S_N2$ reaction.",
+        "options": [
+          {
+            "text": "[Figure: (1-bromoethyl)cyclobutane]",
+            "nta_option_id": "68019156235"
+          },
+          {
+            "text": "[Figure: (2-bromopropan-2-yl)cyclobutane]",
+            "nta_option_id": "68019156236"
+          },
+          {
+            "text": "[Figure: (2-bromoethyl)cyclobutane]",
+            "nta_option_id": "68019156237"
+          },
+          {
+            "text": "[Figure: (2-bromopropyl)cyclobutane]",
+            "nta_option_id": "68019156238"
+          }
+        ]
+      },
+      "answer_key": "C",
+      "image_urls": [],
+      "has_figure": true
+    },
+    {
+      "source": "jee",
+      "id": 3444,
+      "subject": "Maths",
+      "difficulty": "EASY",
+      "problem_payload": {
+        "problem_text": "Let the solution $y = y(x)$ of the differential equation $\\frac{dy}{dx} - y = 1 + 4\\sin x$ satisfy $y(\\pi) = 1$. Then $y\\left(\\frac{\\pi}{2}\\right) + 10$ is equal to ________.",
+        "options": []
+      },
+      "answer_key": "7",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "jee",
+      "id": 1035,
+      "subject": "Maths",
+      "difficulty": "HARD",
+      "problem_payload": {
+        "problem_text": "Let the line $L$ intersect the lines $x - 2 = -y = z - 1$, $2(x + 1) = 2(y - 1) = z + 1$ and be parallel to the line $\\frac{x - 2}{3} = \\frac{y - 1}{1} = \\frac{z - 2}{2}$. Then which of the following points lies on $L$?",
+        "options": [
+          {
+            "text": "$(-\\frac{1}{3}, 1, -1)$",
+            "nta_option_id": "878270220457"
+          },
+          {
+            "text": "$(-\\frac{1}{3}, -1, 1)$",
+            "nta_option_id": "878270220458"
+          },
+          {
+            "text": "$(-\\frac{1}{3}, 1, 1)$",
+            "nta_option_id": "878270220459"
+          },
+          {
+            "text": "$(-\\frac{1}{3}, -1, -1)$",
+            "nta_option_id": "878270220460"
+          }
+        ]
+      },
+      "answer_key": "A",
+      "image_urls": [],
+      "has_figure": false
+    }
+  ]
+}

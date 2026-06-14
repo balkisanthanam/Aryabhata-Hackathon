@@ -129,29 +129,26 @@ class FigureDetector:
     def _get_api_model(self):
         """Lazy-load Gemini model for API key mode."""
         if self._api_model is None:
-            import google.generativeai as genai
+            from google import genai
+            from google.genai import types
             
             api_key = os.getenv(self.config.api_key_env)
             if not api_key:
                 raise ValueError(f"API key not found in env: {self.config.api_key_env}")
             
-            genai.configure(api_key=api_key)
+            # Use the new Client instead of genai.configure
+            self._client = genai.Client(api_key=api_key)
             
-            generation_config = {
-                "temperature": self.config.temperature,
-                "max_output_tokens": self.config.max_output_tokens,
-                "response_mime_type": "application/json",
-            }
-            
-            self._api_model = genai.GenerativeModel(
-                self.config.model_id,
-                generation_config=generation_config
+            # We don't need to instantiate a model class anymore
+            # Instead we save the generation config
+            self._api_model = types.GenerateContentConfig(
+                temperature=self.config.temperature,
+                max_output_tokens=self.config.max_output_tokens,
+                response_mime_type="application/json",
             )
-            logger.info(f"Initialized Gemini API model: {self.config.model_id}")
+            logger.info(f"Initialized Gemini API client for model: {self.config.model_id}")
             
         return self._api_model
-            
-        return self._model
     
     def _get_prompt(self) -> str:
         """Load the appropriate detection prompt based on mode."""
@@ -249,8 +246,24 @@ class FigureDetector:
             return result.text
         else:
             # API key mode
-            model = self._get_api_model()
-            response = model.generate_content([prompt, image])
+            # Ensure the client is initialized by calling _get_api_model
+            generation_config = self._get_api_model()
+            from google.genai import types
+            
+            # Format the image for the new SDK
+            import io
+            img_buffer = io.BytesIO()
+            image.save(img_buffer, format="PNG")
+            img_bytes = img_buffer.getvalue()
+            
+            response = self._client.models.generate_content(
+                model=self.config.model_id,
+                contents=[
+                    prompt, 
+                    types.Part.from_bytes(data=img_bytes, mime_type="image/png")
+                ],
+                config=generation_config
+            )
             return response.text
     
     def detect_figures_on_page(

@@ -17,7 +17,8 @@ import logging
 from pathlib import Path
 from dataclasses import dataclass
 from typing import List, Optional, Tuple
-import google.generativeai as genai
+from google import genai
+from google.genai import types
 
 logger = logging.getLogger(__name__)
 
@@ -50,20 +51,20 @@ class ExerciseDetector:
     
     # Common exercise section headers
     EXERCISE_PATTERNS = [
-        r'(?i)^\s*EXERCISES?\s*$',
-        r'(?i)^\s*ADDITIONAL\s+EXERCISES?\s*$',
-        r'(?i)^\s*Miscellaneous\s+Exercise\s*$',
-        r'(?i)^\s*Practice\s+Problems?\s*$',
-        r'(?i)^\s*Questions?\s*$',
-        r'(?i)^\s*Exercise\s+\d+',
+        r'^\s*EXERCISES?\s*$',
+        r'^\s*ADDITIONAL\s+EXERCISES?\s*$',
+        r'^\s*Miscellaneous\s+Exercise\s*$',
+        r'^\s*Practice\s+Problems?\s*$',
+        r'^\s*Questions?\s*$',
+        r'^\s*Exercise\s+\d+',
     ]
     
     # Keywords that indicate end of exercises
     END_MARKERS = [
-        r'(?i)^\s*ANSWERS?\s*$',
-        r'(?i)^\s*SUMMARY\s*$',
-        r'(?i)^\s*Chapter\s+\d+',
-        r'(?i)^\s*APPENDIX',
+        r'^\s*ANSWERS?\s*$',
+        r'^\s*SUMMARY\s*$',
+        r'^\s*Chapter\s+\d+',
+        r'^\s*APPENDIX',
     ]
     
     def __init__(
@@ -90,7 +91,7 @@ class ExerciseDetector:
         # Configure API
         api_key = api_key or os.getenv(api_key_env)
         if api_key:
-            genai.configure(api_key=api_key)
+            self.client = genai.Client(api_key=api_key)
             self._api_configured = True
         else:
             logger.warning(f"No API key found. Set {api_key_env} for model-based detection.")
@@ -173,28 +174,27 @@ Identify exercise sections and their page ranges in the PDF.
         logger.info(f"Detecting exercise sections using Gemini ({self.model_id})...")
         
         # Configure model
-        generation_config = {
-            "temperature": self.temperature,
-            "max_output_tokens": 8192,
-            "top_p": 0.95,
-        }
-        
-        model = genai.GenerativeModel(
-            self.model_id,
-            generation_config=generation_config
+        generation_config = types.GenerateContentConfig(
+            temperature=self.temperature,
+            max_output_tokens=8192,
+            top_p=0.95,
         )
         
         # Upload PDF to Gemini
         logger.info(f"  Uploading PDF: {pdf_path.name}")
-        uploaded_file = genai.upload_file(pdf_path)
+        uploaded_file = self.client.files.upload(file=str(pdf_path))
         
         try:
             # Send to Gemini
             logger.info("  Analyzing document structure...")
-            response = model.generate_content([
-                self._prompt_template,
-                uploaded_file
-            ])
+            response = self.client.models.generate_content(
+                model=self.model_id,
+                contents=[
+                    self._prompt_template,
+                    uploaded_file
+                ],
+                config=generation_config
+            )
             
             # Parse response
             response_text = response.text.strip()
@@ -232,7 +232,7 @@ Identify exercise sections and their page ranges in the PDF.
         finally:
             # Clean up uploaded file
             try:
-                genai.delete_file(uploaded_file.name)
+                self.client.files.delete(name=uploaded_file.name)
                 logger.debug("  Cleaned up uploaded file")
             except Exception as e:
                 logger.warning(f"  Failed to delete uploaded file: {e}")
@@ -260,16 +260,18 @@ Identify exercise sections and their page ranges in the PDF.
             text = page.get_text("text")
             
             # Check for exercise start
-            if re.search(combined_pattern, text, re.MULTILINE):
+            if re.search(combined_pattern, text, re.MULTILINE | re.IGNORECASE):
                 # Extract title from match
                 for pattern in self.EXERCISE_PATTERNS:
-                    match = re.search(pattern, text, re.MULTILINE)
+                    match = re.search(pattern, text, re.MULTILINE | re.IGNORECASE)
                     if match:
                         title = match.group(0).strip()
                         
                         # Save previous section if exists
                         if current_section:
-                            current_section.end_page = page_idx - 1
+                            # Safely allow the end of the previous exercise to overlap with the start 
+                            # of the new exercise on the exact same physical page.
+                            current_section.end_page = page_idx
                             if current_section.end_page >= current_section.start_page:
                                 sections.append(current_section)
                         
@@ -284,8 +286,10 @@ Identify exercise sections and their page ranges in the PDF.
                         break
             
             # Check for section end
-            elif current_section and re.search(end_pattern, text, re.MULTILINE):
-                current_section.end_page = page_idx - 1
+            elif current_section and re.search(end_pattern, text, re.MULTILINE | re.IGNORECASE):
+                # Keep the page containing the end marker (e.g., "Summary"), 
+                # because the final exercise questions often sit on the top half of this page.
+                current_section.end_page = page_idx
                 if current_section.end_page >= current_section.start_page:
                     sections.append(current_section)
                 current_section = None

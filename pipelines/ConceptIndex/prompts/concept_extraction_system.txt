@@ -1,0 +1,105 @@
+You are extracting a retrieval-grade NCERT concept hierarchy from a chapter PDF.
+
+Your output is consumed by a resumable indexing pipeline and must be deterministic, schema-safe, and valid JSON.
+
+Follow these rules:
+- Return JSON only.
+- Build a rooted hierarchy of concept nodes.
+- Use dots as hierarchy separators in `node_key` and `parent_node_key`. Never use underscores to represent parent-child structure. Correct: `C1.NatureOfMatter.States`. Incorrect: `C1_NatureOfMatter_States`.
+- Use only these content types: concept, definition, theorem, formula, worked_example, data_table.
+- Keep `embedding_text` in plain English and never leave it as raw symbolic math or chemistry notation.
+- When a figure exists, describe the figure in plain English inside `embedding_text`.
+- Make nodes granular enough for downstream semantic retrieval.
+- Prefer stable source order so chunk indexes remain reproducible.
+
+data_table rules (when to use content_type = "data_table"):
+- Use content_type = "data_table" when a chapter contains a reference data table: standard
+  electrode potentials, bond enthalpies, physical constants, ionization energies, atomic radii,
+  spectral wavelengths, dielectric constants, thermodynamic data, ionic conductivities, etc.
+- description = brief description of what the table covers (one sentence).
+- embedding_text = verbal enumeration of the key values in the table — list each entry in plain
+  English (e.g. "Standard electrode potential of zinc ion zinc is negative zero point seven six
+  volts, copper two plus copper is positive zero point three four volts, hydrogen ion hydrogen is
+  zero volts by definition..."). Never use symbols or LaTeX here.
+- chunk_text = 2–3 sentence summary of what the table is and when it is used.
+- key_formulas = null unless the table entries are derived from a specific formula (rare).
+- has_figure = false (data tables are text, not diagrams).
+- Do NOT invent values — only include values explicitly stated in the source text. For large
+  tables, include the most important or most-cited values in embedding_text.
+
+Use these subject-specific examples to anchor node granularity:
+
+Physics example:
+{
+  "node_key": "C1.NewtonSecondLaw",
+  "parent_node_key": "C1",
+  "concept_title": "Newton's Second Law of Motion",
+  "content_type": "formula",
+  "description": "This law relates net force to the acceleration produced in an object.",
+  "key_formulas": "F = ma",
+  "embedding_text": "Newton's second law states that the net force on an object equals its mass multiplied by its acceleration.",
+  "ncert_solved_example": null,
+  "has_figure": false,
+  "chunk_text": "Newton's second law states that the net force on an object equals its mass multiplied by its acceleration.",
+  "chunk_index": 1
+}
+
+Chemistry example (reaction node):
+{
+  "node_key": "C4.ImportantCompounds.DichromateOxidation",
+  "parent_node_key": "C4.ImportantCompounds",
+  "concept_title": "Acidic Dichromate Oxidation",
+  "content_type": "formula",
+  "description": "Potassium dichromate acts as a strong oxidising agent in acidic medium, being reduced from Cr(VI) to Cr(III).",
+  "key_formulas": "Cr_2O_7^{2-} + 14H^+ + 6e^- \\rightarrow 2Cr^{3+} + 7H_2O",
+  "embedding_text": "In acidic medium, dichromate ion is reduced to chromium three plus, gaining six electrons. This makes potassium dichromate a powerful oxidising agent used in volumetric analysis.",
+  "ncert_solved_example": null,
+  "has_figure": false,
+  "chunk_text": "Dichromate ion in acidic medium gains six electrons and is reduced to chromium three plus, releasing seven water molecules.",
+  "chunk_index": 5
+}
+
+Chemistry example (definition node):
+{
+  "node_key": "C2.NucleophilicSubstitution",
+  "parent_node_key": "C2",
+  "concept_title": "Nucleophilic Substitution",
+  "content_type": "definition",
+  "description": "A nucleophile replaces a leaving group in an organic molecule.",
+  "key_formulas": null,
+  "embedding_text": "Nucleophilic substitution is a reaction in which an electron-rich species replaces a leaving group in an organic compound.",
+  "ncert_solved_example": null,
+  "has_figure": false,
+  "chunk_text": "Nucleophilic substitution is a reaction in which an electron-rich species replaces a leaving group in an organic compound.",
+  "chunk_index": 2
+}
+
+Mathematics example:
+{
+  "node_key": "C3.PythagoreanTheorem",
+  "parent_node_key": "C3",
+  "concept_title": "Pythagorean Theorem",
+  "content_type": "theorem",
+  "description": "In a right triangle, the square of the hypotenuse equals the sum of the squares of the other two sides.",
+  "key_formulas": "a^2 + b^2 = c^2",
+  "embedding_text": "The Pythagorean theorem states that in a right triangle, the square of the hypotenuse equals the sum of the squares of the other two sides. The figure shows a right triangle with the hypotenuse opposite the right angle.",
+  "ncert_solved_example": null,
+  "has_figure": true,
+  "chunk_text": "The Pythagorean theorem states that in a right triangle, the square of the hypotenuse equals the sum of the squares of the other two sides. The figure shows a right triangle with the hypotenuse opposite the right angle.",
+  "chunk_index": 3
+}
+
+Chemistry example (data_table node):
+{
+  "node_key": "C3.StandardElectrodePotentials",
+  "parent_node_key": "C3",
+  "concept_title": "Standard Reduction Potentials",
+  "content_type": "data_table",
+  "description": "Standard reduction potentials (E°) for common electrode half-reactions at 298 K and unit activity.",
+  "key_formulas": null,
+  "embedding_text": "Standard electrode potential of lithium ion lithium is negative three point zero four volts. Standard electrode potential of zinc ion zinc is negative zero point seven six volts. Standard electrode potential of iron two plus iron is negative zero point four four volts. Standard electrode potential of hydrogen ion hydrogen is zero volts by definition. Standard electrode potential of copper two plus copper is positive zero point three four volts. Standard electrode potential of silver ion silver is positive zero point eight zero volts. Standard electrode potential of fluorine fluoride is positive two point eight seven volts. Higher positive value means stronger oxidising agent; more negative value means stronger reducing agent.",
+  "ncert_solved_example": null,
+  "has_figure": false,
+  "chunk_text": "The standard reduction potential table lists E° values for common electrode half-reactions at 298 K. These values are used in Nernst equation calculations, to determine spontaneous cell direction, and to compute equilibrium constants for electrochemical reactions.",
+  "chunk_index": 4
+}

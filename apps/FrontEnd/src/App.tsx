@@ -5,7 +5,9 @@ import { PracticeDashboard } from './pages/PracticeDashboard';
 import { PracticeSession } from './pages/PracticeSession';
 import { SolutionFeedback } from './pages/SolutionFeedback';
 import { ChallengeDashboard } from './pages/ChallengeDashboard';
-import { UnderConstruction } from './components/common/UnderConstruction';
+import { PerformanceCompass } from './pages/PerformanceCompass';
+import { AccentSession } from './pages/AccentSession';
+// import { UnderConstruction } from './components/common/UnderConstruction';
 import { useUserStore } from './store/useUserStore';
 import { loginUser } from './lib/api';
 
@@ -41,10 +43,10 @@ function App() {
                 <Route path="/practice/:chapterId" element={<PracticeSession />} />
                 <Route path="/feedback" element={<SolutionFeedback />} />
                 {/* Add other routes later */}
+                <Route path="/accent/:chapterId" element={<AccentSession />} />
                 <Route path="/challenge" element={<ChallengeDashboard />} />
-                <Route path="/analytics" element={<div className="p-10 text-center text-2xl">Analytics Module Coming Soon</div>} />
+                <Route path="/analytics" element={<PerformanceCompass />} />
                 {/* <Route path="/challenge" element={<UnderConstruction title="Challenge" />} /> */}
-                <Route path="/analytics" element={<UnderConstruction title="Analytics" />} />
             </Routes>
         </Router>
     )

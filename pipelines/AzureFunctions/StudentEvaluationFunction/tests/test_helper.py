@@ -5,6 +5,7 @@ This script reads an image and PDF from disk and creates a proper test request
 
 import base64
 import json
+import os
 import requests
 import sys
 from pathlib import Path
@@ -370,7 +371,7 @@ if __name__ == "__main__":
     test_pdf_path = None
     test_problem_file = None
     test_problem_image = None
-    test_pdf_url = "https://<YOUR_STORAGE_ACCOUNT>.blob.core.windows.net/feedback/sample-chapter.pdf"
+    test_pdf_url = os.getenv("TEST_PDF_BLOB_URL", "<PDF_BLOB_URL>")
     
     if len(sys.argv) > 1:
         test_image_path = sys.argv[1]
@@ -417,8 +418,12 @@ if __name__ == "__main__":
     
     if use_production:
         # Production configuration
-        FUNCTION_URL = "https://<YOUR_FUNCTION_APP>.azurewebsites.net/api/evaluate"
-        FUNCTION_KEY = "<YOUR_FUNCTION_KEY>"
+        FUNCTION_URL = os.getenv("AZURE_FUNCTION_URL", "<FUNCTION_URL>")
+        FUNCTION_KEY = os.getenv("AZURE_FUNCTION_KEY", "<FUNCTION_KEY>")
+
+        if FUNCTION_URL == "<FUNCTION_URL>" or FUNCTION_KEY == "<FUNCTION_KEY>":
+            print("Set AZURE_FUNCTION_URL and AZURE_FUNCTION_KEY before running production tests.")
+            sys.exit(1)
         
         test_function_azure(
             image_path=test_image_path,

@@ -1,0 +1,40 @@
+yes. based on my experience developing Aryabhata so far this is an application i want to develop
+Application Brief:
+Completely iteractive Guided Problem solving for students, imitating a teacher. The scope will be strictly NCERT to JEE. This will be interactive, but the system will strictly confine to this scope, so as to avoid mishaps.
+
+Problem space:
+The student points to a problem in their book our uploads any problem that they encountered and seeks help. The student may or may not have a written solution or attempted solution. The student can seek an open ended question like 'help me with key problems in Thermodynamics'
+
+Solution process:
+The system guides the student through the solution - brings the exact relevant formulas and concepts, asks the student some pop-quizzes, then let them answer the next step (through each step similarly) or give them complete control to take from there and revert with full solution. 
+Through this process, the system may get from student's memory (past actions), what the student has done, remind them, show them similar problems that the student has worked to help them if they struggle.
+Provide them follow up problems that they may solve or follow up with a problem from JEE.
+This will be dynamic based on the response of student.
+
+Input options:
+*) Text - typically for seeking which problem Eg. "Permutations Prob 8.3" or respond with an answer "11.4"
+*) The uploads if any could be images or potentially real-time video feed (point to what they have done so far, instead of having to do a camera based upload)
+*) Also can the interactions be voice based? This will ease the student's ability to respond to questions on Math, Phy, Chem. For, the response would need to capture formulas, equations etc. Image could be one way, but Audio makes it quick for short responses Eg. "if system asks what is the formula for ...., the student may just say if it is short x squared + ..."
+
+
+Problem space:
+The student points to a problem in their book our uploads any problem that they encountered and seeks help. The student may or may not have a written solution or attempted solution. The student can seek an open ended question like 'help me with key problems in Thermodynamics'
+
+Solution process:
+The system guides the student through the solution - brings the exact relevant formulas and concepts, asks the student some pop-quizzes, then let them answer the next step (through each step similarly) or give them complete control to take from there and revert with full solution. 
+Through this process, the system may get from student's memory (past actions), what the student has done, remind them, show them similar problems that the student has worked to help them if they struggle.
+Provide them follow up problems that they may solve or follow up with a problem from JEE.
+This will be dynamic based on the response of student.
+
+
+1. The Agentic Nature: Why Logic-Trees Fail
+In the previous model, we discussed entropy. A student's misunderstanding is High Entropy.
+
+Path A: Student knows the formula but has a calculation error.
+
+Path B: Student has a conceptual gap in a prerequisite topic (e.g., trying to solve a Rotational Mechanics problem without understanding Torque).
+
+Path C: Student is distracted or lacks confidence.
+
+An agent doesn't follow a path; it navigates a state space where the "Goal State" is the student’s correct derivation of the answer.
+

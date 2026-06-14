@@ -1,0 +1,102 @@
+**Unit 1: Some Basic Concepts of Chemistry**
+*   **Importance of Chemistry:** The role of chemistry in science and its applications in daily life, such as in agriculture, health, and industry.
+*   **Nature of Matter:** Classification of matter into solids, liquids, and gases; elements, compounds, and mixtures.
+*   **Properties of Matter and their Measurement:** Physical and chemical properties; The International System of Units (SI); Mass and Weight; Volume; Density; Temperature.
+*   **Uncertainty in Measurement:** Scientific notation; Significant figures; Precision and Accuracy; Dimensional Analysis.
+*   **Laws of Chemical Combinations:** Law of Conservation of Mass; Law of Definite Proportions; Law of Multiple Proportions; Gay Lussac’s Law of Gaseous Volumes; Avogadro’s Law.
+*   **Dalton’s Atomic Theory:** The concept of atoms as indivisible building blocks of matter.
+*   **Atomic and Molecular Masses:** Atomic mass; Average atomic mass; Molecular mass; Formula mass.
+*   **Mole Concept and Molar Masses:** The definition of the mole; Avogadro constant; Molar mass.
+*   **Percentage Composition:** Mass percentage of elements; Empirical formula; Molecular formula.
+*   **Stoichiometry and Stoichiometric Calculations:** Balancing chemical equations; Limiting reagent; Reactions in solutions (Mass percent, Mole fraction, Molarity, Molality).
+
+**Unit 2: Structure of Atom**
+*   **Discovery of Sub-atomic Particles:** Discovery of electron, proton, and neutron; Charge to mass ratio of electron; Charge on electron.
+*   **Atomic Models:** Thomson model of atom; Rutherford’s nuclear model of atom; Atomic number and mass number; Isobars and Isotopes.
+*   **Developments Leading to the Bohr’s Model of Atom:** Wave nature of electromagnetic radiation; Particle nature of electromagnetic radiation (Planck’s Quantum theory, Photoelectric effect); Atomic spectra (Line spectrum of hydrogen).
+*   **Bohr’s Model for Hydrogen Atom:** Postulates; Explanation of line spectrum of hydrogen; Limitations of Bohr’s model.
+*   **Towards Quantum Mechanical Model of the Atom:** Dual behaviour of matter (de Broglie); Heisenberg’s Uncertainty Principle.
+*   **Quantum Mechanical Model of Atom:** Schrödinger equation (brief concept); Orbitals and Quantum numbers (Principal, Azimuthal, Magnetic, Spin); Shapes of atomic orbitals; Energies of orbitals; Filling of orbitals in atoms (Aufbau Principle, Pauli Exclusion Principle, Hund’s Rule); Electronic Configuration of atoms.
+
+**Unit 3: Classification of Elements and Periodicity in Properties**
+*   **Genesis of Periodic Classification:** Historical development (Dobereiner's Triads, Newlands' Octaves, Mendeleev’s Periodic Table).
+*   **Modern Periodic Law:** Atomic number as the basis; Present form of the Periodic Table (Periods and Groups).
+*   **Nomenclature of Elements with Atomic Numbers > 100:** IUPAC systematic nomenclature.
+*   **Electronic Configurations and the Periodic Table:** Electronic configurations in periods and groups.
+*   **Electronic Configurations and Types of Elements:** Characteristics of s-, p-, d-, and f-Block elements; Metals, Non-metals, and Metalloids.
+*   **Periodic Trends in Properties of Elements:** Trends in physical properties (Atomic Radius, Ionic Radius, Ionization Enthalpy, Electron Gain Enthalpy, Electronegativity); Periodic trends in chemical properties (Periodicity of Valence/Oxidation States, Anomalous properties of second period elements).
+
+**Unit 4: Chemical Bonding and Molecular Structure**
+*   **Kössel-Lewis Approach to Chemical Bonding:** Octet Rule; Covalent Bond; Lewis Representation; Formal Charge; Limitations of the Octet Rule.
+*   **Ionic or Electrovalent Bond:** Formation of ionic bonds; Lattice Enthalpy.
+*   **Bond Parameters:** Bond Length, Bond Angle, Bond Enthalpy, Bond Order, Resonance Structures, Polarity of Bonds (Dipole Moment).
+*   **The Valence Shell Electron Pair Repulsion (VSEPR) Theory:** Predicting geometry of molecules.
+*   **Valence Bond Theory:** Orbital Overlap Concept; Directional properties of bonds; Overlapping of Atomic Orbitals; Types of overlapping (Sigma and Pi bonds).
+*   **Hybridisation:** Types of hybridisation (sp, sp2, sp3, involving d orbitals).
+*   **Molecular Orbital Theory:** Formation of Molecular Orbitals (LCAO); Energy Level Diagram; Electronic Configuration and Molecular Behaviour; Bonding in Homonuclear Diatomic Molecules.
+*   **Hydrogen Bonding:** Cause of formation; Types of H-Bonds.
+
+**Unit 5: Thermodynamics**
+*   **Thermodynamic Terms:** System and Surroundings; Types of System (Open, Closed, Isolated); State of the System; Internal Energy as a State Function; Work; Heat.
+*   **First Law of Thermodynamics:** Mathematical statement; Applications (Work, Enthalpy).
+*   **Measurement of ∆U and ∆H:** Calorimetry.
+*   **Enthalpy Change (∆rH) of a Reaction:** Standard Enthalpy of Reactions; Enthalpy Changes during Phase Transformations; Standard Enthalpy of Formation; Thermochemical Equations; Hess’s Law of Constant Heat Summation.
+*   **Enthalpies for Different Types of Reactions:** Enthalpy of Combustion, Atomization, Bond Enthalpy, Lattice Enthalpy, Solution, Dilution.
+*   **Spontaneity:** Decrease in Enthalpy; Entropy and Spontaneity; Gibbs Energy and Spontaneity; Second and Third Laws of Thermodynamics.
+*   **Gibbs Energy Change and Equilibrium:** Relationship between free energy change and equilibrium constant.
+
+**Unit 6: Equilibrium**
+*   **Equilibrium in Physical Processes:** Solid-liquid, Liquid-vapour, Solid-vapour equilibria; Dissolution of solids/gases in liquids.
+*   **Equilibrium in Chemical Processes:** Dynamic nature of chemical equilibrium.
+*   **Law of Chemical Equilibrium and Equilibrium Constant:** Law of Mass Action; Relation between Kp and Kc.
+*   **Homogeneous and Heterogeneous Equilibria:** Equilibrium constants for gaseous systems and multi-phase systems.
+*   **Applications of Equilibrium Constants:** Predicting extent and direction of reaction; Calculating equilibrium concentrations.
+*   **Relationship between Equilibrium Constant K, Reaction Quotient Q, and Gibbs Energy G:**.
+*   **Factors Affecting Equilibria:** Le Chatelier’s Principle (Effect of Concentration, Pressure, Inert Gas, Temperature, Catalyst).
+*   **Ionic Equilibrium in Solution:** Strong and weak electrolytes.
+*   **Acids, Bases and Salts:** Arrhenius, Brönsted-Lowry, and Lewis concepts.
+*   **Ionization of Acids and Bases:** Ionization Constants of Weak Acids and Bases; Ionization of Water (Kw); pH Scale; Relation between Ka and Kb; Di- and Polybasic Acids; Common Ion Effect; Hydrolysis of Salts.
+*   **Buffer Solutions:** Preparation and designing buffer solutions.
+*   **Solubility Equilibria of Sparingly Soluble Salts:** Solubility Product Constant (Ksp); Common Ion Effect on Solubility.
+
+### **Unit 7: Redox Reactions**
+*   **Classical Idea of Redox Reactions:** Oxidation and reduction reactions.
+*   **Electron Transfer:** Redox reactions in terms of electron transfer reactions.
+*   **Oxidation Number:** Concepts and applications.
+*   **Electrode Processes:** Redox reactions and electrode processes.
+
+### **Unit 8: Organic Chemistry – Some Basic Principles and Techniques**
+*   **Tetravalence of Carbon:** Shapes of organic compounds and hybridization.
+*   **Structural Representations:** Complete, condensed, bond-line formulas, and 3D representations.
+*   **Classification:** Acyclic, cyclic, aromatic compounds, functional groups, and homologous series.
+*   **Nomenclature:** IUPAC system for alkanes and substituted benzene compounds.
+*   **Isomerism:** Structural isomerism (chain, position, functional, metamerism) and stereoisomerism.
+*   **Reaction Mechanism Concepts:**
+    *   Fission of covalent bonds (homolytic and heterolytic).
+    *   Nucleophiles and Electrophiles.
+    *   Electron movement and displacement effects (Inductive, Resonance, Electromeric, Hyperconjugation).
+*   **Methods of Purification:** Sublimation, crystallization, distillation, differential extraction, and chromatography.
+*   **Qualitative Analysis:** Detection of Carbon, Hydrogen, Nitrogen, Sulphur, Halogens, and Phosphorus.
+*   **Quantitative Analysis:** Estimation of elements including Carbon, Hydrogen, Nitrogen, Halogens, Sulphur, Phosphorus, and Oxygen.
+
+### **Unit 9: Hydrocarbons**
+*   **Classification:** Saturated, unsaturated, and aromatic hydrocarbons.
+*   **Alkanes:**
+    *   Nomenclature, isomerism, and preparation methods.
+    *   Properties (physical and chemical, including combustion and substitution).
+    *   Conformations (Sawhorse and Newman projections of ethane).
+*   **Alkenes:**
+    *   Structure of the double bond.
+    *   Nomenclature and Isomerism (Structural and Geometrical/cis-trans).
+    *   Preparation and Properties (Addition reactions, Markovnikov’s rule, Peroxide effect).
+*   **Alkynes:**
+    *   Nomenclature and Isomerism.
+    *   Structure of the triple bond.
+    *   Properties (Acidic character, addition reactions, polymerization).
+*   **Aromatic Hydrocarbons:**
+    *   Nomenclature and Isomerism.
+    *   Structure of Benzene (Resonance and stability).
+    *   Aromaticity (Hückel Rule).
+    *   Properties (Electrophilic substitution: Nitration, Halogenation, Sulphonation, Friedel-Crafts).
+    *   Directive influence of functional groups (Ortho, para, and meta directing groups).
+*   **Carcinogenicity and Toxicity:** Effects of polynuclear hydrocarbons.

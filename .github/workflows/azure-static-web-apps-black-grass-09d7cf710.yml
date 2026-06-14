@@ -85,8 +85,8 @@ jobs:
           ls -lh ../deploy.zip
           
           # Upload zip to blob storage
-          STORAGE_ACCOUNT="staryabhattafunc"
-          CONTAINER="deployments"
+          STORAGE_ACCOUNT="${{ vars.AZURE_DEPLOY_STORAGE_ACCOUNT }}"
+          CONTAINER="${{ vars.AZURE_DEPLOY_CONTAINER }}"
           BLOB_NAME="deploy-$(date +%Y%m%d%H%M%S).zip"
           
           # Create container if not exists
@@ -124,8 +124,8 @@ jobs:
           
           echo "Setting WEBSITE_RUN_FROM_PACKAGE to blob URL..."
           az functionapp config appsettings set \
-            --name func-aryabhatta-api \
-            --resource-group rg-aryabhata-app \
+            --name "${{ vars.AZURE_FUNCTION_APP_NAME }}" \
+            --resource-group "${{ vars.AZURE_FUNCTION_RESOURCE_GROUP }}" \
             --settings "WEBSITE_RUN_FROM_PACKAGE=$SAS_URL"
           
           # Restart to apply

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JEE Tag Verifier</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/mhchem.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f5f5f5; color: #222; line-height: 1.5; }
+
+  /* header */
+  .header { background: #1a237e; color: #fff; padding: 12px 24px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+  .header h1 { font-size: 18px; font-weight: 600; }
+  .counter { font-size: 14px; background: rgba(255,255,255,0.15); padding: 6px 14px; border-radius: 6px; }
+  .counter .num { font-weight: 700; }
+  .counter .correct-count { color: #81c784; }
+  .counter .wrong-count { color: #ef9a9a; }
+  .counter .better-count { color: #ffe082; }
+
+  /* filter bar */
+  .filter-bar { background: #fff; padding: 14px 24px; border-bottom: 1px solid #ddd; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  .filter-bar label { font-size: 13px; font-weight: 600; color: #555; }
+  .filter-bar select { padding: 6px 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 13px; }
+  .filter-bar button { padding: 7px 18px; border: none; border-radius: 4px; font-size: 13px; font-weight: 600; cursor: pointer; }
+  .btn-load { background: #1a237e; color: #fff; }
+  .btn-load:hover { background: #283593; }
+  .btn-download { background: #fff; color: #1a237e; border: 1px solid #1a237e !important; }
+  .btn-download:hover { background: #e8eaf6; }
+  .btn-load:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  /* main content */
+  .content { max-width: 960px; margin: 20px auto; padding: 0 16px; }
+  .status-msg { text-align: center; color: #777; padding: 60px 0; font-size: 15px; }
+
+  /* question card */
+  .q-card { background: #fff; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 20px; overflow: hidden; }
+  .q-header { background: #f9f9f9; padding: 10px 16px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px; }
+  .q-header .q-id { font-weight: 700; font-size: 14px; color: #1a237e; }
+  .q-header .q-meta { font-size: 12px; color: #777; }
+  .q-badge { display: inline-block; padding: 2px 8px; border-radius: 3px; font-size: 11px; font-weight: 600; }
+  .q-badge.mcq { background: #e3f2fd; color: #1565c0; }
+  .q-badge.integer { background: #fce4ec; color: #c62828; }
+  .q-badge.easy { background: #e8f5e9; color: #2e7d32; }
+  .q-badge.medium { background: #fff3e0; color: #e65100; }
+  .q-badge.hard { background: #fce4ec; color: #c62828; }
+
+  .q-body { padding: 14px 16px; }
+  .q-text { font-size: 15px; line-height: 1.7; margin-bottom: 10px; }
+  .q-options { list-style: none; margin-bottom: 6px; }
+  .q-options li { padding: 4px 0; font-size: 14px; }
+  .q-options .opt-label { font-weight: 600; color: #555; margin-right: 6px; }
+  .q-answer { font-size: 13px; color: #388e3c; font-weight: 600; margin-top: 6px; }
+
+  /* concept sub-card */
+  .concept-card { border: 1px solid #e0e0e0; border-radius: 6px; margin: 10px 0; }
+  .concept-header { padding: 10px 14px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px; background: #fafafa; border-bottom: 1px solid #eee; }
+  .concept-title { font-weight: 600; font-size: 14px; }
+  .concept-meta { font-size: 12px; color: #777; }
+  .type-badge { display: inline-block; padding: 1px 7px; border-radius: 3px; font-size: 11px; font-weight: 600; margin-right: 4px; }
+  .type-badge.concept { background: #e8eaf6; color: #3949ab; }
+  .type-badge.formula { background: #fff8e1; color: #f57f17; }
+  .type-badge.example { background: #e0f2f1; color: #00695c; }
+  .type-badge.technique { background: #f3e5f5; color: #7b1fa2; }
+  .score-bar { display: inline-block; width: 50px; height: 6px; background: #eee; border-radius: 3px; vertical-align: middle; margin-left: 6px; }
+  .score-fill { height: 100%; border-radius: 3px; }
+  .score-high { background: #66bb6a; }
+  .score-mid { background: #ffa726; }
+  .score-low { background: #ef5350; }
+
+  .concept-body { padding: 10px 14px; }
+  .concept-formulas { background: #f5f5f5; padding: 8px 12px; border-radius: 4px; margin-bottom: 8px; font-size: 14px; line-height: 1.8; }
+  details { margin: 6px 0; }
+  details summary { cursor: pointer; font-size: 13px; font-weight: 600; color: #555; user-select: none; }
+  details summary:hover { color: #1a237e; }
+  details .detail-content { padding: 8px 0 4px 0; font-size: 13px; color: #444; line-height: 1.6; }
+
+  /* verdict buttons */
+  .verdict-row { display: flex; gap: 8px; margin-top: 10px; }
+  .verdict-btn { padding: 5px 14px; border: 2px solid #ccc; border-radius: 4px; font-size: 12px; font-weight: 600; cursor: pointer; background: #fff; transition: all 0.15s; }
+  .verdict-btn:hover { border-color: #888; }
+  .verdict-btn.correct { color: #2e7d32; }
+  .verdict-btn.correct.active { background: #e8f5e9; border-color: #2e7d32; }
+  .verdict-btn.wrong { color: #c62828; }
+  .verdict-btn.wrong.active { background: #fce4ec; border-color: #c62828; }
+  .verdict-btn.can_be_better { color: #e65100; }
+  .verdict-btn.can_be_better.active { background: #fff3e0; border-color: #e65100; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>JEE Tag Verifier</h1>
+  <div class="counter" id="counter">
+    Reviewed: <span class="num" id="cnt-reviewed">0</span> / <span class="num" id="cnt-total">0</span>
+    &nbsp;|&nbsp;
+    <span class="correct-count" id="cnt-correct">0</span> correct
+    <span class="wrong-count" id="cnt-wrong">0</span> wrong
+    <span class="better-count" id="cnt-better">0</span> better
+  </div>
+</div>
+
+<div class="filter-bar">
+  <label>Year</label><select id="f-year"><option value="">All</option></select>
+  <label>Date</label><select id="f-date"><option value="">All</option></select>
+  <label>Shift</label><select id="f-shift"><option value="">All</option></select>
+  <label>Subject</label><select id="f-subject"><option value="">All</option></select>
+  <button class="btn-load" id="btn-load">Load Questions</button>
+  <button class="btn-download" id="btn-download" disabled>Download Verdicts</button>
+</div>
+
+<div class="content" id="content">
+  <div class="status-msg" id="status">Select filters and click "Load Questions" to begin.</div>
+</div>
+
+<script>
+// ── state ────────────────────────────────────────────────────────────────────
+const state = {
+  verdicts: {},       // "questionId_conceptId" → "correct"|"wrong"|"can_be_better"
+  questions: [],
+  filters: { year: '', date: '', shift: '', subject: '' },
+  totalPairs: 0,
+};
+
+const OPT_LETTERS = ['A', 'B', 'C', 'D'];
+
+// ── init ─────────────────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', async () => {
+  await loadFilters();
+  document.getElementById('btn-load').addEventListener('click', loadQuestions);
+  document.getElementById('btn-download').addEventListener('click', downloadVerdicts);
+});
+
+async function loadFilters() {
+  try {
+    const resp = await fetch('/api/filters');
+    const data = await resp.json();
+    populateSelect('f-year', data.years || []);
+    populateSelect('f-date', data.dates || []);
+    populateSelect('f-shift', data.shifts || []);
+    populateSelect('f-subject', data.subjects || []);
+  } catch (e) {
+    console.error('Failed to load filters:', e);
+  }
+}
+
+function populateSelect(id, values) {
+  const sel = document.getElementById(id);
+  values.forEach(v => {
+    const opt = document.createElement('option');
+    opt.value = v;
+    opt.textContent = v;
+    sel.appendChild(opt);
+  });
+}
+
+// ── load questions ───────────────────────────────────────────────────────────
+async function loadQuestions() {
+  const btn = document.getElementById('btn-load');
+  btn.disabled = true;
+  btn.textContent = 'Loading...';
+
+  const year = document.getElementById('f-year').value;
+  const date = document.getElementById('f-date').value;
+  const shift = document.getElementById('f-shift').value;
+  const subject = document.getElementById('f-subject').value;
+
+  state.filters = { year, date, shift, subject };
+
+  const params = new URLSearchParams();
+  if (year) params.set('year', year);
+  if (date) params.set('date', date);
+  if (shift) params.set('shift', shift);
+  if (subject) params.set('subject', subject);
+
+  if (!params.toString()) {
+    document.getElementById('status').textContent = 'Please select at least one filter.';
+    btn.disabled = false;
+    btn.textContent = 'Load Questions';
+    return;
+  }
+
+  try {
+    const resp = await fetch('/api/questions?' + params.toString());
+    const data = await resp.json();
+
+    if (data.error) {
+      document.getElementById('status').textContent = data.error;
+      return;
+    }
+
+    state.questions = data.questions || [];
+    state.verdicts = {};
+    state.totalPairs = state.questions.reduce((sum, q) => sum + q.concepts.length, 0);
+
+    renderQuestions();
+    updateCounter();
+    document.getElementById('btn-download').disabled = false;
+  } catch (e) {
+    document.getElementById('content').innerHTML = '<div class="status-msg">Error loading questions: ' + e.message + '</div>';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Load Questions';
+  }
+}
+
+// ── render ────────────────────────────────────────────────────────────────────
+function renderQuestions() {
+  const container = document.getElementById('content');
+
+  if (state.questions.length === 0) {
+    container.innerHTML = '<div class="status-msg">No tagged questions found for these filters.</div>';
+    return;
+  }
+
+  let html = '';
+  state.questions.forEach((q, qi) => {
+    const qc = q.question_content || {};
+    const rawText = qc.raw_text || '(no text)';
+    const options = qc.options || [];
+    const sectionClass = (q.section || '').toLowerCase() === 'integer' ? 'integer' : 'mcq';
+    const diffClass = (q.difficulty || 'medium').toLowerCase();
+
+    html += `<div class="q-card">`;
+    html += `<div class="q-header">`;
+    html += `<div><span class="q-id">Q${qi + 1} (ID: ${q.question_id})</span> <span class="q-badge ${sectionClass}">${q.section || 'MCQ'}</span> <span class="q-badge ${diffClass}">${q.difficulty || '—'}</span></div>`;
+    html += `<div class="q-meta">${q.subject} | ${q.dateofexam} Shift ${q.shift} | NTA: ${q.nta_question_id} | Pattern: ${q.pattern_label || '—'}</div>`;
+    html += `</div>`;
+
+    html += `<div class="q-body">`;
+    html += `<div class="q-text">${escapeHtml(rawText)}</div>`;
+
+    if (options.length > 0) {
+      html += `<ul class="q-options">`;
+      options.forEach((opt, oi) => {
+        const letter = OPT_LETTERS[oi] || (oi + 1);
+        const isCorrect = q.answer_key === letter;
+        html += `<li><span class="opt-label">(${letter})</span> <span>${escapeHtml(opt.text || '')}</span>${isCorrect ? ' <span style="color:#2e7d32;font-weight:600">&#10004;</span>' : ''}</li>`;
+      });
+      html += `</ul>`;
+    }
+
+    if (q.answer_key) {
+      html += `<div class="q-answer">Answer: ${escapeHtml(q.answer_key)}</div>`;
+    }
+
+    // figure description
+    if (qc.has_figure && qc.figure_description) {
+      html += `<div style="margin-top:8px;padding:6px 10px;background:#fff8e1;border-radius:4px;font-size:13px;color:#795548;">[Figure] ${escapeHtml(qc.figure_description)}</div>`;
+    }
+
+    // concepts
+    q.concepts.forEach(c => {
+      const key = q.question_id + '_' + c.concept_id;
+      const scoreClass = c.similarity_score >= 0.85 ? 'score-high' : c.similarity_score >= 0.7 ? 'score-mid' : 'score-low';
+      const scorePct = Math.round(c.similarity_score * 100);
+      const typeClass = (c.content_type || 'concept').toLowerCase();
+
+      html += `<div class="concept-card">`;
+      html += `<div class="concept-header">`;
+      html += `<div><span class="type-badge ${typeClass}">${c.content_type || 'concept'}</span> <span class="concept-title">${escapeHtml(c.concept_title)}</span></div>`;
+      html += `<div class="concept-meta">Ch: ${escapeHtml(c.chapter_title)} | Score: ${c.similarity_score.toFixed(2)} <span class="score-bar"><span class="score-fill ${scoreClass}" style="width:${scorePct}%"></span></span></div>`;
+      html += `</div>`;
+
+      html += `<div class="concept-body">`;
+
+      if (c.key_formulas) {
+        // Wrap each formula (split by ; or newline) in $ delimiters for KaTeX
+        const formulas = c.key_formulas.split(/[;\n]+/).filter(f => f.trim());
+        const rendered = formulas.map(f => `$${f.trim()}$`).join('&nbsp;&nbsp;');
+        html += `<div class="concept-formulas">${rendered}</div>`;
+      }
+
+      if (c.description) {
+        html += `<details><summary>Description</summary><div class="detail-content">${escapeHtml(c.description)}</div></details>`;
+      }
+      if (c.ncert_solved_example) {
+        html += `<details><summary>NCERT Example</summary><div class="detail-content">${escapeHtml(c.ncert_solved_example)}</div></details>`;
+      }
+
+      html += `<div class="verdict-row" data-key="${key}">`;
+      html += `<button class="verdict-btn correct" onclick="setVerdict('${key}','correct')">&#10003; Correct</button>`;
+      html += `<button class="verdict-btn wrong" onclick="setVerdict('${key}','wrong')">&#10007; Wrong</button>`;
+      html += `<button class="verdict-btn can_be_better" onclick="setVerdict('${key}','can_be_better')">~ Can Be Better</button>`;
+      html += `</div>`;
+
+      html += `</div></div>`;
+    });
+
+    html += `</div></div>`;
+  });
+
+  container.innerHTML = html;
+
+  // Render all LaTeX
+  renderMathInElement(container, {
+    delimiters: [
+      { left: '$$', right: '$$', display: true },
+      { left: '$', right: '$', display: false },
+      { left: '\\(', right: '\\)', display: false },
+      { left: '\\[', right: '\\]', display: true },
+    ],
+    throwOnError: false,
+  });
+}
+
+// ── verdict handling ─────────────────────────────────────────────────────────
+function setVerdict(key, verdict) {
+  // Toggle off if clicking same verdict
+  if (state.verdicts[key] === verdict) {
+    delete state.verdicts[key];
+  } else {
+    state.verdicts[key] = verdict;
+  }
+
+  // Update button styles
+  const row = document.querySelector(`.verdict-row[data-key="${key}"]`);
+  if (row) {
+    row.querySelectorAll('.verdict-btn').forEach(btn => {
+      btn.classList.remove('active');
+    });
+    if (state.verdicts[key]) {
+      const activeBtn = row.querySelector(`.verdict-btn.${state.verdicts[key]}`);
+      if (activeBtn) activeBtn.classList.add('active');
+    }
+  }
+
+  updateCounter();
+}
+
+function updateCounter() {
+  const reviewed = Object.keys(state.verdicts).length;
+  const correct = Object.values(state.verdicts).filter(v => v === 'correct').length;
+  const wrong = Object.values(state.verdicts).filter(v => v === 'wrong').length;
+  const better = Object.values(state.verdicts).filter(v => v === 'can_be_better').length;
+
+  document.getElementById('cnt-reviewed').textContent = reviewed;
+  document.getElementById('cnt-total').textContent = state.totalPairs;
+  document.getElementById('cnt-correct').textContent = correct;
+  document.getElementById('cnt-wrong').textContent = wrong;
+  document.getElementById('cnt-better').textContent = better;
+}
+
+// ── download ─────────────────────────────────────────────────────────────────
+function downloadVerdicts() {
+  // Build lookup for concept titles and scores
+  const conceptLookup = {};
+  state.questions.forEach(q => {
+    q.concepts.forEach(c => {
+      conceptLookup[q.question_id + '_' + c.concept_id] = {
+        question_id: q.question_id,
+        nta_question_id: q.nta_question_id,
+        concept_id: c.concept_id,
+        concept_title: c.concept_title,
+        similarity_score: c.similarity_score,
+      };
+    });
+  });
+
+  const reviewed = Object.keys(state.verdicts).length;
+  const correct = Object.values(state.verdicts).filter(v => v === 'correct').length;
+  const wrong = Object.values(state.verdicts).filter(v => v === 'wrong').length;
+  const better = Object.values(state.verdicts).filter(v => v === 'can_be_better').length;
+
+  const exportData = {
+    exported_at: new Date().toISOString(),
+    filters: state.filters,
+    summary: {
+      total_pairs: state.totalPairs,
+      reviewed: reviewed,
+      correct: correct,
+      wrong: wrong,
+      can_be_better: better,
+      accuracy_pct: reviewed > 0 ? Math.round(1000 * correct / reviewed) / 10 : 0,
+    },
+    verdicts: Object.entries(state.verdicts).map(([key, verdict]) => {
+      const info = conceptLookup[key] || {};
+      return { ...info, verdict };
+    }),
+  };
+
+  const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  const parts = [state.filters.year, state.filters.date, state.filters.shift, state.filters.subject].filter(Boolean);
+  a.download = 'tag_verdicts_' + (parts.join('_') || 'all') + '.json';
+  a.href = url;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+// ── util ─────────────────────────────────────────────────────────────────────
+function escapeHtml(text) {
+  if (!text) return '';
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+</script>
+</body>
+</html>

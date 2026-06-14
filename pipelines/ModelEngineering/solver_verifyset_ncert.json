@@ -1,0 +1,1641 @@
+{
+  "meta": {
+    "seed": 7,
+    "n": 123
+  },
+  "records": [
+    {
+      "source": "ncert",
+      "id": 415,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Calculate the wavenumber for the longest wavelength transition in the Balmer series of atomic hydrogen.",
+        "options": []
+      },
+      "answer_key": "1.523 \u00d7 106 m\u20131",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 1174,
+      "subject": "Maths",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "If $z_1 = 2 - i, z_2 = 1 + i$, find $\\left| \\frac{z_1 + z_2 + 1}{z_1 - z_2 + 1} \\right|$.",
+        "options": []
+      },
+      "answer_key": "{\"answer\": \"\\u221a2\"}",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 679,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Three girls skating on a circular ice ground of radius $200 \\text{ m}$ start from a point $P$ on the edge of the ground and reach a point $Q$ diametrically opposite to $P$ following different paths as shown in Fig. 3.19. What is the magnitude of the displacement vector for each ? For which girl is this equal to the actual length of path skate ?",
+        "options": []
+      },
+      "answer_key": "400 m for each; B",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_3/figure_3_8.png"
+      ],
+      "has_figure": true
+    },
+    {
+      "source": "ncert",
+      "id": 599,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Ethyl acetate is formed by the reaction between ethanol and acetic acid and the equilibrium is represented as:\n$$\\ce{CH3COOH (l) + C2H5OH (l) <=> CH3COOC2H5 (l) + H2O (l)}$$\n(i) Write the concentration ratio (reaction quotient), $Q_c$, for this reaction (note: water is not in excess and is not a solvent in this reaction)\n(ii) At $293 \\text{ K}$, if one starts with $1.00 \\text{ mol}$ of acetic acid and $0.18 \\text{ mol}$ of ethanol, there is $0.171 \\text{ mol}$ of ethyl acetate in the final equilibrium mixture. Calculate the equilibrium constant.\n(iii) Starting with $0.5 \\text{ mol}$ of ethanol and $1.0 \\text{ mol}$ of acetic acid and maintaining it at $293 \\text{ K}$, $0.214 \\text{ mol}$ of ethyl acetate is found after sometime. Has equilibrium been reached?",
+        "options": []
+      },
+      "answer_key": "(i) [CH3COOC2H5][H2O] / [CH3COOH][C2H5OH]\n(ii) 3.92 (iii) value of Qc is less than Kc therefore equilibrium is not attained.",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 271,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "A sample of $0.50 \\text{ g}$ of an organic compound was treated according to Kjeldahl\u2019s method. The ammonia evolved was absorbed in $50 \\text{ ml}$ of $0.5 \\text{ M } \\ce{H2SO4}$. The residual acid required $60 \\text{ mL}$ of $0.5 \\text{ M}$ solution of $\\ce{NaOH}$ for neutralisation. Find the percentage composition of nitrogen in the compound.",
+        "options": []
+      },
+      "answer_key": "% fo nitrogen = 56",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 702,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "A rocket with a lift-off mass $20,000 \\text{ kg}$ is blasted upwards with an initial acceleration of $5.0 \\text{ m s}^{-2}$. Calculate the initial thrust (force) of the blast.",
+        "options": []
+      },
+      "answer_key": "F \u2013 20,000 \u00d7 10 = 20000 \u00d7 5.0, i.e., F = 3.0 \u00d7 105 N",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 370,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "A spring having with a spring constant $1200 \\text{ N m}^{-1}$ is mounted on a horizontal table as shown in Fig. 13.19. A mass of $3 \\text{ kg}$ is attached to the free end of the spring. The mass is then pulled sideways to a distance of $2.0 \\text{ cm}$ and released.\nDetermine (i) the frequency of oscillations, (ii) maximum acceleration of the mass, and (iii) the maximum speed of the mass.",
+        "options": []
+      },
+      "answer_key": "Frequency 3.2 s\u20131; maximum acceleration of the mass 8.0 m s\u20132; maximum speed of the mass 0.4 m s\u20131.",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_13/figure_13_9.png"
+      ],
+      "has_figure": true
+    },
+    {
+      "source": "ncert",
+      "id": 787,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "A rigid bar of mass $15 \\text{ kg}$ is supported symmetrically by three wires each $2.0 \\text{ m}$ long. Those at each end are of copper and the middle one is of iron. Determine the ratios of their diameters if each is to have the same tension.",
+        "options": []
+      },
+      "answer_key": "Dcopper/Diron = 1.25",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 442,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "An ion with mass number 56 contains 3 units of positive charge and 30.4% more neutrons than electrons. Assign the symbol to this ion.",
+        "options": []
+      },
+      "answer_key": "26 56 3+ Fe",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 1178,
+      "subject": "Maths",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Find the modulus of $\\frac{1 + i}{1 - i} - \\frac{1 - i}{1 + i}$.",
+        "options": []
+      },
+      "answer_key": "{\"answer\": \"2\"}",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 417,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "The electron energy in hydrogen atom is given by $E_n = (-2.18 \\times 10^{-18})/n^2 \\text{ J}$. Calculate the energy required to remove an electron completely from the $n = 2$ orbit. What is the longest wavelength of light in cm that can be used to cause this transition?",
+        "options": []
+      },
+      "answer_key": "3647\u00c5",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 652,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "What is the maximum concentration of equimolar solutions of ferrous sulphate and sodium sulphide so that when mixed in equal volumes, there is no precipitation of iron sulphide? (For iron sulphide, $K_{sp} = 6.3 \\times 10^{-18}$).",
+        "options": []
+      },
+      "answer_key": "The highest molarity for the solution is 2.5 \u00d7 10\u20139M",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 429,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "How many electrons in an atom may have the following quantum numbers?\n(a) $n = 4, m_s = - 1/2$\n(b) $n = 3, l = 0$",
+        "options": []
+      },
+      "answer_key": "(a) 16 electrons (b) 2 electrons",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 765,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Which of the following symptoms is likely to afflict an astronaut in space (a) swollen feet, (b) swollen face, (c) headache, (d) orientational problem.",
+        "options": []
+      },
+      "answer_key": "(b), (c) and (d)",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 635,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "The ionization constant of dimethylamine is $5.4 \\times 10^{-4}$. Calculate its degree of ionization in its $0.02\\text{M}$ solution. What percentage of dimethylamine is ionized if the solution is also $0.1\\text{M}$ in $\\ce{NaOH}$?",
+        "options": []
+      },
+      "answer_key": "\u03b1 = 0.0054",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 766,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "In the following two exercises, choose the correct answer from among the given ones:\nThe gravitational intensity at the centre of a hemispherical shell of uniform mass density has the direction indicated by the arrow (see Fig 7.11) (i) a, (ii) b, (iii) c, (iv) 0.",
+        "options": []
+      },
+      "answer_key": "For these two problems, complete the hemisphere to sphere. At both P, and C, potential is constant and hence intensity = 0. Therefore, for the hemisphere, (c) and (e) are correct.",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_7/figure_7_10.png"
+      ],
+      "has_figure": true
+    },
+    {
+      "source": "ncert",
+      "id": 632,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "The pH of $0.005\\text{M}$ codeine ($\\ce{C18H21NO3}$) solution is 9.95. Calculate its ionization constant and $pK_b$.",
+        "options": []
+      },
+      "answer_key": "Kb = 1.6 \u00d7 10\u20136, pKb = 5.8",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 448,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "The longest wavelength doublet absorption transition is observed at 589 and $589.6 \\text{ nm}$. Calcualte the frequency of each transition and energy difference between two excited states.",
+        "options": []
+      },
+      "answer_key": "3.45 \u00d7 10\u201322 J",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 295,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Figure 2.14 gives the $x-t$ plot of a particle in one-dimensional motion. Three different equal intervals of time are shown. In which interval is the average speed greatest, and in which is it the least ? Give the sign of average velocity for each interval.",
+        "options": []
+      },
+      "answer_key": "Greatest in 3, least in 2; v > 0 in 1 and 2, v < 0 in 3.",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_2/figure_2_17.png"
+      ],
+      "has_figure": true
+    },
+    {
+      "source": "ncert",
+      "id": 447,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Lifetimes of the molecules in the excited states are often measured by using pulsed radiation source of duration nearly in the nano second range. If the radiation source has the duration of $2 \\text{ ns}$ and the number of photons emitted during the pulse source is $2.5 \\times 10^{15}$, calculate the energy of the source.",
+        "options": []
+      },
+      "answer_key": "8.28 \u00d7 10\u201310 J",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 1177,
+      "subject": "Maths",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Find the real numbers $x$ and $y$ if $(x - iy) (3 + 5i)$ is the conjugate of $-6 - 24i$.",
+        "options": []
+      },
+      "answer_key": "{\"answer\": \"x = 3, y = \\u2013 3\"}",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 419,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "The mass of an electron is $9.1 \\times 10^{-31} \\text{ kg}$. If its K.E. is $3.0 \\times 10^{-25} \\text{ J}$, calculate its wavelength.",
+        "options": []
+      },
+      "answer_key": "8967\u00c5",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 465,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "(a) How many subshells are associated with $n = 4$ ? (b) How many electrons will be present in the subshells having $m_s$ value of $-1/2$ for $n = 4$ ?",
+        "options": []
+      },
+      "answer_key": "16",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 734,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "The bob of a pendulum is released from a horizontal position. If the length of the pendulum is $1.5 \\text{ m}$, what is the speed with which the bob arrives at the lowermost point, given that it dissipated $5\\%$ of its initial energy against air resistance ?",
+        "options": []
+      },
+      "answer_key": "5.3 m s-1",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 382,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "A steel wire has a length of $12.0 \\text{ m}$ and a mass of $2.10 \\text{ kg}$. What should be the tension in the wire so that speed of a transverse wave on the wire equals the speed of sound in dry air at $20^\\circ\\text{C} = 343 \\text{ m s}^{-1}$.",
+        "options": []
+      },
+      "answer_key": "2.06 \u00d7 104 N",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 363,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Which of the following examples represent (nearly) simple harmonic motion and which represent periodic but not simple harmonic motion?\n(a) the rotation of earth about its axis.\n(b) motion of an oscillating mercury column in a U-tube.\n(c) motion of a ball bearing inside a smooth curved bowl, when released from a point slightly above the lower most point.\n(d) general vibrations of a polyatomic molecule about its equilibrium position.",
+        "options": []
+      },
+      "answer_key": "(b) and (c): SHM; (a) and (d) represent periodic but not SHM [A polyatomic molecule has a number of natural frequencies; so in general, its vibration is a superposition of SHM\u2019s of a number of different frequencies. This superposition is periodic but not SHM].",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 596,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "At $700 \\text{ K}$, equilibrium constant for the reaction:\n$$\\ce{H2 (g) + I2 (g) <=> 2HI (g)}$$\nis 54.8. If $0.5 \\text{ mol L}^{-1}$ of $\\ce{HI(g)}$ is present at equilibrium at $700 \\text{ K}$, what are the concentration of $\\ce{H2(g)}$ and $\\ce{I2(g)}$ assuming that we initially started with $\\ce{HI(g)}$ and allowed it to reach equilibrium at $700\\text{K}$?",
+        "options": []
+      },
+      "answer_key": "0.068 molL\u20131 each of H2 and I2",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 441,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "An ion with mass number 37 possesses one unit of negative charge. If the ion conatins 11.1% more neutrons than the electrons, find the symbol of the ion.",
+        "options": []
+      },
+      "answer_key": "17 37 1 Cl\u2212",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 706,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "A man of mass $70 \\text{ kg}$ stands on a weighing scale in a lift which is moving\n(a) upwards with a uniform speed of $10 \\text{ m s}^{-1}$,\n(b) downwards with a uniform acceleration of $5 \\text{ m s}^{-2}$,\n(c) upwards with a uniform acceleration of $5 \\text{ m s}^{-2}$.\nWhat would be the readings on the scale in each case?\n(d) What would be the reading if the lift mechanism failed and it hurtled down freely under gravity ?",
+        "options": []
+      },
+      "answer_key": "The reading on the scale is a measure of the force on the floor by the man. By the Third Law, this is equal and opposite to the normal force N on the man by the floor. (a) N = 70 \u00d7 10 = 700 N ; Reading is 70 kg (b) 70 \u00d7 10 \u2013 N = 70 \u00d7 5 ; Reading is 35 kg (c) N \u2013 70 \u00d7 10 = 70 \u00d7 5 ; Reading is 105 kg (d) 70 \u00d7 10 \u2013 N = 70 \u00d7 10; Reading would be zero; the scale would read zero.",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 1158,
+      "subject": "Maths",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "$i^{-39}$",
+        "options": []
+      },
+      "answer_key": "{\"answer\": \"0+i 1\"}",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 733,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "The bob A of a pendulum released from $30^\\circ$ to the vertical hits another bob B of the same mass at rest on a table as shown in Fig. 5.15. How high does the bob A rise after the collision ? Neglect the size of the bobs and assume the collision to be elastic.",
+        "options": []
+      },
+      "answer_key": "It transfers its entire momentum to the ball on the table, and does not rise at all.",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_5/figure_5_17.png"
+      ],
+      "has_figure": true
+    },
+    {
+      "source": "ncert",
+      "id": 655,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Fill in the blanks\n(a) The volume of a cube of side $1 \\text{ cm}$ is equal to .....$\\text{m}^3$\n(b) The surface area of a solid cylinder of radius $2.0 \\text{ cm}$ and height $10.0 \\text{ cm}$ is equal to ...$(\\text{mm})^2$\n(c) A vehicle moving with a speed of $18 \\text{ km h}^{-1}$ covers....$\\text{m}$ in $1 \\text{ s}$\n(d) The relative density of lead is $11.3$. Its density is ....$\\text{g cm}^{-3}$ or ....$\\text{kg m}^{-3}$.",
+        "options": []
+      },
+      "answer_key": "(a) 10\u20136 ; (b) 1.5 \u00d7 104 ; (c) 5 ; (d) 11.3, 1.13 \u00d7 104.",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 424,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "An atom of an element contains 29 electrons and 35 neutrons. Deduce (i) the number of protons and (ii) the electronic configuration of the element.",
+        "options": []
+      },
+      "answer_key": "(i) 29 protons",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 1162,
+      "subject": "Maths",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "$\\left[\\left(\\frac{1}{3} + i\\frac{7}{3}\\right) + \\left(4 + i\\frac{1}{3}\\right)\\right] - \\left(-\\frac{4}{3} + i\\right)$",
+        "options": []
+      },
+      "answer_key": "{\"answer\": \"17/3 + i 5/3\"}",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 675,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "State with reasons, whether the following algebraic operations with scalar and vector physical quantities are meaningful :\n(a) adding any two scalars, (b) adding a scalar to a vector of the same dimensions , (c) multiplying any vector by any scalar, (d) multiplying any two scalars, (e) adding any two vectors, (f) adding a component of a vector to the same vector.",
+        "options": []
+      },
+      "answer_key": "Only (c) and (d) are permissible",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 310,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Write IUPAC names of the products obtained by the ozonolysis of the following compounds :\n(i) Pent-2-ene\n(ii) 3,4-Dimethylhept-3-ene\n(iii) 2-Ethylbut-1-ene\n(iv) 1-Phenylbut-1-ene",
+        "options": []
+      },
+      "answer_key": "(i) Ethanal and propanal\n(ii) Butan-2-one and pentan-2-one\n(iii) Methanal and pentan-3-one\n(iv) Propanal and benzaldehyde",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 307,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "How do you account for the formation of ethane during chlorination of methane ?",
+        "options": []
+      },
+      "answer_key": "Due to the side reaction in termination step by the combination of two C. H3 free radicals.",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 434,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "$2 \\times 10^8$ atoms of carbon are arranged side by side. Calculate the radius of carbon atom if the length of this arrangement is $2.4 \\text{ cm}$.",
+        "options": []
+      },
+      "answer_key": "0.06 nm",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 1160,
+      "subject": "Maths",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "$(1 - i) - (-1 + i6)$",
+        "options": []
+      },
+      "answer_key": "{\"answer\": \"2 \\u2013 7 i\"}",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 600,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "A sample of pure $\\ce{PCl5}$ was introduced into an evacuated vessel at $473 \\text{ K}$. After equilibrium was attained, concentration of $\\ce{PCl5}$ was found to be $0.5 \\times 10^{-1} \\text{ mol L}^{-1}$. If value of $K_c$ is $8.3 \\times 10^{-3}$, what are the concentrations of $\\ce{PCl3}$ and $\\ce{Cl2}$ at equilibrium?\n$$\\ce{PCl5 (g) <=> PCl3 (g) + Cl2(g)}$$",
+        "options": []
+      },
+      "answer_key": "0.02molL\u20131 for both.",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 747,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "A non-uniform bar of weight $W$ is suspended at rest by two strings of negligible weight as shown in Fig.6.33. The angles made by the strings with the vertical are $36.9^\\circ$ and $53.1^\\circ$ respectively. The bar is $2 \\text{ m}$ long. Calculate the distance $d$ of the centre of gravity of the bar from its left end.",
+        "options": []
+      },
+      "answer_key": "72 cm",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_6/figure_6_8.png"
+      ],
+      "has_figure": true
+    },
+    {
+      "source": "ncert",
+      "id": 676,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Read each statement below carefully and state with reasons, if it is true or false :\n(a) The magnitude of a vector is always a scalar, (b) each component of a vector is always a scalar, (c) the total path length is always equal to the magnitude of the displacement vector of a particle. (d) the average speed of a particle (defined as total path length divided by the time taken to cover the path) is either greater or equal to the magnitude of average velocity of the particle over the same interval of time, (e) Three vectors not lying in a plane can never add up to give a null vector.",
+        "options": []
+      },
+      "answer_key": "(a) T, (b) F, (c) F, (d) T, (e) T",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 1153,
+      "subject": "Maths",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Find $\\sin \\frac{x}{2}$, $\\cos \\frac{x}{2}$ and $\\tan \\frac{x}{2}$ in each of the following :\n$\\tan x = -\\frac{4}{3}$, $x$ in quadrant II",
+        "options": []
+      },
+      "answer_key": "{\"answer\": \"2\\u221a5/5, \\u221a5/5, 1/2\"}",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 1154,
+      "subject": "Maths",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "$\\cos x = -\\frac{1}{3}$, $x$ in quadrant III",
+        "options": []
+      },
+      "answer_key": "{\"answer\": \"\\u221a6/3, -\\u221a3/3, -\\u221a2\"}",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 366,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "A particle is in linear simple harmonic motion between two points, A and B, $10 \\text{ cm}$ apart. Take the direction from A to B as the positive direction and give the signs of velocity, acceleration and force on the particle when it is\n(a) at the end A,\n(b) at the end B,\n(c) at the mid-point of AB going towards A,\n(d) at $2 \\text{ cm}$ away from B going towards A,\n(e) at $3 \\text{ cm}$ away from A going towards B, and\n(f) at $4 \\text{ cm}$ away from B going towards A.",
+        "options": []
+      },
+      "answer_key": "(a) 0, +, + ; (b) 0, \u2013, \u2013 ; (c) \u2013, 0,0 ; (d) \u2013, \u2013, \u2013 ; (e) +, +, + ; (f ) \u2013, \u2013, \u2013.",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 437,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "In Milikan\u2019s experiment, static electric charge on the oil drops has been obtained by shining X-rays. If the static electric charge on the oil drop is $-1.282 \\times 10^{-18}\\text{C}$, calculate the number of electrons present on it.",
+        "options": []
+      },
+      "answer_key": "8",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 395,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "A steel rod $100 \\text{ cm}$ long is clamped at its middle. The fundamental frequency of longitudinal vibrations of the rod are given to be $2.53 \\text{ kHz}$. What is the speed of sound in steel?",
+        "options": []
+      },
+      "answer_key": "5.06 km s\u20131",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 598,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "$K_p = 0.04 \\text{ atm}$ at $899 \\text{ K}$ for the equilibrium shown below. What is the equilibrium concentration of $\\ce{C2H6}$ when it is placed in a flask at $4.0 \\text{ atm}$ pressure and allowed to come to equilibrium?\n$$\\ce{C2H6 (g) <=> C2H4 (g) + H2 (g)}$$",
+        "options": []
+      },
+      "answer_key": "[C2H6]eq = 3.62 atm",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 396,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "A pipe $20 \\text{ cm}$ long is closed at one end. Which harmonic mode of the pipe is resonantly excited by a $430 \\text{ Hz}$ source ? Will the same source be in resonance with the pipe if both ends are open? (speed of sound in air is $340 \\text{ m s}^{-1}$).",
+        "options": []
+      },
+      "answer_key": "First harmonic (fundamental); No.",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 1157,
+      "subject": "Maths",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "$i^9 + i^{19}$",
+        "options": []
+      },
+      "answer_key": "{\"answer\": \"0 + i 0\"}",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 294,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Figure 2.13 gives the $x-t$ plot of a particle executing one-dimensional simple harmonic motion. (You will learn about this motion in more detail in Chapter 13). Give the signs of position, velocity and acceleration variables of the particle at $t = 0.3 \\text{ s}$, $1.2 \\text{ s}$, $-1.2 \\text{ s}$.",
+        "options": []
+      },
+      "answer_key": "x < 0, v < 0, a > 0; x > 0, v > 0, a < 0; x < 0, v > 0, a > 0.",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_2/figure_2_16.png"
+      ],
+      "has_figure": true
+    },
+    {
+      "source": "ncert",
+      "id": 1183,
+      "subject": "Maths",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "If $\\left(\\frac{1 + i}{1 - i}\\right)^m = 1$, then find the least positive integral value of $m$.",
+        "options": []
+      },
+      "answer_key": "{\"answer\": \"4\"}",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 758,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Choose the correct alternative :\n(a) Acceleration due to gravity increases/decreases with increasing altitude.\n(b) Acceleration due to gravity increases/decreases with increasing depth (assume the earth to be a sphere of uniform density).\n(c) Acceleration due to gravity is independent of mass of the earth/mass of the body.\n(d) The formula $-G Mm(1/r_2 \u2013 1/r_1)$ is more/less accurate than the formula $mg(r_2 \u2013 r_1)$ for the difference of potential energy between two points $r_2$ and $r_1$ distance away from the centre of the earth.",
+        "options": []
+      },
+      "answer_key": "(a) decreases; (b) decreases; (c) mass of the body; (d) more.",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 443,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Arrange the following type of radiations in increasing order of frequency: (a) radiation from microwave oven (b) amber light from traffic signal (c) radiation from FM radio (d) cosmic rays from outer space and (e) X-rays.",
+        "options": []
+      },
+      "answer_key": "Cosmic rays > X\u2013rays > amber colour > microwave > FM",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 397,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Two sitar strings A and B playing the note \u2018Ga\u2019 are slightly out of tune and produce beats of frequency $6 \\text{ Hz}$. The tension in the string A is slightly reduced and the beat frequency is found to reduce to $3 \\text{ Hz}$. If the original frequency of A is $324 \\text{ Hz}$, what is the frequency of B?",
+        "options": []
+      },
+      "answer_key": "318 Hz",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 421,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "(i) Write the electronic configurations of the following ions: (a) $\\ce{H-}$ (b) $\\ce{Na+}$ (c) $\\ce{O^{2-}}$ (d) $\\ce{F-}$\n(ii) What are the atomic numbers of elements whose outermost electrons are represented by (a) $3s^1$ (b) $2p^3$ and (c) $3p^5$ ?\n(iii) Which atoms are indicated by the following configurations ?\n(a) $\\ce{[He] 2s^1}$ (b) $\\ce{[Ne] 3s^2 3p^3}$ (c) $\\ce{[Ar] 4s^2 3d^1}$.",
+        "options": []
+      },
+      "answer_key": "(i) (a) 1s2 (b) 1s2 2s2 2p6; (c) 1s22s22p6 (d) 1s22s22p6",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 394,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "A metre-long tube open at one end, with a movable piston at the other end, shows resonance with a fixed frequency source (a tuning fork of frequency $340 \\text{ Hz}$) when the tube length is $25.5 \\text{ cm}$ or $79.3 \\text{ cm}$. Estimate the speed of sound in air at the temperature of the experiment. The edge effects may be neglected.",
+        "options": []
+      },
+      "answer_key": "347 m s\u20131 Hint : vn = l v) n ( 4 1 2 \u2212 ; n = 1,2,3,\u2026.for a pipe with one end closed",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 796,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Fill in the blanks using the word(s) from the list appended with each statement:\n(a) Surface tension of liquids generally ... with temperatures (increases / decreases)\n(b) Viscosity of gases ... with temperature, whereas viscosity of liquids ... with temperature (increases / decreases)\n(c) For solids with elastic modulus of rigidity, the shearing force is proportional to ... , while for fluids it is proportional to ... (shear strain / rate of shear strain)\n(d) For a fluid in a steady flow, the increase in flow speed at a constriction follows (conservation of mass / Bernoulli\u2019s principle)\n(e) For the model of a plane in a wind tunnel, turbulence occurs at a ... speed for turbulence for an actual plane (greater / smaller)",
+        "options": []
+      },
+      "answer_key": "(a) decreases (b) \u03b7 of gases increases, \u03b7 of liquid decreases with temperature (c) shear strain, rate of shear strain (d) conservation of mass, Bernoulli\u2019s equation (e) greater.",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 1164,
+      "subject": "Maths",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "$\\left(\\frac{1}{3} + 3i\\right)^3$",
+        "options": []
+      },
+      "answer_key": "{\"answer\": \"-242/27 - 26i\"}",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 1156,
+      "subject": "Maths",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Express each of the complex number given in the Exercises 1 to 10 in the form $a + ib$.\n\n$(5i)\\left(-\\frac{3}{5}i\\right)$",
+        "options": []
+      },
+      "answer_key": "{\"answer\": \"3 + i0\"}",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 745,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Find the components along the $x, y, z$ axes of the angular momentum $\\mathbf{l}$ of a particle, whose position vector is $\\mathbf{r}$ with components $x, y, z$ and momentum is $\\mathbf{p}$ with components $p_x, p_y$ and $p_z$. Show that if the particle moves only in the $x-y$ plane the angular momentum has only a $z$-component.",
+        "options": []
+      },
+      "answer_key": "lz = xpy \u2013 ypx, lx = ypz \u2013 zpy, ly = zpx \u2013 xpz",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 616,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "What is meant by the conjugate acid-base pair? Find the conjugate acid/base for the following species:\n$\\ce{HNO2}$, $\\ce{CN^-}$, $\\ce{HClO4}$, $\\ce{F^-}$, $\\ce{OH^-}$, $\\ce{CO3^{2-}}$, and $\\ce{S^{2-}}$",
+        "options": []
+      },
+      "answer_key": "NO2\u2013, HCN, ClO4, HF, H2O, HCO3\u2013, HS\u2013",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 1165,
+      "subject": "Maths",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "$\\left(-2 - \\frac{1}{3}i\\right)^3$",
+        "options": []
+      },
+      "answer_key": "{\"answer\": \"-22/3 - i 107/27\"}",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 764,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "A comet orbits the sun in a highly elliptical orbit. Does the comet have a constant (a) linear speed, (b) angular speed, (c) angular momentum, (d) kinetic energy, (e) potential energy, (f) total energy throughout its orbit? Neglect any mass loss of the comet when it comes very close to the Sun.",
+        "options": []
+      },
+      "answer_key": "All quantities vary over an orbit except angular momentum and total energy.",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 210,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Calculate the standard enthalpy of formation of $\\ce{CH3OH(l)}$ from the following data:\n$\\ce{CH3OH(l) + 3/2 O2(g) -> CO2(g) + 2H2O(l)}$ ; $\\Delta_r H^\\ominus = -726 \\text{ kJ mol}^{-1}$\n$\\ce{C(graphite) + O2(g) -> CO2(g)}$ ; $\\Delta_c H^\\ominus = -393 \\text{ kJ mol}^{-1}$\n$\\ce{H2(g) + 1/2 O2(g) -> H2O(l)}$; $\\Delta_f H^\\ominus = -286 \\text{ kJ mol}^{-1}$.",
+        "options": []
+      },
+      "answer_key": "\u2013 239 kJ mol\u20131",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 782,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Two wires of diameter $0.25 \\text{ cm}$, one made of steel and the other made of brass are loaded as shown in Fig. 8.11. The unloaded length of steel wire is $1.5 \\text{ m}$ and that of brass wire is $1.0 \\text{ m}$. Compute the elongations of the steel and the brass wires.",
+        "options": []
+      },
+      "answer_key": "1.5 \u00d7 10\u20134 m (steel); 1.3 \u00d7 10\u20134 m (brass)",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_8/figure_8_5.png"
+      ],
+      "has_figure": true
+    },
+    {
+      "source": "ncert",
+      "id": 273,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "In the estimation of sulphur by Carius method, $0.468 \\text{ g}$ of an organic sulphur compound afforded $0.668 \\text{ g}$ of barium sulphate. Find out the percentage of sulphur in the given compound.",
+        "options": []
+      },
+      "answer_key": "% of sulphur = 19.66",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 309,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "For the following compounds, write structural formulas and IUPAC names for all possible isomers having the number of double or triple bond as indicated :\n(a) $\\ce{C4H8}$ (one double bond)\n(b) $\\ce{C5H8}$ (one triple bond)",
+        "options": []
+      },
+      "answer_key": "(a) (i) CH2 = CH \u2013 CH2 \u2013 CH3 But-1-ene\n(ii) CH3 \u2013 CH2 = CH \u2013 CH3 But-2-ene\n(iii) CH2 = C \u2013 CH3 2-Methylpropene\n|\nCH3\n(b) (i) HC \u2261 C \u2013 CH2 \u2013 CH2 \u2013 CH3 Pent-1-yne\n(ii) CH3 \u2013 C \u2261 C \u2013 CH2 \u2013 CH3 Pent-2-yne\n(iii) CH3 \u2013 CH \u2013 C \u2261 CH 3-Methylbut-1-yne\n|\nCH3",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 583,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "What is $K_c$ for the following equilibrium when the equilibrium concentration of each substance is: $[\\ce{SO2}]= 0.60\\text{M}$, $[\\ce{O2}] = 0.82\\text{M}$ and $[\\ce{SO3}] = 1.90\\text{M}$?\n$$\\ce{2SO2(g) + O2(g) <=> 2SO3(g)}$$",
+        "options": []
+      },
+      "answer_key": "12.229",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 1172,
+      "subject": "Maths",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Reduce $\\left(\\frac{1}{1 - 4i} - \\frac{2}{1 + i}\\right) \\left(\\frac{3 - 4i}{5 + i}\\right)$ to the standard form.",
+        "options": []
+      },
+      "answer_key": "{\"answer\": \"(307 + 599i)/442\"}",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 647,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Calculate the pH of the resultant mixtures:\na) $10 \\text{ mL}$ of $0.2\\text{M } \\ce{Ca(OH)2} + 25 \\text{ mL}$ of $0.1\\text{M } \\ce{HCl}$\nb) $10 \\text{ mL}$ of $0.01\\text{M } \\ce{H2SO4} + 10 \\text{ mL}$ of $0.01\\text{M } \\ce{Ca(OH)2}$\nc) $10 \\text{ mL}$ of $0.1\\text{M } \\ce{H2SO4} + 10 \\text{ mL}$ of $0.1\\text{M } \\ce{KOH}$",
+        "options": []
+      },
+      "answer_key": "a) 12.6 b) 7.00 c) 1.3",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 288,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "A man walks on a straight road from his home to a market $2.5 \\text{ km}$ away with a speed of $5 \\text{ km h}^{-1}$. Finding the market closed, he instantly turns and walks back home with a speed of $7.5 \\text{ km h}^{-1}$. What is the\n(a) magnitude of average velocity, and\n(b) average speed of the man over the interval of time (i) 0 to 30 min, (ii) 0 to 50 min, (iii) 0 to 40 min ?\n[Note: You will appreciate from this exercise why it is better to define average speed as total path length divided by time, and not as magnitude of average velocity. You would not like to tell the tired man on his return home that his average speed was zero !]",
+        "options": []
+      },
+      "answer_key": "(a) 5 km h\u20131, 5 km h\u20131; (b) 0, 6 km h\u20131; (c) 15/8 km h\u20131, 45/8 km h\u20131",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 719,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Given in Fig. 5.11 are examples of some potential energy functions in one dimension. The total energy of the particle is indicated by a cross on the ordinate axis. In each case, specify the regions, if any, in which the particle cannot be found for the given energy. Also, indicate the minimum total energy the particle must have in each case. Think of simple physical contexts for which these potential energy shapes are relevant.",
+        "options": []
+      },
+      "answer_key": "(a) x > a ; 0 (c) x < a, x > b ; - V1 (b) \u2212\u221e < x < \u221e; V1 (d) - b/2 < x < - a / 2, a / 2 < x < b / 2; -V1",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_5/figure_5_3.png"
+      ],
+      "has_figure": true
+    },
+    {
+      "source": "ncert",
+      "id": 1163,
+      "subject": "Maths",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "$(1 - i)^4$",
+        "options": []
+      },
+      "answer_key": "{\"answer\": \"- 4 + i 0\"}",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 1167,
+      "subject": "Maths",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "$\\sqrt{5} + 3i$",
+        "options": []
+      },
+      "answer_key": "{\"answer\": \"\\u221a5/14 - i 3/14\"}",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 1161,
+      "subject": "Maths",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "$\\left(\\frac{1}{5} + i\\frac{2}{5}\\right) - \\left(4 + i\\frac{5}{2}\\right)$",
+        "options": []
+      },
+      "answer_key": "{\"answer\": \"-19/5 - 21/10 i\"}",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 280,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "The position-time ($x-t$) graphs for two children A and B returning from their school O to their homes P and Q respectively are shown in Fig. 2.9. Choose the correct entries in the brackets below ;\n(a) (A/B) lives closer to the school than (B/A)\n(b) (A/B) starts from the school earlier than (B/A)\n(c) (A/B) walks faster than (B/A)\n(d) A and B reach home at the (same/different) time\n(e) (A/B) overtakes (B/A) on the road (once/twice).",
+        "options": []
+      },
+      "answer_key": "(a) A....B, (b) A....B, (c) B....A, (d) Same, (e) B....A....once.",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_2/figure_2_2.png"
+      ],
+      "has_figure": true
+    },
+    {
+      "source": "ncert",
+      "id": 726,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "A body is moving unidirectionally under the influence of a source of constant power. Its displacement in time $t$ is proportional to\n(i) $t^{1/2}$ (ii) $t$ (iii) $t^{3/2}$ (iv) $t^2$",
+        "options": []
+      },
+      "answer_key": "(c) t3/2",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 633,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "What is the pH of $0.001\\text{M}$ aniline solution? The ionization constant of aniline can be taken from Table 6.7. Calculate the degree of ionization of aniline in the solution. Also calculate the ionization constant of the conjugate acid of aniline.",
+        "options": []
+      },
+      "answer_key": "\u03b1 = 6.53 \u00d7 10\u20134, Ka = 2.35 \u00d7 10\u20135",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 629,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Assuming complete dissociation, calculate the pH of the following solutions:\n(a) $0.003 \\text{ M } \\ce{HCl}$ (b) $0.005 \\text{ M } \\ce{NaOH}$ (c) $0.002 \\text{ M } \\ce{HBr}$ (d) $0.002 \\text{ M } \\ce{KOH}$",
+        "options": []
+      },
+      "answer_key": "a) 2.52 b) 11.70 c) 2.70 d) 11.30",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 687,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Read each statement below carefully and state, with reasons, if it is true or false :\n(a) The net acceleration of a particle in circular motion is *always* along the radius of the circle towards the centre\n(b) The velocity vector of a particle at a point is *always* along the tangent to the path of the particle at that point\n(c) The acceleration vector of a particle in *uniform* circular motion averaged over one cycle is a null vector",
+        "options": []
+      },
+      "answer_key": "(a) False (true only for uniform circular motion) (b) True, (c) True.",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 440,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "An element with mass number 81 contains 31.7% more neutrons as compared to protons. Assign the atomic symbol.",
+        "options": []
+      },
+      "answer_key": "35 81Br",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 296,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Figure 2.15 gives a speed-time graph of a particle in motion along a constant direction. Three equal intervals of time are shown. In which interval is the average acceleration greatest in magnitude? In which interval is the average speed greatest ? Choosing the positive direction as the constant direction of motion, give the signs of $v$ and $a$ in the three intervals. What are the accelerations at the points A, B, C and D ?",
+        "options": []
+      },
+      "answer_key": "Acceleration magnitude greatest in 2; speed greatest in 3; v > 0 in 1, 2 and 3; a > 0 in 1 and 3, a < 0 in 2; a = 0 at A, B, C, D.",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_2/figure_2_18.png"
+      ],
+      "has_figure": true
+    },
+    {
+      "source": "ncert",
+      "id": 372,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Figures 13.20 correspond to two circular motions. The radius of the circle, the period of revolution, the initial position, and the sense of revolution (i.e. clockwise or anti-clockwise) are indicated on each figure.\nObtain the corresponding simple harmonic motions of the $x$-projection of the radius vector of the revolving particle P, in each case.",
+        "options": []
+      },
+      "answer_key": "(a) x = \u2013 3 sin \u03c0t where x is in cm. (b) x = \u2013 2 cos \u03c0 2 t where x is in cm.",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_13/figure_13_11.png"
+      ],
+      "has_figure": true
+    },
+    {
+      "source": "ncert",
+      "id": 1155,
+      "subject": "Maths",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "$\\sin x = \\frac{1}{4}$, $x$ in quadrant II",
+        "options": []
+      },
+      "answer_key": "{\"answer\": \"\\u221a(8 + 2\\u221a15)/4, \\u221a(8 - 2\\u221a15)/4, 4 + \\u221a15\"}",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 707,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Figure 4.16 shows the position-time graph of a particle of mass $4 \\text{ kg}$. What is the (a) force on the particle for $t < 0, t > 4 \\text{ s}, 0 < t < 4 \\text{ s}$? (b) impulse at $t = 0$ and $t = 4 \\text{ s}$ ? (Consider one-dimensional motion only).",
+        "options": []
+      },
+      "answer_key": "(a) In all the three intervals, acceleration and, therefore, force are zero. (b) 3 kg m s\u20131 at t = 0 ; (c) \u20133 kg m s\u20131 at t = 4 s.",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_4/figure_4_14.png"
+      ],
+      "has_figure": true
+    },
+    {
+      "source": "ncert",
+      "id": 651,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "The ionization constant of benzoic acid is $6.46 \\times 10^{-5}$ and $K_{sp}$ for silver benzoate is $2.5 \\times 10^{-13}$. How many times is silver benzoate more soluble in a buffer of pH 3.19 compared to its solubility in pure water?",
+        "options": []
+      },
+      "answer_key": "Silver benzoate is 3.317 times more soluble at lower pH",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 433,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "If the diameter of a carbon atom is $0.15 \\text{ nm}$, calculate the number of carbon atoms which can be placed side by side in a straight line across length of scale of length $20 \\text{ cm}$ long.",
+        "options": []
+      },
+      "answer_key": "1.33 \u00d7 109",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 650,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Equal volumes of $0.002 \\text{ M}$ solutions of sodium iodate and cupric chlorate are mixed together. Will it lead to precipitation of copper iodate? (For cupric iodate $K_{sp} = 7.4 \\times 10^{-8}$).",
+        "options": []
+      },
+      "answer_key": "No precipitate",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 612,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Dihydrogen gas used in Haber's process is produced by reacting methane from natural gas with high temperature steam. The first stage of two stage reaction involves the formation of $\\ce{CO}$ and $\\ce{H2}$. In second stage, $\\ce{CO}$ formed in first stage is reacted with more steam in water gas shift reaction,\n$$\\ce{CO (g) + H2O (g) <=> CO2 (g) + H2 (g)}$$\nIf a reaction vessel at $400^\\circ\\text{C}$ is charged with an equimolar mixture of $\\ce{CO}$ and steam such that $p_{\\ce{CO}} = p_{\\ce{H2O}} = 4.0 \\text{ bar}$, what will be the partial pressure of $\\ce{H2}$ at equilibrium? $K_p= 10.1$ at $400^\\circ\\text{C}$",
+        "options": []
+      },
+      "answer_key": "[H2]eq = 0.96 bar",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 605,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Calculate a) $\\Delta G^\\ominus$ and b) the equilibrium constant for the formation of $\\ce{NO2}$ from $\\ce{NO}$ and $\\ce{O2}$ at $298\\text{K}$\n$$\\ce{NO (g) + 1/2 O2 (g) <=> NO2 (g)}$$\nwhere\n$\\Delta_f G^\\ominus (\\ce{NO2}) = 52.0 \\text{ kJ/mol}$\n$\\Delta_f G^\\ominus (\\ce{NO}) = 87.0 \\text{ kJ/mol}$\n$\\Delta_f G^\\ominus (\\ce{O2}) = 0 \\text{ kJ/mol}$",
+        "options": []
+      },
+      "answer_key": "a) \u2013 35.0kJ, b) 1.365 \u00d7 106",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 637,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "The pH of milk, black coffee, tomato juice, lemon juice and egg white are 6.8, 5.0, 4.2, 2.2 and 7.8 respectively. Calculate corresponding hydrogen ion concentration in each.",
+        "options": []
+      },
+      "answer_key": "a) 1.5 \u00d7 10\u20137M, b) 10\u20135M, c) 6.31 \u00d7 10\u20135M d) 6.31 \u00d7 10\u20133M",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 388,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "For the wave described in Exercise 14.8, plot the displacement ($y$) versus ($t$) graphs for $x = 0, 2$ and $4 \\text{ cm}$. What are the shapes of these graphs? In which aspects does the oscillatory motion in travelling wave differ from one point to another: amplitude, frequency or phase ?",
+        "options": []
+      },
+      "answer_key": "All the graphs are sinusoidal. They have same amplitude and frequency, but different initial phases.",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 1180,
+      "subject": "Maths",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "If $\\alpha$ and $\\beta$ are different complex numbers with $|\\beta| = 1$, then find $\\left| \\frac{\\beta - \\alpha}{1 - \\bar{\\alpha}\\beta} \\right|$.",
+        "options": []
+      },
+      "answer_key": "{\"answer\": \"1\"}",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 1166,
+      "subject": "Maths",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Find the multiplicative inverse of each of the complex numbers given in the Exercises 11 to 13.\n\n$4 - 3i$",
+        "options": []
+      },
+      "answer_key": "{\"answer\": \"4/25 + i 3/25\"}",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 636,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Calculate the hydrogen ion concentration in the following biological fluids whose pH are given below:\n(a) Human muscle-fluid, 6.83\n(b) Human stomach fluid, 1.2\n(c) Human blood, 7.38\n(d) Human saliva, 6.4.",
+        "options": []
+      },
+      "answer_key": "a) 1.48 \u00d7 10\u20137M, b) 0.063 c) 4.17 \u00d7 10\u20138M d) 3.98 \u00d7 10\u20137",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 393,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "A wire stretched between two rigid supports vibrates in its fundamental mode with a frequency of $45 \\text{ Hz}$. The mass of the wire is $3.5 \\times 10^{-2} \\text{ kg}$ and its linear mass density is $4.0 \\times 10^{-2} \\text{ kg m}^{-1}$. What is (a) the speed of a transverse wave on the string, and (b) the tension in the string?",
+        "options": []
+      },
+      "answer_key": "(a) 79 m s\u20131 (b) 248 N",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 305,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "At what temperature is the root mean square speed of an atom in an argon gas cylinder equal to the rms speed of a helium gas atom at $-20 \\text{ }^\\circ\\text{C}$ ? (atomic mass of $\\text{Ar} = 39.9 \\text{ u}$, of $\\text{He} = 4.0 \\text{ u}$).",
+        "options": []
+      },
+      "answer_key": "2.52 \u00d7 103 K",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 374,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Figure 13.21(a) shows a spring of force constant $k$ clamped rigidly at one end and a mass $m$ attached to its free end. A force $F$ applied at the free end stretches the spring. Figure 13.21 (b) shows the same spring with both ends free and attached to a mass $m$ at either end. Each end of the spring in Fig. 13.21(b) is stretched by the same force $F$.\n(a) What is the maximum extension of the spring in the two cases ?\n(b) If the mass in Fig. (a) and the two masses in Fig. (b) are released, what is the period of oscillation in each case ?",
+        "options": []
+      },
+      "answer_key": "(a) F/k for both (a) and (b). (b) T = 2\u03c0 m k for (a) and 2\u03c0 k m 2 for (b)",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_13/figure_13_13.png"
+      ],
+      "has_figure": true
+    },
+    {
+      "source": "ncert",
+      "id": 732,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Two identical ball bearings in contact with each other and resting on a frictionless table are hit head-on by another ball bearing of the same mass moving initially with a speed $V$. If the collision is elastic, which of the following (Fig. 5.14) is a possible result after collision ?",
+        "options": []
+      },
+      "answer_key": "(b)",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_5/figure_5_16.png"
+      ],
+      "has_figure": true
+    },
+    {
+      "source": "ncert",
+      "id": 1159,
+      "subject": "Maths",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "$3(7 + i7) + i (7 + i7)$",
+        "options": []
+      },
+      "answer_key": "{\"answer\": \"14 + 28 i\"}",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 313,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Propanal and pentan-3-one are the ozonolysis products of an alkene? What is the structural formula of the alkene?",
+        "options": []
+      },
+      "answer_key": "4-Ethylhex-3-ene\nCH3 \u2013 CH2\u2013 C = CH \u2013 CH2\u2013CH3\n|\nCH2\u2013CH3",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 377,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "A simple pendulum of length $l$ and having a bob of mass $M$ is suspended in a car. The car is moving on a circular track of radius $R$ with a uniform speed $v$. If the pendulum makes small oscillations in a radial direction about its equilibrium position, what will be its time period ?",
+        "options": []
+      },
+      "answer_key": "\u03c0 + 2 4 2 T = 2 g / l v R . Hint: Effective acceleration due to gravity will get reduced due to radial acceleration v2/R acting in the horizontal plane.",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 327,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Write structures of all the alkenes which on hydrogenation give 2-methylbutane.",
+        "options": []
+      },
+      "answer_key": "CH2 = C \u2013 CH2 \u2013 CH3 2-Methylbut-1-ene\nCH3\n|\nCH3 \u2013 C = CH \u2013 CH3 2-Methylbut-2-ene\nCH3\n|\nCH3 \u2013 CH \u2013CH = CH2 3-Methylbut-1-ene",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 217,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Comment on the thermodynamic stability of $\\ce{NO(g)}$, given\n$\\ce{1/2 N2(g) + 1/2 O2(g) -> NO(g)}$; $\\Delta_r H^\\ominus = 90 \\text{ kJ mol}^{-1}$\n$\\ce{NO(g) + 1/2 O2(g) -> NO2(g)}$: $\\Delta_r H^\\ominus = -74 \\text{ kJ mol}^{-1}$",
+        "options": []
+      },
+      "answer_key": "NO(g) is unstable, but NO2(g) is formed.",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 1168,
+      "subject": "Maths",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "$-i$",
+        "options": []
+      },
+      "answer_key": "{\"answer\": \"0 + i1\"}",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 457,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "If the velocity of the electron in Bohr\u2019s first orbit is $2.19 \\times 10^6 \\text{ ms}^{-1}$, calculate the de Broglie wavelength associated with it.",
+        "options": []
+      },
+      "answer_key": "332 pm",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 562,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "A sample of drinking water was found to be severely contaminated with chloroform, $\\ce{CHCl3}$, supposed to be carcinogenic in nature. The level of contamination was $15 \\text{ ppm}$ (by mass).\n(i) Express this in per cent by mass.\n(ii) Determine the molality of chloroform in the water sample.",
+        "options": []
+      },
+      "answer_key": "~ 15 \u00d7 10\u20134 g , 1.25 \u00d7 10\u20134 m",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 693,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "An aircraft is flying at a height of $3400 \\text{ m}$ above the ground. If the angle subtended at a ground observation point by the aircraft positions $10.0 \\text{ s}$ apart is $30^\\circ$, what is the speed of the aircraft ?",
+        "options": []
+      },
+      "answer_key": "182 m s\u20131",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 293,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Suggest a suitable physical situation for each of the following graphs (Fig 2.12):",
+        "options": []
+      },
+      "answer_key": "(a) A ball at rest on a smooth floor is kicked, it rebounds from a wall with reduced speed and moves to the opposite wall which stops it; (b) A ball thrown up with some initial velocity rebounding from the floor with reduced speed after each hit; (c) A uniformly moving cricket ball turned back by hitting it with a bat for a very short time-interval.",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_2/figure_2_15.png"
+      ],
+      "has_figure": true
+    },
+    {
+      "source": "ncert",
+      "id": 435,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "The diameter of zinc atom is $2.6 \\text{ \\AA}$. Calculate (a) radius of zinc atom in pm and (b) number of atoms present in a length of $1.6 \\text{ cm}$ if the zinc atoms are arranged side by side lengthwise.",
+        "options": []
+      },
+      "answer_key": "(a) 1.3 \u00d7 102 pm\n(b) 6.15 \u00d7 107 pm",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 364,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Fig. 13.18 depicts four $x-t$ plots for linear motion of a particle. Which of the plots represent periodic motion? What is the period of motion (in case of periodic motion)?",
+        "options": []
+      },
+      "answer_key": "(b) and (d) are periodic, each with a period of 2 s; (a) and (c) are not periodic. [Note in (c), repetition of merely one position is not enough for motion to be periodic; the entire motion during one period must be repeated successively].",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_13/figure_13_3.png"
+      ],
+      "has_figure": true
+    },
+    {
+      "source": "ncert",
+      "id": 725,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "A body is initially at rest. It undergoes one-dimensional motion with constant acceleration. The power delivered to it at time $t$ is proportional to\n(i) $t^{1/2}$ (ii) $t$ (iii) $t^{3/2}$ (iv) $t^2$",
+        "options": []
+      },
+      "answer_key": "(b) t",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 628,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "It has been found that the pH of a $0.01\\text{M}$ solution of an organic acid is 4.15. Calculate the concentration of the anion, the ionization constant of the acid and its $pK_a$.",
+        "options": []
+      },
+      "answer_key": "[A\u2013] = 7.08 x10\u20135M, Ka= 5.08 \u00d7 10\u20137, pKa= 6.29",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 688,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "The position of a particle is given by\n$\\mathbf{r} = 3.0t \\hat{\\mathbf{i}} - 2.0t^2 \\hat{\\mathbf{j}} + 4.0 \\hat{\\mathbf{k}} \\text{ m}$\nwhere $t$ is in seconds and the coefficients have the proper units for $\\mathbf{r}$ to be in metres.\n(a) Find the $\\mathbf{v}$ and $\\mathbf{a}$ of the particle? (b) What is the magnitude and direction of velocity of the particle at $t = 2.0 \\text{ s}$ ?",
+        "options": []
+      },
+      "answer_key": "(a) v(t) = 3.0 i + 4.0 t j, a(t) = 4.0 j; (b) 8.54 m s\u20131, 70\u00b0 with x-axis.",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 668,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "The unit of length convenient on the atomic scale is known as an angstrom and is denoted by $\\text{\\AA}$: $1 \\text{ \\AA} = 10^{-10} \\text{ m}$. The size of a hydrogen atom is about $0.5 \\text{ \\AA}$. What is the total atomic volume in $\\text{m}^3$ of a mole of hydrogen atoms ?",
+        "options": []
+      },
+      "answer_key": "\u2245 3 \u00d7 10\u20137 m3",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 369,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "A spring balance has a scale that reads from 0 to $50 \\text{ kg}$. The length of the scale is $20 \\text{ cm}$. A body suspended from this balance, when displaced and released, oscillates with a period of $0.6 \\text{ s}$. What is the weight of the body?",
+        "options": []
+      },
+      "answer_key": "219 N",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 736,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "A body of mass $0.5 \\text{ kg}$ travels in a straight line with velocity $v = a x^{3/2}$ where $a = 5 \\text{ m}^{-1/2} \\text{ s}^{-1}$. What is the work done by the net force during its displacement from $x = 0$ to $x = 2 \\text{ m}$ ?",
+        "options": []
+      },
+      "answer_key": "50 J",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 427,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Using $s$, $p$, $d$ notations, describe the orbital with the following quantum numbers.\n(a) $n=1, l=0$; (b) $n = 3; l=1$ (c) $n = 4; l =2$; (d) $n=4; l=3$.",
+        "options": []
+      },
+      "answer_key": "(a) 1s, (b) 3p, (c) 4d and (d) 4f",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 568,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "In a reaction\n$\\ce{A + B2 -> AB2}$\nIdentify the limiting reagent, if any, in the following reaction mixtures.\n(i) 300 atoms of A + 200 molecules of B\n(ii) 2 mol A + 3 mol B\n(iii) 100 atoms of A + 100 molecules of B\n(iv) 5 mol A + 2.5 mol B\n(v) 2.5 mol A + 5 mol B",
+        "options": []
+      },
+      "answer_key": "(i) B is limiting\n(ii) A is limiting\n(iii) Stoichiometric mixture \u2013No\n(iv) B is limiting\n(v) A is limiting",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 317,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "What are the necessary conditions for any system to be aromatic?",
+        "options": []
+      },
+      "answer_key": "Planar, conjugated ring system with delocalisation of (4n+2) \u03c0 electrons, where, n is an integer",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 1170,
+      "subject": "Maths",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Evaluate: $\\left[i^{18} + \\left(\\frac{1}{i}\\right)^{25}\\right]^3$.",
+        "options": []
+      },
+      "answer_key": "{\"answer\": \"2 \\u2013 2 i\"}",
+      "image_urls": [],
+      "has_figure": false
+    },
+    {
+      "source": "ncert",
+      "id": 774,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "The escape speed of a projectile on the earth\u2019s surface is $11.2 \\text{ km s}^{-1}$. A body is projected out with thrice this speed. What is the speed of the body far away from the earth? Ignore the presence of the sun and other planets.",
+        "options": []
+      },
+      "answer_key": "31.7 km/s",
+      "image_urls": [],
+      "has_figure": false
+    }
+  ]
+}

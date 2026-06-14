@@ -1,6 +1,15 @@
 {
   "version": "2.0",
   "logging": {
+    "logLevel": {
+      "default": "Information",
+      "Host.Triggers.Queue": "Information",
+      "Function.feedback_queue_trigger": "Debug",
+      "Worker": "Information",
+      "Azure.Core": "Warning",
+      "DurableTask.AzureStorage": "Warning",
+      "DurableTask.Core": "Warning"
+    },
     "applicationInsights": {
       "samplingSettings": {
         "isEnabled": true,
@@ -11,5 +20,13 @@
   "extensionBundle": {
     "id": "Microsoft.Azure.Functions.ExtensionBundle",
     "version": "[4.*, 5.0.0)"
+  },
+  "extensions": {
+    "queues": {
+      "messageEncoding": "none"
+    },
+    "durableTask": {
+      "hubName": "StudentEvaluationHub"
+    }
   }
 }

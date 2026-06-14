@@ -1,0 +1,60 @@
+### DELEGATION STRATEGY (Agentic Mode)
+1. **The Schema Compliance Agent:** Cross-reference the Prisma models (`ncert_concept_hierarchy`, `ncert_concept_embeddings`) with the SQL migration comments to ensure the DB write strategy targets the exact fields and unique constraints required for the M2 index.
+2. **The Vector Specialist:** Focus on the `gemini-embedding-2-preview` integration. Validate that the dimensions (768) and task types (`RETRIEVAL_DOCUMENT`) are optimized for the NCERT-to-JEE mapping described in the architecture docs.
+3. **The Reliability Critic:** Review the "Checkpoint/Resumability" design. Identify potential failure points in the multi-step extraction (e.g., API timeouts or blob storage errors) and ensure the pipeline can resume without duplicating high-cost embedding calls.
+
+
+Read these files:
+- Design/Architecture/JEEAscentModuleBreakdown.md (M2 section)
+- Design/Architecture/JEEAscentArchitecture.md
+- apps/functions/prisma/schema.prisma (ncert_concept_hierarchy,
+  ncert_concept_embeddings models)
+- Scripts/JEEAscent_DB_Migration_v2.sql (M2 tables with comments)
+- pipelines/ExtractionPipeline/SchoolDataExtraction/MultiStep/blob_client.py
+- pipelines/ExtractionPipeline/SchoolDataExtraction/MultiStep/gemini_client.py
+
+Do NOT write any code yet.
+
+Produce a detailed implementation plan for Module M2 
+(NCERT Concept Index pipeline) as a markdown file saved to:
+Design/Architecture/M2_Implementation_Plan.md
+
+The plan must cover:
+1. Module overview and goals
+2. Input/output specification
+3. Step-by-step pipeline stages with pseudocode for each
+4. Gemini extraction prompt design (what to ask, expected JSON shape)
+5. Embedding strategy:
+   - Model: gemini-embedding-2-preview
+   - Dimensions: 768 (output_dimensionality=768)
+   - task_type: RETRIEVAL_DOCUMENT for indexing, RETRIEVAL_QUERY for search
+6. DB write strategy (upsert logic, path/parent_id assignment)
+7. Checkpoint/resumability design
+8. Error handling approach
+9. Test strategy (single chapter dry run before full run)
+10. File structure for the new pipeline
+11. Create the pipeline under: pipelines/ConceptIndex/
+
+Expected structure:
+pipelines/ConceptIndex/
+├── concept_index_pipeline.py   # main pipeline
+├── gemini_extractor.py         # Gemini extraction + embedding logic
+├── db_writer.py                # DB upsert logic
+├── checkpoints/                # checkpoint files per chapter (gitignored)
+├── logs/                       # pipeline run logs
+├── prompts/                    # Gemini prompt templates as .txt files
+└── README.md                   # pipeline documentation
+Note: folder name is ConceptIndex (not ChapterIndex) — 
+this reflects that we index NCERT concepts, not chapters.
+
+12. Reuse from existing pipelines (do not copy, import directly):
+- pipelines/ExtractionPipeline/SchoolDataExtraction/MultiStep/blob_client.py
+- pipelines/ExtractionPipeline/SchoolDataExtraction/MultiStep/gemini_client.py
+
+13. Also add to root .gitignore:
+pipelines/ConceptIndex/checkpoints/
+pipelines/ConceptIndex/logs/
+
+Before saving the final file, have the 'Critic' agent perform a self-correction pass to ensure the "Checkpoints/Resumability" design handles the specific hierarchy found in the schema.
+
+Save the plan and stop. Do not write implementation code.

@@ -1,0 +1,288 @@
+[
+ {
+  "result_type": "Math_Golden",
+  "content": {
+   "has_figure": false,
+   "page_number": 6,
+   "question_text": "Find the radian measures corresponding to the following degree measures:\n(i) $25^\\circ$ (ii) $-47^\\circ 30'$ (iii) $240^\\circ$ (iv) $520^\\circ$"
+  },
+  "solution": {
+   "steps": [
+    {
+     "step_type": "conceptual",
+     "nudge_hint": "",
+     "explanation": "To convert an angle from degree measure to radian measure, we multiply it by $\\frac{\\pi}{180}$.\n\n$$\\text{Radian measure} = \\frac{\\pi}{180} \\times \\text{Degree measure}$$",
+     "step_number": 1,
+     "visual_asset": {
+      "data": "",
+      "type": "none",
+      "caption": "",
+      "required": false
+     },
+     "latex_formula": null,
+     "embedded_formats": []
+    },
+    {
+     "step_type": "calculation",
+     "nudge_hint": "",
+     "explanation": "For $25^\\circ$:\n$$\\text{Radian measure} = 25 \\times \\frac{\\pi}{180} = \\frac{5\\pi}{36}$$",
+     "step_number": 2,
+     "visual_asset": {
+      "data": "",
+      "type": "none",
+      "caption": "",
+      "required": false
+     },
+     "latex_formula": null,
+     "embedded_formats": []
+    },
+    {
+     "step_type": "calculation",
+     "nudge_hint": "",
+     "explanation": "For $-47^\\circ 30'$:\nFirst, convert $30'$ to degrees: $30' = \\left(\\frac{30}{60}\\right)^\\circ = 0.5^\\circ = \\left(\\frac{1}{2}\\right)^\\circ$.\nSo, $-47^\\circ 30' = -\\left(47 + \\frac{1}{2}\\right)^\\circ = -\\frac{95}{2}^\\circ$.\nNow, convert to radians:\n$$\\text{Radian measure} = -\\frac{95}{2} \\times \\frac{\\pi}{180} = -\\frac{19\\pi}{72}$$",
+     "step_number": 3,
+     "visual_asset": {
+      "data": "",
+      "type": "none",
+      "caption": "",
+      "required": false
+     },
+     "latex_formula": null,
+     "embedded_formats": []
+    },
+    {
+     "step_type": "calculation",
+     "nudge_hint": "",
+     "explanation": "For $240^\\circ$:\n$$\\text{Radian measure} = 240 \\times \\frac{\\pi}{180} = \\frac{4\\pi}{3}$$",
+     "step_number": 4,
+     "visual_asset": {
+      "data": "",
+      "type": "none",
+      "caption": "",
+      "required": false
+     },
+     "latex_formula": null,
+     "embedded_formats": []
+    },
+    {
+     "step_type": "calculation",
+     "nudge_hint": "",
+     "explanation": "For $520^\\circ$:\n$$\\text{Radian measure} = 520 \\times \\frac{\\pi}{180} = \\frac{26\\pi}{9}$$",
+     "step_number": 5,
+     "visual_asset": {
+      "data": "",
+      "type": "none",
+      "caption": "",
+      "required": false
+     },
+     "latex_formula": null,
+     "embedded_formats": []
+    }
+   ],
+   "question_id": "EXERCISE_3_1_Q1",
+   "final_answer": "(i) $\\frac{5\\pi}{36}$ (ii) $-\\frac{19\\pi}{72}$ (iii) $\\frac{4\\pi}{3}$ (iv) $\\frac{26\\pi}{9}$",
+   "has_sub_parts": false,
+   "question_text": "Find the radian measures corresponding to the following degree measures:\n(i) 25\u00b0 (ii) \u2013 47\u00b030\u2032 (iii) 240\u00b0 (iv) 520\u00b0",
+   "rendered_text": "## Question EXERCISE_3_1_Q1\n\nFind the radian measures corresponding to the following degree measures:\n(i) 25\u00b0 (ii) \u2013 47\u00b030\u2032 (iii) 240\u00b0 (iv) 520\u00b0\n\n\n### Step 1 (conceptual)\n**Hint:** \n\nTo convert an angle from degree measure to radian measure, we multiply it by $\\frac{\\pi}{180}$.\n\n$$\\text{Radian measure} = \\frac{\\pi}{180} \\times \\text{Degree measure}$$\n\n### Step 2 (calculation)\n**Hint:** \n\nFor $25^\\circ$:\n$$\\text{Radian measure} = 25 \\times \\frac{\\pi}{180} = \\frac{5\\pi}{36}$$\n\n### Step 3 (calculation)\n**Hint:** \n\nFor $-47^\\circ 30'$:\nFirst, convert $30'$ to degrees: $30' = \\left(\\frac{30}{60}\\right)^\\circ = 0.5^\\circ = \\left(\\frac{1}{2}\\right)^\\circ$.\nSo, $-47^\\circ 30' = -\\left(47 + \\frac{1}{2}\\right)^\\circ = -\\frac{95}{2}^\\circ$.\nNow, convert to radians:\n$$\\text{Radian measure} = -\\frac{95}{2} \\times \\frac{\\pi}{180} = -\\frac{19\\pi}{72}$$\n\n### Step 4 (calculation)\n**Hint:** \n\nFor $240^\\circ$:\n$$\\text{Radian measure} = 240 \\times \\frac{\\pi}{180} = \\frac{4\\pi}{3}$$\n\n### Step 5 (calculation)\n**Hint:** \n\nFor $520^\\circ$:\n$$\\text{Radian measure} = 520 \\times \\frac{\\pi}{180} = \\frac{26\\pi}{9}$$\n\n### Final Answer\n(i) $\\frac{5\\pi}{36}$ (ii) $-\\frac{19\\pi}{72}$ (iii) $\\frac{4\\pi}{3}$ (iv) $\\frac{26\\pi}{9}$"
+  }
+ },
+ {
+  "result_type": "Physics_Pedagogy",
+  "content": {
+   "has_figure": false,
+   "page_number": 17,
+   "question_text": "A geyser heats water flowing at the rate of $3.0$ litres per minute from $27 ^\\circ\\text{C}$ to $77 ^\\circ\\text{C}$. If the geyser operates on a gas burner, what is the rate of consumption of the fuel if its heat of combustion is $4.0 \\times 10^4 \\text{ J/g}$ ?"
+  },
+  "solution": {
+   "steps": [
+    {
+     "step_type": "calculation",
+     "nudge_hint": "",
+     "explanation": "Given the flow rate of water is $3.0 \\text{ litres/min}$. \nSince the density of water is $1000 \\text{ g/litre}$, the mass of water heated per minute is:\n$m = 3.0 \\text{ litres/min} \\times 1000 \\text{ g/litre} = 3000 \\text{ g/min}$.",
+     "step_number": 1,
+     "latex_formula": null
+    },
+    {
+     "step_type": "calculation",
+     "nudge_hint": "",
+     "explanation": "The rise in temperature is $\\Delta T = 77 ^\\circ\\text{C} - 27 ^\\circ\\text{C} = 50 ^\\circ\\text{C} = 50 \\text{ K}$.\nThe heat required per minute to heat the water is:\n$Q_{\\text{water}} = mc\\Delta T = (3000 \\text{ g/min}) \\times (4.186 \\text{ J g}^{-1} \\text{ K}^{-1}) \\times (50 \\text{ K})$\n$Q_{\\text{water}} = 627900 \\text{ J/min}$.",
+     "step_number": 2,
+     "latex_formula": null
+    },
+    {
+     "step_type": "calculation",
+     "nudge_hint": "",
+     "explanation": "The heat of combustion of the fuel is $H = 4.0 \\times 10^4 \\text{ J/g}$.\nLet the rate of fuel consumption be $m_{\\text{fuel}}$ (in g/min).\nThe heat released by the fuel per minute is $Q_{\\text{fuel}} = m_{\\text{fuel}} \\times H$.\nAssuming all heat from the fuel goes into the water ($Q_{\\text{water}} = Q_{\\text{fuel}}$):\n$627900 \\text{ J/min} = m_{\\text{fuel}} \\times (4.0 \\times 10^4 \\text{ J/g})$\n$m_{\\text{fuel}} = \\frac{627900}{4.0 \\times 10^4} \\text{ g/min} = 15.6975 \\text{ g/min}$.",
+     "step_number": 3,
+     "latex_formula": null
+    },
+    {
+     "step_type": "calculation",
+     "nudge_hint": "",
+     "explanation": "The given values (3.0, 27, 77, 4.0) have two significant figures. Therefore, we round the result to two significant figures.\n$m_{\\text{fuel}} \\approx 16 \\text{ g/min}$.",
+     "step_number": 4,
+     "latex_formula": null
+    }
+   ],
+   "question_id": "11.1",
+   "final_answer": "The rate of consumption of the fuel is **16 g/min**.",
+   "question_text": "A geyser heats water flowing at the rate of 3.0 litres per minute from 27 \u00b0C to 77 \u00b0C. If the geyser operates on a gas burner, what is the rate of consumption of the fuel if its heat of combustion is 4.0 \u00d7 10\u2074 J/g?",
+   "rendered_text": "## Question 11.1\n\nA geyser heats water flowing at the rate of 3.0 litres per minute from 27 \u00b0C to 77 \u00b0C. If the geyser operates on a gas burner, what is the rate of consumption of the fuel if its heat of combustion is 4.0 \u00d7 10\u2074 J/g?\n\n\n### Step 1 (calculation)\n**Hint:** \n\nGiven the flow rate of water is $3.0 \\text{ litres/min}$. \nSince the density of water is $1000 \\text{ g/litre}$, the mass of water heated per minute is:\n$m = 3.0 \\text{ litres/min} \\times 1000 \\text{ g/litre} = 3000 \\text{ g/min}$.\n\n### Step 2 (calculation)\n**Hint:** \n\nThe rise in temperature is $\\Delta T = 77 ^\\circ\\text{C} - 27 ^\\circ\\text{C} = 50 ^\\circ\\text{C} = 50 \\text{ K}$.\nThe heat required per minute to heat the water is:\n$Q_{\\text{water}} = mc\\Delta T = (3000 \\text{ g/min}) \\times (4.186 \\text{ J g}^{-1} \\text{ K}^{-1}) \\times (50 \\text{ K})$\n$Q_{\\text{water}} = 627900 \\text{ J/min}$.\n\n### Step 3 (calculation)\n**Hint:** \n\nThe heat of combustion of the fuel is $H = 4.0 \\times 10^4 \\text{ J/g}$.\nLet the rate of fuel consumption be $m_{\\text{fuel}}$ (in g/min).\nThe heat released by the fuel per minute is $Q_{\\text{fuel}} = m_{\\text{fuel}} \\times H$.\nAssuming all heat from the fuel goes into the water ($Q_{\\text{water}} = Q_{\\text{fuel}}$):\n$627900 \\text{ J/min} = m_{\\text{fuel}} \\times (4.0 \\times 10^4 \\text{ J/g})$\n$m_{\\text{fuel}} = \\frac{627900}{4.0 \\times 10^4} \\text{ g/min} = 15.6975 \\text{ g/min}$.\n\n### Step 4 (calculation)\n**Hint:** \n\nThe given values (3.0, 27, 77, 4.0) have two significant figures. Therefore, we round the result to two significant figures.\n$m_{\\text{fuel}} \\approx 16 \\text{ g/min}$.\n\n### Final Answer\nThe rate of consumption of the fuel is **16 g/min**."
+  }
+ },
+ {
+  "result_type": "Physics_Drift",
+  "content": {
+   "has_figure": true,
+   "figure_info": [
+    {
+     "url": "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/12/Physics/ch_3/figure_EXERCISES_Q3_7.png",
+     "type": "PHYSICS_CIRCUIT",
+     "local_path": "C:\\Bala\\Coding\\AryaBhatta\\pipelines\\ExtractionPipeline\\SchoolDataExtraction\\MultiStep\\Output\\cropped_images\\leph103\\q3_7_fig.png",
+     "description": "A bridge circuit network with nodes A, B, C, D. Resistors are connected as follows: 10 \u03a9 between A and B, 5 \u03a9 between B and C, 5 \u03a9 between A and D, 10 \u03a9 between D and C, and a 5 \u03a9 resistor between B and D. A 10V battery is connected across nodes A and C with a 10 \u03a9 resistor in series with the battery."
+    }
+   ],
+   "page_number": 26,
+   "visual_data": {
+    "type": "PHYSICS_CIRCUIT",
+    "box_2d": [
+     312,
+     296,
+     622,
+     932
+    ],
+    "description": "A bridge circuit network with nodes A, B, C, D. Resistors are connected as follows: 10 \u03a9 between A and B, 5 \u03a9 between B and C, 5 \u03a9 between A and D, 10 \u03a9 between D and C, and a 5 \u03a9 resistor between B and D. A 10V battery is connected across nodes A and C with a 10 \u03a9 resistor in series with the battery.",
+    "visual_source": "current_page",
+    "cropped_image_path": "cropped_images\\leph103\\q3_7_fig.png"
+   },
+   "question_text": "Determine the current in each branch of the network shown in Fig. 3.20:",
+   "figure_references": [
+    "Fig. 3.20"
+   ]
+  },
+  "solution": {
+   "steps": [
+    {
+     "step_type": "conceptual",
+     "nudge_hint": "",
+     "explanation": "Looking at the battery symbol in Fig. 3.20, the longer vertical line is on the right, meaning node C is connected to the positive terminal and node A to the negative. Let's assume a total current $I$ enters node C. \nAt node C, it splits into $I_1$ (along CB) and $I_2$ (along CD). \nAt node B, $I_1$ splits into $I_3$ (along BD) and the rest goes along BA, which is $(I_1 - I_3)$. \nAt node D, $I_2$ and $I_3$ combine to flow along DA, which is $(I_2 + I_3)$.",
+     "step_number": 1,
+     "visual_asset": {
+      "data": "",
+      "type": "none",
+      "caption": "",
+      "required": false
+     },
+     "latex_formula": null,
+     "embedded_formats": []
+    },
+    {
+     "step_type": "conceptual",
+     "nudge_hint": "",
+     "explanation": "We will apply KVL to three loops to solve for our three unknowns ($I_1, I_2, I_3$).\n**Loop 1 (CBDC):** Path C -> B -> D -> C\n$-5I_1 - 5I_3 + 10I_2 = 0 \\implies I_1 + I_3 - 2I_2 = 0 \\implies I_1 = 2I_2 - I_3$  (Eq. 1)\n\n**Loop 2 (BADB):** Path B -> A -> D -> B\n$-10(I_1 - I_3) + 5(I_2 + I_3) + 5I_3 = 0$\n$-10I_1 + 10I_3 + 5I_2 + 10I_3 = 0 \\implies -2I_1 + I_2 + 4I_3 = 0$  (Eq. 2)\n\n**Loop 3 (ADCA through battery):** Path A -> D -> C -> A\nMoving against current in AD and DC, and from + to - in the battery:\n$+5(I_2 + I_3) + 10I_2 - 10 = 0$\n$15I_2 + 5I_3 = 10 \\implies 3I_2 + I_3 = 2 \\implies I_3 = 2 - 3I_2$  (Eq. 3)",
+     "step_number": 2,
+     "visual_asset": {
+      "data": "",
+      "type": "none",
+      "caption": "",
+      "required": false
+     },
+     "latex_formula": null,
+     "embedded_formats": []
+    },
+    {
+     "step_type": "calculation",
+     "nudge_hint": "",
+     "explanation": "Substitute Eq. 3 into Eq. 1:\n$I_1 = 2I_2 - (2 - 3I_2) = 5I_2 - 2$  (Eq. 4)\n\nSubstitute Eq. 3 and Eq. 4 into Eq. 2:\n$-2(5I_2 - 2) + I_2 + 4(2 - 3I_2) = 0$\n$-10I_2 + 4 + I_2 + 8 - 12I_2 = 0$\n$-21I_2 + 12 = 0 \\implies I_2 = \\frac{12}{21} = \\frac{4}{7} \\text{ A}$\n\nNow find $I_3$ and $I_1$:\n$I_3 = 2 - 3(\\frac{4}{7}) = \\frac{14}{7} - \\frac{12}{7} = \\frac{2}{7} \\text{ A}$\n$I_1 = 5(\\frac{4}{7}) - 2 = \\frac{20}{7} - \\frac{14}{7} = \\frac{6}{7} \\text{ A}$",
+     "step_number": 3,
+     "visual_asset": {
+      "data": "",
+      "type": "none",
+      "caption": "",
+      "required": false
+     },
+     "latex_formula": null,
+     "embedded_formats": []
+    },
+    {
+     "step_type": "calculation",
+     "nudge_hint": "",
+     "explanation": "Current in branch BA = $I_1 - I_3 = \\frac{6}{7} - \\frac{2}{7} = \\frac{4}{7} \\text{ A}$\nCurrent in branch DA = $I_2 + I_3 = \\frac{4}{7} + \\frac{2}{7} = \\frac{6}{7} \\text{ A}$",
+     "step_number": 4,
+     "visual_asset": {
+      "data": "",
+      "type": "none",
+      "caption": "",
+      "required": false
+     },
+     "latex_formula": null,
+     "embedded_formats": []
+    }
+   ],
+   "question_id": "EXERCISES_Q3.7",
+   "final_answer": "The currents are: **AB = 4/7 A** (B to A), **BC = 6/7 A** (C to B), **CD = 4/7 A** (C to D), **AD = 6/7 A** (D to A), and **BD = 2/7 A** (B to D).",
+   "has_sub_parts": false,
+   "question_text": "Determine the current in each branch of the network shown in Fig. 3.20:",
+   "rendered_text": "## Question EXERCISES_Q3.7\n\nDetermine the current in each branch of the network shown in Fig. 3.20:\n\n\n### Step 1 (conceptual)\n**Hint:** \n\nLooking at the battery symbol in Fig. 3.20, the longer vertical line is on the right, meaning node C is connected to the positive terminal and node A to the negative. Let's assume a total current $I$ enters node C. \nAt node C, it splits into $I_1$ (along CB) and $I_2$ (along CD). \nAt node B, $I_1$ splits into $I_3$ (along BD) and the rest goes along BA, which is $(I_1 - I_3)$. \nAt node D, $I_2$ and $I_3$ combine to flow along DA, which is $(I_2 + I_3)$.\n\n### Step 2 (conceptual)\n**Hint:** \n\nWe will apply KVL to three loops to solve for our three unknowns ($I_1, I_2, I_3$).\n**Loop 1 (CBDC):** Path C -> B -> D -> C\n$-5I_1 - 5I_3 + 10I_2 = 0 \\implies I_1 + I_3 - 2I_2 = 0 \\implies I_1 = 2I_2 - I_3$  (Eq. 1)\n\n**Loop 2 (BADB):** Path B -> A -> D -> B\n$-10(I_1 - I_3) + 5(I_2 + I_3) + 5I_3 = 0$\n$-10I_1 + 10I_3 + 5I_2 + 10I_3 = 0 \\implies -2I_1 + I_2 + 4I_3 = 0$  (Eq. 2)\n\n**Loop 3 (ADCA through battery):** Path A -> D -> C -> A\nMoving against current in AD and DC, and from + to - in the battery:\n$+5(I_2 + I_3) + 10I_2 - 10 = 0$\n$15I_2 + 5I_3 = 10 \\implies 3I_2 + I_3 = 2 \\implies I_3 = 2 - 3I_2$  (Eq. 3)\n\n### Step 3 (calculation)\n**Hint:** \n\nSubstitute Eq. 3 into Eq. 1:\n$I_1 = 2I_2 - (2 - 3I_2) = 5I_2 - 2$  (Eq. 4)\n\nSubstitute Eq. 3 and Eq. 4 into Eq. 2:\n$-2(5I_2 - 2) + I_2 + 4(2 - 3I_2) = 0$\n$-10I_2 + 4 + I_2 + 8 - 12I_2 = 0$\n$-21I_2 + 12 = 0 \\implies I_2 = \\frac{12}{21} = \\frac{4}{7} \\text{ A}$\n\nNow find $I_3$ and $I_1$:\n$I_3 = 2 - 3(\\frac{4}{7}) = \\frac{14}{7} - \\frac{12}{7} = \\frac{2}{7} \\text{ A}$\n$I_1 = 5(\\frac{4}{7}) - 2 = \\frac{20}{7} - \\frac{14}{7} = \\frac{6}{7} \\text{ A}$\n\n### Step 4 (calculation)\n**Hint:** \n\nCurrent in branch BA = $I_1 - I_3 = \\frac{6}{7} - \\frac{2}{7} = \\frac{4}{7} \\text{ A}$\nCurrent in branch DA = $I_2 + I_3 = \\frac{4}{7} + \\frac{2}{7} = \\frac{6}{7} \\text{ A}$\n\n### Final Answer\nThe currents are: **AB = 4/7 A** (B to A), **BC = 6/7 A** (C to B), **CD = 4/7 A** (C to D), **AD = 6/7 A** (D to A), and **BD = 2/7 A** (B to D)."
+  }
+ },
+ {
+  "result_type": "Chemistry_Hallucination",
+  "content": {
+   "has_figure": false,
+   "page_number": 34,
+   "question_text": "Use Lewis symbols to show electron transfer between the following atoms to form cations and anions : (a) K and S (b) Ca and O (c) Al and N."
+  },
+  "solution": {
+   "steps": [
+    {
+     "step_type": "visual",
+     "nudge_hint": "",
+     "explanation": "Potassium (K) has 1 valence electron (Lewis symbol K\u2022) and loses it to form $\\ce{K+}$. Sulfur (S) has 6 valence electrons (Lewis symbol :S: with 2 unpaired) and needs 2 more to complete its octet, forming $\\ce{S^2-}$. Therefore, two K atoms are needed to supply the two electrons required by one S atom.",
+     "step_number": 1,
+     "visual_asset": {
+      "data": "",
+      "type": "none",
+      "caption": "",
+      "required": false
+     },
+     "latex_formula": null,
+     "embedded_formats": []
+    },
+    {
+     "step_type": "visual",
+     "nudge_hint": "",
+     "explanation": "Calcium (Ca) has 2 valence electrons (Lewis symbol \u2022Ca\u2022) and loses both to form $\\ce{Ca^2+}$. Oxygen (O) has 6 valence electrons (Lewis symbol :O: with 2 unpaired) and gains 2 electrons to form $\\ce{O^2-}$. One Ca atom provides the exact number of electrons needed by one O atom.",
+     "step_number": 2,
+     "visual_asset": {
+      "data": "",
+      "type": "none",
+      "caption": "",
+      "required": false
+     },
+     "latex_formula": null,
+     "embedded_formats": []
+    },
+    {
+     "step_type": "visual",
+     "nudge_hint": "",
+     "explanation": "Aluminum (Al) has 3 valence electrons (Lewis symbol \u2022Al:) and loses them to form $\\ce{Al^3+}$. Nitrogen (N) has 5 valence electrons (Lewis symbol :N: with 3 unpaired) and gains 3 electrons to form $\\ce{N^3-}$. One Al atom provides the three electrons needed by one N atom.",
+     "step_number": 3,
+     "visual_asset": {
+      "data": "",
+      "type": "none",
+      "caption": "",
+      "required": false
+     },
+     "latex_formula": null,
+     "embedded_formats": []
+    }
+   ],
+   "question_id": "4.14",
+   "final_answer": "The electron transfer is shown in the Lewis symbol diagrams above for each pair of elements.",
+   "has_sub_parts": false,
+   "question_text": "Use Lewis symbols to show electron transfer between the following atoms to form cations and anions: (a) K and S (b) Ca and O (c) Al and N.",
+   "rendered_text": "## Question 4.14\n\nUse Lewis symbols to show electron transfer between the following atoms to form cations and anions: (a) K and S (b) Ca and O (c) Al and N.\n\n\n### Step 1 (visual)\n**Hint:** \n\nPotassium (K) has 1 valence electron (Lewis symbol K\u2022) and loses it to form $\\ce{K+}$. Sulfur (S) has 6 valence electrons (Lewis symbol :S: with 2 unpaired) and needs 2 more to complete its octet, forming $\\ce{S^2-}$. Therefore, two K atoms are needed to supply the two electrons required by one S atom.\n\n### Step 2 (visual)\n**Hint:** \n\nCalcium (Ca) has 2 valence electrons (Lewis symbol \u2022Ca\u2022) and loses both to form $\\ce{Ca^2+}$. Oxygen (O) has 6 valence electrons (Lewis symbol :O: with 2 unpaired) and gains 2 electrons to form $\\ce{O^2-}$. One Ca atom provides the exact number of electrons needed by one O atom.\n\n### Step 3 (visual)\n**Hint:** \n\nAluminum (Al) has 3 valence electrons (Lewis symbol \u2022Al:) and loses them to form $\\ce{Al^3+}$. Nitrogen (N) has 5 valence electrons (Lewis symbol :N: with 3 unpaired) and gains 3 electrons to form $\\ce{N^3-}$. One Al atom provides the three electrons needed by one N atom.\n\n### Final Answer\nThe electron transfer is shown in the Lewis symbol diagrams above for each pair of elements."
+  }
+ }
+]

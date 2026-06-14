@@ -1,0 +1,40 @@
+{
+  "name": "aryabhatta-functions",
+  "version": "1.0.0",
+  "description": "Azure Functions API for Aryabhatta",
+  "main": "dist/src/functions/*.js",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "clean": "rimraf dist",
+    "prestart": "npm run clean && npm run build",
+    "start": "func start",
+    "test": "echo \"No tests yet...\""
+  },
+  "dependencies": {
+    "@azure/functions": "^4.11.1",
+    "@azure/identity": "^4.13.0",
+    "@azure/storage-blob": "^12.30.0",
+    "@azure/storage-queue": "^12.25.0",
+    "@prisma/adapter-pg": "^7.3.0",
+    "@prisma/client": "^7.3.0",
+    "@prisma/config": "^7.3.0",
+    "busboy": "^1.6.0",
+    "pg": "^8.18.0",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "@types/busboy": "^1.5.4",
+    "@types/node": "^18.19.130",
+    "@types/pg": "^8.16.0",
+    "@types/uuid": "^10.0.0",
+    "azure-functions-core-tools": "^4.x",
+    "prisma": "^7.3.0",
+    "rimraf": "^5.0.0",
+    "typescript": "^5.0.0"
+  }
+}

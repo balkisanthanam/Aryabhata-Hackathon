@@ -1,0 +1,7 @@
+CONCEPT VOCABULARY ({subject}, {n_concepts} concepts):
+{vocabulary_block}
+
+QUESTIONS TO TAG (batch of {n_questions}):
+{questions_block}
+
+Return a JSON object with a "results" array containing one entry per question above, in order.

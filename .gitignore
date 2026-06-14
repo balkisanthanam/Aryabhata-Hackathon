@@ -24,6 +24,7 @@ venv/
 # Azure Functions
 # -----------------------------------------
 local.settings.json
+!apps/functions/local.settings.json
 bin/
 obj/
 
@@ -42,6 +43,9 @@ build/
 .env.local
 .env.production
 .env.*.local
+!.env.example
+!**/.env.example
+SANITIZATION_TRACKER.md
 
 # -----------------------------------------
 # Logs
@@ -82,191 +86,63 @@ pipelines/ExtractionPipeline/JSONBasedExtraction/input/
 pipelines/ExtractionPipeline/JSONBasedExtraction/output/
 pipelines/ExtractionPipeline/SchoolDataExtraction/MultiStep/Input/
 pipelines/ExtractionPipeline/SchoolDataExtraction/MultiStep/Output/
+pipelines/ConceptIndex/checkpoints/
+pipelines/ConceptIndex/logs/
+
+# -----------------------------------------
+# Local scratch / experiments / tooling dumps
+# -----------------------------------------
 experiments/
 results/
 .vscode/
 test_exec.py
-__azurite_db_blob__.json
-__azurite_db_blob_extent__.json
-__azurite_db_queue__.json
-__azurite_db_queue_extent__.json
-__azurite_db_table__.json
+test_results.txt
 DEBUG_SETUP.md
 local.settings.json.temp
-test_results.txt
-apps/FrontEnd/.env.example
-.vscode/launch_simple.json
-apps/backend/experiment/input/HandWritten/11_Exemplar_Math_3DGeo/1.jpeg
-apps/backend/experiment/input/HandWritten/11_Exemplar_Math_3DGeo/2.jpeg
-apps/backend/experiment/input/HandWritten/11_Exemplar_Math_3DGeo/3.jpeg
-apps/backend/experiment/input/HandWritten/11_NCERT_Chem_Organic/1.jpeg
-apps/backend/experiment/input/HandWritten/11_NCERT_Chem_Organic/2.jpeg
-apps/backend/experiment/input/HandWritten/11_NCERT_Chem_Organic/3.jpeg
-apps/backend/experiment/input/HandWritten/11_NCERT_Chem_Organic/4.jpeg
-apps/backend/experiment/input/HandWritten/TBN_2/1.jpeg
-apps/backend/experiment/input/HandWritten/TBN_2/2.jpeg
-apps/backend/experiment/input/HandWritten/TBN_2/3.jpeg
-apps/backend/experiment/input/HandWritten/TBN_2/4.jpeg
-apps/backend/experiment/input/HandWritten/TBN_2/5.jpeg
-apps/backend/experiment/input/Problems/11_Exemplar_Math_3DGeo/WhatsApp Image 2026-01-24 at 10.03.46.jpeg
-apps/backend/experiment/input/Problems/11_Exemplar_Math_3DGeo/WhatsApp Image 2026-01-24 at 10.03.47 (1).jpeg
-apps/backend/experiment/input/Problems/11_Exemplar_Math_3DGeo/WhatsApp Image 2026-01-24 at 10.03.47.jpeg
-apps/backend/experiment/input/Problems/11_Math_StraightLines/WhatsApp Image 2026-01-20 at 11.20.24.jpeg
-apps/backend/experiment/input/Problems/11_Math_StraightLines/WhatsApp Image 2026-01-20 at 11.20.25 (1).jpeg
-apps/backend/experiment/input/Problems/11_Math_StraightLines/WhatsApp Image 2026-01-20 at 11.20.25 (2).jpeg
-apps/backend/experiment/input/Problems/11_Math_StraightLines/WhatsApp Image 2026-01-20 at 11.20.25 (3).jpeg
-apps/backend/experiment/input/Problems/11_Math_StraightLines/WhatsApp Image 2026-01-20 at 11.20.25.jpeg
-apps/backend/experiment/input/Problems/11_PostMid/WhatsApp Image 2026-01-18 at 16.12.05 (1).jpeg
-apps/backend/experiment/input/Problems/11_PostMid/WhatsApp Image 2026-01-18 at 16.12.05 (2).jpeg
-apps/backend/experiment/input/Problems/11_PostMid/WhatsApp Image 2026-01-18 at 16.12.05 (3).jpeg
-apps/backend/experiment/input/Problems/11_PostMid/WhatsApp Image 2026-01-18 at 16.12.05.jpeg
-apps/backend/experiment/input/Problems/11_PreMid/WhatsApp Image 2026-01-18 at 16.13.04 (1).jpeg
-apps/backend/experiment/input/Problems/11_PreMid/WhatsApp Image 2026-01-18 at 16.13.04.jpeg
-apps/backend/experiment/input/Problems/11_PreMid/WhatsApp Image 2026-01-18 at 16.13.05 (1).jpeg
-apps/backend/experiment/input/Problems/11_PreMid/WhatsApp Image 2026-01-18 at 16.13.05.jpeg
-apps/backend/experiment/output/HandWritten/V1/11_Exemplar_Math_3DGeo/10.jpg
-apps/backend/experiment/output/HandWritten/V1/11_Exemplar_Math_3DGeo/11.jpg
-apps/backend/experiment/output/HandWritten/V1/11_Exemplar_Math_3DGeo/12.jpg
-apps/backend/experiment/output/HandWritten/V1/11_Exemplar_Math_3DGeo/13.jpg
-apps/backend/experiment/output/HandWritten/V1/11_Exemplar_Math_3DGeo/response.json
-apps/backend/experiment/output/HandWritten/V1/11_NCERT_Chem_Organic/Q1.jpg
-apps/backend/experiment/output/HandWritten/V1/11_NCERT_Chem_Organic/Q2.jpg
-apps/backend/experiment/output/HandWritten/V1/11_NCERT_Chem_Organic/Q3.jpg
-apps/backend/experiment/output/HandWritten/V1/11_NCERT_Chem_Organic/Q4.jpg
-apps/backend/experiment/output/HandWritten/V1/11_NCERT_Chem_Organic/Q6.jpg
-apps/backend/experiment/output/HandWritten/V1/11_NCERT_Chem_Organic/Q7.jpg
-apps/backend/experiment/output/HandWritten/V1/11_NCERT_Chem_Organic/Q8.jpg
-apps/backend/experiment/output/HandWritten/V1/11_NCERT_Chem_Organic/Q11.jpg
-apps/backend/experiment/output/HandWritten/V1/11_NCERT_Chem_Organic/Q12.jpg
-apps/backend/experiment/output/HandWritten/V1/11_NCERT_Chem_Organic/Q13.jpg
-apps/backend/experiment/output/HandWritten/V1/11_NCERT_Chem_Organic/Q14.jpg
-apps/backend/experiment/output/HandWritten/V1/11_NCERT_Chem_Organic/Q15.jpg
-apps/backend/experiment/output/HandWritten/V1/11_NCERT_Chem_Organic/Q16.jpg
-apps/backend/experiment/output/HandWritten/V1/11_NCERT_Chem_Organic/Q17.jpg
-apps/backend/experiment/output/HandWritten/V1/11_NCERT_Chem_Organic/response.json
-apps/backend/experiment/output/HandWritten/V1/TBN_2/11.jpg
-apps/backend/experiment/output/HandWritten/V1/TBN_2/12b.jpg
-apps/backend/experiment/output/HandWritten/V1/TBN_2/14.jpg
-apps/backend/experiment/output/HandWritten/V1/TBN_2/17b.jpg
-apps/backend/experiment/output/HandWritten/V1/TBN_2/19b.jpg
-apps/backend/experiment/output/HandWritten/V1/TBN_2/24.jpg
-apps/backend/experiment/output/HandWritten/V1/TBN_2/response.json
-apps/backend/experiment/output/HandWritten/V1/TBN_2/Unlabeled_Gravitation.jpg
-apps/backend/experiment/output/HandWritten/V2/11_Exemplar_Math_3DGeo/10.jpg
-apps/backend/experiment/output/HandWritten/V2/11_Exemplar_Math_3DGeo/11.jpg
-apps/backend/experiment/output/HandWritten/V2/11_Exemplar_Math_3DGeo/12.jpg
-apps/backend/experiment/output/HandWritten/V2/11_Exemplar_Math_3DGeo/13.jpg
-apps/backend/experiment/output/HandWritten/V2/11_Exemplar_Math_3DGeo/response.json
-apps/backend/experiment/output/HandWritten/V2/11_NCERT_Chem_Organic/1a.jpg
-apps/backend/experiment/output/HandWritten/V2/11_NCERT_Chem_Organic/1b.jpg
-apps/backend/experiment/output/HandWritten/V2/11_NCERT_Chem_Organic/1c.jpg
-apps/backend/experiment/output/HandWritten/V2/11_NCERT_Chem_Organic/1d.jpg
-apps/backend/experiment/output/HandWritten/V2/11_NCERT_Chem_Organic/1e.jpg
-apps/backend/experiment/output/HandWritten/V2/11_NCERT_Chem_Organic/2a.jpg
-apps/backend/experiment/output/HandWritten/V2/11_NCERT_Chem_Organic/2b.jpg
-apps/backend/experiment/output/HandWritten/V2/11_NCERT_Chem_Organic/2c.jpg
-apps/backend/experiment/output/HandWritten/V2/11_NCERT_Chem_Organic/2d.jpg
-apps/backend/experiment/output/HandWritten/V2/11_NCERT_Chem_Organic/2e.jpg
-apps/backend/experiment/output/HandWritten/V2/11_NCERT_Chem_Organic/3.jpg
-apps/backend/experiment/output/HandWritten/V2/11_NCERT_Chem_Organic/4a.jpg
-apps/backend/experiment/output/HandWritten/V2/11_NCERT_Chem_Organic/4b.jpg
-apps/backend/experiment/output/HandWritten/V2/11_NCERT_Chem_Organic/4c.jpg
-apps/backend/experiment/output/HandWritten/V2/11_NCERT_Chem_Organic/4d.jpg
-apps/backend/experiment/output/HandWritten/V2/11_NCERT_Chem_Organic/4e.jpg
-apps/backend/experiment/output/HandWritten/V2/11_NCERT_Chem_Organic/4f.jpg
-apps/backend/experiment/output/HandWritten/V2/11_NCERT_Chem_Organic/6a.jpg
-apps/backend/experiment/output/HandWritten/V2/11_NCERT_Chem_Organic/6b.jpg
-apps/backend/experiment/output/HandWritten/V2/11_NCERT_Chem_Organic/7a.jpg
-apps/backend/experiment/output/HandWritten/V2/11_NCERT_Chem_Organic/7b.jpg
-apps/backend/experiment/output/HandWritten/V2/11_NCERT_Chem_Organic/7c.jpg
-apps/backend/experiment/output/HandWritten/V2/11_NCERT_Chem_Organic/8a.jpg
-apps/backend/experiment/output/HandWritten/V2/11_NCERT_Chem_Organic/8b.jpg
-apps/backend/experiment/output/HandWritten/V2/11_NCERT_Chem_Organic/11a.jpg
-apps/backend/experiment/output/HandWritten/V2/11_NCERT_Chem_Organic/11b.jpg
-apps/backend/experiment/output/HandWritten/V2/11_NCERT_Chem_Organic/11c.jpg
-apps/backend/experiment/output/HandWritten/V2/11_NCERT_Chem_Organic/12.jpg
-apps/backend/experiment/output/HandWritten/V2/11_NCERT_Chem_Organic/13a.jpg
-apps/backend/experiment/output/HandWritten/V2/11_NCERT_Chem_Organic/13b.jpg
-apps/backend/experiment/output/HandWritten/V2/11_NCERT_Chem_Organic/13c.jpg
-apps/backend/experiment/output/HandWritten/V2/11_NCERT_Chem_Organic/14a.jpg
-apps/backend/experiment/output/HandWritten/V2/11_NCERT_Chem_Organic/14b.jpg
-apps/backend/experiment/output/HandWritten/V2/11_NCERT_Chem_Organic/14c.jpg
-apps/backend/experiment/output/HandWritten/V2/11_NCERT_Chem_Organic/15a.jpg
-apps/backend/experiment/output/HandWritten/V2/11_NCERT_Chem_Organic/15b.jpg
-apps/backend/experiment/output/HandWritten/V2/11_NCERT_Chem_Organic/15c.jpg
-apps/backend/experiment/output/HandWritten/V2/11_NCERT_Chem_Organic/16a.jpg
-apps/backend/experiment/output/HandWritten/V2/11_NCERT_Chem_Organic/16b.jpg
-apps/backend/experiment/output/HandWritten/V2/11_NCERT_Chem_Organic/16c.jpg
-apps/backend/experiment/output/HandWritten/V2/11_NCERT_Chem_Organic/16d.jpg
-apps/backend/experiment/output/HandWritten/V2/11_NCERT_Chem_Organic/17.jpg
-apps/backend/experiment/output/HandWritten/V2/11_NCERT_Chem_Organic/response.json
-apps/backend/experiment/output/HandWritten/V2/TBN_2/11.jpg
-apps/backend/experiment/output/HandWritten/V2/TBN_2/12b.jpg
-apps/backend/experiment/output/HandWritten/V2/TBN_2/14.jpg
-apps/backend/experiment/output/HandWritten/V2/TBN_2/17b.jpg
-apps/backend/experiment/output/HandWritten/V2/TBN_2/24.jpg
-apps/backend/experiment/output/HandWritten/V2/TBN_2/response.json
-apps/backend/experiment/output/HandWritten/V3/11_Exemplar_Math_3DGeo/10.jpg
-apps/backend/experiment/output/HandWritten/V3/11_Exemplar_Math_3DGeo/11.jpg
-apps/backend/experiment/output/HandWritten/V3/11_Exemplar_Math_3DGeo/12.jpg
-apps/backend/experiment/output/HandWritten/V3/11_Exemplar_Math_3DGeo/13.jpg
-apps/backend/experiment/output/HandWritten/V3/11_Exemplar_Math_3DGeo/response.json
-apps/backend/experiment/output/HandWritten/V3/11_NCERT_Chem_Organic/Q1.jpg
-apps/backend/experiment/output/HandWritten/V3/11_NCERT_Chem_Organic/Q2.jpg
-apps/backend/experiment/output/HandWritten/V3/11_NCERT_Chem_Organic/Q3.jpg
-apps/backend/experiment/output/HandWritten/V3/11_NCERT_Chem_Organic/Q4.jpg
-apps/backend/experiment/output/HandWritten/V3/11_NCERT_Chem_Organic/Q6.jpg
-apps/backend/experiment/output/HandWritten/V3/11_NCERT_Chem_Organic/Q7.jpg
-apps/backend/experiment/output/HandWritten/V3/11_NCERT_Chem_Organic/Q8.jpg
-apps/backend/experiment/output/HandWritten/V3/11_NCERT_Chem_Organic/Q11.jpg
-apps/backend/experiment/output/HandWritten/V3/11_NCERT_Chem_Organic/Q12.jpg
-apps/backend/experiment/output/HandWritten/V3/11_NCERT_Chem_Organic/Q13.jpg
-apps/backend/experiment/output/HandWritten/V3/11_NCERT_Chem_Organic/Q14.jpg
-apps/backend/experiment/output/HandWritten/V3/11_NCERT_Chem_Organic/Q15.jpg
-apps/backend/experiment/output/HandWritten/V3/11_NCERT_Chem_Organic/Q16.jpg
-apps/backend/experiment/output/HandWritten/V3/11_NCERT_Chem_Organic/Q17.jpg
-apps/backend/experiment/output/HandWritten/V3/11_NCERT_Chem_Organic/response.json
-apps/backend/experiment/output/HandWritten/V3/TBN_2/11.jpg
-apps/backend/experiment/output/HandWritten/V3/TBN_2/12b.jpg
-apps/backend/experiment/output/HandWritten/V3/TBN_2/14.jpg
-apps/backend/experiment/output/HandWritten/V3/TBN_2/17b.jpg
-apps/backend/experiment/output/HandWritten/V3/TBN_2/24.jpg
-apps/backend/experiment/output/HandWritten/V3/TBN_2/response.json
-apps/backend/experiment/output/HandWritten/V4/11_Exemplar_Math_3DGeo/Q10.jpg
-apps/backend/experiment/output/HandWritten/V4/11_Exemplar_Math_3DGeo/Q11.jpg
-apps/backend/experiment/output/HandWritten/V4/11_Exemplar_Math_3DGeo/Q12.jpg
-apps/backend/experiment/output/HandWritten/V4/11_Exemplar_Math_3DGeo/Q13.jpg
-apps/backend/experiment/output/HandWritten/V4/11_Exemplar_Math_3DGeo/response.json
-apps/backend/experiment/output/HandWritten/V4/11_NCERT_Chem_Organic/Q1.jpg
-apps/backend/experiment/output/HandWritten/V4/11_NCERT_Chem_Organic/Q2.jpg
-apps/backend/experiment/output/HandWritten/V4/11_NCERT_Chem_Organic/Q3.jpg
-apps/backend/experiment/output/HandWritten/V4/11_NCERT_Chem_Organic/Q4.jpg
-apps/backend/experiment/output/HandWritten/V4/11_NCERT_Chem_Organic/Q6.jpg
-apps/backend/experiment/output/HandWritten/V4/11_NCERT_Chem_Organic/Q7.jpg
-apps/backend/experiment/output/HandWritten/V4/11_NCERT_Chem_Organic/Q8.jpg
-apps/backend/experiment/output/HandWritten/V4/11_NCERT_Chem_Organic/Q11.jpg
-apps/backend/experiment/output/HandWritten/V4/11_NCERT_Chem_Organic/Q12.jpg
-apps/backend/experiment/output/HandWritten/V4/11_NCERT_Chem_Organic/Q13.jpg
-apps/backend/experiment/output/HandWritten/V4/11_NCERT_Chem_Organic/Q14.jpg
-apps/backend/experiment/output/HandWritten/V4/11_NCERT_Chem_Organic/Q15.jpg
-apps/backend/experiment/output/HandWritten/V4/11_NCERT_Chem_Organic/Q16.jpg
-apps/backend/experiment/output/HandWritten/V4/11_NCERT_Chem_Organic/Q17.jpg
-apps/backend/experiment/output/HandWritten/V4/11_NCERT_Chem_Organic/response.json
-apps/backend/experiment/output/HandWritten/V4/TBN_2/11.jpg
-apps/backend/experiment/output/HandWritten/V4/TBN_2/12b.jpg
-apps/backend/experiment/output/HandWritten/V4/TBN_2/14.jpg
-apps/backend/experiment/output/HandWritten/V4/TBN_2/16b.jpg
-apps/backend/experiment/output/HandWritten/V4/TBN_2/17.jpg
-apps/backend/experiment/output/HandWritten/V4/TBN_2/24.jpg
-apps/backend/experiment/output/HandWritten/V4/TBN_2/response.json
-package.json
+__azurite_db_*.json
 pipelines/AzureFunctions/QuestionGeneratorFunction/scratch.py
+**/local.settings.local.json
+**/.claude/settings.local.json
+**/.playwright-mcp/
 
 # -----------------------------------------
-# Security: files that may contain secrets
+# Backend handwriting/grading experiment data (input + output)
 # -----------------------------------------
-**/test_prod.py
-**/test_curl.sh
-**/test_curl.ps1
-*.pem
-*.key
+apps/backend/experiment/input/
+apps/backend/experiment/output/
+
+# -----------------------------------------
+# DataCollection - downloaded JEE papers + answer keys
+# -----------------------------------------
+pipelines/DataCollection/DataCollection/JEEMain/Paper_*.pdf
+pipelines/DataCollection/DataCollection/JEEMain_AnswerKeys/
+
+# -----------------------------------------
+# Pipeline run artifacts - checkpoints / logs / outputs (all generated)
+# -----------------------------------------
+pipelines/JEEAscentPipeline/checkpoints/
+pipelines/JEEAscentPipeline/logs/
+pipelines/JEEAscentPipeline/e2e_*.png
+pipelines/ExtractionPipeline/SchoolDataExtraction/MultiStep/Output_SmartContext/
+pipelines/ModelEngineering/runs/
+
+# Vite build/deps cache — regenerates; belongs under apps/FrontEnd/node_modules/.vite
+.vite/
+
+# Scratch artifacts from ingest_answer_keys.py (PDF chunking) and ad-hoc runs
+temp_*.pdf
+temp_chunks*
+temp_chunks/
+Issues/Chemistry_Biomolecules_2.png
+Issues/Chemistry_Biomolecules_3.png
+Issues/Chemistry_Biomolecules.png
+Issues/FrontEnd_SolutionView_Issues.md
+Issues/Math_Vector_Answer_Rendered_2.png
+Issues/Math_Vector_Answer_Rendered.png
+Issues/Math_Vector_Answers.png
+Issues/Math_Vector_Problems.png
+Issues/Physics_Answer_WaveOptics_Render_2.png
+Issues/Physics_Answer_WaveOptics_Render.png
+Issues/Physics_Answer_WaveOptics_result.png
+Issues/Physics_Answer_WaveOptics.png
+Issues/WorkLeft.md

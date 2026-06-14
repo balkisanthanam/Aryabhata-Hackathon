@@ -1,0 +1,18 @@
+# ConceptIndex Pipeline Dependencies
+# Imports MultiStep GeminiClient at runtime via sys.path injection — install MultiStep deps too.
+
+# Google Gemini SDK (v2, required for Gemini 3 and Vertex AI)
+google-genai>=1.0.0
+
+# Google Cloud Auth (for Vertex AI OAuth2)
+google-auth>=2.0.0
+
+# Azure SDK — PostgreSQL token auth + private blob download
+azure-identity>=1.15.0
+azure-storage-blob>=12.19.0
+
+# Database
+psycopg2-binary>=2.9.0
+
+# Utilities
+python-dotenv>=1.0.0

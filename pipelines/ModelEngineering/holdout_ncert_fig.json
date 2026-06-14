@@ -1,0 +1,413 @@
+{
+  "meta": {
+    "n": 27,
+    "purpose": "NCERT visual test"
+  },
+  "records": [
+    {
+      "source": "ncert",
+      "id": 680,
+      "subject": "Physics",
+      "problem_payload": {
+        "problem_text": "A cyclist starts from the centre $O$ of a circular park of radius $1 \\text{ km}$, reaches the edge $P$ of the park, then cycles along the circumference, and returns to the centre along $QO$ as shown in Fig. 3.20. If the round trip takes $10 \\text{ min}$, what is the (a) net displacement, (b) average velocity, and (c) average speed of the cyclist ?",
+        "options": []
+      },
+      "answer_key": "(a) O; (b) O; (c) 21.4 km h–1",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_3/figure_3_9.png"
+      ],
+      "has_figure": true,
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 808,
+      "subject": "Physics",
+      "problem_payload": {
+        "problem_text": "Figures 9.20(a) and (b) refer to the steady flow of a (non-viscous) liquid. Which of the two figures is incorrect ? Why ?",
+        "options": []
+      },
+      "answer_key": "Fig (a) is incorrect [Reason: at a constriction (i.e. where the area of cross-section of the tube is smaller), flow speed is larger due to mass conservation. Consequently pressure there is smaller according to Bernoulli’s equation. We assume the fluid to be incompressible].",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_9/figure_9_15.png"
+      ],
+      "has_figure": true,
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 721,
+      "subject": "Physics",
+      "problem_payload": {
+        "problem_text": "Answer the following :\n(a) The casing of a rocket in flight burns up due to friction. At whose expense is the heat energy required for burning obtained? The rocket or the atmosphere?\n(b) Comets move around the sun in highly elliptical orbits. The gravitational force on the comet due to the sun is not normal to the comet’s velocity in general. Yet the work done by the gravitational force over every complete orbit of the comet is zero. Why ?\n(c) An artificial satellite orbiting the earth in very thin atmosphere loses its energy gradually due to dissipation against atmospheric resistance, however small. Why then does its speed increase progressively as it comes closer and closer to the earth ?\n(d) In Fig. 5.13(i) the man walks $2 \\text{ m}$ carrying a mass of $15 \\text{ kg}$ on his hands. In Fig. 5.13(ii), he walks the same distance pulling the rope behind him. The rope goes over a pulley, and a mass of $15 \\text{ kg}$ hangs at its other end. In which case is the work done greater ?",
+        "options": []
+      },
+      "answer_key": "(a) rocket; (b) For a conservative force work done over a path is minus of change in potential energy. Over a complete orbit, there is no change in potential energy; (c) K.E. increases, but P.E. decreases, and the sum decreases due to dissipation against friction; (d) in the second case.",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_5/figure_5_5.png"
+      ],
+      "has_figure": true,
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 811,
+      "subject": "Physics",
+      "problem_payload": {
+        "problem_text": "Figure 9.21 (a) shows a thin liquid film supporting a small weight = $4.5 \\times 10^{-2} \\text{ N}$. What is the weight supported by a film of the same liquid at the same temperature in Fig. (b) and (c) ? Explain your answer physically.",
+        "options": []
+      },
+      "answer_key": "4.5 × 10–2 N for (b) and (c), the same as in (a).",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_9/figure_9_18.png"
+      ],
+      "has_figure": true,
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 779,
+      "subject": "Physics",
+      "problem_payload": {
+        "problem_text": "Figure 8.9 shows the strain-stress curve for a given material. What are (a) Young’s modulus and (b) approximate yield strength for this material?",
+        "options": []
+      },
+      "answer_key": "(a) From the given graph for a stress of 150 × 106 N m–2 the strain is 0.002 (b) Approximate yield strength of the material is 3 × 108 N m–2",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_8/figure_8_2.png"
+      ],
+      "has_figure": true,
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 780,
+      "subject": "Physics",
+      "problem_payload": {
+        "problem_text": "The stress-strain graphs for materials $A$ and $B$ are shown in Fig. 8.10.\nThe graphs are drawn to the same scale.\n(a) Which of the materials has the greater Young’s modulus?\n(b) Which of the two is the stronger material?",
+        "options": []
+      },
+      "answer_key": "(a) Material A (b) Strength of a material is determined by the amount of stress required to cause fracture: material A is stronger than material B.",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_8/figure_8_3.png"
+      ],
+      "has_figure": true,
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 525,
+      "subject": "Chemistry",
+      "problem_payload": {
+        "problem_text": "The skeletal structure of $\\ce{CH3COOH}$ as shown below is correct, but some of the bonds are shown incorrectly. Write the correct Lewis structure for acetic acid.",
+        "options": []
+      },
+      "answer_key": null,
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Chemistry/ch_4/figure_4_20.png"
+      ],
+      "has_figure": true,
+      "never_distill": true
+    },
+    {
+      "source": "ncert",
+      "id": 517,
+      "subject": "Chemistry",
+      "problem_payload": {
+        "problem_text": "$\\ce{H3PO3}$ can be represented by structures 1 and 2 shown below. Can these two structures be taken as the canonical forms of the resonance hybrid representing $\\ce{H3PO3}$ ? If not, give reasons for the same.",
+        "options": []
+      },
+      "answer_key": null,
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Chemistry/ch_4/figure_4_12.png"
+      ],
+      "has_figure": true,
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 318,
+      "subject": "Chemistry",
+      "problem_payload": {
+        "problem_text": "Explain why the following systems are not aromatic?\n(i) [Structure]\n(ii) [Structure]\n(iii) [Structure]",
+        "options": []
+      },
+      "answer_key": "Lack of delocalisation of (4n +2) π electrons in the cyclic system.",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Chemistry/ch_9/figure_9_12.png"
+      ],
+      "has_figure": true,
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 308,
+      "subject": "Chemistry",
+      "problem_payload": {
+        "problem_text": "Write IUPAC names of the following compounds :\n(a) $\\ce{CH3CH=C(CH3)2}$\n(b) $\\ce{CH2=CH-C \\equiv C-CH3}$\n(c) [Structure]\n(d) [Structure]\n(e) [Structure]\n(f) $\\ce{CH3(CH2)4CH(CH2CH(CH3)2)(CH2)3CH3}$\n(g) $\\ce{CH3 - CH = CH - CH2 - CH = CH - CH(C2H5) - CH2 - CH = CH2}$",
+        "options": []
+      },
+      "answer_key": "(a) 2-Methyl-but-2-ene\n(b) Pent-1-ene-3-yne\n(c) Buta-1, 3-diene\n(d) 4-Phenylbut-1-ene\n(e) 2-Methylphenol\n(f) 5-(2-Methylpropyl)-decane\n(g) 4-Ethyldeca –1,5,8- triene",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Chemistry/ch_9/figure_9_2.png"
+      ],
+      "has_figure": true,
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 679,
+      "subject": "Physics",
+      "problem_payload": {
+        "problem_text": "Three girls skating on a circular ice ground of radius $200 \\text{ m}$ start from a point $P$ on the edge of the ground and reach a point $Q$ diametrically opposite to $P$ following different paths as shown in Fig. 3.19. What is the magnitude of the displacement vector for each ? For which girl is this equal to the actual length of path skate ?",
+        "options": []
+      },
+      "answer_key": "400 m for each; B",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_3/figure_3_8.png"
+      ],
+      "has_figure": true,
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 370,
+      "subject": "Physics",
+      "problem_payload": {
+        "problem_text": "A spring having with a spring constant $1200 \\text{ N m}^{-1}$ is mounted on a horizontal table as shown in Fig. 13.19. A mass of $3 \\text{ kg}$ is attached to the free end of the spring. The mass is then pulled sideways to a distance of $2.0 \\text{ cm}$ and released.\nDetermine (i) the frequency of oscillations, (ii) maximum acceleration of the mass, and (iii) the maximum speed of the mass.",
+        "options": []
+      },
+      "answer_key": "Frequency 3.2 s–1; maximum acceleration of the mass 8.0 m s–2; maximum speed of the mass 0.4 m s–1.",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_13/figure_13_9.png"
+      ],
+      "has_figure": true,
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 766,
+      "subject": "Physics",
+      "problem_payload": {
+        "problem_text": "In the following two exercises, choose the correct answer from among the given ones:\nThe gravitational intensity at the centre of a hemispherical shell of uniform mass density has the direction indicated by the arrow (see Fig 7.11) (i) a, (ii) b, (iii) c, (iv) 0.",
+        "options": []
+      },
+      "answer_key": "For these two problems, complete the hemisphere to sphere. At both P, and C, potential is constant and hence intensity = 0. Therefore, for the hemisphere, (c) and (e) are correct.",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_7/figure_7_10.png"
+      ],
+      "has_figure": true,
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 295,
+      "subject": "Physics",
+      "problem_payload": {
+        "problem_text": "Figure 2.14 gives the $x-t$ plot of a particle in one-dimensional motion. Three different equal intervals of time are shown. In which interval is the average speed greatest, and in which is it the least ? Give the sign of average velocity for each interval.",
+        "options": []
+      },
+      "answer_key": "Greatest in 3, least in 2; v > 0 in 1 and 2, v < 0 in 3.",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_2/figure_2_17.png"
+      ],
+      "has_figure": true,
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 733,
+      "subject": "Physics",
+      "problem_payload": {
+        "problem_text": "The bob A of a pendulum released from $30^\\circ$ to the vertical hits another bob B of the same mass at rest on a table as shown in Fig. 5.15. How high does the bob A rise after the collision ? Neglect the size of the bobs and assume the collision to be elastic.",
+        "options": []
+      },
+      "answer_key": "It transfers its entire momentum to the ball on the table, and does not rise at all.",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_5/figure_5_17.png"
+      ],
+      "has_figure": true,
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 747,
+      "subject": "Physics",
+      "problem_payload": {
+        "problem_text": "A non-uniform bar of weight $W$ is suspended at rest by two strings of negligible weight as shown in Fig.6.33. The angles made by the strings with the vertical are $36.9^\\circ$ and $53.1^\\circ$ respectively. The bar is $2 \\text{ m}$ long. Calculate the distance $d$ of the centre of gravity of the bar from its left end.",
+        "options": []
+      },
+      "answer_key": "72 cm",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_6/figure_6_8.png"
+      ],
+      "has_figure": true,
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 294,
+      "subject": "Physics",
+      "problem_payload": {
+        "problem_text": "Figure 2.13 gives the $x-t$ plot of a particle executing one-dimensional simple harmonic motion. (You will learn about this motion in more detail in Chapter 13). Give the signs of position, velocity and acceleration variables of the particle at $t = 0.3 \\text{ s}$, $1.2 \\text{ s}$, $-1.2 \\text{ s}$.",
+        "options": []
+      },
+      "answer_key": "x < 0, v < 0, a > 0; x > 0, v > 0, a < 0; x < 0, v > 0, a > 0.",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_2/figure_2_16.png"
+      ],
+      "has_figure": true,
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 782,
+      "subject": "Physics",
+      "problem_payload": {
+        "problem_text": "Two wires of diameter $0.25 \\text{ cm}$, one made of steel and the other made of brass are loaded as shown in Fig. 8.11. The unloaded length of steel wire is $1.5 \\text{ m}$ and that of brass wire is $1.0 \\text{ m}$. Compute the elongations of the steel and the brass wires.",
+        "options": []
+      },
+      "answer_key": "1.5 × 10–4 m (steel); 1.3 × 10–4 m (brass)",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_8/figure_8_5.png"
+      ],
+      "has_figure": true,
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 719,
+      "subject": "Physics",
+      "problem_payload": {
+        "problem_text": "Given in Fig. 5.11 are examples of some potential energy functions in one dimension. The total energy of the particle is indicated by a cross on the ordinate axis. In each case, specify the regions, if any, in which the particle cannot be found for the given energy. Also, indicate the minimum total energy the particle must have in each case. Think of simple physical contexts for which these potential energy shapes are relevant.",
+        "options": []
+      },
+      "answer_key": "(a) x > a ; 0 (c) x < a, x > b ; - V1 (b) −∞ < x < ∞; V1 (d) - b/2 < x < - a / 2, a / 2 < x < b / 2; -V1",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_5/figure_5_3.png"
+      ],
+      "has_figure": true,
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 280,
+      "subject": "Physics",
+      "problem_payload": {
+        "problem_text": "The position-time ($x-t$) graphs for two children A and B returning from their school O to their homes P and Q respectively are shown in Fig. 2.9. Choose the correct entries in the brackets below ;\n(a) (A/B) lives closer to the school than (B/A)\n(b) (A/B) starts from the school earlier than (B/A)\n(c) (A/B) walks faster than (B/A)\n(d) A and B reach home at the (same/different) time\n(e) (A/B) overtakes (B/A) on the road (once/twice).",
+        "options": []
+      },
+      "answer_key": "(a) A....B, (b) A....B, (c) B....A, (d) Same, (e) B....A....once.",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_2/figure_2_2.png"
+      ],
+      "has_figure": true,
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 296,
+      "subject": "Physics",
+      "problem_payload": {
+        "problem_text": "Figure 2.15 gives a speed-time graph of a particle in motion along a constant direction. Three equal intervals of time are shown. In which interval is the average acceleration greatest in magnitude? In which interval is the average speed greatest ? Choosing the positive direction as the constant direction of motion, give the signs of $v$ and $a$ in the three intervals. What are the accelerations at the points A, B, C and D ?",
+        "options": []
+      },
+      "answer_key": "Acceleration magnitude greatest in 2; speed greatest in 3; v > 0 in 1, 2 and 3; a > 0 in 1 and 3, a < 0 in 2; a = 0 at A, B, C, D.",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_2/figure_2_18.png"
+      ],
+      "has_figure": true,
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 372,
+      "subject": "Physics",
+      "problem_payload": {
+        "problem_text": "Figures 13.20 correspond to two circular motions. The radius of the circle, the period of revolution, the initial position, and the sense of revolution (i.e. clockwise or anti-clockwise) are indicated on each figure.\nObtain the corresponding simple harmonic motions of the $x$-projection of the radius vector of the revolving particle P, in each case.",
+        "options": []
+      },
+      "answer_key": "(a) x = – 3 sin πt where x is in cm. (b) x = – 2 cos π 2 t where x is in cm.",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_13/figure_13_11.png"
+      ],
+      "has_figure": true,
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 707,
+      "subject": "Physics",
+      "problem_payload": {
+        "problem_text": "Figure 4.16 shows the position-time graph of a particle of mass $4 \\text{ kg}$. What is the (a) force on the particle for $t < 0, t > 4 \\text{ s}, 0 < t < 4 \\text{ s}$? (b) impulse at $t = 0$ and $t = 4 \\text{ s}$ ? (Consider one-dimensional motion only).",
+        "options": []
+      },
+      "answer_key": "(a) In all the three intervals, acceleration and, therefore, force are zero. (b) 3 kg m s–1 at t = 0 ; (c) –3 kg m s–1 at t = 4 s.",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_4/figure_4_14.png"
+      ],
+      "has_figure": true,
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 374,
+      "subject": "Physics",
+      "problem_payload": {
+        "problem_text": "Figure 13.21(a) shows a spring of force constant $k$ clamped rigidly at one end and a mass $m$ attached to its free end. A force $F$ applied at the free end stretches the spring. Figure 13.21 (b) shows the same spring with both ends free and attached to a mass $m$ at either end. Each end of the spring in Fig. 13.21(b) is stretched by the same force $F$.\n(a) What is the maximum extension of the spring in the two cases ?\n(b) If the mass in Fig. (a) and the two masses in Fig. (b) are released, what is the period of oscillation in each case ?",
+        "options": []
+      },
+      "answer_key": "(a) F/k for both (a) and (b). (b) T = 2π m k for (a) and 2π k m 2 for (b)",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_13/figure_13_13.png"
+      ],
+      "has_figure": true,
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 732,
+      "subject": "Physics",
+      "problem_payload": {
+        "problem_text": "Two identical ball bearings in contact with each other and resting on a frictionless table are hit head-on by another ball bearing of the same mass moving initially with a speed $V$. If the collision is elastic, which of the following (Fig. 5.14) is a possible result after collision ?",
+        "options": []
+      },
+      "answer_key": "(b)",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_5/figure_5_16.png"
+      ],
+      "has_figure": true,
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 293,
+      "subject": "Physics",
+      "problem_payload": {
+        "problem_text": "Suggest a suitable physical situation for each of the following graphs (Fig 2.12):",
+        "options": []
+      },
+      "answer_key": "(a) A ball at rest on a smooth floor is kicked, it rebounds from a wall with reduced speed and moves to the opposite wall which stops it; (b) A ball thrown up with some initial velocity rebounding from the floor with reduced speed after each hit; (c) A uniformly moving cricket ball turned back by hitting it with a bat for a very short time-interval.",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_2/figure_2_15.png"
+      ],
+      "has_figure": true,
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 364,
+      "subject": "Physics",
+      "problem_payload": {
+        "problem_text": "Fig. 13.18 depicts four $x-t$ plots for linear motion of a particle. Which of the plots represent periodic motion? What is the period of motion (in case of periodic motion)?",
+        "options": []
+      },
+      "answer_key": "(b) and (d) are periodic, each with a period of 2 s; (a) and (c) are not periodic. [Note in (c), repetition of merely one position is not enough for motion to be periodic; the entire motion during one period must be repeated successively].",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_13/figure_13_3.png"
+      ],
+      "has_figure": true,
+      "never_distill": false
+    }
+  ]
+}

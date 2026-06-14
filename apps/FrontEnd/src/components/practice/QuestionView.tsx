@@ -1,4 +1,5 @@
 import { LatexRenderer } from '../common/LatexRenderer';
+import { cleanLatex } from '../../lib/latex';
 
 
 interface QuestionViewProps {
@@ -6,6 +7,13 @@ interface QuestionViewProps {
 }
 
 export const QuestionView = ({ question }: QuestionViewProps) => {
+    const formatQuestionText = (text: string) => {
+        if (!text) return '';
+        return text
+            .replace(/\s([a-zA-Z]\))/g, '\n$1')
+            .trim();
+    };
+
     return (
         <div className="flex flex-col">
             <div className="bg-gradient-to-r from-gray-50 to-white dark:from-slate-800 dark:to-slate-800/50 p-6 border-b border-gray-200 dark:border-indigo-900/50">
@@ -14,8 +22,8 @@ export const QuestionView = ({ question }: QuestionViewProps) => {
                         {question.question_id}
                     </span>
                     <div className="prose dark:prose-invert max-w-none text-gray-800 dark:text-gray-200">
-                        <div className="mb-0 text-lg leading-snug font-medium font-serif">
-                            <LatexRenderer content={question.question_text} />
+                        <div className="mb-0 text-[1.02rem] leading-8 tracking-[0.005em] font-medium">
+                            <LatexRenderer content={cleanLatex(formatQuestionText(question.question_text))} />
                         </div>
                     </div>
                 </div>

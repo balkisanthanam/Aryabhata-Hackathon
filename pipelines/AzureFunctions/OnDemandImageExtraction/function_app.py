@@ -13,10 +13,10 @@ from typing import List, Dict, Any
 
 app = func.FunctionApp(http_auth_level=func.AuthLevel.FUNCTION)
 
-# Azure Key Vault configuration - set these via environment variables or Azure App Settings
-KEY_VAULT_URL = os.environ.get("KEY_VAULT_URL", "https://<YOUR_KEYVAULT_NAME>.vault.azure.net/")
-KEY_VAULT_SECRET_NAME = os.environ.get("KEY_VAULT_SECRET_NAME", "GOOGLEAPIKEY")
-PROMPT_BLOB_URL = os.environ.get("PROMPT_BLOB_URL", "https://<YOUR_STORAGE_ACCOUNT>.blob.core.windows.net/feedback/OnDemandImage_prompt.txt")
+# Azure Key Vault configuration
+KEY_VAULT_URL = os.environ.get("KEY_VAULT_URL", "<KEY_VAULT_URL>")
+KEY_VAULT_SECRET_NAME = os.environ.get("KEY_VAULT_SECRET_NAME", "<KEY_VAULT_SECRET_NAME>")
+PROMPT_BLOB_URL = os.environ.get("PROMPT_BLOB_URL", "<PROMPT_BLOB_URL>")
 
 # Gemini model configuration (from environment variable or default)
 GEMINI_MODEL = os.environ.get('GEMINI_MODEL', 'gemini-3-pro-preview')
@@ -224,7 +224,7 @@ def extract_image_from_pdf(req: func.HttpRequest) -> func.HttpResponse:
     
     Expected JSON payload:
     {
-        "pdf_blob_url": "https://<YOUR_STORAGE_ACCOUNT>.blob.core.windows.net/feedback/11/Maths/kemh106.pdf",
+        "pdf_blob_url": "<PDF_BLOB_URL>",
         "exercise_name": "Exercise 8.1",
         "problem_number": "12"
     }

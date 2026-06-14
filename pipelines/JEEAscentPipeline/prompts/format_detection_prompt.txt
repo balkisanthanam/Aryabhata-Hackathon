@@ -1,0 +1,40 @@
+You are classifying the layout format of a JEE Main question paper.
+
+You will receive an image of page 1 of the paper. Your task is to determine which layout format the paper uses:
+
+## Layout Formats
+
+**2021_PLUS** — Modern NTA two-column layout (used from 2021 onwards):
+- Questions are arranged in TWO columns side by side on the page
+- Each column contains question text and options (A/B/C/D) or integer-type blanks
+- The NTA logo and exam details appear at the top
+- Questions have a visible NTA Question ID (long numeric string, usually 10-12 digits) shown next to or below each question
+- Options are labeled (1), (2), (3), (4) or (A), (B), (C), (D)
+
+**PRE_2021** — Older NTA single-column layout (used before 2021):
+- Questions are arranged in a SINGLE column, full-width
+- No visible NTA Question ID printed on the paper (or uses older short IDs)
+- Options labeled (A), (B), (C), (D) in a single-column layout
+
+**UNKNOWN** — Use this if you cannot determine the layout with confidence.
+
+## Instructions
+
+1. Look at the overall page layout carefully.
+2. Count the number of question columns: one column = PRE_2021, two columns = 2021_PLUS.
+3. Check whether long NTA Question IDs (10+ digit numbers) are printed on the page.
+4. Return your answer as a JSON object with a single key "format".
+
+## Response Format
+
+Return ONLY a valid JSON object. No explanation, no markdown fences:
+
+{"format": "2021_PLUS"}
+
+or
+
+{"format": "PRE_2021"}
+
+or
+
+{"format": "UNKNOWN"}

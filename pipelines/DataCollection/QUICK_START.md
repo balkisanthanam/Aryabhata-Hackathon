@@ -13,7 +13,7 @@ Edit `run_exam_download.bat` and set your database credentials:
 ```batch
 set DB_HOST=localhost
 set DB_PORT=5432
-set DB_NAME=aryabhatta
+set DB_NAME=<DB_NAME>
 set DB_USER=postgres
 set DB_PASSWORD=your_actual_password
 ```

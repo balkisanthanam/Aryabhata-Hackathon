@@ -1,0 +1,6 @@
+Embedding guidance:
+- `embedding_text` is mandatory for every node.
+- Convert formulas into verbal descriptions.
+- Convert chemistry equations into natural-language reaction descriptions.
+- Include the semantic role of any figure or diagram in plain English.
+- Keep the text retrieval-friendly, concise, and meaningful without the original PDF.

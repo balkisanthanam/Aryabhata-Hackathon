@@ -36,6 +36,8 @@ class GeminiModelConfig:
     top_k: Optional[int] = None
     response_modalities: list = field(default_factory=lambda: ["TEXT"])
     response_mime_type: Optional[str] = None  # "application/json" for structured output
+    thinking_level: Optional[str] = None  # Gemini 3: "MINIMAL"|"LOW"|"MEDIUM"|"HIGH" — cap deliberation on mechanical tasks
+    response_schema: Optional[Dict[str, Any]] = None  # Vertex JSON-mode schema — enforces field presence + types at generation time
     
     def to_dict(self) -> Dict[str, Any]:
         """Convert to dict for API calls, excluding None values."""
@@ -68,19 +70,30 @@ class PipelineConfig:
     project_id: str = field(default_factory=lambda: GOOGLE_CLOUD_PROJECT or os.environ.get("GOOGLE_CLOUD_PROJECT", ""))
     location: str = field(default_factory=lambda: GOOGLE_CLOUD_LOCATION or os.environ.get("GOOGLE_CLOUD_LOCATION", "us-central1"))
     
-    # Stage 2 - Solver Engine (gemini-3-pro-image-preview for interleaved output)
+    # Stage 2 - Solver Engine
     solver_model: GeminiModelConfig = field(default_factory=lambda: GeminiModelConfig(
-        model_id="gemini-3-pro-image-preview",
+        model_id="gemini-3.1-pro-preview",
         temperature=0.4,
-        response_modalities=["TEXT", "IMAGE"],  # Enable image generation
     ))
     
-    # Stage 1 - Extraction Engine (gemini-3-pro for vision + JSON output)
+    tutor_model: GeminiModelConfig = field(default_factory=lambda: GeminiModelConfig(
+        model_id="gemini-3.1-pro-preview",
+        temperature=0.6,
+    ))
+    
+    formatter_model: GeminiModelConfig = field(default_factory=lambda: GeminiModelConfig(
+        model_id="gemini-3-flash-preview",
+        temperature=0.1,
+        response_mime_type="application/json",
+        thinking_level="LOW",  # Formatting is mechanical — cap thinking so Flash stays fast.
+    ))
+    
+    # Stage 1 - Extraction Engine
     extraction_model: GeminiModelConfig = field(default_factory=lambda: GeminiModelConfig(
-        model_id="gemini-3-pro-preview", 
+        model_id="gemini-3.1-pro-preview", 
         temperature=0.2,  # Low temp for consistent extraction
         response_mime_type="application/json",
-        max_output_tokens=8192,  # Allow for long JSON responses with many questions
+        max_output_tokens=32768,  # Allow for long JSON + reasoning thoughts
     ))
     
     # Stage 1.5 - Detection Model (for exercise section detection - fast + cheap)
@@ -102,7 +115,9 @@ class PipelineConfig:
     
     # Batch Processing
     batch_size: int = 5  # Questions per batch
-    batch_delay_seconds: float = 2.0  # Delay between batches to avoid rate limits
+    batch_delay_seconds: float = 15.0  # Delay between Stage 2 batches to reduce rate-limit pressure
+    quota_cooldown_seconds: float = 90.0  # Minimum cooldown after 429 responses
+    cancellation_cooldown_seconds: float = 45.0  # Minimum cooldown after repeated 499 cancellations
     
     # Timeouts (in seconds)
     api_timeout_seconds: int = 600  # 10 minutes default for API calls
@@ -134,6 +149,8 @@ class PipelineConfig:
             project_id=project_id or os.environ.get("GOOGLE_CLOUD_PROJECT", "test-project"),
             batch_size=2,
             batch_delay_seconds=1.0,
+            quota_cooldown_seconds=5.0,
+            cancellation_cooldown_seconds=3.0,
         )
 
 
@@ -141,3 +158,18 @@ class PipelineConfig:
 def get_config() -> PipelineConfig:
     """Get the default pipeline configuration."""
     return PipelineConfig.from_env()
+
+
+def flash_assembly_config() -> PipelineConfig:
+    """Flash Assembly Line config — solver+tutor on gemini-3-flash-preview.
+
+    Formatter is already gemini-3-flash-preview (thinking=LOW) in the default
+    PipelineConfig; only solver and tutor differ from the Pro default.
+    Lifted verbatim from batch_evaluator.py A3.5 block so all consumers share
+    one definition.
+    """
+    cfg = PipelineConfig()
+    cfg.solver_model = GeminiModelConfig(model_id="gemini-3-flash-preview", temperature=0.4, max_output_tokens=32768)
+    cfg.tutor_model  = GeminiModelConfig(model_id="gemini-3-flash-preview", temperature=0.6, max_output_tokens=32768)
+    # formatter_model stays as configured (already gemini-3-flash-preview, thinking=LOW)
+    return cfg

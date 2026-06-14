@@ -164,9 +164,7 @@ class ExtractionResponse:
                     "questions": [q.to_dict() for q in es.questions],
                 }
                 for es in self.exercise_sections
-            ],
-            # Keep flat questions list for backward compatibility
-            "questions": [q.to_dict() for q in self.questions],
+            ]
         }
 
 
@@ -250,17 +248,29 @@ class ExtractionEngine:
         # Determine page range
         if request.page_range:
             start_page, end_page = request.page_range
+            page_indices = list(range(start_page, end_page + 1))
         else:
             # Auto-detect exercise sections using shared detector (PDF upload)
             exercise_sections = self._detect_exercise_sections(request.pdf_path)
             if exercise_sections:
-                start_page = exercise_sections[0].start_page
-                end_page = exercise_sections[-1].end_page or total_pages - 1
-                logger.info(f"Auto-detected exercise pages: {start_page + 1} to {end_page + 1}")
+                page_indices = sorted(
+                    {
+                        page_num
+                        for section in exercise_sections
+                        for page_num in range(section.start_page, (section.end_page or section.start_page) + 1)
+                    }
+                )
+                start_page = page_indices[0]
+                end_page = page_indices[-1]
+                logger.info(
+                    "Auto-detected exercise pages: %s",
+                    ", ".join(str(page_num + 1) for page_num in page_indices),
+                )
             else:
                 logger.warning("No exercise sections detected, processing all pages")
                 start_page = 0
                 end_page = total_pages - 1
+                page_indices = list(range(start_page, end_page + 1))
                 exercise_sections = []
         
         # Store exercise sections for response
@@ -287,8 +297,9 @@ class ExtractionEngine:
         raw_responses: List[str] = []
         seen_question_ids: Set[str] = set()
         
-        for page_idx in range(start_page, end_page + 1):
+        for page_idx in page_indices:
             logger.info(f"Processing page {page_idx + 1}/{total_pages}")
+            current_section = self._find_exercise_section_for_page(page_idx, detected_sections)
             
             # Render current page and next page (if exists)
             images = self._render_pages(doc, page_idx)
@@ -313,9 +324,12 @@ class ExtractionEngine:
                 
                 # Add new questions (skip duplicates from previous page's look-ahead)
                 for q in questions:
-                    if q.question_id not in seen_question_ids:
+                    scoped_question_id = self._build_scoped_question_id(q.question_id, page_idx, current_section)
+                    if scoped_question_id not in seen_question_ids:
+                        if current_section:
+                            q._exercise_title = current_section.title
                         all_questions.append(q)
-                        seen_question_ids.add(q.question_id)
+                        seen_question_ids.add(scoped_question_id)
                         logger.info(f"  Extracted: {q.question_id}")
                 
             except Exception as e:
@@ -332,11 +346,16 @@ class ExtractionEngine:
             cropped_dir = self._crop_all_visuals(request.pdf_path, all_questions)
         
         processing_time = (datetime.now() - start_time).total_seconds()
+
+        exercise_sections_with_questions = self._assign_questions_to_sections(
+            detected_sections,
+            all_questions,
+        )
         
         return ExtractionResponse(
             request=request,
             questions=all_questions,
-            exercise_sections=detected_sections,
+            exercise_sections=exercise_sections_with_questions,
             raw_responses=raw_responses,
             cropped_images_dir=cropped_dir,
             processing_time_seconds=processing_time,
@@ -378,8 +397,13 @@ class ExtractionEngine:
         
         # Load prompts
         default_prompts_dir = Path(__file__).parent / "prompts"
+        
+        pass1_filename = "pass1_text_extraction.md"
+        if request.subject and request.subject.lower() in ["maths", "mathematics", "math"]:
+            pass1_filename = "pass1_text_extraction_math.md"
+            
         pass1_prompt = self._load_prompt(
-            pass1_prompt_path or default_prompts_dir / "pass1_text_extraction.md",
+            pass1_prompt_path or default_prompts_dir / pass1_filename,
             request
         )
         pass2_prompt = self._load_prompt(
@@ -395,6 +419,7 @@ class ExtractionEngine:
         # Detect exercise sections
         if request.page_range:
             start_page, end_page = request.page_range
+            page_indices = list(range(start_page, end_page + 1))
             exercise_sections = [ExerciseSection(
                 title="Manual Range",
                 start_page=start_page,
@@ -413,14 +438,24 @@ class ExtractionEngine:
                     processing_time_seconds=(datetime.now() - start_time).total_seconds(),
                     model_used=self.config.extraction_model.model_id,
                 )
-            start_page = exercise_sections[0].start_page
-            end_page = exercise_sections[-1].end_page or total_pages - 1
+            page_indices = sorted(
+                {
+                    page_num
+                    for section in exercise_sections
+                    for page_num in range(section.start_page, (section.end_page or section.start_page) + 1)
+                }
+            )
+            start_page = page_indices[0]
+            end_page = page_indices[-1]
         
-        logger.info(f"Processing exercise pages: {start_page + 1} to {end_page + 1}")
+        logger.info(
+            "Processing exercise pages: %s",
+            ", ".join(str(page_num + 1) for page_num in page_indices),
+        )
         
         # Create temporary PDF with just exercise pages
         exercise_pdf_path = self._extract_exercise_pages_to_pdf(
-            request.pdf_path, start_page, end_page
+            request.pdf_path, page_indices
         )
         
         # Pass 1: Extract text + figure flags from PDF
@@ -448,13 +483,13 @@ class ExtractionEngine:
             logger.info(f"=== PASS 2: Figure Detection for {len(questions_with_figures)} questions ===")
             
             # Render all exercise pages as images
-            exercise_images = self._render_page_range(doc, start_page, end_page)
+            exercise_images = self._render_page_list(doc, page_indices)
             
             # Call Pass 2 using shared FigureExtraction module (single-page-at-a-time)
             detected_figures, figure_boxes = self._pass2_extract_figures(
                 exercise_images,
                 questions_with_figures,
-                start_page  # Pass the starting page number (0-indexed) for offset
+                page_indices
             )
             pass2_raw = json.dumps({"figures": detected_figures}, indent=2)
             
@@ -470,7 +505,7 @@ class ExtractionEngine:
         all_questions = self._merge_passes(
             pass1_questions,
             figure_boxes,
-            start_page
+            page_indices
         )
         logger.info(f"Merged: {len(all_questions)} total questions")
         
@@ -479,7 +514,8 @@ class ExtractionEngine:
             pass1_exercises,
             all_questions,
             start_page,
-            end_page
+            end_page,
+            detected_sections=exercise_sections  # Pass the Stage 0 bounds down
         )
         
         # Crop visuals
@@ -517,16 +553,14 @@ class ExtractionEngine:
     def _extract_exercise_pages_to_pdf(
         self,
         pdf_path: Path,
-        start_page: int,
-        end_page: int
+        page_numbers: List[int]
     ) -> Path:
         """
         Extract specific pages from PDF to a new temporary PDF.
         
         Args:
             pdf_path: Original PDF path
-            start_page: Start page (0-indexed)
-            end_page: End page (0-indexed, inclusive)
+            page_numbers: Page numbers to extract (0-indexed)
             
         Returns:
             Path to temporary PDF with just the exercise pages
@@ -538,14 +572,18 @@ class ExtractionEngine:
         doc = fitz.open(pdf_path)
         new_doc = fitz.open()
         
-        for page_num in range(start_page, end_page + 1):
+        for page_num in page_numbers:
             new_doc.insert_pdf(doc, from_page=page_num, to_page=page_num)
         
         new_doc.save(temp_pdf_path)
         new_doc.close()
         doc.close()
         
-        logger.info(f"Created temp PDF with pages {start_page + 1}-{end_page + 1}: {temp_pdf_path.name}")
+        logger.info(
+            "Created temp PDF with pages %s: %s",
+            ", ".join(str(page_num + 1) for page_num in page_numbers),
+            temp_pdf_path.name,
+        )
         return temp_pdf_path
     
     def _pass1_extract_text(
@@ -561,12 +599,13 @@ class ExtractionEngine:
         Note: gemini-3-pro-image-preview doesn't support response_mime_type with PDF,
         so we don't enforce JSON output - we parse it from the response instead.
         """
-        # Don't use response_mime_type="application/json" with PDF input
-        # The model will return JSON based on the prompt instructions
+        # gemini-3-pro-image-preview max output tokens is 8192.
+        max_tokens = self.config.extraction_model.max_output_tokens or 8192
+        
         model_config = GeminiModelConfig(
             model_id=self.config.extraction_model.model_id,
             temperature=0.2,
-            max_output_tokens=16384,  # Allow for many questions
+            max_output_tokens=max_tokens,
             # Note: NOT setting response_mime_type - it causes errors with PDF input
         )
         
@@ -596,12 +635,32 @@ class ExtractionEngine:
             logger.debug(f"Rendered page {page_num + 1}: {img.size[0]}x{img.size[1]}")
         
         return images
+
+    def _render_page_list(
+        self,
+        doc: fitz.Document,
+        page_numbers: List[int],
+        dpi: int = 300
+    ) -> List[Image.Image]:
+        """Render an arbitrary list of pages as PIL Images."""
+        images = []
+        zoom = dpi / 72.0
+        mat = fitz.Matrix(zoom, zoom)
+
+        for page_num in page_numbers:
+            page = doc.load_page(page_num)
+            pix = page.get_pixmap(matrix=mat)
+            img = Image.frombytes("RGB", [pix.width, pix.height], pix.samples)
+            images.append(img)
+            logger.debug(f"Rendered page {page_num + 1}: {img.size[0]}x{img.size[1]}")
+
+        return images
     
     def _pass2_extract_figures(
         self,
         images: List[Image.Image],
         questions_with_figures: List[Dict],
-        start_page: int
+        page_numbers: List[int]
     ) -> Tuple[List[Dict], Dict[str, List[Dict]]]:
         """
         Pass 2: Detect figures on page images and match to questions.
@@ -612,7 +671,7 @@ class ExtractionEngine:
         Args:
             images: List of PIL Images for exercise pages
             questions_with_figures: Questions from Pass 1 that have figures
-            start_page: The starting page number (0-indexed) for offset calculation
+            page_numbers: Original PDF page numbers for each image (0-indexed)
             
         Returns:
             Tuple of:
@@ -637,8 +696,12 @@ class ExtractionEngine:
         # Detect figures on each page (one at a time for accuracy)
         all_figures = detector.detect_figures_batch(
             images=images,
-            start_page=start_page + 1  # Convert to 1-indexed
+            start_page=1
         )
+
+        for figure in all_figures:
+            if 0 <= figure.page_index < len(page_numbers):
+                figure.page_number = page_numbers[figure.page_index] + 1
         
         logger.info(f"  Detected {len(all_figures)} figures across all pages")
         
@@ -647,20 +710,22 @@ class ExtractionEngine:
         
         # Prepare questions for matching
         # Add source_page info based on Pass 1 hints
+        default_source_page = page_numbers[0] + 1 if page_numbers else 1
+        default_next_page = page_numbers[1] + 1 if len(page_numbers) > 1 else default_source_page
         for q in questions_with_figures:
             fig_info = q.get('figure_info', {}) or {}
             if fig_info.get('page') == 'next':
                 # Figure is on next page relative to question
-                q['source_page'] = start_page + 2  # Estimated (1-indexed)
+                q['source_page'] = default_next_page
             else:
-                q['source_page'] = start_page + 1  # Default to first exercise page (1-indexed)
+                q['source_page'] = default_source_page
         
         # Use the shared FigureMatcher to match figures to questions
         matcher = FigureMatcher()
         matched_questions = matcher.match_figures_to_questions(
             questions=questions_with_figures,
             figures=figures_as_dicts,
-            exercise_start_page=start_page + 1
+            exercise_start_page=default_source_page
         )
         
         # Build the figure_boxes mapping from match results
@@ -781,7 +846,7 @@ class ExtractionEngine:
         self,
         pass1_questions: List[Dict],
         figure_boxes: Dict[str, List[Dict]],
-        start_page: int
+        page_numbers: List[int]
     ) -> List[ExtractedQuestion]:
         """
         Merge Pass 1 text with Pass 2 bounding boxes.
@@ -789,7 +854,7 @@ class ExtractionEngine:
         Args:
             pass1_questions: Questions from Pass 1 with text and figure flags
             figure_boxes: Mapping of question_id -> bounding boxes from Pass 2
-            start_page: The starting page number (0-indexed) for offset calculation
+            page_numbers: Original PDF page numbers for exercise pages (0-indexed)
             
         Returns:
             List of fully populated ExtractedQuestion objects
@@ -820,7 +885,10 @@ class ExtractionEngine:
                     
                     # Calculate actual page number from page_index
                     page_index = first_box.get('page_index', 0)
-                    figure_page_number = start_page + page_index + 1  # 1-indexed
+                    if 0 <= page_index < len(page_numbers):
+                        figure_page_number = page_numbers[page_index] + 1
+                    elif page_numbers:
+                        figure_page_number = page_numbers[0] + 1
                     logger.debug(f"Q{q_id}: figure on page_index={page_index}, actual_page={figure_page_number}")
             
             # Determine page number for the question
@@ -831,7 +899,7 @@ class ExtractionEngine:
                 visual_data.visual_source = "next_page"
             
             # Use the figure's page number if we detected one, otherwise default to first page
-            question_page = figure_page_number if figure_page_number else (start_page + 1)
+            question_page = figure_page_number if figure_page_number else (page_numbers[0] + 1 if page_numbers else 1)
             
             question = ExtractedQuestion(
                 question_id=q_id,
@@ -854,7 +922,8 @@ class ExtractionEngine:
         pass1_exercises: List[Dict],
         all_questions: List[ExtractedQuestion],
         start_page: int,
-        end_page: int
+        end_page: int,
+        detected_sections: Optional[List[ExerciseSection]] = None
     ) -> List[ExerciseSection]:
         """
         Build ExerciseSection objects with questions grouped by exercise.
@@ -862,14 +931,18 @@ class ExtractionEngine:
         Args:
             pass1_exercises: Exercise structure from Pass 1 JSON
             all_questions: List of ExtractedQuestion objects from merge
-            start_page: Starting page (0-indexed)
-            end_page: Ending page (0-indexed)
+            start_page: Global starting page for fallback (0-indexed)
+            end_page: Global ending page for fallback (0-indexed)
+            detected_sections: Original sections from Stage 0 with accurate bounds
             
         Returns:
             List of ExerciseSection objects with nested questions
         """
-        # Build a map of question_id -> ExtractedQuestion
-        question_map = {q.question_id: q for q in all_questions}
+        # Build a map keyed by exercise title + question id because numbering restarts per exercise.
+        question_map = {
+            (getattr(q, '_exercise_title', 'EXERCISES'), q.question_id): q
+            for q in all_questions
+        }
         
         sections = []
         for idx, ex in enumerate(pass1_exercises):
@@ -882,18 +955,62 @@ class ExtractionEngine:
             exercise_questions = []
             for q_dict in ex.get('questions', []):
                 q_id = q_dict.get('question_id', '')
-                if q_id in question_map:
-                    exercise_questions.append(question_map[q_id])
+                question_key = (title, q_id)
+                if question_key in question_map:
+                    exercise_questions.append(question_map[question_key])
             
             # Use model's total if available, else count
             total_questions = model_total if model_total is not None else len(exercise_questions)
             
-            # Estimate page range for this exercise
-            # (Could be improved with actual page detection from model)
+            # Estimate page range for this exercise based on Stage 0 detection first
+            ex_start_page = start_page
+            ex_end_page = end_page
+            
+            # Map back to Stage 0 accurate detector bounds if available
+            if detected_sections:
+                import re
+                from difflib import SequenceMatcher
+                
+                # Try exact title match first
+                matched_sec = next((s for s in detected_sections if s.title.lower() == title.lower()), None)
+                
+                # Then try fuzzy match (e.g. "EXERCISE 3.1" matches "EXERCISE 3")
+                if not matched_sec:
+                    # Clean title e.g. "EXERCISE 3.1" -> "EXERCISE 3"
+                    base_title = re.sub(r'\.\d+$', '', title)
+                    matched_sec = next((s for s in detected_sections if s.title.lower() == base_title.lower() 
+                                        or SequenceMatcher(None, s.title.lower(), title.lower()).ratio() > 0.8), None)
+                
+                if matched_sec:
+                    ex_start_page = matched_sec.start_page
+                    ex_end_page = matched_sec.end_page or end_page
+
+            # Pass 1 does not include exact page numbers for non-figure questions.
+            # When no figure-based page was inferred, assign the exercise start page
+            # so later consumers do not inherit the global first page for every exercise.
+            for question in exercise_questions:
+                if question.page_number == start_page + 1:
+                    question.page_number = ex_start_page + 1
+            
+            # If there was no Stage 0 section match, fall back to question start pages.
+            # Do not shrink detector-provided bounds to the last question start page,
+            # because an exercise can span additional pages without new question starts.
+            if exercise_questions and not detected_sections:
+                # Question.page_number is 1-indexed in saved output; convert back to
+                # 0-indexed PDF pages before refining exercise bounds.
+                page_nums = [
+                    q.page_number - 1
+                    for q in exercise_questions
+                    if hasattr(q, 'page_number') and q.page_number is not None and (q.page_number - 1) != start_page
+                ]
+                if page_nums:
+                    ex_start_page = max(ex_start_page, min(page_nums))
+                    ex_end_page = min(ex_end_page, max(page_nums))
+
             section = ExerciseSection(
                 title=title,
-                start_page=start_page,
-                end_page=end_page,
+                start_page=ex_start_page,
+                end_page=ex_end_page,
                 total_questions=total_questions,
                 questions=exercise_questions
             )
@@ -937,6 +1054,62 @@ class ExtractionEngine:
             logger.info(f"  Found: '{section.title}' pages {section.start_page + 1}-{section.end_page + 1}")
         
         return sections
+
+    def _find_exercise_section_for_page(
+        self,
+        page_idx: int,
+        sections: List[ExerciseSection],
+    ) -> Optional[ExerciseSection]:
+        """Return the detected exercise section covering the given 0-indexed page."""
+        for section in sections:
+            section_end = section.end_page if section.end_page is not None else section.start_page
+            if section.start_page <= page_idx <= section_end:
+                return section
+        return None
+
+    def _build_scoped_question_id(
+        self,
+        question_id: str,
+        page_idx: int,
+        section: Optional[ExerciseSection],
+    ) -> str:
+        """Build a dedupe key that avoids collisions across exercises with repeated numbering."""
+        if section:
+            section_end = section.end_page if section.end_page is not None else section.start_page
+            return f"{section.title}:{section.start_page}:{section_end}:{question_id}"
+        return f"page:{page_idx}:{question_id}"
+
+    def _assign_questions_to_sections(
+        self,
+        detected_sections: List[ExerciseSection],
+        questions: List[ExtractedQuestion],
+    ) -> List[ExerciseSection]:
+        """Attach extracted questions to their detected exercise sections for serialization."""
+        if not detected_sections:
+            return []
+
+        section_copies = [
+            ExerciseSection(
+                title=section.title,
+                start_page=section.start_page,
+                end_page=section.end_page,
+                total_questions=section.total_questions,
+                questions=[],
+            )
+            for section in detected_sections
+        ]
+
+        for question in questions:
+            question_page_idx = max((question.page_number or 1) - 1, 0)
+            matched_section = self._find_exercise_section_for_page(question_page_idx, section_copies)
+            if matched_section:
+                matched_section.questions.append(question)
+
+        for section in section_copies:
+            if section.questions:
+                section.total_questions = len(section.questions)
+
+        return section_copies
     
     def _render_pages(
         self,
@@ -1125,6 +1298,10 @@ class ExtractionEngine:
     
     def _extract_json(self, text: str) -> Optional[str]:
         """Extract JSON from text that may contain markdown or other content."""
+        # Helper to fix single unescaped backslashes in LaTeX generated by the model
+        def _clean_json_latex(json_str: str) -> str:
+            return re.sub(r'(?<!\\)\\([^"\\/bfnrtu])', r'\\\\\1', json_str)
+
         # Try markdown code blocks first
         patterns = [
             r'```json\s*([\s\S]*?)\s*```',
@@ -1140,7 +1317,13 @@ class ExtractionEngine:
                         json.loads(candidate)
                         return candidate
                     except json.JSONDecodeError:
-                        continue
+                        # Attempt to heal invalid LaTeX JSON escapes
+                        try:
+                            patched = _clean_json_latex(candidate)
+                            json.loads(patched)
+                            return patched
+                        except json.JSONDecodeError:
+                            continue
         
         # Try raw JSON
         if text.strip().startswith('{') or text.strip().startswith('['):
@@ -1148,7 +1331,13 @@ class ExtractionEngine:
                 json.loads(text.strip())
                 return text.strip()
             except json.JSONDecodeError:
-                pass
+                # Attempt to heal invalid LaTeX JSON escapes
+                try:
+                    patched = _clean_json_latex(text.strip())
+                    json.loads(patched)
+                    return patched
+                except json.JSONDecodeError:
+                    pass
         
         # Try to find JSON object/array in text
         json_patterns = [

@@ -63,7 +63,7 @@ $env:DB_PASSWORD = "your_password"
 ```cmd
 set DB_HOST=localhost
 set DB_PORT=5432
-set DB_NAME=aryabhatta
+set DB_NAME=<DB_NAME>
 set DB_USER=postgres
 set DB_PASSWORD=your_password
 ```
@@ -72,7 +72,7 @@ set DB_PASSWORD=your_password
 ```bash
 export DB_HOST=localhost
 export DB_PORT=5432
-export DB_NAME=aryabhatta
+export DB_NAME=<DB_NAME>
 export DB_USER=postgres
 export DB_PASSWORD=your_password
 ```
@@ -81,7 +81,7 @@ export DB_PASSWORD=your_password
 ```
 DB_HOST=localhost
 DB_PORT=5432
-DB_NAME=aryabhatta
+DB_NAME=<DB_NAME>
 DB_USER=postgres
 DB_PASSWORD=your_password
 ```

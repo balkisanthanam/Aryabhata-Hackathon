@@ -20,7 +20,7 @@ This Azure Function extracts specific problem images from educational PDF docume
 
 ```json
 {
-  "pdf_blob_url": "https://<YOUR_STORAGE>.blob.core.windows.net/feedback/11/Maths/kemh106.pdf",
+  "pdf_blob_url": "<BLOB_STORAGE_URL>/feedback/11/Maths/kemh106.pdf",
   "exercise_name": "Exercise 8.1",
   "problem_number": "12"
 }
@@ -132,9 +132,9 @@ Configure in `local.settings.json` for local development:
 Update these constants in `function_app.py`:
 
 ```python
-KEY_VAULT_URL = os.environ.get("KEY_VAULT_URL", "https://<YOUR_KEY_VAULT>.vault.azure.net/")
-KEY_VAULT_SECRET_NAME = os.environ.get("KEY_VAULT_SECRET_NAME", "GOOGLEAPIKEY")
-PROMPT_BLOB_URL = os.environ.get("PROMPT_BLOB_URL", "https://<YOUR_STORAGE>.blob.core.windows.net/feedback/ExtractionPipeline/ImageBasedExtraction/prompts/OnDemandImage_prompt.txt")
+KEY_VAULT_URL = "<KEY_VAULT_URL>"
+KEY_VAULT_SECRET_NAME = "<KEY_VAULT_SECRET_NAME>"
+PROMPT_BLOB_URL = "<BLOB_STORAGE_URL>/feedback/ExtractionPipeline/ImageBasedExtraction/prompts/OnDemandImage_prompt.txt"
 GEMINI_MODEL = os.environ.get('GEMINI_MODEL', 'gemini-3-pro-preview')  # Configurable via environment
 ```
 
@@ -165,7 +165,7 @@ func azure functionapp publish <your-function-app-name>
 curl -X POST "http://localhost:7071/api/extract_image" \
   -H "Content-Type: application/json" \
   -d '{
-    "pdf_blob_url": "https://<YOUR_STORAGE>.blob.core.windows.net/feedback/11/Maths/kemh106.pdf",
+    "pdf_blob_url": "<BLOB_STORAGE_URL>/feedback/11/Maths/kemh106.pdf",
     "exercise_name": "Exercise 8.1",
     "problem_number": "12"
   }' \
@@ -179,7 +179,7 @@ import requests
 
 url = "http://localhost:7071/api/extract_image"
 payload = {
-    "pdf_blob_url": "https://<YOUR_STORAGE>.blob.core.windows.net/feedback/11/Maths/kemh106.pdf",
+    "pdf_blob_url": "<BLOB_STORAGE_URL>/feedback/11/Maths/kemh106.pdf",
     "exercise_name": "Exercise 8.1",
     "problem_number": "12"
 }
@@ -224,7 +224,7 @@ async function extractProblemImage(
 
 // Usage
 const imageBlob = await extractProblemImage(
-  'https://<YOUR_STORAGE>.blob.core.windows.net/feedback/11/Maths/kemh106.pdf',
+  '<BLOB_STORAGE_URL>/feedback/11/Maths/kemh106.pdf',
   'Exercise 8.1',
   '12'
 );
@@ -295,3 +295,4 @@ The prompt instructs Gemini to:
 ## License
 
 Part of the AryaBhatta educational platform.
+

@@ -1,0 +1,43 @@
+Let's get back to drawing board then.
+Model Options for release (if we decide):
+=========================================
+From what i understand, the only plausible option is a combo involving Untuned Flash model right? 
+were there any Tuned Combo that worked? I thought that had more weakspots?
+
+Even Flash model cannot be shipped by itself. One possibility is, we have some heuristics mechanism, which can reasonably predict in a cheap way if the solution can be relied on (just yes or now) and if not fallback to Pro. The reason is the types of problem are going to be very diverse. Unless the relatively smaller model demonstrates good number, it might be risky (in prod scenarios, weaker nos from weak models might manifest more errors than in a small set). Let's call this model - (Gemini 3 flash untuned + fallback for known bad spots + heuristic fallback) as Untuned_with_support
+I also felt we should dump all errors listed in a file (md?) per combo we tried and analyse (add the question id, which will help to query for the question if needed)
+
+How to improve our Model training SFT efforts?
+=========================================
+I did some deep research on LORA use cases. I found them to be useful. Please go through them. Do share your candid and honest inputs on them:
+Gemini - https://gemini.google.com/share/5f3319aaa26b (also stored as doc in our code base here )
+Claude - 
+Here are some questions/suggestions i have:
+1) We are not trying to inject knowledge for sure in LORA right?. We expect the Gemini Flash models to be fundamentally good on Math, Physics & Chemistry. We are just guiding it on COT with the LORA. Is this framing correct?
+2) However i felt after reading these reports RAG might help Gemini Flash? Do we use the Smart context?
+3) There's a lot interesting points on the Hyper Parameters, which we would want to try. Though i will admit that hyper params will not make a big difference, if the fundamental architecture is broken. But we should try this.
+4) Should we consider one LORA adaptor per subject? For each subject has its own nuance. We might need more examples in that case
+5) Should we considere RLVR?
+6) On Model, if we are not going to ship immediately and going to do an iterative approach (with or without RLVR pts 5 & 6), then is it good to consider any other open source model? I know you warned about the MLOPs overhead. But i am throwing this in case we are not shipping immediately and only iterating. This can be done in a local setup also or a basic cloud setup?
+
+Model Training options:
+=========================================
+Option 1 (RLVR):
+----------------
+IS RLVR feasible? We have answer keys for 2 full years of JEE and some of NCERT (the others are more like proof or demonstrate that can be verified). Won't we be able to adopt RLVR? Some thought process on this:
+a) Basically train with 100 samples for each subject as adaptor
+b) Have them in a parallel 3 step solution pipeline (not in prod. but in a parallel pipeline)
+c) We have 3 step Prod ready solution pipeline for both NCERT and JEE (with Pro). We run for a small batch size (50 for JEE and one chapter for NCERT). We don't waste this run. Push it to prod (after evaluation? 
+	Or alternately
+	If we can ship Untuned_with_support, then we can make that prod line
+d) We run the Parallel pipeline also for the same batch
+e) we compare the answers. if needed we can have our evaluator also to score
+f) use (e) to give RLVR reward and iterate the model
+g) iterate, evaluate the new model till we get to the desired metric
+
+Option 2 (without RLVR):
+------------------------
+If not RLVR, we can potentially do similar without RLVR also, with each iteration, we add the training data to the corpus.
+
+
+

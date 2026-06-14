@@ -1,0 +1,132 @@
+### **Chapter 1: Units and Measurement**
+*   **Introduction:** Measurement concepts and the need for standards.
+*   **The International System of Units:** Base units, derived units, and SI units.
+*   **Significant Figures:** Rules for determining significant digits and arithmetic operations.
+*   **Dimensions of Physical Quantities:** Understanding the nature of physical quantities through base dimensions.
+*   **Dimensional Formulae and Dimensional Equations:** Expressing physical quantities in terms of fundamental dimensions.
+*   **Dimensional Analysis and its Applications:** Checking equation consistency and deducing relations among physical quantities.
+
+### **Chapter 2: Motion in a Straight Line**
+*   **Introduction:** Frame of reference and rectilinear motion.
+*   **Instantaneous Velocity and Speed:** Defining velocity and speed at a specific instant.
+*   **Acceleration:** Rate of change of velocity.
+*   **Kinematic Equations for Uniformly Accelerated Motion:** Relations connecting displacement, velocity, acceleration, and time.
+*   **Relative Velocity:** Velocity of one object with respect to another.
+
+### **Chapter 3: Motion in a Plane**
+*   **Scalars and Vectors:** Distinction between scalar and vector quantities; position and displacement vectors.
+*   **Multiplication of Vectors by Real Numbers:** Scaling vectors.
+*   **Addition and Subtraction of Vectors:** Graphical (head-to-tail, parallelogram) and analytical methods.
+*   **Resolution of Vectors:** Breaking vectors into components; unit vectors.
+*   **Motion in a Plane:** Position, velocity, and acceleration in two dimensions.
+*   **Motion in a Plane with Constant Acceleration:** Equations of motion in 2D.
+*   **Projectile Motion:** Motion of an object projected into the air (trajectory, time of flight, maximum height, horizontal range).
+*   **Uniform Circular Motion:** Angular speed, linear speed, and centripetal acceleration.,
+
+### **Chapter 4: Laws of Motion**
+*   **Aristotle’s Fallacy & The Law of Inertia:** Historical context and Galileo's contributions.
+*   **Newton’s First Law of Motion:** Inertia and force.
+*   **Newton’s Second Law of Motion:** Momentum, force, and acceleration ($F=ma$).
+*   **Newton’s Third Law of Motion:** Action and reaction forces.
+*   **Conservation of Momentum:** Conservation laws in isolated systems.
+*   **Equilibrium of a Particle:** Forces in equilibrium.
+*   **Common Forces in Mechanics:** Friction (static, kinetic, rolling), circular motion dynamics.
+*   **Solving Problems in Mechanics:** Using free-body diagrams.,
+
+### **Chapter 5: Work, Energy and Power**
+*   **Notions of Work and Kinetic Energy:** The Work-Energy Theorem.
+*   **Work:** Definition, scalar product of vectors, work done by constant and variable forces.
+*   **Kinetic Energy:** Energy of motion.
+*   **The Concept of Potential Energy:** Stored energy, gravitational potential energy.
+*   **The Conservation of Mechanical Energy:** Conservation principles for conservative forces.
+*   **The Potential Energy of a Spring:** Elastic potential energy.
+*   **Power:** Rate of doing work.
+*   **Collisions:** Elastic and inelastic collisions in one and two dimensions.
+
+### **Chapter 6: Systems of Particles and Rotational Motion**
+*   **Centre of Mass:** Definition and motion of the centre of mass.
+*   **Linear Momentum of a System of Particles:** Conservation of momentum for systems.
+*   **Vector Product of Two Vectors:** Cross product and its applications.
+*   **Angular Velocity and its Relation with Linear Velocity:** Rotational kinematics.
+*   **Torque and Angular Momentum:** Moment of force, conservation of angular momentum.
+*   **Equilibrium of a Rigid Body:** Conditions for translational and rotational equilibrium.
+*   **Moment of Inertia:** Rotational inertia, radius of gyration.
+*   **Kinematics and Dynamics of Rotational Motion:** Rotation about a fixed axis.,
+
+### **Chapter 7: Gravitation**
+*   **Kepler’s Laws:** Laws of planetary motion (orbits, areas, periods).
+*   **Universal Law of Gravitation:** Newton's law of attraction between masses.
+*   **The Gravitational Constant:** Measurement and value of $G$.
+*   **Acceleration Due to Gravity:** Variation with altitude and depth.
+*   **Gravitational Potential Energy:** Potential energy near earth and at distances.
+*   **Escape Speed:** Velocity required to escape gravitational influence.
+*   **Earth Satellites & Energy of an Orbiting Satellite:** Orbital velocity, time period, and energy of satellites.
+
+### **Chapter 9: Mechanical Properties of Solids** (From Test Paper Source)
+*   **Stress and Strain:** Compressive, tensile, and shearing stress/strain.
+*   **Hooke's Law:** Proportionality limit.
+*   **Modulus of Elasticity:** Young's Modulus, Bulk Modulus.
+*   **Elastic Potential Energy:** Energy stored in stretched wires.
+*   **Material Behavior:** Ductile vs. brittle materials, elastic vs. plastic deformation.,
+
+**Chapter 8: MECHANICAL PROPERTIES OF SOLIDS**
+*   **Stress and Strain:** Understanding the restoring force per unit area (stress) and the fractional change in dimension (strain) when a body is deformed.
+*   **Hooke’s Law:** The proportional relationship between stress and strain for small deformations.
+*   **Stress-Strain Curve:** Analyzing the relationship between stress and strain for materials to understand properties like yield point and tensile strength.
+*   **Elastic Moduli:**
+    *   **Young’s Modulus:** Ratio of tensile/compressive stress to longitudinal strain.
+    *   **Shear Modulus:** Ratio of shearing stress to shearing strain.
+    *   **Bulk Modulus:** Ratio of hydraulic stress to volume strain.
+*   **Applications of Elastic Behaviour:** Practical uses in engineering, such as the design of beams, bridges, and cranes.
+
+**Chapter 9: MECHANICAL PROPERTIES OF FLUIDS**
+*   **Pressure:** Force per unit area exerted by a fluid, including Pascal's Law regarding the transmission of pressure in a fluid at rest.
+*   **Streamline Flow:** The study of fluids in motion (fluid dynamics) where velocity at a point remains constant in time.
+*   **Bernoulli’s Principle:** The conservation of energy in fluid flow, relating pressure, kinetic energy, and potential energy.
+*   **Viscosity:** The internal friction or resistance to motion between layers of a fluid.
+*   **Surface Tension:** The property of liquid surfaces to shrink into the minimum surface area possible, caused by cohesive forces between molecules.
+
+**Chapter 10: THERMAL PROPERTIES OF MATTER**
+*   **Temperature and Heat:** Defining temperature as a measure of hotness and heat as the energy transferred due to temperature difference.
+*   **Measurement of Temperature:** Principles of thermometers and temperature scales like Celsius, Fahrenheit, and Kelvin.
+*   **Ideal-Gas Equation:** The relationship $PV = \mu RT$ connecting pressure, volume, and temperature.
+*   **Thermal Expansion:** The increase in dimensions (linear, area, volume) of a body due to an increase in temperature.
+*   **Specific Heat Capacity:** The amount of heat required to raise the temperature of a unit mass of substance by one degree.
+*   **Calorimetry:** The measurement of heat transfer.
+*   **Change of State:** Transitions between solid, liquid, and gas phases, including concepts like latent heat.
+*   **Heat Transfer:** The three modes of transfer: Conduction, Convection, and Radiation.
+*   **Newton’s Law of Cooling:** The rate of heat loss of a body is proportional to the temperature difference between the body and its surroundings.
+
+**Chapter 11: THERMODYNAMICS**
+*   **Thermal Equilibrium:** The state where macroscopic variables do not change, leading to the Zeroth Law of Thermodynamics.
+*   **First Law of Thermodynamics:** The law of conservation of energy ($\Delta Q = \Delta U + \Delta W$) applied to thermodynamic systems.
+*   **Specific Heat Capacity:** Molar specific heats at constant pressure ($C_p$) and constant volume ($C_v$).
+*   **Thermodynamic Processes:** Types of processes including Isothermal, Adiabatic, Isochoric, and Isobaric.
+*   **Second Law of Thermodynamics:** Limits on the efficiency of heat engines and the direction of heat transfer.
+*   **Reversible and Irreversible Processes:** Distinguishing between ideal reversible changes and natural irreversible ones.
+*   **Carnot Engine:** An ideal reversible heat engine operating between two temperatures.
+
+**Chapter 12: KINETIC THEORY**
+*   **Molecular Nature of Matter:** The atomic hypothesis and the behavior of molecules in solids, liquids, and gases.
+*   **Behaviour of Gases:** Gas laws (Boyle's, Charles') and the ideal gas equation derived from molecular theory.
+*   **Kinetic Theory of an Ideal Gas:** Interpreting pressure and temperature in terms of molecular motion and kinetic energy.
+*   **Law of Equipartition of Energy:** The distribution of energy equally among all degrees of freedom.
+*   **Specific Heat Capacity:** Theoretical predictions of specific heats for monoatomic, diatomic, and polyatomic gases.
+*   **Mean Free Path:** The average distance a molecule travels between collisions.
+
+**Chapter 13: OSCILLATIONS**
+*   **Periodic and Oscillatory Motions:** Defining motion that repeats at regular intervals.
+*   **Simple Harmonic Motion (SHM):** Oscillatory motion where restoring force is proportional to displacement.
+*   **SHM and Uniform Circular Motion:** Visualizing SHM as the projection of circular motion.
+*   **Velocity and Acceleration in SHM:** The mathematical relationships of velocity and acceleration to displacement and time.
+*   **Force Law for SHM:** The linear relationship $F = -kx$.
+*   **Energy in SHM:** The interchange and conservation of kinetic and potential energy during oscillation.
+*   **The Simple Pendulum:** Analysis of a small bob oscillating on a string as an SHM system.
+
+**Chapter 14: WAVES**
+*   **Transverse and Longitudinal Waves:** Distinguishing waves by the direction of oscillation relative to propagation.
+*   **Displacement Relation in a Progressive Wave:** Mathematical description of a travelling wave.
+*   **Speed of a Travelling Wave:** Determining wave speed based on medium properties (e.g., tension in a string).
+*   **Principle of Superposition of Waves:** How overlapping waves combine algebraically.
+*   **Reflection of Waves:** Behavior of waves at rigid and open boundaries.
+*   **Beats:** The phenomenon arising from the interference of waves with slightly different frequencies.

@@ -1,5 +1,7 @@
 azure-functions
 debugpy
 azure-ai-formrecognizer
+azure-cosmos
+azure-storage-blob
 openai
 google-generativeai

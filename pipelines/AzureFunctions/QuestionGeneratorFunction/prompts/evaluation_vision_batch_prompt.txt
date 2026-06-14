@@ -23,8 +23,17 @@ Format of each element in the batch data:
   "questionId": "<id matching the input>",
   "question": "<question text>",
   "studentAnswer": "<student answer text>",
-  "marks": <marks>
+  "marks": <marks>,
+  "referenceAnswer": "<correct/model answer from the question bank — present only when available>",
+  "commonMistakes": ["<common mistake 1>", ...],  // present only when available
+  "explanation": "<solution explanation from the question bank — present only when available>"
 }}
+
+When "referenceAnswer", "commonMistakes", or "explanation" are present:
+- Use "referenceAnswer" as the authoritative expected answer for scoring and generating "expected_answer" in your output.
+- Use "explanation" to understand the ideal solution approach.
+- Use "commonMistakes" to identify whether the student has made a known error pattern and call it out explicitly in "missed_points" or "feedback".
+- Do NOT reveal the reference answer verbatim to the student. Use it only to calibrate your evaluation.
 
 Answer Sheet Image:
 <image provided>

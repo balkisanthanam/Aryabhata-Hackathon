@@ -1,211 +1,273 @@
-# Deployment Guide for Student Evaluation Azure Function
+# Student Evaluation Function — Deployment Reference
 
-## Prerequisites
+Last updated: 2026-02-20
 
-### 1. Azure Resources Required
-- Azure Function App (Python 3.9+)
-- Azure Key Vault
-- Azure Storage Account (for function app storage)
-- Application Insights (recommended for monitoring)
+## 1. Resource Inventory
 
-### 2. Local Development Tools
-- [Azure Functions Core Tools](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local)
-- Python 3.9 or higher
-- Azure CLI
+| Resource | Name | Resource Group | Purpose |
+|---|---|---|---|
+| Function App | `<FUNCTION_APP_NAME>` | `<FUNCTION_RESOURCE_GROUP>` | Python 3.11 Linux Consumption plan |
+| PostgreSQL Flexible Server | `<DB_SERVER_NAME>` | `<DB_RESOURCE_GROUP>` | AAD + password auth enabled |
+| Key Vault | `<KEY_VAULT_NAME>` | *(check portal)* | RBAC-based authorization (not access policies) |
+| Blob Storage | `kalidasa` | `<BLOB_RESOURCE_GROUP>` | Prompts, PDFs, student uploads, pipeline artifacts |
+| Queue Storage | `<QUEUE_STORAGE_ACCOUNT>` | `<FUNCTION_RESOURCE_GROUP>` | `feedback-jobs` queue + Durable Functions task hub |
 
-## Setup Steps
+**Managed Identity:** System-assigned on `<FUNCTION_APP_NAME>`
+- Principal ID: `<MANAGED_IDENTITY_PRINCIPAL_ID>`
+- Display Name: `<FUNCTION_APP_NAME>`
 
-### Step 1: Create Azure Resources
+---
 
-#### Create Resource Group
-```bash
-az group create --name rg-student-evaluation --location eastus
+## 2. Deploying Code
+
+```powershell
+cd pipelines\AzureFunctions\StudentEvaluationFunction
+func azure functionapp publish <FUNCTION_APP_NAME> --python
 ```
 
-#### Create Storage Account
-```bash
-az storage account create --name <YOUR_STORAGE_ACCOUNT> --resource-group rg-student-evaluation --location eastus --sku Standard_LRS
+> **IMPORTANT:** `func azure functionapp publish` deploys **code only** — it does NOT push
+> `local.settings.json` values. App settings must be configured separately (see §3).
+
+After deployment, verify all 13 functions synced:
+```
+feedback_queue_trigger      [queueTrigger]
+evaluation_orchestrator     [orchestrationTrigger]
+read_evaluation             [activityTrigger]
+fetch_student_images        [activityTrigger]
+split_student_hw            [activityTrigger]
+split_textbook              [activityTrigger]
+parse_text_ref              [activityTrigger]
+validate_inputs             [activityTrigger]
+get_chapter_pdf             [activityTrigger]
+evaluate_batch              [activityTrigger]
+update_evaluation           [activityTrigger]
+save_checkpoint             [activityTrigger]
+load_checkpoint             [activityTrigger]
 ```
 
-#### Create Key Vault
-```bash
-az keyvault create --name <YOUR_KEY_VAULT> --resource-group rg-student-evaluation --location eastus
+---
+
+## 3. App Settings (Environment Variables)
+
+These must exist on the Function App. Push them with:
+
+```powershell
+az functionapp config appsettings set `
+  --name <FUNCTION_APP_NAME> `
+  --resource-group <FUNCTION_RESOURCE_GROUP> `
+  --settings `
+    FEEDBACK_QUEUE_CONNECTION="<<QUEUE_STORAGE_ACCOUNT> connection string>" `
+    DB_HOST="<DB_HOST>" `
+    DB_NAME="postgres" `
+    DB_USER="<FUNCTION_APP_NAME>" `
+    DB_PORT="5432" `
+    KEY_VAULT_URL="<KEY_VAULT_URL>" `
+    KEY_VAULT_SECRET_NAME="<KEY_VAULT_SECRET_NAME>" `
+    BLOB_STORAGE_URL="<BLOB_STORAGE_URL>" `
+    PROMPTS_CONTAINER="feedback"
 ```
 
-#### Store Google API Key in Key Vault
-```bash
-az keyvault secret set --vault-name <YOUR_KEY_VAULT> --name GOOGLEAPIKEY --value "your-google-api-key-here"
+### Getting the <QUEUE_STORAGE_ACCOUNT> connection string
+
+```powershell
+az storage account show-connection-string `
+  --name <QUEUE_STORAGE_ACCOUNT> `
+  --resource-group <FUNCTION_RESOURCE_GROUP> `
+  --query connectionString -o tsv
 ```
 
-#### Create Function App
-```bash
-az functionapp create --resource-group rg-student-evaluation --consumption-plan-location eastus --runtime python --runtime-version 3.9 --functions-version 4 --name <YOUR_FUNCTION_APP> --storage-account <YOUR_STORAGE_ACCOUNT> --os-type Linux
+### Pre-existing settings (set automatically by Azure)
+
+These are already configured and should NOT be overwritten:
+- `AzureWebJobsStorage` — connection string to `<QUEUE_STORAGE_ACCOUNT>` (Durable Functions task hub)
+- `FUNCTIONS_WORKER_RUNTIME` = `python`
+- `FUNCTIONS_EXTENSION_VERSION` = `~4`
+
+### Verify all settings
+
+```powershell
+az functionapp config appsettings list `
+  --name <FUNCTION_APP_NAME> `
+  --resource-group <FUNCTION_RESOURCE_GROUP> `
+  --query "[].name" -o tsv
 ```
 
-### Step 2: Enable Managed Identity
+### Key notes on DB_USER
 
-```bash
-az functionapp identity assign --name <YOUR_FUNCTION_APP> --resource-group rg-student-evaluation
+- `DB_USER` must be **`<FUNCTION_APP_NAME>`** (the Managed Identity display name)
+- The function authenticates to PostgreSQL using `DefaultAzureCredential` → AAD token
+- Do NOT use your personal AAD account (`<PERSONAL_AAD_ACCOUNT>`)
+
+---
+
+## 4. Managed Identity Permissions
+
+### 4a. Required RBAC Role Assignments
+
+| Storage/Service | Role | Scope | Why |
+|---|---|---|---|
+| `kalidasa` | **Storage Blob Data Contributor** | storage account | Read prompts/PDFs + **write** pipeline artifacts |
+| `<KEY_VAULT_NAME>` | **Key Vault Secrets User** | vault | Read Gemini API key (`<KEY_VAULT_SECRET_NAME>`) |
+| `<QUEUE_STORAGE_ACCOUNT>` | *(connection string)* | N/A | Queue trigger + Durable task hub use account key, not MI |
+
+#### Assign blob contributor (if not already set)
+
+```powershell
+# Find kalidasa's resource group (it's NOT in <FUNCTION_RESOURCE_GROUP>)
+az storage account show --name kalidasa --query resourceGroup -o tsv
+# → <BLOB_RESOURCE_GROUP>
+
+az role assignment create `
+  --assignee "<MANAGED_IDENTITY_PRINCIPAL_ID>" `
+  --role "Storage Blob Data Contributor" `
+  --scope "/subscriptions/<SUBSCRIPTION_ID>/resourceGroups/<BLOB_RESOURCE_GROUP>/providers/Microsoft.Storage/storageAccounts/kalidasa"
 ```
 
-Copy the `principalId` from the output.
+#### Assign Key Vault secrets reader (if not already set)
 
-### Step 3: Grant Key Vault Access
-
-```bash
-az keyvault set-policy --name <YOUR_KEY_VAULT> --object-id <principal-id-from-step-2> --secret-permissions get list
+```powershell
+az role assignment create `
+  --assignee "<MANAGED_IDENTITY_PRINCIPAL_ID>" `
+  --role "Key Vault Secrets User" `
+  --scope "/subscriptions/<SUBSCRIPTION_ID>/providers/Microsoft.KeyVault/vaults/<KEY_VAULT_NAME>"
 ```
 
-### Step 4: Configure Function App Settings
+#### Verify role assignments
 
-```bash
-az functionapp config appsettings set --name <YOUR_FUNCTION_APP> --resource-group rg-student-evaluation --settings "KEY_VAULT_URL=https://<YOUR_KEY_VAULT>.vault.azure.net/"
+```powershell
+az role assignment list `
+  --assignee <MANAGED_IDENTITY_PRINCIPAL_ID> `
+  --query "[].{role:roleDefinitionName, scope:scope}" -o table
 ```
 
-### Step 5: Local Development Setup
+### 4b. PostgreSQL AAD Admin Registration
 
-1. Clone/navigate to the function directory:
-```bash
-cd AzureFunctions/StudentEvaluationFunction
+The Managed Identity must be registered as an AAD administrator on the PostgreSQL server.
+This is **separate** from RBAC — it's a PostgreSQL-level config.
+
+#### Check current admins
+
+```powershell
+$serverId = "/subscriptions/<SUBSCRIPTION_ID>/resourceGroups/<DB_RESOURCE_GROUP>/providers/Microsoft.DBforPostgreSQL/flexibleServers/<DB_SERVER_NAME>"
+
+az rest --method GET `
+  --url "${serverId}/administrators?api-version=2022-12-01" `
+  --query "value[].{name:properties.principalName, type:properties.principalType}" `
+  -o table
 ```
 
-2. Create virtual environment:
-```bash
-python -m venv .venv
-.venv\Scripts\activate  # Windows
-# source .venv/bin/activate  # Linux/Mac
+#### Register MI as admin (if not listed)
+
+```powershell
+$principalId = "<MANAGED_IDENTITY_PRINCIPAL_ID>"
+$tenantId = "<TENANT_ID>"
+
+az rest --method PUT `
+  --url "${serverId}/administrators/${principalId}?api-version=2022-12-01" `
+  --body "{
+    \`"properties\`": {
+      \`"principalType\`": \`"ServicePrincipal\`",
+      \`"principalName\`": \`"<FUNCTION_APP_NAME>\`",
+      \`"tenantId\`": \`"${tenantId}\`"
+    }
+  }"
 ```
 
-3. Install dependencies:
-```bash
-pip install -r requirements.txt
+> This operation takes ~60 seconds to complete.
+
+---
+
+## 5. Post-Deployment Checklist
+
+After every deployment, verify:
+
+- [ ] All 13 functions synced (check `func publish` output)
+- [ ] App settings are present (`az functionapp config appsettings list`)
+- [ ] `DB_USER` = `<FUNCTION_APP_NAME>` (not personal AAD account)
+- [ ] MI has `Storage Blob Data Contributor` on `kalidasa`
+- [ ] MI has `Key Vault Secrets User` on `<KEY_VAULT_NAME>`
+- [ ] MI is registered as PostgreSQL AAD admin on `<DB_SERVER_NAME>`
+- [ ] Restart function app after any settings change:
+  ```powershell
+  az functionapp restart --name <FUNCTION_APP_NAME> --resource-group <FUNCTION_RESOURCE_GROUP>
+  ```
+
+---
+
+## 6. Troubleshooting
+
+### Job stuck in PENDING
+
+1. **Check app settings** — `func publish` does NOT deploy `local.settings.json`
+2. **Check queue** — is the message sitting in `feedback-jobs` or moved to `feedback-jobs-poison`?
+3. **Check function app state:**
+   ```powershell
+   az functionapp show --name <FUNCTION_APP_NAME> `
+     --resource-group <FUNCTION_RESOURCE_GROUP> `
+     --query state -o tsv
+   ```
+4. **Restart after config changes:**
+   ```powershell
+   az functionapp restart --name <FUNCTION_APP_NAME> --resource-group <FUNCTION_RESOURCE_GROUP>
+   ```
+
+### Poison queue
+
+If the queue trigger fails 5 times, the message moves to `feedback-jobs-poison`.
+Common causes:
+- Missing app settings (DB, Key Vault, blob URLs)
+- MI not authorized for PostgreSQL / Key Vault / Blob Storage
+- `DB_USER` set to wrong identity
+
+### Viewing logs
+
+```powershell
+# Stream live logs (Ctrl+C to stop)
+az webapp log tail --name <FUNCTION_APP_NAME> --resource-group <FUNCTION_RESOURCE_GROUP>
+
+# Application Insights (if configured)
+az monitor app-insights query `
+  --app <FUNCTION_APP_NAME> `
+  --resource-group <FUNCTION_RESOURCE_GROUP> `
+  --analytics-query "traces | top 20 by timestamp desc"
 ```
 
-4. Update `local.settings.json`:
-```json
-{
-  "IsEncrypted": false,
-  "Values": {
-    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
-    "FUNCTIONS_WORKER_RUNTIME": "python",
-    "KEY_VAULT_URL": "https://<YOUR_KEY_VAULT>.vault.azure.net/",
-    "GOOGLE_API_KEY": "your-google-api-key-for-local-testing"
-  }
-}
+### Test the deployed function
+
+```powershell
+python tests/test_durable_e2e.py --target deployed `
+  --student-work "path\to\student_work.jpg" `
+  --text-ref "problem 10.1" `
+  --subject Physics --class 11 --no-cleanup
 ```
 
-5. For local testing, you can bypass Key Vault by modifying the function to use the `GOOGLE_API_KEY` environment variable.
+Use `--no-cleanup` to keep the `solution_evaluations` row for inspection.
 
-### Step 6: Test Locally
+---
 
-1. Start Azure Functions runtime:
-```bash
-func start
-```
+## 7. Gotchas & Lessons Learned
 
-2. Test the endpoint:
-```bash
-python test_create_payload.py
-curl -X POST http://localhost:7071/api/evaluate -H "Content-Type: application/json" -d @test_request.json
-```
+1. **`func publish` ≠ full deployment.** It only pushes code. App settings from
+   `local.settings.json` are intentionally NOT deployed (they often contain local-only values).
 
-### Step 7: Deploy to Azure
+2. **Resources span multiple resource groups.** `kalidasa` is in `<BLOB_RESOURCE_GROUP>`,
+   `<DB_SERVER_NAME>` is in `<DB_RESOURCE_GROUP>`, function app is in `<FUNCTION_RESOURCE_GROUP>`.
+   RBAC scope paths must use the correct resource group.
 
-```bash
-func azure functionapp publish <YOUR_FUNCTION_APP>
-```
+3. **Storage Blob Data Reader is not enough.** The function writes pipeline artifacts
+   (via `utils/step_blob.py`), so it needs **Contributor**, not just Reader.
 
-### Step 8: Verify Deployment
+4. **PostgreSQL AAD admin ≠ Azure RBAC.** Granting the MI an Azure role on the PG server
+   is not sufficient — it must also be registered as an AAD administrator on the server
+   itself via the REST API or portal.
 
-Get the function URL:
-```bash
-az functionapp function show --name <YOUR_FUNCTION_APP> --resource-group rg-student-evaluation --function-name evaluate --query invokeUrlTemplate -o tsv
-```
+5. **Key Vault uses RBAC, not access policies.** `<KEY_VAULT_NAME>` is configured with RBAC-based
+   authorization. Use role assignments (`Key Vault Secrets User`), not `az keyvault set-policy`.
 
-Test the deployed function:
-```bash
-curl -X POST "https://<YOUR_FUNCTION_APP>.azurewebsites.net/api/evaluate?code=<function-key>" -H "Content-Type: application/json" -d @test_request.json
-```
+6. **`AzureWebJobsStorage` and `FEEDBACK_QUEUE_CONNECTION` both point to `<QUEUE_STORAGE_ACCOUNT>`**
+   but serve different purposes: the former is for Durable Functions runtime, the latter is
+   for the queue trigger binding.
 
-## Configuration Updates
+7. **Test script cleans up DB rows by default.** Use `--no-cleanup` flag to preserve
+   `solution_evaluations` rows for post-mortem inspection.
 
-### Update Key Vault URL in Function Code
-
-Edit `function_app.py` and update:
-```python
-KEY_VAULT_URL = "https://<YOUR_KEY_VAULT>.vault.azure.net/"
-```
-
-## Monitoring and Troubleshooting
-
-### View Logs
-```bash
-az webapp log tail --name <YOUR_FUNCTION_APP> --resource-group rg-student-evaluation
-```
-
-### Application Insights
-Enable Application Insights for better monitoring:
-```bash
-az monitor app-insights component create --app <YOUR_APP_INSIGHTS> --location eastus --resource-group rg-student-evaluation --application-type web
-```
-
-Link to Function App:
-```bash
-APPINSIGHTS_KEY=$(az monitor app-insights component show --app <YOUR_APP_INSIGHTS> --resource-group rg-student-evaluation --query instrumentationKey -o tsv)
-
-az functionapp config appsettings set --name <YOUR_FUNCTION_APP> --resource-group rg-student-evaluation --settings "APPINSIGHTS_INSTRUMENTATIONKEY=$APPINSIGHTS_KEY"
-```
-
-## Security Best Practices
-
-1. **Use Managed Identity**: Enabled by default in this setup
-2. **Restrict Network Access**: Configure Function App networking if needed
-3. **API Key Management**: Rotate Google API key regularly
-4. **Function Keys**: Use function-level keys, rotate periodically
-5. **CORS Configuration**: Configure allowed origins if calling from web apps
-
-## Cost Optimization
-
-1. Use Consumption Plan (pay per execution)
-2. Optimize image/PDF sizes before sending
-3. Monitor invocation counts and execution times
-4. Set up budget alerts in Azure
-
-## Updating the Function
-
-To update the deployed function:
-
-1. Make changes locally
-2. Test with `func start`
-3. Deploy with `func azure functionapp publish <YOUR_FUNCTION_APP>`
-
-## Environment Variables Summary
-
-| Variable | Description | Set In |
-|----------|-------------|--------|
-| KEY_VAULT_URL | Azure Key Vault URL | Function App Settings |
-| GOOGLEAPIKEY | Google API Key | Key Vault Secret |
-| AzureWebJobsStorage | Storage connection | Automatic |
-| FUNCTIONS_WORKER_RUNTIME | Runtime type | Automatic |
-
-## Troubleshooting Common Issues
-
-### Issue: Cannot access Key Vault
-**Solution**: Verify Managed Identity is enabled and has proper permissions
-
-### Issue: Gemini API errors
-**Solution**: Check API key validity and quota limits
-
-### Issue: Function timeout
-**Solution**: Increase timeout in host.json (default is 5 minutes for consumption plan)
-
-### Issue: Large PDF processing fails
-**Solution**: Consider Azure Durable Functions for long-running operations
-
-## Next Steps
-
-1. Implement support for `problem_images` and `reference_answer_images`
-2. Add caching layer for repeated evaluations
-3. Implement batch processing endpoint
-4. Add webhook notifications for completed evaluations
-5. Create a front-end interface for easier testing

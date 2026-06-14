@@ -1,0 +1,11 @@
+This code base is for an Educational application Aryabhata. Please completely understand the Application details, architecture, design, components and code.
+The initial product proposal can be found in Design\Branding\Aryabhata WebApp.pptx. Feedback is a functionality which i tried to articulate (before building) as spec in the files SolutionFeedback*.* under Design\Architecture
+The folder has logo for the product. The UX design (initial. We iterated subsequently) can be found for desktop in Design\Desktop (there are folders in the parent for mobile and tablet).
+Key Code folders:
+1) The main application with frontend, server, middleware (like Azure [Durable] Functions), db schema is under the folder apps. The file apps\Architecture_Design.md captures the flow to a great extent. The other '*.md' files will be useful for other details.
+2) The product has a key pipeline that extracts information from the NCERT books (in the form of pdfs). It is found under pipelines\ExtractionPipeline\SchoolDataExtraction\Multistep. The details of the pipeline is given in severl '*.md' files under this folder
+3) We use PostgreSQL to store key data. Scripts\DB_Master.sql contains the key scripts. I use Scripts\DB_Queries.sql to query the DB. We also use Azure storage.
+4) We use Gemini models which we hit through API.
+
+Once you completely understand the project. We will start architecting and designing the next major application
+

@@ -84,18 +84,18 @@ class DatabaseClient:
         Initialize database client.
         
         Args:
-            host: PostgreSQL host (e.g., <YOUR_PG_SERVER>.postgres.database.azure.com)
-            database: Database name (e.g., postgres)
+            host: PostgreSQL host (e.g., <DB_HOST>)
+            database: Database name (e.g., <DB_NAME>)
             user: Username (without @servername for managed identity)
             password: Password (ignored if using managed identity)
             connection_string: Full connection string (overrides other params)
             use_managed_identity: Use Azure DefaultAzureCredential for auth
             sslmode: SSL mode (require for Azure)
         """
-        self.host = host or os.environ.get("AZURE_PG_HOST", "<YOUR_PG_SERVER>.postgres.database.azure.com")
-        self.database = database or os.environ.get("AZURE_PG_DATABASE", "postgres")
+        self.host = host or os.environ.get("AZURE_PG_HOST", "<DB_HOST>")
+        self.database = database or os.environ.get("AZURE_PG_DATABASE", "<DB_NAME>")
         # For Entra auth, user must be the full UPN (external users need #EXT# format)
-        self.user = user or os.environ.get("AZURE_PG_USER", "<YOUR_ENTRA_USER>@<YOUR_TENANT>.onmicrosoft.com")
+        self.user = user or os.environ.get("AZURE_PG_USER", "<DB_USER>")
         self.password = password
         self.connection_string = connection_string or os.environ.get("AZURE_PG_CONNECTION_STRING")
         self.use_managed_identity = use_managed_identity
@@ -260,6 +260,145 @@ class DatabaseClient:
             )
             row = cur.fetchone()
             return row[0] if row else None
+
+    def get_chapter_content_counts(self, chapter_id: int) -> Dict[str, int]:
+        """Get exercise, question, and non-null solution counts for a chapter."""
+        conn = self.connect()
+        with conn.cursor() as cur:
+            cur.execute(
+                """
+                SELECT
+                    COUNT(DISTINCT e.exerciseid) AS exercise_count,
+                    COUNT(q.questionid) AS question_count,
+                    COUNT(q.solution) AS solution_count
+                FROM exercisedata e
+                LEFT JOIN questiondata q ON q.exerciseid = e.exerciseid
+                WHERE e.chapterid = %s
+                """,
+                (chapter_id,)
+            )
+            row = cur.fetchone()
+            return {
+                'exercise_count': row[0] or 0,
+                'question_count': row[1] or 0,
+                'solution_count': row[2] or 0,
+            }
+
+    def get_questions_data_by_refs(
+        self,
+        chapter_id: int,
+        pipeline_question_ids: List[str],
+    ) -> List[Dict[str, Any]]:
+        """
+        Fetch full question data (text + figure URL) from the DB for a list of
+        full pipeline question IDs (e.g., ["EXERCISES_Q8.16", "EXERCISE_3_1_Q1"]).
+
+        HOW THE MATCH WORKS
+        -------------------
+        The pipeline encodes each question ID as:
+            safe_title + "_Q" + question_ref
+        where safe_title = exercise_title.upper().replace(' ', '_').replace('.', '_')
+
+        This method re-applies the same encoding in SQL:
+            UPPER(REPLACE(REPLACE(e.exercise, ' ', '_'), '.', '_')) || '_Q' || q.question_ref
+
+        So a DB row (exercise="EXERCISE 3.1", question_ref="1") reconstructs into
+        "EXERCISE_3_1_Q1" which is exactly what the pipeline generates --
+        the match is a direct string equality, collision-free.
+
+        MULTI-EXERCISE CHAPTERS (e.g., Maths)
+        --------------------------------------
+        Each question is always joined through its own exercisedata row, so even if
+        two exercises in the same chapter share the same question_ref (e.g. "1"):
+            - "EXERCISE 3.1" + "1" → "EXERCISE_3_1_Q1"
+            - "EXERCISE 3.2" + "1" → "EXERCISE_3_2_Q1"
+        These are always distinct strings; there is no cross-exercise collision.
+
+        MAINTENANCE NOTE
+        ----------------
+        The encoding logic (spaces→_, dots→_) is duplicated between this SQL and
+        e2e_pipeline.py.  If the pipeline ID convention ever changes, update BOTH.
+        Alternatively, refactor to fetch all chapter questions and match in Python
+        using the same Python encoding function to keep the logic in one place.
+
+        Args:
+            chapter_id: ChapterId to scope the lookup (performance filter).
+            pipeline_question_ids: Full pipeline IDs e.g. ["EXERCISE_3_1_Q1", "EXERCISES_Q8.1"].
+
+        Returns:
+            List of dicts with keys: pipeline_id, question_text, figure_url (may be None).
+        """
+        if not pipeline_question_ids:
+            return []
+
+        conn = self.connect()
+        with conn.cursor(cursor_factory=RealDictCursor) as cur:
+            cur.execute(
+                """
+                SELECT
+                    UPPER(REPLACE(REPLACE(e.exercise, ' ', '_'), '.', '_'))
+                        || '_Q' || q.question_ref            AS pipeline_id,
+                    q.content->>'question_text'              AS question_text,
+                    -- figure_url is stored nested inside figure_info[0].url by the ingestion pipeline.
+                    -- content->>'figure_url' does NOT exist at the top level; use the correct path.
+                    q.content->'figure_info'->0->>'url'     AS figure_url
+                FROM questiondata q
+                JOIN exercisedata e ON q.exerciseid = e.exerciseid
+                WHERE e.chapterid = %s
+                  AND (
+                    UPPER(REPLACE(REPLACE(e.exercise, ' ', '_'), '.', '_'))
+                        || '_Q' || q.question_ref
+                  ) = ANY(%s)
+                ORDER BY e.exerciseid, q.question_ref
+                """,
+                (chapter_id, pipeline_question_ids)
+            )
+            rows = cur.fetchall()
+            return [dict(row) for row in rows]
+
+
+            
+    def get_smart_context_for_question(
+        self,
+        chapter_id: int,
+        question_embedding: List[float],
+        top_k: int = 5
+    ) -> List[Dict[str, Any]]:
+        """
+        Retrieve localized context (chunks) for a question using PgVector.
+        Searches `ncert_concept_embeddings` for the given chapter.
+        
+        Args:
+            chapter_id: Limit search to this chapter.
+            question_embedding: 768-dim vector of the question text.
+            top_k: Number of most similar concepts to retrieve.
+            
+        Returns:
+            List of dicts containing the retrieved chunk_text and metadata.
+        """
+        conn = self.connect()
+        
+        # Format the pgvector literal accepted by PostgreSQL
+        vector_literal = "[" + ",".join(f"{value:.12f}" for value in question_embedding) + "]"
+        
+        with conn.cursor(cursor_factory=RealDictCursor) as cur:
+            cur.execute(
+                """
+                SELECT 
+                    h.concept_title,
+                    h.chunk_text,
+                    h.figure_url,
+                    (e.embedding <-> %s::vector) AS distance
+                FROM ncert_concept_hierarchy h
+                JOIN ncert_concept_embeddings e ON h.id = e.concept_id
+                WHERE h.chapter_id = %s
+                ORDER BY distance ASC
+                LIMIT %s
+                """,
+                (vector_literal, chapter_id, top_k)
+            )
+            rows = cur.fetchall()
+            return [dict(row) for row in rows]
     
     # =========================================================================
     # UPSERT Operations
@@ -487,7 +626,8 @@ class DatabaseClient:
             dry_run: If True, only return counts without deleting
             
         Returns:
-            Dict with 'exercises_deleted' and 'questions_deleted' counts
+            Dict with 'user_exercise_deleted', 'questions_deleted', and
+            'exercises_deleted' counts
         """
         conn = self.connect()
         
@@ -501,7 +641,27 @@ class DatabaseClient:
             
             if not exercise_ids:
                 logger.info(f"No exercises found for ChapterId={chapter_id}")
-                return {'exercises_deleted': 0, 'questions_deleted': 0}
+                return {
+                    'user_exercise_deleted': 0,
+                    'exercises_deleted': 0,
+                    'questions_deleted': 0,
+                }
+
+            # Get question IDs so we can delete UserExerciseData rows first.
+            cur.execute(
+                "SELECT questionid FROM questiondata WHERE exerciseid = ANY(%s)",
+                (exercise_ids,)
+            )
+            question_ids = [row[0] for row in cur.fetchall()]
+
+            # Count dependent user exercise rows that will be deleted.
+            user_exercise_count = 0
+            if question_ids:
+                cur.execute(
+                    "SELECT COUNT(*) FROM userexercisedata WHERE questionid = ANY(%s)",
+                    (question_ids,)
+                )
+                user_exercise_count = cur.fetchone()[0]
             
             # Count questions that will be deleted
             cur.execute(
@@ -512,10 +672,26 @@ class DatabaseClient:
             exercises_count = len(exercise_ids)
             
             if dry_run:
-                logger.info(f"[DRY RUN] Would delete: {questions_count} questions, {exercises_count} exercises for ChapterId={chapter_id}")
-                return {'exercises_deleted': exercises_count, 'questions_deleted': questions_count}
+                logger.info(
+                    f"[DRY RUN] Would delete: {user_exercise_count} user exercise rows, "
+                    f"{questions_count} questions, {exercises_count} exercises "
+                    f"for ChapterId={chapter_id}"
+                )
+                return {
+                    'user_exercise_deleted': user_exercise_count,
+                    'exercises_deleted': exercises_count,
+                    'questions_deleted': questions_count,
+                }
             
-            # Delete questions first (FK constraint)
+            # Delete in dependency order: userexercisedata -> questiondata -> exercisedata.
+            user_exercise_deleted = 0
+            if question_ids:
+                cur.execute(
+                    "DELETE FROM userexercisedata WHERE questionid = ANY(%s)",
+                    (question_ids,)
+                )
+                user_exercise_deleted = cur.rowcount
+
             cur.execute(
                 "DELETE FROM questiondata WHERE exerciseid = ANY(%s)",
                 (exercise_ids,)
@@ -532,9 +708,14 @@ class DatabaseClient:
             conn.commit()
             
             logger.info(f"Cleanup complete for ChapterId={chapter_id}: "
-                       f"deleted {questions_deleted} questions, {exercises_deleted} exercises")
+                       f"deleted {user_exercise_deleted} user exercise rows, "
+                       f"{questions_deleted} questions, {exercises_deleted} exercises")
             
-            return {'exercises_deleted': exercises_deleted, 'questions_deleted': questions_deleted}
+            return {
+                'user_exercise_deleted': user_exercise_deleted,
+                'exercises_deleted': exercises_deleted,
+                'questions_deleted': questions_deleted,
+            }
     
     def get_chapter_info(self, chapter_id: int) -> Optional[Dict[str, Any]]:
         """

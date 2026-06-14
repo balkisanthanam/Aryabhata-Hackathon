@@ -1,14 +1,19 @@
 # Azure Functions dependencies
 azure-functions
+azure-functions-durable
 azure-identity
 azure-keyvault-secrets
 azure-storage-blob
+azure-storage-queue
 
-# Google Gemini API
-google-generativeai
+# Google Gemini API (new SDK, replaces deprecated google-generativeai)
+google-genai
+
+# Database
+psycopg2-binary
+
+# Image processing
+Pillow
 
 # HTTP requests
 requests
-
-# Additional utilities
-python-dotenv

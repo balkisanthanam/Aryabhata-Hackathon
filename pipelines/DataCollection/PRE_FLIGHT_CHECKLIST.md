@@ -57,14 +57,14 @@ Choose ONE of these methods:
 **Windows CMD:**
 - [ ] Run: `set DB_HOST=localhost`
 - [ ] Run: `set DB_PORT=5432`
-- [ ] Run: `set DB_NAME=aryabhatta`
+- [ ] Run: `set DB_NAME=<DB_NAME>`
 - [ ] Run: `set DB_USER=postgres`
 - [ ] Run: `set DB_PASSWORD=your_password`
 
 **Linux/Mac:**
 - [ ] Run: `export DB_HOST=localhost`
 - [ ] Run: `export DB_PORT=5432`
-- [ ] Run: `export DB_NAME=aryabhatta`
+- [ ] Run: `export DB_NAME=<DB_NAME>`
 - [ ] Run: `export DB_USER=postgres`
 - [ ] Run: `export DB_PASSWORD=your_password`
 

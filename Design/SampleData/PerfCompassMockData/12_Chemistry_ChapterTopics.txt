@@ -1,0 +1,105 @@
+**Unit 1: Solutions**
+*   **Types of Solutions**: Classification based on physical states of solute and solvent (Solid, Liquid, Gaseous solutions).
+*   **Expressing Concentration of Solutions**: Mass percentage, Volume percentage, Mass by volume percentage, Parts per million (ppm), Mole fraction, Molarity, and Molality.
+*   **Solubility**: Solubility of solids in liquids and gases in liquids (Henry’s Law).
+*   **Vapour Pressure of Liquid Solutions**: Raoult’s Law for volatile solutes and liquid-liquid solutions.
+*   **Ideal and Non-ideal Solutions**: Deviation from Raoult’s law (Positive and Negative deviations).
+*   **Colligative Properties**: Relative lowering of vapour pressure, Elevation of boiling point, Depression of freezing point, Osmosis and Osmotic Pressure.
+*   **Abnormal Molar Masses**: Association or dissociation of molecules (Van’t Hoff factor).
+
+**Unit 2: Electrochemistry**
+*   **Electrochemical Cells**: Distinction between Galvanic and Electrolytic cells.
+*   **Galvanic Cells**: Electrode potential, Standard electrode potential, and Cell potential.
+*   **Nernst Equation**: Calculation of equilibrium constant and Gibbs energy of cell reaction.
+*   **Conductance of Electrolytic Solutions**: Resistivity, Conductivity, Molar conductivity, Variation of conductivity with concentration, and Kohlrausch law.
+*   **Electrolytic Cells and Electrolysis**: Faraday’s Laws of Electrolysis (First and Second Law).
+*   **Batteries**: Primary batteries (Dry cell, Mercury cell) and Secondary batteries (Lead storage battery, Nickel-cadmium cell).
+*   **Fuel Cells**: Hydrogen-Oxygen fuel cell.
+*   **Corrosion**: Electrochemical theory of rusting.
+
+**Unit 3: Chemical Kinetics**
+*   **Rate of a Chemical Reaction**: Average and Instantaneous rate.
+*   **Factors Influencing Rate of a Reaction**: Dependence on concentration (Rate Law), Order of reaction, and Molecularity.
+*   **Integrated Rate Equations**: Zero order and First order reactions, Half-life of a reaction.
+*   **Temperature Dependence of the Rate of a Reaction**: Arrhenius equation, Activation energy, and Catalyst effect.
+*   **Collision Theory**: Energetic and orientation aspects of effective collisions.
+
+**Unit 4: The d- and f-Block Elements**
+*   **Position in the Periodic Table**: Electronic configurations of transition elements.
+*   **General Properties of Transition Elements (d-Block)**: Physical properties, Variation in atomic and ionic sizes, Ionisation enthalpies, Oxidation states, Magnetic properties, Formation of coloured ions, Complex compounds, Catalytic properties, and Alloy formation.
+*   **Important Compounds of Transition Elements**: Preparation and properties of Potassium Dichromate ($K_2Cr_2O_7$) and Potassium Permanganate ($KMnO_4$).
+*   **The Lanthanoids**: Electronic configurations, Atomic and ionic sizes (Lanthanoid contraction), Oxidation states.
+*   **The Actinoids**: Electronic configurations, Ionic sizes, Oxidation states, and comparison with Lanthanoids.
+
+**Unit 5: Coordination Compounds**
+*   **Werner’s Theory**: Primary and secondary valences.
+*   **Definitions of Important Terms**: Coordination entity, Central atom/ion, Ligands, Coordination number, Coordination sphere, Coordination polyhedron, Oxidation number.
+*   **Nomenclature**: IUPAC rules for naming coordination compounds.
+*   **Isomerism**: Geometric, Optical, Linkage, Coordination, Ionisation, and Solvate isomerism.
+*   **Bonding in Coordination Compounds**: Valence Bond Theory (hybridisation, magnetic properties) and Crystal Field Theory (d-orbital splitting in octahedral and tetrahedral fields, spectrochemical series).
+*   **Bonding in Metal Carbonyls**: Synergic bonding interactions.
+*   **Importance and Applications**: Applications in metallurgy, analytical chemistry, and biological systems.
+
+### **Unit 6: Haloalkanes and Haloarenes**
+*   **Classification:** Categorization based on the number of halogen atoms and the nature of the C–X bond (e.g., alkyl, vinylic, aryl halides).
+*   **Nomenclature:** Common and IUPAC naming conventions for haloalkanes and haloarenes.
+*   **Nature of C–X Bond:** Understanding the bond length, enthalpy, and dipole moments.
+*   **Methods of Preparation:**
+    *   Preparation of Haloalkanes (from alcohols, hydrocarbons, halogen exchange).
+    *   Preparation of Haloarenes (e.g., electrophilic substitution, Sandmeyer's reaction).
+*   **Physical Properties:** Boiling points, melting points, and density trends.
+*   **Chemical Reactions:**
+    *   Nucleophilic substitution reactions (SN1 and SN2 mechanisms).
+    *   Elimination reactions and reaction with metals (Grignard reagents).
+    *   Stereochemical aspects (optical activity, chirality, retention, inversion).
+*   **Polyhalogen Compounds:** Uses and environmental effects of compounds like dichloromethane, chloroform, iodoform, carbon tetrachloride, freons, and DDT.
+
+### **Unit 7: Alcohols, Phenols and Ethers**
+*   **Classification and Nomenclature:** Naming and classifying alcohols, phenols, and ethers.
+*   **Structures of Functional Groups:** Structural aspects of the hydroxyl and ether linkages.
+*   **Alcohols and Phenols:**
+    *   Methods of preparation (from alkenes, carbonyl compounds, Grignard reagents, cumene, etc.).
+    *   Physical properties (boiling points, solubility).
+    *   Chemical reactions (acidity, esterification, dehydration, oxidation, electrophilic substitution).
+*   **Some Commercially Important Alcohols:** Methanol and Ethanol.
+*   **Ethers:**
+    *   Preparation (dehydration of alcohols, Williamson synthesis).
+    *   Physical properties and chemical reactions (cleavage of C–O bond, electrophilic substitution).
+
+### **Unit 8: Aldehydes, Ketones and Carboxylic Acids**
+*   **Aldehydes and Ketones:**
+    *   **Nomenclature and Structure:** Common/IUPAC names and the nature of the carbonyl group.
+    *   **Preparation:** Oxidation/dehydrogenation of alcohols, ozonolysis, hydration of alkynes, and specific methods for aromatic aldehydes/ketones.
+    *   **Physical Properties:** Boiling points and solubility trends.
+    *   **Chemical Reactions:** Nucleophilic addition (mechanism and examples), reduction, oxidation, Aldol condensation, and Cannizzaro reaction.
+    *   **Uses:** Applications in industry and daily life.
+*   **Carboxylic Acids:**
+    *   **Nomenclature and Structure:** Naming conventions and carboxyl group structure.
+    *   **Methods of Preparation:** From primary alcohols, aldehydes, nitriles, Grignard reagents, etc..
+    *   **Physical Properties:** Acidity, boiling points, and solubility.
+    *   **Chemical Reactions:** Reactions involving cleavage of O–H bond (acidity), C–OH bond (esterification, anhydride formation), and substitution in the hydrocarbon part.
+    *   **Uses:** Industrial and laboratory applications.
+
+### **Unit 9: Amines**
+*   **Structure and Classification:** Primary, secondary, and tertiary amines and their pyramidal structure.
+*   **Nomenclature:** IUPAC and common naming systems.
+*   **Preparation of Amines:** Reduction of nitro compounds/nitriles/amides, ammonolysis of alkyl halides, Gabriel phthalimide synthesis, and Hoffmann bromamide degradation.
+*   **Physical Properties:** Solubility and boiling point trends.
+*   **Chemical Reactions:** Basic character, alkylation, acylation, carbylamine reaction, reaction with nitrous acid, and electrophilic substitution.
+*   **Diazonium Salts:**
+    *   Method of preparation (Diazotisation).
+    *   Chemical reactions (displacement of nitrogen, coupling reactions) and their importance in synthesis.
+
+### **Unit 10: Biomolecules**
+*   **Carbohydrates:**
+    *   Classification (Monosaccharides, Oligosaccharides, Polysaccharides).
+    *   Monosaccharides (Glucose structure, cyclic structure, fructose).
+    *   Disaccharides (Sucrose, maltose, lactose) and Polysaccharides (Starch, cellulose, glycogen).
+*   **Proteins:**
+    *   Amino acids (Essential/non-essential, classification).
+    *   Structure of proteins (Primary, secondary, tertiary, quaternary).
+    *   Denaturation of proteins.
+*   **Enzymes:** Mechanism and nature of enzyme action.
+*   **Vitamins:** Classification (fat-soluble/water-soluble) and deficiency diseases.
+*   **Nucleic Acids:** Chemical composition, structure of DNA (double helix) and RNA, and biological functions.
+*   **Hormones:** Brief introduction to their role in biosystems.

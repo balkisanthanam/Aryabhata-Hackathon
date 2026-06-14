@@ -1,0 +1,2143 @@
+{
+  "meta": {
+    "created_at": "2026-05-23T19:13:47.721779",
+    "seed": 42,
+    "figure_share_target": 0.35,
+    "ncert_count": 50,
+    "jee_count": 50,
+    "figure_bearing_count": 23,
+    "image_urls_present_count": 10,
+    "never_distill_count": 20,
+    "subject_breakdown": {
+      "jee/Chemistry/fig=False": 10,
+      "jee/Chemistry/fig=True": 6,
+      "jee/Maths/fig=False": 16,
+      "jee/Maths/fig=True": 1,
+      "jee/Physics/fig=False": 11,
+      "jee/Physics/fig=True": 6,
+      "ncert/Chemistry/fig=False": 12,
+      "ncert/Chemistry/fig=True": 4,
+      "ncert/Maths/fig=False": 17,
+      "ncert/Physics/fig=False": 11,
+      "ncert/Physics/fig=True": 6
+    }
+  },
+  "records": [
+    {
+      "source": "ncert",
+      "id": 1181,
+      "subject": "Maths",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Find the number of non-zero integral solutions of the equation $|1 - i|^x = 2^x$.",
+        "options": []
+      },
+      "answer_key": "{\"answer\": \"0\"}",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "LEGACY",
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 1182,
+      "subject": "Maths",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "If $(a + ib) (c + id) (e + if) (g + ih) = A + iB$, then show that\n$(a^2 + b^2) (c^2 + d^2) (e^2 + f^2) (g^2 + h^2) = A^2 + B^2$",
+        "options": []
+      },
+      "answer_key": null,
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "LEGACY",
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 1147,
+      "subject": "Maths",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "$(\\sin 3x + \\sin x) \\sin x + (\\cos 3x - \\cos x) \\cos x = 0$",
+        "options": []
+      },
+      "answer_key": null,
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "MATH_PASSED",
+      "never_distill": true
+    },
+    {
+      "source": "ncert",
+      "id": 1138,
+      "subject": "Maths",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "$\\frac{\\sin x - \\sin y}{\\cos x + \\cos y} = \\tan \\frac{x - y}{2}$",
+        "options": []
+      },
+      "answer_key": null,
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "MATH_PASSED",
+      "never_distill": true
+    },
+    {
+      "source": "ncert",
+      "id": 1367,
+      "subject": "Maths",
+      "class": "12",
+      "problem_payload": {
+        "problem_text": "Find the value of the following:\n$\\cos^{-1}\\left(\\cos\\frac{13\\pi}{6}\\right)$",
+        "options": []
+      },
+      "answer_key": null,
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "LEGACY",
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 1169,
+      "subject": "Maths",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Express the following expression in the form of $a + ib$ :\n\n$\\frac{(3 + i\\sqrt{5})(3 - i\\sqrt{5})}{(\\sqrt{3} + \\sqrt{2}i) - (\\sqrt{3} - i\\sqrt{2})}$",
+        "options": []
+      },
+      "answer_key": "{\"answer\": \"0 \\u2013 i 7\\u221a2/2\"}",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "LEGACY",
+      "never_distill": true
+    },
+    {
+      "source": "ncert",
+      "id": 1357,
+      "subject": "Maths",
+      "class": "12",
+      "problem_payload": {
+        "problem_text": "$\\tan^{-1}\\frac{x}{\\sqrt{a^2-x^2}}, |x| < a$",
+        "options": []
+      },
+      "answer_key": null,
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "LEGACY",
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 1142,
+      "subject": "Maths",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "$\\cot x \\cot 2x - \\cot 2x \\cot 3x - \\cot 3x \\cot x = 1$",
+        "options": []
+      },
+      "answer_key": null,
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "MATH_PASSED",
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 1131,
+      "subject": "Maths",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "$\\cos \\left(\\frac{3\\pi}{4} + x\\right) - \\cos \\left(\\frac{3\\pi}{4} - x\\right) = -\\sqrt{2} \\sin x$",
+        "options": []
+      },
+      "answer_key": null,
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "MATH_PASSED",
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 1370,
+      "subject": "Maths",
+      "class": "12",
+      "problem_payload": {
+        "problem_text": "$\\sin^{-1}\\frac{8}{17} + \\sin^{-1}\\frac{3}{5} = \\tan^{-1}\\frac{77}{36}$",
+        "options": []
+      },
+      "answer_key": null,
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "LEGACY",
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 1341,
+      "subject": "Maths",
+      "class": "12",
+      "problem_payload": {
+        "problem_text": "$\\tan^{-1}(-\\sqrt{3})$",
+        "options": []
+      },
+      "answer_key": null,
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "MATH_PASSED",
+      "never_distill": true
+    },
+    {
+      "source": "ncert",
+      "id": 1337,
+      "subject": "Maths",
+      "class": "12",
+      "problem_payload": {
+        "problem_text": "Let $A = \\{1, 2, 3\\}$. Then number of equivalence relations containing $(1, 2)$ is\n(A) 1\n(B) 2\n(C) 3\n(D) 4",
+        "options": []
+      },
+      "answer_key": null,
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "MATH_PASSED",
+      "never_distill": true
+    },
+    {
+      "source": "ncert",
+      "id": 1334,
+      "subject": "Maths",
+      "class": "12",
+      "problem_payload": {
+        "problem_text": "Find the number of all onto functions from the set $\\{1, 2, 3, \\dots, n\\}$ to itself.",
+        "options": []
+      },
+      "answer_key": null,
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "MATH_PASSED",
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 1145,
+      "subject": "Maths",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "$\\cos 6x = 32 \\cos^6 x - 48\\cos^4 x + 18 \\cos^2 x - 1$",
+        "options": []
+      },
+      "answer_key": null,
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "MATH_PASSED",
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 1141,
+      "subject": "Maths",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "$\\frac{\\cos 4x + \\cos 3x + \\cos 2x}{\\sin 4x + \\sin 3x + \\sin 2x} = \\cot 3x$",
+        "options": []
+      },
+      "answer_key": null,
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "MATH_PASSED",
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 1362,
+      "subject": "Maths",
+      "class": "12",
+      "problem_payload": {
+        "problem_text": "$\\tan^{-1}\\left(\\tan\\frac{3\\pi}{4}\\right)$",
+        "options": []
+      },
+      "answer_key": null,
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "LEGACY",
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 1176,
+      "subject": "Maths",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Let $z_1 = 2 - i, z_2 = -2 + i$. Find\n(i) $\\text{Re} \\left(\\frac{z_1 z_2}{\\bar{z}_1}\\right)$, (ii) $\\text{Im} \\left(\\frac{1}{z_1 \\bar{z}_1}\\right)$.",
+        "options": []
+      },
+      "answer_key": "{\"answer\": \"(i) -2/5, (ii) 0\"}",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "LEGACY",
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 680,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "A cyclist starts from the centre $O$ of a circular park of radius $1 \\text{ km}$, reaches the edge $P$ of the park, then cycles along the circumference, and returns to the centre along $QO$ as shown in Fig. 3.20. If the round trip takes $10 \\text{ min}$, what is the (a) net displacement, (b) average velocity, and (c) average speed of the cyclist ?",
+        "options": []
+      },
+      "answer_key": "(a) O; (b) O; (c) 21.4 km h–1",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_3/figure_3_9.png"
+      ],
+      "has_figure": true,
+      "image_urls_present": true,
+      "review_status_at_pick": "LEGACY",
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 808,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Figures 9.20(a) and (b) refer to the steady flow of a (non-viscous) liquid. Which of the two figures is incorrect ? Why ?",
+        "options": []
+      },
+      "answer_key": "Fig (a) is incorrect [Reason: at a constriction (i.e. where the area of cross-section of the tube is smaller), flow speed is larger due to mass conservation. Consequently pressure there is smaller according to Bernoulli’s equation. We assume the fluid to be incompressible].",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_9/figure_9_15.png"
+      ],
+      "has_figure": true,
+      "image_urls_present": true,
+      "review_status_at_pick": "LEGACY",
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 721,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Answer the following :\n(a) The casing of a rocket in flight burns up due to friction. At whose expense is the heat energy required for burning obtained? The rocket or the atmosphere?\n(b) Comets move around the sun in highly elliptical orbits. The gravitational force on the comet due to the sun is not normal to the comet’s velocity in general. Yet the work done by the gravitational force over every complete orbit of the comet is zero. Why ?\n(c) An artificial satellite orbiting the earth in very thin atmosphere loses its energy gradually due to dissipation against atmospheric resistance, however small. Why then does its speed increase progressively as it comes closer and closer to the earth ?\n(d) In Fig. 5.13(i) the man walks $2 \\text{ m}$ carrying a mass of $15 \\text{ kg}$ on his hands. In Fig. 5.13(ii), he walks the same distance pulling the rope behind him. The rope goes over a pulley, and a mass of $15 \\text{ kg}$ hangs at its other end. In which case is the work done greater ?",
+        "options": []
+      },
+      "answer_key": "(a) rocket; (b) For a conservative force work done over a path is minus of change in potential energy. Over a complete orbit, there is no change in potential energy; (c) K.E. increases, but P.E. decreases, and the sum decreases due to dissipation against friction; (d) in the second case.",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_5/figure_5_5.png"
+      ],
+      "has_figure": true,
+      "image_urls_present": true,
+      "review_status_at_pick": "LEGACY",
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 811,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Figure 9.21 (a) shows a thin liquid film supporting a small weight = $4.5 \\times 10^{-2} \\text{ N}$. What is the weight supported by a film of the same liquid at the same temperature in Fig. (b) and (c) ? Explain your answer physically.",
+        "options": []
+      },
+      "answer_key": "4.5 × 10–2 N for (b) and (c), the same as in (a).",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_9/figure_9_18.png"
+      ],
+      "has_figure": true,
+      "image_urls_present": true,
+      "review_status_at_pick": "LEGACY",
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 779,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Figure 8.9 shows the strain-stress curve for a given material. What are (a) Young’s modulus and (b) approximate yield strength for this material?",
+        "options": []
+      },
+      "answer_key": "(a) From the given graph for a stress of 150 × 106 N m–2 the strain is 0.002 (b) Approximate yield strength of the material is 3 × 108 N m–2",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_8/figure_8_2.png"
+      ],
+      "has_figure": true,
+      "image_urls_present": true,
+      "review_status_at_pick": "LEGACY",
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 780,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "The stress-strain graphs for materials $A$ and $B$ are shown in Fig. 8.10.\nThe graphs are drawn to the same scale.\n(a) Which of the materials has the greater Young’s modulus?\n(b) Which of the two is the stronger material?",
+        "options": []
+      },
+      "answer_key": "(a) Material A (b) Strength of a material is determined by the amount of stress required to cause fracture: material A is stronger than material B.",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_8/figure_8_3.png"
+      ],
+      "has_figure": true,
+      "image_urls_present": true,
+      "review_status_at_pick": "LEGACY",
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 778,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "A steel wire of length $4.7 \\text{ m}$ and cross-sectional area $3.0 \\times 10^{-5} \\text{ m}^2$ stretches by the same amount as a copper wire of length $3.5 \\text{ m}$ and cross-sectional area of $4.0 \\times 10^{-5} \\text{ m}^2$ under a given load. What is the ratio of the Young’s modulus of steel to that of copper?",
+        "options": []
+      },
+      "answer_key": "1.8",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "LEGACY",
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 727,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "A body constrained to move along the z-axis of a coordinate system is subject to a constant force $\\mathbf{F}$ given by\n$\\mathbf{F} = -\\hat{\\mathbf{i}} + 2\\hat{\\mathbf{j}} + 3\\hat{\\mathbf{k}} \\text{ N}$\nwhere $\\hat{\\mathbf{i}}, \\hat{\\mathbf{j}}, \\hat{\\mathbf{k}}$ are unit vectors along the x-, y- and z-axis of the system respectively. What is the work done by this force in moving the body a distance of $4 \\text{ m}$ along the z-axis ?",
+        "options": []
+      },
+      "answer_key": "12 J",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "LEGACY",
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 384,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "You have learnt that a travelling wave in one dimension is represented by a function $y = f (x, t)$ where $x$ and $t$ must appear in the combination $x - v t$ or $x + v t$, i.e. $y = f (x \\pm v t)$. Is the converse true? Examine if the following functions for $y$ can possibly represent a travelling wave :\n(a) $(x - vt )^2$\n(b) $\\log [(x + vt)/x_0]$\n(c) $1/(x + vt)$",
+        "options": []
+      },
+      "answer_key": "The converse is not true. An obvious requirement for an acceptable function for a travelling wave is that it should be finite everywhere and at all times. Only function (c) satisfies this condition, the remaining functions cannot possibly represent a travelling wave.",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "LEGACY",
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 671,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "The Sun is a hot plasma (ionized matter) with its inner core at a temperature exceeding $10^7 \\text{ K}$, and its outer surface at a temperature of about $6000 \\text{ K}$. At these high temperatures, no substance remains in a solid or liquid phase. In what range do you expect the mass density of the Sun to be, in the range of densities of solids and liquids or gases ? Check if your guess is correct from the following data : mass of the Sun = $2.0 \\times 10^{30} \\text{ kg}$, radius of the Sun = $7.0 \\times 10^8 \\text{ m}$.",
+        "options": []
+      },
+      "answer_key": "1.4 × 103 kg m-3; the mass density of the Sun is in the range of densities of liquids / solids and not gases. This high density arises due to inward gravitational attraction on outer layers due to inner layers of the Sun.",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "LEGACY",
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 383,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Use the formula $v = \\sqrt{\\frac{\\gamma P}{\\rho}}$ to explain why the speed of sound in air\n(a) is independent of pressure,\n(b) increases with temperature,\n(c) increases with humidity.",
+        "options": []
+      },
+      "answer_key": "Assume ideal gas law: P = ρRT M , where ρ is the density, M is the molecular mass, and T is the temperature of the gas. This gives v = RT M γ . This shows that v is: (a) Independent of pressure. (b) Increases as T . (c) The molecular mass of water (18) is less than that of N2 (28) and O2 (32). Therefore as humidity increases, the effective molecular mass of air decreases and hence v increases.",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "LEGACY",
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 667,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "A famous relation in physics relates ‘moving mass’ $m$ to the ‘rest mass’ $m_0$ of a particle in terms of its speed $v$ and the speed of light, $c$. (This relation first arose as a consequence of special relativity due to Albert Einstein). A boy recalls the relation almost correctly but forgets where to put the constant $c$. He writes :\n$m = \\frac{m_0}{(1 - v^2)^{1/2}}$.\nGuess where to put the missing $c$.",
+        "options": []
+      },
+      "answer_key": "The correct formula is m = m0 (1 – v2/c2)–½",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "LEGACY",
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 807,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "In a test experiment on a model aeroplane in a wind tunnel, the flow speeds on the upper and lower surfaces of the wing are $70 \\text{ m s}^{-1}$ and $63 \\text{ m s}^{-1}$ respectively. What is the lift on the wing if its area is $2.5 \\text{ m}^2$ ? Take the density of air to be $1.3 \\text{ kg m}^{-3}$.",
+        "options": []
+      },
+      "answer_key": "1.5 × 103 N",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "LEGACY",
+      "never_distill": true
+    },
+    {
+      "source": "ncert",
+      "id": 756,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "The oxygen molecule has a mass of $5.30 \\times 10^{-26} \\text{ kg}$ and a moment of inertia of $1.94 \\times 10^{-46} \\text{ kg m}^2$ about an axis through its centre perpendicular to the lines joining the two atoms. Suppose the mean speed of such a molecule in a gas is $500 \\text{ m/s}$ and that its kinetic energy of rotation is two thirds of its kinetic energy of translation. Find the average angular velocity of the molecule.",
+        "options": []
+      },
+      "answer_key": "6.75×1012 rad s–1",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "LEGACY",
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 750,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "A solid cylinder of mass $20 \\text{ kg}$ rotates about its axis with angular speed $100 \\text{ rad s}^{-1}$. The radius of the cylinder is $0.25 \\text{ m}$. What is the kinetic energy associated with the rotation of the cylinder? What is the magnitude of angular momentum of the cylinder about its axis?",
+        "options": []
+      },
+      "answer_key": "Kinetic Energy = 3125 J; Angular Momentum = 62.5 J s",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "LEGACY",
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 809,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "The cylindrical tube of a spray pump has a cross-section of $8.0 \\text{ cm}^2$ one end of which has 40 fine holes each of diameter $1.0 \\text{ mm}$. If the liquid flow inside the tube is $1.5 \\text{ m min}^{-1}$, what is the speed of ejection of the liquid through the holes ?",
+        "options": []
+      },
+      "answer_key": "0.64 m s–1",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "LEGACY",
+      "never_distill": true
+    },
+    {
+      "source": "ncert",
+      "id": 762,
+      "subject": "Physics",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Choose the correct alternative:\n(a) If the zero of potential energy is at infinity, the total energy of an orbiting satellite is negative of its kinetic/potential energy.\n(b) The energy required to launch an orbiting satellite out of earth’s gravitational influence is more/less than the energy required to project a stationary object at the same height (as the satellite) out of earth’s influence.",
+        "options": []
+      },
+      "answer_key": "(a) Kinetic energy, (b) less,",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "LEGACY",
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 525,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "The skeletal structure of $\\ce{CH3COOH}$ as shown below is correct, but some of the bonds are shown incorrectly. Write the correct Lewis structure for acetic acid.",
+        "options": []
+      },
+      "answer_key": null,
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Chemistry/ch_4/figure_4_20.png"
+      ],
+      "has_figure": true,
+      "image_urls_present": true,
+      "review_status_at_pick": "LEGACY",
+      "never_distill": true
+    },
+    {
+      "source": "ncert",
+      "id": 517,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "$\\ce{H3PO3}$ can be represented by structures 1 and 2 shown below. Can these two structures be taken as the canonical forms of the resonance hybrid representing $\\ce{H3PO3}$ ? If not, give reasons for the same.",
+        "options": []
+      },
+      "answer_key": null,
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Chemistry/ch_4/figure_4_12.png"
+      ],
+      "has_figure": true,
+      "image_urls_present": true,
+      "review_status_at_pick": "LEGACY",
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 318,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Explain why the following systems are not aromatic?\n(i) [Structure]\n(ii) [Structure]\n(iii) [Structure]",
+        "options": []
+      },
+      "answer_key": "Lack of delocalisation of (4n +2) π electrons in the cyclic system.",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Chemistry/ch_9/figure_9_12.png"
+      ],
+      "has_figure": true,
+      "image_urls_present": true,
+      "review_status_at_pick": "LEGACY",
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 308,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Write IUPAC names of the following compounds :\n(a) $\\ce{CH3CH=C(CH3)2}$\n(b) $\\ce{CH2=CH-C \\equiv C-CH3}$\n(c) [Structure]\n(d) [Structure]\n(e) [Structure]\n(f) $\\ce{CH3(CH2)4CH(CH2CH(CH3)2)(CH2)3CH3}$\n(g) $\\ce{CH3 - CH = CH - CH2 - CH = CH - CH(C2H5) - CH2 - CH = CH2}$",
+        "options": []
+      },
+      "answer_key": "(a) 2-Methyl-but-2-ene\n(b) Pent-1-ene-3-yne\n(c) Buta-1, 3-diene\n(d) 4-Phenylbut-1-ene\n(e) 2-Methylphenol\n(f) 5-(2-Methylpropyl)-decane\n(g) 4-Ethyldeca –1,5,8- triene",
+      "image_urls": [
+        "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Chemistry/ch_9/figure_9_2.png"
+      ],
+      "has_figure": true,
+      "image_urls_present": true,
+      "review_status_at_pick": "LEGACY",
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 521,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Write the significance/applications of dipole moment.",
+        "options": []
+      },
+      "answer_key": null,
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "LEGACY",
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 543,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Describe the hybridisation in case of $\\ce{PCl5}$. Why are the axial bonds longer as compared to equatorial bonds?",
+        "options": []
+      },
+      "answer_key": null,
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "LEGACY",
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 416,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "What is the energy in joules, required to shift the electron of the hydrogen atom from the first Bohr orbit to the fifth Bohr orbit and what is the wavelength of the light emitted when the electron returns to the ground state? The ground state electron energy is $-2.18 \\times 10^{-11} \\text{ ergs}$.",
+        "options": []
+      },
+      "answer_key": "2.08 × 10–11 ergs, 950 Å",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "LEGACY",
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 337,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Write formulas for the following compounds:\n(a) Mercury(II) chloride (b) Nickel(II) sulphate\n(c) Tin(IV) oxide (d) Thallium(I) sulphate\n(e) Iron(III) sulphate (f) Chromium(III) oxide",
+        "options": []
+      },
+      "answer_key": null,
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "LEGACY",
+      "never_distill": true
+    },
+    {
+      "source": "ncert",
+      "id": 566,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "The following data are obtained when dinitrogen and dioxygen react together to form different compounds:\n\n| | Mass of dinitrogen | Mass of dioxygen |\n|---|---|---|\n| (i) | $14 \\text{ g}$ | $16 \\text{ g}$ |\n| (ii) | $14 \\text{ g}$ | $32 \\text{ g}$ |\n| (iii) | $28 \\text{ g}$ | $32 \\text{ g}$ |\n| (iv) | $28 \\text{ g}$ | $80 \\text{ g}$ |\n\n(a) Which law of chemical combination is obeyed by the above experimental data? Give its statement.\n(b) Fill in the blanks in the following conversions:\n(i) $1 \\text{ km} = \\dots\\dots\\dots\\dots\\dots\\dots \\text{ mm} = \\dots\\dots\\dots\\dots\\dots\\dots \\text{ pm}$\n(ii) $1 \\text{ mg} = \\dots\\dots\\dots\\dots\\dots\\dots \\text{ kg} = \\dots\\dots\\dots\\dots\\dots\\dots \\text{ ng}$\n(iii) $1 \\text{ mL} = \\dots\\dots\\dots\\dots\\dots\\dots \\text{ L} = \\dots\\dots\\dots\\dots\\dots\\dots \\text{ dm}^3$",
+        "options": []
+      },
+      "answer_key": "(a) law of multiple proportion\n(b)\n(i) Ans : (106 mm, 1015 pm)\n(ii) Ans : (10–6 kg, 106 ng)\n(iii) Ans : (10–3 L, 10–3 dm3)",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "LEGACY",
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 558,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Pressure is determined as force per unit area of the surface. The SI unit of pressure, pascal is as shown below:\n$1\\text{Pa} = 1\\text{N m}^{-2}$\nIf mass of air at sea level is $1034 \\text{ g cm}^{-2}$, calculate the pressure in pascal.",
+        "options": []
+      },
+      "answer_key": null,
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "LEGACY",
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 312,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "An alkene ‘A’ contains three C – C, eight C – H $\\sigma$ bonds and one C – C $\\pi$ bond. ‘A’ on ozonolysis gives two moles of an aldehyde of molar mass $44 \\text{ u}$. Write IUPAC name of ‘A’.",
+        "options": []
+      },
+      "answer_key": "But-2-ene",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "LEGACY",
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 1264,
+      "subject": "Chemistry",
+      "class": "12",
+      "problem_payload": {
+        "problem_text": "$100\\text{ g}$ of liquid A (molar mass $140\\text{ g mol}^{-1}$) was dissolved in $1000\\text{ g}$ of liquid B (molar mass $180\\text{ g mol}^{-1}$). The vapour pressure of pure liquid B was found to be $500\\text{ torr}$. Calculate the vapour pressure of pure liquid A and its vapour pressure in the solution if the total vapour pressure of the solution is $475\\text{ Torr}$.",
+        "options": []
+      },
+      "answer_key": null,
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "MATH_PASSED",
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 323,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Write down the products of ozonolysis of 1,2-dimethylbenzene (o-xylene). How does the result support Kekulé structure for benzene?",
+        "options": []
+      },
+      "answer_key": null,
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "LEGACY",
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 345,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Consider the reactions:\n$\\ce{2S2O3^2-(aq) + I2(s) -> S4O6^2-(aq) + 2I^-(aq)}$\n$\\ce{S2O3^2-(aq) + 2Br2(l) + 5H2O(l) -> 2SO4^2-(aq) + 4Br^-(aq) + 10H^+(aq)}$\nWhy does the same reductant, thiosulphate react differently with iodine and bromine?",
+        "options": []
+      },
+      "answer_key": null,
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "LEGACY",
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 627,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "The ionization constant of acetic acid is $1.74 \\times 10^{-5}$. Calculate the degree of dissociation of acetic acid in its $0.05 \\text{ M}$ solution. Calculate the concentration of acetate ion in the solution and its pH.",
+        "options": []
+      },
+      "answer_key": "[Ac–]= 0.00093, pH= 3.03",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "LEGACY",
+      "never_distill": false
+    },
+    {
+      "source": "ncert",
+      "id": 348,
+      "subject": "Chemistry",
+      "class": "11",
+      "problem_payload": {
+        "problem_text": "Consider the reactions:\n(a) $\\ce{H3PO2(aq) + 4AgNO3(aq) + 2H2O(l) -> H3PO4(aq) + 4Ag(s) + 4HNO3(aq)}$\n(b) $\\ce{H3PO2(aq) + 2CuSO4(aq) + 2H2O(l) -> H3PO4(aq) + 2Cu(s) + H2SO4(aq)}$\n(c) $\\ce{C6H5CHO(l) + 2[Ag(NH3)2]^+(aq) + 3OH^-(aq) -> C6H5COO^-(aq) + 2Ag(s) + 4NH3(aq) + 2H2O(l)}$\n(d) $\\ce{C6H5CHO(l) + 2Cu^2+(aq) + 5OH^-(aq) ->}$ No change observed.\nWhat inference do you draw about the behaviour of $\\ce{Ag^+}$ and $\\ce{Cu^2+}$ from these reactions?",
+        "options": []
+      },
+      "answer_key": null,
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "LEGACY",
+      "never_distill": false
+    },
+    {
+      "source": "jee",
+      "id": 953,
+      "subject": "Maths",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "Let the positive integers be written in the form :\n\n[Figure: A triangular arrangement of numbers where the $1^{\\text{st}}$ row is 1, the $2^{\\text{nd}}$ row is 2, 3, the $3^{\\text{rd}}$ row is 4, 5, 6, and the $4^{\\text{th}}$ row is 7, 8, 9, 10.]\n\nIf the $k^{\\text{th}}$ row contains exactly $k$ numbers for every natural number $k$, then the row in which the number $5310$ will be, is _________.",
+        "options": []
+      },
+      "answer_key": "103",
+      "image_urls": [],
+      "has_figure": true,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": false
+    },
+    {
+      "source": "jee",
+      "id": 2465,
+      "subject": "Maths",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "For $0 < c < b < a$, let $(a + b - 2c)x^2 + (b + c - 2a)x + (c + a - 2b) = 0$ and $\\alpha \\neq 1$ be one of its root. Then, among the two statements\\n\\n(I) If $\\alpha \\in (-1, 0)$, then $b$ cannot be the geometric mean of $a$ and $c$\\n\\n(II) If $\\alpha \\in (0, 1)$, then $b$ may be the geometric mean of $a$ and $c$",
+        "options": [
+          {
+            "text": "only (I) is true",
+            "nta_option_id": null
+          },
+          {
+            "text": "only (II) is true",
+            "nta_option_id": null
+          },
+          {
+            "text": "Both (I) and (II) are true",
+            "nta_option_id": null
+          },
+          {
+            "text": "Neither (I) nor (II) is true",
+            "nta_option_id": null
+          }
+        ]
+      },
+      "answer_key": "4058593531",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": false,
+      "corrupt_key": true
+    },
+    {
+      "source": "jee",
+      "id": 753,
+      "subject": "Maths",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "Let $\\alpha, \\beta$ be the distinct roots of the equation $x^2 - (t^2 - 5t + 6)x + 1 = 0, t \\in \\mathbb{R}$ and $a_n = \\alpha^n + \\beta^n$. Then the minimum value of $\\frac{a_{2023} + a_{2025}}{a_{2024}}$ is",
+        "options": [
+          {
+            "text": "$-1/4$",
+            "nta_option_id": "68019155193"
+          },
+          {
+            "text": "$1/4$",
+            "nta_option_id": "68019155194"
+          },
+          {
+            "text": "$-1/2$",
+            "nta_option_id": "68019155195"
+          },
+          {
+            "text": "$1/2$",
+            "nta_option_id": "68019155196"
+          }
+        ]
+      },
+      "answer_key": "A",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": false
+    },
+    {
+      "source": "jee",
+      "id": 1040,
+      "subject": "Maths",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "Let $|\\cos \\theta \\cos(60-\\theta) \\cos(60+\\theta)| \\le \\frac{1}{8}, \\theta \\in [0, 2\\pi]$. Then, the sum of all $\\theta \\in [0, 2\\pi]$, where $\\cos 3\\theta$ attains its maximum value, is :",
+        "options": []
+      },
+      "answer_key": "878270220477",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": false,
+      "corrupt_key": true
+    },
+    {
+      "source": "jee",
+      "id": 3528,
+      "subject": "Maths",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "Given that the inverse trigonometric function assumes principal values only. Let $x, y$ be any two real numbers in $[-1, 1]$ such that $\\cos^{-1} x - \\sin^{-1} y = \\alpha, \\frac{-\\pi}{2} \\le \\alpha \\le \\pi$.\n\nThen, the minimum value of $x^2 + y^2 + 2xy \\sin \\alpha$ is",
+        "options": [
+          {
+            "text": "$-1$",
+            "nta_option_id": "68019154447"
+          },
+          {
+            "text": "$\\frac{-1}{2}$",
+            "nta_option_id": "68019154448"
+          },
+          {
+            "text": "0",
+            "nta_option_id": "68019154449"
+          },
+          {
+            "text": "$\\frac{1}{2}$",
+            "nta_option_id": "68019154450"
+          }
+        ]
+      },
+      "answer_key": "C",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": false
+    },
+    {
+      "source": "jee",
+      "id": 1042,
+      "subject": "Maths",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "If a function $f$ satisfies $f(m+n) = f(m) + f(n)$ for all $m, n \\in N$ and $f(1) = 1$, then the largest natural number $\\lambda$ such that $\\sum_{k=1}^{2022} f(\\lambda + k) \\le (2022)^2$ is equal to _______.",
+        "options": []
+      },
+      "answer_key": "1010",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": true
+    },
+    {
+      "source": "jee",
+      "id": 2216,
+      "subject": "Maths",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "Let the area of the region $\\{(x, y) : x - 2y + 4 \\ge 0, x + 2y^2 \\ge 0, x + 4y^2 \\le 8, y \\ge 0\\}$ be $\\frac{m}{n}$, where $m$ and $n$ are coprime numbers. Then $m + n$ is equal to ________.",
+        "options": []
+      },
+      "answer_key": "119",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": true
+    },
+    {
+      "source": "jee",
+      "id": 3521,
+      "subject": "Maths",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "Let C be a circle with radius $\\sqrt{10}$ units and centre at the origin. Let the line $x + y = 2$ intersects the circle C at the points P and Q. Let MN be a chord of C of length 2 unit and slope $-1$. Then, a distance (in units) between the chord PQ and the chord MN is",
+        "options": [
+          {
+            "text": "$\\sqrt{2} - 1$",
+            "nta_option_id": "68019154419"
+          },
+          {
+            "text": "$3 - \\sqrt{2}$",
+            "nta_option_id": "68019154420"
+          },
+          {
+            "text": "$\\sqrt{2} + 1$",
+            "nta_option_id": "68019154421"
+          },
+          {
+            "text": "$2 - \\sqrt{3}$",
+            "nta_option_id": "68019154422"
+          }
+        ]
+      },
+      "answer_key": "B",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": false
+    },
+    {
+      "source": "jee",
+      "id": 2377,
+      "subject": "Maths",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "For $\\alpha, \\beta \\in (0, \\frac{\\pi}{2})$, let $3\\sin(\\alpha + \\beta) = 2\\sin(\\alpha - \\beta)$ and a real number $k$ be such that $\\tan \\alpha = k \\tan \\beta$. Then, the value of $k$ is equal to",
+        "options": [
+          {
+            "text": "$\\frac{2}{3}$",
+            "nta_option_id": "4058593271"
+          },
+          {
+            "text": "$-\\frac{2}{3}$",
+            "nta_option_id": "4058593272"
+          },
+          {
+            "text": "$-5$",
+            "nta_option_id": "4058593273"
+          },
+          {
+            "text": "$5$",
+            "nta_option_id": "4058593274"
+          }
+        ]
+      },
+      "answer_key": "C",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": false
+    },
+    {
+      "source": "jee",
+      "id": 3340,
+      "subject": "Maths",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "The area enclosed between the curves $y = x|x|$ and $y = x - |x|$ is :",
+        "options": [
+          {
+            "text": "1",
+            "nta_option_id": "878270219095"
+          },
+          {
+            "text": "$\\frac{2}{3}$",
+            "nta_option_id": "878270219096"
+          },
+          {
+            "text": "$\\frac{4}{3}$",
+            "nta_option_id": "878270219097"
+          },
+          {
+            "text": "$\\frac{8}{3}$",
+            "nta_option_id": "878270219098"
+          }
+        ]
+      },
+      "answer_key": "C",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": false
+    },
+    {
+      "source": "jee",
+      "id": 3357,
+      "subject": "Maths",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "Let the mean and the standard deviation of the probability distribution\n\n$$ \\begin{array}{|c|c|c|c|c|} \\hline \\text{X} & \\alpha & 1 & 0 & -3 \\\\ \\hline \\text{P(X)} & \\frac{1}{3} & \\text{K} & \\frac{1}{6} & \\frac{1}{4} \\\\ \\hline \\end{array} $$\n\nbe $\\mu$ and $\\sigma$, respectively. If $\\sigma - \\mu = 2$, then $\\sigma + \\mu$ is equal to _________.",
+        "options": []
+      },
+      "answer_key": "5",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": false
+    },
+    {
+      "source": "jee",
+      "id": 3428,
+      "subject": "Maths",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "Let $f(x) = \\begin{cases} -2, & -2 \\leq x \\leq 0 \\\\ x - 2, & 0 < x \\leq 2 \\end{cases}$ and $h(x) = f(|x|) + |f(x)|$. Then $\\int_{-2}^{2} h(x) \\, dx$ is equal to :",
+        "options": [
+          {
+            "text": "1",
+            "nta_option_id": "878270218277"
+          },
+          {
+            "text": "2",
+            "nta_option_id": "878270218278"
+          },
+          {
+            "text": "4",
+            "nta_option_id": "878270218279"
+          },
+          {
+            "text": "6",
+            "nta_option_id": "878270218280"
+          }
+        ]
+      },
+      "answer_key": "B",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": false
+    },
+    {
+      "source": "jee",
+      "id": 3426,
+      "subject": "Maths",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "The sum of all rational terms in the expansion of $\\left(2^{\\frac{1}{5}} + 5^{\\frac{1}{3}}\\right)^{15}$ is equal to :",
+        "options": [
+          {
+            "text": "931",
+            "nta_option_id": "878270218269"
+          },
+          {
+            "text": "3133",
+            "nta_option_id": "878270218270"
+          },
+          {
+            "text": "633",
+            "nta_option_id": "878270218271"
+          },
+          {
+            "text": "6131",
+            "nta_option_id": "878270218272"
+          }
+        ]
+      },
+      "answer_key": "B",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": false
+    },
+    {
+      "source": "jee",
+      "id": 3332,
+      "subject": "Maths",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "The values of $m, n$, for which the system of equations\n$x + y + z = 4$,\n$2x + 5y + 5z = 17$,\n$x + 2y + mz = n$\nhas infinitely many solutions, satisfy the equation :",
+        "options": [
+          {
+            "text": "$m^2 + n^2 + mn = 68$",
+            "nta_option_id": "878270219063"
+          },
+          {
+            "text": "$m^2 + n^2 - mn = 39$",
+            "nta_option_id": "878270219064"
+          },
+          {
+            "text": "$m^2 + n^2 + m + n = 64$",
+            "nta_option_id": "878270219065"
+          },
+          {
+            "text": "$m^2 + n^2 - m - n = 46$",
+            "nta_option_id": "878270219066"
+          }
+        ]
+      },
+      "answer_key": "B",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": true
+    },
+    {
+      "source": "jee",
+      "id": 681,
+      "subject": "Maths",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "Let $3, 7, 11, 15, \\dots, 403$ and $2, 5, 8, 11, \\dots, 404$ be two arithmetic progressions. Then the sum, of the common terms in them, is equal to ________.",
+        "options": []
+      },
+      "answer_key": "6699",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": true
+    },
+    {
+      "source": "jee",
+      "id": 1036,
+      "subject": "Maths",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "Let three vectors $\\vec{a} = \\alpha \\hat{i} + 4 \\hat{j} + 2 \\hat{k}$, $\\vec{b} = 5 \\hat{i} + 3 \\hat{j} + 4 \\hat{k}$, $\\vec{c} = x \\hat{i} + y \\hat{j} + z \\hat{k}$ form a triangle such that $\\vec{c} = \\vec{a} - \\vec{b}$ and the area of the triangle is $5\\sqrt{6}$. If $\\alpha$ is a positive real number, then $|\\vec{c}|^2$ is equal to :",
+        "options": [
+          {
+            "text": "10",
+            "nta_option_id": "878270220469"
+          },
+          {
+            "text": "12",
+            "nta_option_id": "878270220470"
+          },
+          {
+            "text": "14",
+            "nta_option_id": "878270220471"
+          },
+          {
+            "text": "16",
+            "nta_option_id": "878270220472"
+          }
+        ]
+      },
+      "answer_key": "C",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": false
+    },
+    {
+      "source": "jee",
+      "id": 1202,
+      "subject": "Maths",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "Let $S_n$ denote the sum of the first $n$ terms of an arithmetic progression. If $S_{10} = 390$ and the ratio of the tenth and the fifth terms is $15 : 7$, then $S_{15} - S_5$ is equal to :",
+        "options": [
+          {
+            "text": "690",
+            "nta_option_id": "9561772575"
+          },
+          {
+            "text": "800",
+            "nta_option_id": "9561772576"
+          },
+          {
+            "text": "890",
+            "nta_option_id": "9561772577"
+          },
+          {
+            "text": "790",
+            "nta_option_id": "9561772578"
+          }
+        ]
+      },
+      "answer_key": "D",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": false
+    },
+    {
+      "source": "jee",
+      "id": 2516,
+      "subject": "Physics",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "Equivalent resistance of the following network is _______ $\\Omega$.\n\n[Figure: A circuit diagram with resistors $R_1 = 6\\ \\Omega$, $R_2 = 2\\ \\Omega$, $R_3 = 2\\ \\Omega$, $R_4 = 2\\ \\Omega$, $R_5 = 3\\ \\Omega$, and $R_6 = 3\\ \\Omega$ connected between terminals $A$ and $B$. A vertical wire is on the far left.]",
+        "options": []
+      },
+      "answer_key": "1",
+      "image_urls": [],
+      "has_figure": true,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": false
+    },
+    {
+      "source": "jee",
+      "id": 2702,
+      "subject": "Physics",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "According to the wave-particle duality of matter by de-Broglie, which of the following graph plot presents most appropriate relationship between wavelength of electron($\\lambda$) and momentum of electron ($p$) ?",
+        "options": [
+          {
+            "text": "[Figure: A graph with $\\lambda$ on the vertical axis and $p$ on the horizontal axis, showing a rectangular hyperbola curve.]",
+            "nta_option_id": "9561772191"
+          },
+          {
+            "text": "[Figure: A graph with $\\lambda$ on the vertical axis and $p$ on the horizontal axis, showing a straight line passing through the origin.]",
+            "nta_option_id": "9561772192"
+          },
+          {
+            "text": "[Figure: A graph with $\\lambda$ on the vertical axis and $1/p$ on the horizontal axis, showing a rectangular hyperbola curve.]",
+            "nta_option_id": "9561772193"
+          },
+          {
+            "text": "[Figure: A graph with $p$ on the vertical axis and $\\lambda$ on the horizontal axis, showing a straight line passing through the origin.]",
+            "nta_option_id": "9561772194"
+          }
+        ]
+      },
+      "answer_key": "A",
+      "image_urls": [],
+      "has_figure": true,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": false
+    },
+    {
+      "source": "jee",
+      "id": 3565,
+      "subject": "Physics",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "An ac source is connected in given series LCR circuit. The rms potential difference across the capacitor of $20\\text{ }\\mu\\text{F}$ is ________ V.",
+        "options": []
+      },
+      "answer_key": "50",
+      "image_urls": [],
+      "has_figure": true,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": true
+    },
+    {
+      "source": "jee",
+      "id": 3365,
+      "subject": "Physics",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "Given below are two statements :\nStatement I : When speed of liquid is zero everywhere, pressure difference at any two points depends on equation $P_1 - P_2 = \\rho g(h_2 - h_1)$.\nStatement II : In ventury tube shown $2gh = v_1^2 - v_2^2$\nIn the light of the above statements, choose the most appropriate answer from the options given below.",
+        "options": [
+          {
+            "text": "Both Statement I and Statement II are correct.",
+            "nta_option_id": "878270218355"
+          },
+          {
+            "text": "Both Statement I and Statement II are incorrect.",
+            "nta_option_id": "878270218356"
+          },
+          {
+            "text": "Statement I is correct but Statement II is incorrect.",
+            "nta_option_id": "878270218357"
+          },
+          {
+            "text": "Statement I is incorrect but Statement II is correct.",
+            "nta_option_id": "878270218358"
+          }
+        ]
+      },
+      "answer_key": "C",
+      "image_urls": [],
+      "has_figure": true,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": false
+    },
+    {
+      "source": "jee",
+      "id": 602,
+      "subject": "Physics",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "A block of mass $5\\text{ kg}$ is placed on a rough inclined surface as shown in the figure. If $\\vec{F}_1$ is the force required to just move the block up the inclined plane and $\\vec{F}_2$ is the force required to just prevent the block from sliding down, then the value of $|\\vec{F}_1| - |\\vec{F}_2|$ is: [Use $g = 10\\text{ m/s}^2$]",
+        "options": [
+          {
+            "text": "$\\frac{5\\sqrt{3}}{2}\\text{ N}$",
+            "nta_option_id": "4058593873"
+          },
+          {
+            "text": "$10\\text{ N}$",
+            "nta_option_id": "4058593874"
+          },
+          {
+            "text": "$25\\sqrt{3}\\text{ N}$",
+            "nta_option_id": "4058593875"
+          },
+          {
+            "text": "$50\\sqrt{3}\\text{ N}$",
+            "nta_option_id": "4058593876"
+          }
+        ]
+      },
+      "answer_key": "D",
+      "image_urls": [],
+      "has_figure": true,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": false
+    },
+    {
+      "source": "jee",
+      "id": 3568,
+      "subject": "Physics",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "In the experiment to determine the galvanometer resistance by half-deflection method, the plot of $1/\\theta$ vs the resistance (R) of the resistance box is shown in the figure. The figure of merit of the galvanometer is ________ $\\times 10^{-1}\\text{ A/division}$. [The source has emf $2\\text{V}$]",
+        "options": []
+      },
+      "answer_key": "5",
+      "image_urls": [],
+      "has_figure": true,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": false
+    },
+    {
+      "source": "jee",
+      "id": 982,
+      "subject": "Physics",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "A closed and an open organ pipe have same lengths. If the ratio of frequencies of their seventh overtones is $\\left(\\frac{a-1}{a}\\right)$ then the value of $a$ is _______.",
+        "options": []
+      },
+      "answer_key": "16",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": true
+    },
+    {
+      "source": "jee",
+      "id": 3380,
+      "subject": "Physics",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "A solid sphere and a hollow cylinder roll up without slipping on same inclined plane with same initial speed $v$. The sphere and the cylinder reaches upto maximum heights $h_1$ and $h_2$, respectively, above the initial level. The ratio $h_1 : h_2$ is $\\frac{n}{10}$. The value of n is _________.",
+        "options": []
+      },
+      "answer_key": "7",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": false
+    },
+    {
+      "source": "jee",
+      "id": 3298,
+      "subject": "Physics",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "The shortest wavelength of the spectral lines in the Lyman series of hydrogen spectrum is $915 \\text{ \\AA}$. The longest wavelength of spectral lines in the Balmer series will be _________ $\\text{\\AA}$.",
+        "options": []
+      },
+      "answer_key": "6588",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": true
+    },
+    {
+      "source": "jee",
+      "id": 3463,
+      "subject": "Physics",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "Arrange the following in the ascending order of wavelength:\n\nA. Gamma rays ($\\lambda_1$)\nB. x - rays ($\\lambda_2$)\nC. Infrared waves ($\\lambda_3$)\nD. Microwaves ($\\lambda_4$)\n\nChoose the most appropriate answer from the options given below",
+        "options": [
+          {
+            "text": "$\\lambda_4 < \\lambda_3 < \\lambda_2 < \\lambda_1$",
+            "nta_option_id": "68019154517"
+          },
+          {
+            "text": "$\\lambda_4 < \\lambda_3 < \\lambda_1 < \\lambda_2$",
+            "nta_option_id": "68019154518"
+          },
+          {
+            "text": "$\\lambda_2 < \\lambda_1 < \\lambda_4 < \\lambda_3$",
+            "nta_option_id": "68019154519"
+          },
+          {
+            "text": "$\\lambda_1 < \\lambda_2 < \\lambda_3 < \\lambda_4$",
+            "nta_option_id": "68019154520"
+          }
+        ]
+      },
+      "answer_key": "D",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": true
+    },
+    {
+      "source": "jee",
+      "id": 873,
+      "subject": "Physics",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "Assuming the earth to be a sphere of uniform mass density, a body weighed $300\\text{ N}$ on the surface of earth. How much it would weigh at $\\frac{R}{4}$ depth under surface of earth ?",
+        "options": [
+          {
+            "text": "$75\\text{ N}$",
+            "nta_option_id": "878270219705"
+          },
+          {
+            "text": "$225\\text{ N}$",
+            "nta_option_id": "878270219706"
+          },
+          {
+            "text": "$300\\text{ N}$",
+            "nta_option_id": "878270219707"
+          },
+          {
+            "text": "$375\\text{ N}$",
+            "nta_option_id": "878270219708"
+          }
+        ]
+      },
+      "answer_key": "B",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": true
+    },
+    {
+      "source": "jee",
+      "id": 2420,
+      "subject": "Physics",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "A big drop is formed by coalescing 1000 small identical drops of water. If $E_1$ be the total surface energy of 1000 small drops of water and $E_2$ be the surface energy of single big drop of water, then $E_1 : E_2$ is $x : 1$ where $x = \\_\\_\\_\\_\\_\\_\\_.$",
+        "options": []
+      },
+      "answer_key": "10",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": false
+    },
+    {
+      "source": "jee",
+      "id": 695,
+      "subject": "Physics",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "With rise in temperature, the Young's modulus of elasticity :",
+        "options": [
+          {
+            "text": "decreases",
+            "nta_option_id": "9561772125"
+          },
+          {
+            "text": "increases",
+            "nta_option_id": "9561772126"
+          },
+          {
+            "text": "remains unchanged",
+            "nta_option_id": "9561772127"
+          },
+          {
+            "text": "changes erratically",
+            "nta_option_id": "9561772128"
+          }
+        ]
+      },
+      "answer_key": "A",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": false
+    },
+    {
+      "source": "jee",
+      "id": 3271,
+      "subject": "Physics",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "A heavy box of mass 50 kg is moving on a horizontal surface. If co-efficient of kinetic friction between the box and horizontal surface is 0.3 then force of kinetic friction is :",
+        "options": [
+          {
+            "text": "1.47 N",
+            "nta_option_id": "878270219149"
+          },
+          {
+            "text": "14.7 N",
+            "nta_option_id": "878270219150"
+          },
+          {
+            "text": "147 N",
+            "nta_option_id": "878270219151"
+          },
+          {
+            "text": "1470 N",
+            "nta_option_id": "878270219152"
+          }
+        ]
+      },
+      "answer_key": "C",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": false
+    },
+    {
+      "source": "jee",
+      "id": 890,
+      "subject": "Physics",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "Two coherent monochromatic light beams of intensities $I$ and $4I$ are superimposed. The difference between maximum and minimum possible intensities in the resulting beam is $xI$. The value of $x$ is _______.",
+        "options": []
+      },
+      "answer_key": "8",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": false
+    },
+    {
+      "source": "jee",
+      "id": 3455,
+      "subject": "Physics",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "Correct formula for height of a satellite from earths surface is:",
+        "options": [
+          {
+            "text": "$\\left(\\frac{T^2 R^2}{4\\pi^2 g}\\right)^{1/3} - R$",
+            "nta_option_id": "68019154485"
+          },
+          {
+            "text": "$\\left(\\frac{T^2 R^2 g}{4\\pi}\\right)^{1/2} - R$",
+            "nta_option_id": "68019154486"
+          },
+          {
+            "text": "$\\left(\\frac{T^2 R^2 g}{4\\pi^2}\\right)^{-1/3} + R$",
+            "nta_option_id": "68019154487"
+          },
+          {
+            "text": "$\\left(\\frac{T^2 R^2 g}{4\\pi^2}\\right)^{1/3} - R$",
+            "nta_option_id": "68019154488"
+          }
+        ]
+      },
+      "answer_key": "D",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": false
+    },
+    {
+      "source": "jee",
+      "id": 777,
+      "subject": "Physics",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "Four particles $A, B, C, D$ of mass $\\frac{m}{2}, m, 2m, 4m$, have same momentum, respectively. The particle with maximum kinetic energy is :",
+        "options": [
+          {
+            "text": "$A$",
+            "nta_option_id": "68019155271"
+          },
+          {
+            "text": "$B$",
+            "nta_option_id": "68019155272"
+          },
+          {
+            "text": "$C$",
+            "nta_option_id": "68019155273"
+          },
+          {
+            "text": "$D$",
+            "nta_option_id": "68019155274"
+          }
+        ]
+      },
+      "answer_key": "A",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": false
+    },
+    {
+      "source": "jee",
+      "id": 2449,
+      "subject": "Chemistry",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "The products A and B formed in the following reaction scheme are respectively\n\n[Figure: Benzene $\\xrightarrow{\\begin{matrix} \\text{i) con. } HNO_3 / \\text{Con. } H_2SO_4 \\\\ 323-333\\text{ K} \\\\ \\text{ii) Sn / HCl} \\end{matrix}} A \\xrightarrow{\\begin{matrix} \\text{i) } NaNO_2, HCl, 273-278\\text{ K} \\\\ \\text{ii) Phenol} \\end{matrix}} B$]",
+        "options": [
+          {
+            "text": "[Figure: Aniline and 4-(4-aminophenyl)phenol]",
+            "nta_option_id": "4058593483"
+          },
+          {
+            "text": "[Figure: 1-chloro-4-nitrobenzene and 4-(4-nitrophenyl)phenol]",
+            "nta_option_id": "4058593484"
+          },
+          {
+            "text": "[Figure: Aniline and p-hydroxyazobenzene]",
+            "nta_option_id": "4058593485"
+          },
+          {
+            "text": "[Figure: Aniline and o-hydroxyazobenzene]",
+            "nta_option_id": "4058593486"
+          }
+        ]
+      },
+      "answer_key": "C",
+      "image_urls": [],
+      "has_figure": true,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": false
+    },
+    {
+      "source": "jee",
+      "id": 920,
+      "subject": "Chemistry",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "When '$x' \\times 10^{-2}$ mL methanol (molar mass $= 32$ g; density $= 0.792$ g/cm$^3$) is added to $100$ mL water (density $= 1$ g/cm$^3$), the following diagram is obtained.\n\n[Figure: A graph of Vapour pressure versus Temperature/K. It shows three curves: 'Frozen system', 'Water', and 'Methanolic solution'. The freezing point of water is marked at $273.15$ K and the freezing point of the methanolic solution is marked at $270.65$ K.]\n\n$x = \\text{__________ (nearest integer).}$\n\n[Given : Molal freezing point depression constant of water at $273.15$ K is $1.86$ K kg mol$^{-1}$]",
+        "options": []
+      },
+      "answer_key": "543",
+      "image_urls": [],
+      "has_figure": true,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": false
+    },
+    {
+      "source": "jee",
+      "id": 567,
+      "subject": "Chemistry",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "$CH_3CH_2Br + NaOH \\xrightarrow{C_2H_5OH} \\text{Product A}$\n$CH_3CH_2Br + NaOH \\xrightarrow{H_2O} \\text{Product B}$\n\nThe total number of hydrogen atoms in product A and product B is _______.",
+        "options": []
+      },
+      "answer_key": "10",
+      "image_urls": [],
+      "has_figure": true,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": true
+    },
+    {
+      "source": "jee",
+      "id": 463,
+      "subject": "Chemistry",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "Salicylaldehyde is synthesized from phenol, when reacted with",
+        "options": [
+          {
+            "text": "$CO_2, NaOH$",
+            "nta_option_id": "4058593471"
+          },
+          {
+            "text": "[Figure: Formyl chloride structure], $NaOH$",
+            "nta_option_id": "4058593472"
+          },
+          {
+            "text": "$HCCl_3, NaOH$",
+            "nta_option_id": "4058593473"
+          },
+          {
+            "text": "$CCl_4, NaOH$",
+            "nta_option_id": "4058593474"
+          }
+        ]
+      },
+      "answer_key": "C",
+      "image_urls": [],
+      "has_figure": true,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": false
+    },
+    {
+      "source": "jee",
+      "id": 1018,
+      "subject": "Chemistry",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "Number of amine compounds from the following giving solids which are soluble in NaOH upon reaction with Hinsberg's reagent is ________.",
+        "options": []
+      },
+      "answer_key": "5",
+      "image_urls": [],
+      "has_figure": true,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": false
+    },
+    {
+      "source": "jee",
+      "id": 2625,
+      "subject": "Chemistry",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "Identify A and B in the following reaction sequence.\n\n[Figure: A reaction sequence starting with bromobenzene reacting with concentrated $\\text{HNO}_3$ to give product A, which then reacts with (i) $\\text{NaOH}$ and (ii) $\\text{HCl}$ to give product B.]",
+        "options": [
+          {
+            "text": "A = [Figure: 1-bromo-4-nitrobenzene], B = [Figure: 2-bromo-4-nitrophenol]",
+            "nta_option_id": "4058594011"
+          },
+          {
+            "text": "A = [Figure: 1-bromo-2,4-dinitrobenzene], B = [Figure: 4-bromo-1,3-benzenediol]",
+            "nta_option_id": "4058594012"
+          },
+          {
+            "text": "A = [Figure: 2-bromo-1,3,5-trinitrobenzene], B = [Figure: 2,4,6-trinitrophenol]",
+            "nta_option_id": "4058594013"
+          },
+          {
+            "text": "A = [Figure: nitrobenzene], B = [Figure: 3-nitrophenol]",
+            "nta_option_id": "4058594014"
+          }
+        ]
+      },
+      "answer_key": "C",
+      "image_urls": [],
+      "has_figure": true,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": false
+    },
+    {
+      "source": "jee",
+      "id": 3395,
+      "subject": "Chemistry",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "Number of elements from the following that CANNOT form compounds with valencies which match with their respective group valencies is ________.\nB, C, N, S, O, F, P, Al, Si",
+        "options": [
+          {
+            "text": "5",
+            "nta_option_id": "878270218445"
+          },
+          {
+            "text": "3",
+            "nta_option_id": "878270218446"
+          },
+          {
+            "text": "6",
+            "nta_option_id": "878270218447"
+          },
+          {
+            "text": "7",
+            "nta_option_id": "878270218448"
+          }
+        ]
+      },
+      "answer_key": "B",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": false
+    },
+    {
+      "source": "jee",
+      "id": 3320,
+      "subject": "Chemistry",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "Number of compounds from the following with zero dipole moment is ________.\n$\\text{HF}, \\text{H}_2, \\text{H}_2\\text{S}, \\text{CO}_2, \\text{NH}_3, \\text{BF}_3, \\text{CH}_4, \\text{CHCl}_3, \\text{SiF}_4, \\text{H}_2\\text{O}, \\text{BeF}_2$",
+        "options": []
+      },
+      "answer_key": "6",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": false
+    },
+    {
+      "source": "jee",
+      "id": 918,
+      "subject": "Chemistry",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "For the reaction at $298\\text{ K}$, $2\\text{A} + \\text{B} \\rightarrow \\text{C}$. $\\Delta\\text{H} = 400\\text{ kJ mol}^{-1}$ and $\\Delta\\text{S} = 0.2\\text{ kJ mol}^{-1}\\text{ K}^{-1}$. The reaction will become spontaneous above ______ $\\text{K}$.",
+        "options": []
+      },
+      "answer_key": "2000",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": false
+    },
+    {
+      "source": "jee",
+      "id": 1730,
+      "subject": "Chemistry",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "The lowest oxidation number of an atom in a compound $A_2B$ is $-2$. The number of electrons in its valence shell is _______.",
+        "options": []
+      },
+      "answer_key": "6",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": false
+    },
+    {
+      "source": "jee",
+      "id": 542,
+      "subject": "Chemistry",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "For the given reaction, choose the correct expression of $K_C$ from the following :-\n$Fe^{3+}_{(aq)} + SCN^-_{(aq)} \rightleftharpoons (FeSCN)^{2+}_{(aq)}$",
+        "options": [
+          {
+            "text": "$K_C = \\frac{[FeSCN^{2+}]^2}{[Fe^{3+}][SCN^-]}$",
+            "nta_option_id": "4058593689"
+          },
+          {
+            "text": "$K_C = \\frac{[FeSCN^{2+}]}{[Fe^{3+}]^2[SCN^-]^2}$",
+            "nta_option_id": "4058593690"
+          },
+          {
+            "text": "$K_C = \\frac{[FeSCN^{2+}]}{[Fe^{3+}][SCN^-]}$",
+            "nta_option_id": "4058593691"
+          },
+          {
+            "text": "$K_C = \\frac{[Fe^{3+}][SCN^-]}{[FeSCN^{2+}]}$",
+            "nta_option_id": "4058593692"
+          }
+        ]
+      },
+      "answer_key": "C",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": true
+    },
+    {
+      "source": "jee",
+      "id": 2615,
+      "subject": "Chemistry",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "{\\alpha^{1/2} P^{1/2}}{(2 + \\alpha)^{3/2}}$\nOption 4: $K_p = \\frac{\\alpha^{1/2} P^{3/2}}{(2 + \\alpha)^{3/2}}$\nYes, that's what's there.\n\nWait, let me look at the reaction again.\n$A_{(g)} \\rightleftharpoons B_{(g)} + \\frac{C}{2}_{(g)}$\nMaybe it's $A_{(g)} \\rightleftharpoons B_{(g)} + \\frac{C}{2} (g)$?\nActually, looking at the image, it's $A_{(g)} \\rightleftharpoons B_{(g)} + \\frac{C}{2}_{(g)}$.\nI'll use $A_{(g)} \\rightleftharpoons B_{(g)} + \\frac{C}{2}_{(g)}$.\n\nWait, let me look at the options again.\nOption 1: $K_p = \\frac{\\alpha^{3/2} P^{1/2}}{(2 + \\alpha)^{1/2} (1 - \\alpha)}$\nOption 2: $K_p = \\frac{\\alpha^{1/2} P^{1/2}}{(2 + \\alpha)^{1/2}}$\nOption 3: $K_p = \\frac{\\alpha^{1/2} P^{1/2}}{(2 + \\alpha)^{3/2}}$\nOption 4: $K_p = \\frac{\\alpha^{1/2}",
+        "options": []
+      },
+      "answer_key": "4058593963",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": false,
+      "corrupt_key": true
+    },
+    {
+      "source": "jee",
+      "id": 3575,
+      "subject": "Chemistry",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "Given below are two statements :\nStatement I : In group 13, the stability of +1 oxidation state increases down the group.\nStatement II : The atomic size of gallium is greater than that of aluminium.\nIn the light of the above statements, choose the most appropriate answer from the options given below :",
+        "options": [
+          {
+            "text": "Both Statement I and Statement II are correct",
+            "nta_option_id": "878270218985"
+          },
+          {
+            "text": "Both Statement I and Statement II are incorrect",
+            "nta_option_id": "878270218986"
+          },
+          {
+            "text": "Statement I is correct but Statement II is incorrect",
+            "nta_option_id": "878270218987"
+          },
+          {
+            "text": "Statement I is incorrect but Statement II is correct",
+            "nta_option_id": "878270218988"
+          }
+        ]
+      },
+      "answer_key": "C",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": false
+    },
+    {
+      "source": "jee",
+      "id": 993,
+      "subject": "Chemistry",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "Among the following halogens\n\n$F_2, Cl_2, Br_2$ and $I_2$\n\nWhich can undergo disproportionation reactions?",
+        "options": [
+          {
+            "text": "Only $I_2$",
+            "nta_option_id": "68019156187"
+          },
+          {
+            "text": "$F_2$ and $Cl_2$",
+            "nta_option_id": "68019156188"
+          },
+          {
+            "text": "$Cl_2, Br_2$ and $I_2$",
+            "nta_option_id": "68019156189"
+          },
+          {
+            "text": "$F_2, Cl_2$ and $Br_2$",
+            "nta_option_id": "68019156190"
+          }
+        ]
+      },
+      "answer_key": "C",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": false
+    },
+    {
+      "source": "jee",
+      "id": 3581,
+      "subject": "Chemistry",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "An organic compound has $42.1\\%$ carbon, $6.4\\%$ hydrogen and remainder is oxygen. If its molecular weight is $342$, then its molecular formula is :",
+        "options": [
+          {
+            "text": "$\\text{C}_{12}\\text{H}_{22}\\text{O}_{11}$",
+            "nta_option_id": "878270219009"
+          },
+          {
+            "text": "$\\text{C}_{11}\\text{H}_{18}\\text{O}_{12}$",
+            "nta_option_id": "878270219010"
+          },
+          {
+            "text": "$\\text{C}_{14}\\text{H}_{20}\\text{O}_{10}$",
+            "nta_option_id": "878270219011"
+          },
+          {
+            "text": "$\\text{C}_{12}\\text{H}_{20}\\text{O}_{12}$",
+            "nta_option_id": "878270219012"
+          }
+        ]
+      },
+      "answer_key": "A",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": false
+    },
+    {
+      "source": "jee",
+      "id": 1274,
+      "subject": "Chemistry",
+      "class": null,
+      "problem_payload": {
+        "problem_text": "Match List - I with List - II.\n\nList - I (Reactants)\n(A) Phenol, $Zn/\\Delta$\n(B) Phenol, $CHCl_3$, $NaOH$, $HCl$\n(C) Phenol, $CO_2$, $NaOH$, $HCl$\n(D) Phenol, Conc. $HNO_3$\n\nList - II (Product)\n(I) Salicylaldehyde\n(II) Salicylic acid\n(III) Benzene\n(IV) Picric acid\n\nChoose the correct answer from the options given below :",
+        "options": [
+          {
+            "text": "(A)-(III), (B)-(I), (C)-(II), (D)-(IV)",
+            "nta_option_id": "9561772795"
+          },
+          {
+            "text": "(A)-(IV), (B)-(I), (C)-(II), (D)-(III)",
+            "nta_option_id": "9561772796"
+          },
+          {
+            "text": "(A)-(IV), (B)-(II), (C)-(I), (D)-(III)",
+            "nta_option_id": "9561772797"
+          },
+          {
+            "text": "(A)-(III), (B)-(IV), (C)-(I), (D)-(II)",
+            "nta_option_id": "9561772798"
+          }
+        ]
+      },
+      "answer_key": "A",
+      "image_urls": [],
+      "has_figure": false,
+      "image_urls_present": false,
+      "review_status_at_pick": "PENDING",
+      "never_distill": false
+    }
+  ]
+}

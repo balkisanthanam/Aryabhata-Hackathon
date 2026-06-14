@@ -3,6 +3,7 @@ Generate a JSON payload file for curl testing
 """
 import base64
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -146,7 +147,7 @@ def create_payload(image_path: str, pdf_url: str, output_file: str = "payload.js
     print(f"\nPayload saved to: {output_file}")
     print(f"File size: {Path(output_file).stat().st_size / 1024:.2f} KB")
     print("\nYou can now use this file with curl:")
-    print(f'  curl -X POST "https://<YOUR_FUNCTION_APP>.azurewebsites.net/api/evaluate?code=YOUR_KEY" \\')
+    print(f'  curl -X POST "<FUNCTION_URL>?code=<FUNCTION_KEY>" \\')
     print(f'       -H "Content-Type: application/json" \\')
     print(f'       -d @{output_file}')
 
@@ -179,7 +180,7 @@ if __name__ == "__main__":
         sys.exit(0 if len(sys.argv) > 1 else 1)
     
     image_path = sys.argv[1]
-    pdf_url = sys.argv[2] if len(sys.argv) > 2 else "https://<YOUR_STORAGE_ACCOUNT>.blob.core.windows.net/feedback/sample-chapter.pdf"
+    pdf_url = sys.argv[2] if len(sys.argv) > 2 else os.getenv("TEST_PDF_BLOB_URL", "<PDF_BLOB_URL>")
     problem_file = sys.argv[3] if len(sys.argv) > 3 and sys.argv[3] else None
     problem_image = sys.argv[4] if len(sys.argv) > 4 and sys.argv[4] else None
     output_file = sys.argv[5] if len(sys.argv) > 5 else "payload.json"

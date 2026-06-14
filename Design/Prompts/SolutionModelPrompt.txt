@@ -1,0 +1,22 @@
+The project is to create a Solution model replacing existing Gemini 3.1 Pro. Currently this model is called from multiple places to get solutions for 11th, 12th, JEE projects - NCERT exercise, Feedback sought by students, JEE Main problems (WIP). This is for Physics, Mathematics and Chemistry. The Gemini 3.1 pro solution is very costly, but the quality has been pretty good (i do find few issues in Chemistry. But i am yet to measure formally the quality. This is anecdotal so far). I want a cost optimized but equally quality model.
+
+The option i am thinking currently:
+1) Find the best Open source STEM model or model that is good in Math, Physics & Chemistry
+2) I have already extracted solutions for good no of NCERT problems with the help of Gemini 3.1 pro. I can do some more JEE Main problems. These solutions will act as my training data. If possible i will use an Evalator to filter this futher.
+3) Do Student fine tuning of the open source model to get the same quality
+4) Distill this fine tuned model to have the same accuracy
+5) Optimise further if any
+6) I am not going to use human RLHF at this point. I had planned to use it to get the solution steps in line with what a Teacher would do. But we can park at this point.
+7) Host this model in Azure Foundry or equivalent
+8) Use this model in the pipeline
+Is the above approach right or should something else be done? Need critical evaluation on the above
+
+In addition we need to develop an Evaluator to evaluate the solutions developed. Gemini 3.1 Pro seems to be the best candidate for being an evaluator. But open for any other big model option as well as long as they are competitive. There are few aspects to get the Evaluator to get trustable quality:
+1) We can use the same Solutions from Gemini 3.1 Pro generated till now, but picked as the best answer by human evaluators
+2) In addition NCERT publishes answer keys, but only the final result and not the inbetween steps. But this should help fix obvious issues.
+
+Let this evaluator be hosted similar to the Solution model.
+
+Come up with a complete Architecture and detailed design with steps and guidelines. Be critical of the proposal i had above. Suggest alternatives or modifications if needed. Store the Architecture and Design document in the Design/Architecture folder.
+Do not start making changes yet. Let's iterate on this and finalise.
+

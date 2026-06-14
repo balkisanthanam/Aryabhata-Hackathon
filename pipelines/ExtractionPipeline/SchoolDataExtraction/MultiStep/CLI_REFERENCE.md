@@ -93,6 +93,7 @@ Generate step-by-step solutions for questions.
 | `--from-extraction` | string | None | Path to extraction JSON to get questions from |
 | `--batch-size` | int | `5` | Questions per batch. Set to `0` to disable batching. |
 | `--no-cache` | flag | False | Disable Gemini content caching |
+| `--use-smart-context` | flag | False | Use localized vector context & critique loop instead of Full PDF |
 
 **Examples:**
 
@@ -108,6 +109,9 @@ python main.py --stage 2 --pdf "Input/keph203.pdf" --questions "10.1,10.2,10.3" 
 
 # Disable batching (one API call for all questions)
 python main.py --stage 2 --pdf "Input/keph203.pdf" --questions "10.1,10.2" --batch-size 0
+
+# Solve using Smart Context + Golden Generator instead of the entire PDF
+python main.py --stage 2 --pdf "Input/keph203.pdf" --questions "10.1,10.2" --use-smart-context
 ```
 
 **Output:** `Output/<pdf_stem>_solutions.json`
@@ -125,6 +129,7 @@ Full end-to-end pipeline: Extract → Solve → Upload to Azure.
 | `--skip-solutions` | flag | False | Skip solution generation (extraction only) |
 | `--no-managed-identity` | flag | False | Use connection strings instead of Azure Managed Identity |
 | `--batch-size` | int | `5` | Questions per batch for solution generation |
+| `--use-smart-context` | flag | False | Use localized vector context & critique loop instead of Full PDF |
 
 **Examples:**
 
@@ -140,6 +145,9 @@ python main.py --stage 3 --pdf "Input/keph203.pdf" --class 11 --subject Physics 
 
 # Extract only, skip solution generation
 python main.py --stage 3 --pdf "Input/keph203.pdf" --class 11 --subject Physics --skip-solutions
+
+# Full pipeline using the highly optimized Smart Context
+python main.py --stage 3 --pdf "Input/keph203.pdf" --class 11 --subject Physics --use-smart-context
 ```
 
 **Output:**
@@ -213,10 +221,10 @@ The pipeline can be configured via environment variables:
 | `GOOGLE_API_KEY` | Gemini API key (for non-Vertex AI) | - |
 | `GOOGLE_PROJECT_ID` | GCP project ID (for Vertex AI) | - |
 | `GOOGLE_LOCATION` | GCP region (for Vertex AI) | `global` |
-| `AZURE_PG_HOST` | PostgreSQL host | `<YOUR_PG_SERVER>.postgres.database.azure.com` |
-| `AZURE_PG_DATABASE` | Database name | `postgres` |
+| `AZURE_PG_HOST` | PostgreSQL host | `<DB_HOST>` |
+| `AZURE_PG_DATABASE` | Database name | `<DB_NAME>` |
 | `AZURE_PG_USER` | Entra user (UPN format) | - |
-| `AZURE_STORAGE_ACCOUNT` | Blob storage account | `<YOUR_STORAGE_ACCOUNT>` |
+| `AZURE_STORAGE_ACCOUNT` | Blob storage account | `stevaluationstorage` |
 | `AZURE_BLOB_CONTAINER` | Blob container name | `onlineresources` |
 
 ---
@@ -343,6 +351,7 @@ The pipeline will detect missing questions (6.61-6.70 in this example) and solve
 
 | Date | Changes |
 |------|---------|
+| 2026-04-10 | Added `--use-smart-context` flag for PgVector chunk retrieval and GoldenGenerator critique loop |
 | 2026-01-25 | Added `fix_db_ingestion.py` utility for pushing solutions to DB after auth failures |
 | 2026-01-25 | Added troubleshooting for "unknown" in state files and DB ingestion skip issues |
 | 2026-01-24 | Added JSON validity rule to prompt to prevent Gemini from inserting thinking text mid-JSON |

@@ -46,9 +46,13 @@ async function practiceQuestionHandler(request: HttpRequest, context: Invocation
 
         // MODE: START (or Fallback if Resume data missing)
         if (!targetQuestionId) {
-            // Find first exercise->question for this chapter
-            const firstExercise = await prisma.exercisedata.findFirst({
-                where: { chapterid: parseInt(chapterId) },
+            const initialExercise = await prisma.exercisedata.findFirst({
+                where: targetExerciseId
+                    ? {
+                        chapterid: parseInt(chapterId),
+                        exerciseid: targetExerciseId,
+                    }
+                    : { chapterid: parseInt(chapterId) },
                 orderBy: { exerciseid: 'asc' },
                 include: {
                     questiondata: {
@@ -58,9 +62,9 @@ async function practiceQuestionHandler(request: HttpRequest, context: Invocation
                 }
             });
 
-            if (firstExercise && firstExercise.questiondata.length > 0) {
-                targetExerciseId = firstExercise.exerciseid;
-                targetQuestionId = firstExercise.questiondata[0].questionid;
+            if (initialExercise && initialExercise.questiondata.length > 0) {
+                targetExerciseId = initialExercise.exerciseid;
+                targetQuestionId = initialExercise.questiondata[0].questionid;
             } else {
                 return withCors({
                     status: 404,

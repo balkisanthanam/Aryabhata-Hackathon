@@ -1,59 +1,14 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { LatexRenderer } from '../common/LatexRenderer';
+import { cleanLatex } from '../../lib/latex';
 
 interface SolutionViewProps {
     solution: any;
 }
 
-// Utility to clean malformed LaTeX from DB
-// Specific fix for \frac becoming Form Feed (\u000c) + "rac"
-const cleanLatex = (text: string | null | undefined): string => {
-    if (!text) return "";
-    return text
-        // Fix \frac (Form Feed \f -> \u000c)
-        .replace(/\u000crac/g, '\\frac')
-        .replace(/\u000call/g, '\\forall')
-
-        // Fix \t... (Tab \t -> \u0009)
-        .replace(/\u0009imes/g, '\\times')
-        .replace(/\u0009ext/g, '\\text')
-        .replace(/\u0009an/g, '\\tan')
-        .replace(/\u0009au/g, '\\tau')
-        .replace(/\u0009heta/g, '\\theta')
-        .replace(/\u0009o/g, '\\to')
-
-        // Fix \n... (Newline \n -> \u000a)
-        // Be careful with \nu to avoid replacing actual newlines followed by 'u' in text
-        // Most \nu usages are in math, so look for \nu followed by non-letter or end
-        .replace(/\u000au/g, '\\nu')
-        .replace(/\u000aabla/g, '\\nabla')
-        .replace(/\u000aeq/g, '\\neq')
-        .replace(/\u000aeg/g, '\\neg')
-        .replace(/\u000aot/g, '\\not')
-
-        // Fix \r... (Carriage Return \r -> \u000d)
-        .replace(/\u000dho/g, '\\rho')
-        .replace(/\u000dight/g, '\\right')
-
-        // Fix \b... (Backspace \b -> \u0008)
-        .replace(/\u0008ar/g, '\\bar')
-        .replace(/\u0008eta/g, '\\beta')
-        .replace(/\u0008egin/g, '\\begin')
-        .replace(/\u0008f/g, '\\bf')
-
-        // Fix \a... (Bell \a -> \u0007 - IF supported/mangled)
-        .replace(/\u0007lpha/g, '\\alpha')
-        .replace(/\u0007pprox/g, '\\approx')
-
-        // Fix \v... (Vertical Tab \v -> \u000b)
-        .replace(/\u000bec/g, '\\vec')
-        .replace(/\u000bert/g, '\\vert')
-        .replace(/\u000barphi/g, '\\varphi');
-};
-
 export const SolutionView = ({ solution }: SolutionViewProps) => {
-    // State to track which step is currently expanded. 
+    // State to track which step is currently expanded.
     // Default to 0 (Step 1). null means all collapsed.
     const [expandedStep, setExpandedStep] = useState<number | null>(0);
 
@@ -61,9 +16,25 @@ export const SolutionView = ({ solution }: SolutionViewProps) => {
         setExpandedStep(prev => (prev === index ? null : index));
     };
 
-    // Combine steps and final answer for unified handling
-    const steps = solution.steps;
+    // Defensive normalization to avoid hard crashes when DB/API returns null or partial solution data.
+    const safeSolution = (solution && typeof solution === 'object') ? solution : null;
+    const steps = Array.isArray(safeSolution?.steps) ? safeSolution.steps : [];
+    const finalAnswer = typeof safeSolution?.final_answer === 'string' ? safeSolution.final_answer : 'Solution is not available yet for this question.';
     const finalAnswerIndex = steps.length;
+
+    if (!safeSolution) {
+        return (
+            <div className="p-4 lg:p-8">
+                <h3 className="text-xl font-serif font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+                    <span className="material-symbols-outlined text-primary">calculate</span>
+                    Full Solution
+                </h3>
+                <div className="rounded-xl border border-amber-200 bg-amber-50/80 dark:bg-amber-900/10 dark:border-amber-800/40 p-4 text-amber-900 dark:text-amber-200">
+                    {finalAnswer}
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div className="p-4 lg:p-8">
@@ -98,7 +69,7 @@ export const SolutionView = ({ solution }: SolutionViewProps) => {
                                     {/* Hint Text - Visible only when collapsed */}
                                     {!isExpanded && step.nudge_hint && (
                                         <span className="text-sm italic text-slate-500 dark:text-slate-400">
-                                            {cleanLatex(step.nudge_hint)}
+                                            <LatexRenderer content={cleanLatex(step.nudge_hint)} />
                                         </span>
                                     )}
                                 </div>
@@ -190,7 +161,7 @@ export const SolutionView = ({ solution }: SolutionViewProps) => {
                                         <p className="font-serif text-lg text-slate-900 dark:text-white flex flex-col items-center">
                                             <span className="block text-xs uppercase tracking-widest text-slate-500 mb-2">Answer</span>
                                             <span className="text-primary dark:text-indigo-400 font-bold text-2xl ml-1">
-                                                <LatexRenderer content={cleanLatex(solution.final_answer)} />
+                                                <LatexRenderer content={cleanLatex(finalAnswer)} />
                                             </span>
                                         </p>
                                     </div>

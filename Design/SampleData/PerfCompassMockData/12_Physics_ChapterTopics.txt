@@ -1,0 +1,146 @@
+**Chapter One: ELECTRIC CHARGES AND FIELDS**
+*   **Introduction**
+*   **Electric Charge**
+*   **Conductors and Insulators**
+*   **Basic Properties of Electric Charge**
+*   **Coulomb’s Law**
+*   **Forces between Multiple Charges**
+*   **Electric Field**
+*   **Electric Field Lines**
+*   **Electric Flux**
+*   **Electric Dipole**
+*   **Dipole in a Uniform External Field**
+*   **Continuous Charge Distribution**
+*   **Gauss’s Law**
+*   **Applications of Gauss’s Law**
+    *   [Sources: 301]
+
+**Chapter Two: ELECTROSTATIC POTENTIAL AND CAPACITANCE**
+*   **Introduction**
+*   **Electrostatic Potential**
+*   **Potential due to a Point Charge**
+*   **Potential due to an Electric Dipole**
+*   **Potential due to a System of Charges**
+*   **Equipotential Surfaces**
+*   **Potential Energy of a System of Charges**
+*   **Potential Energy in an External Field**
+*   **Electrostatics of Conductors**
+*   **Dielectrics and Polarisation**
+*   **Capacitors and Capacitance**
+*   **The Parallel Plate Capacitor**
+*   **Effect of Dielectric on Capacitance**
+*   **Combination of Capacitors**
+*   **Energy Stored in a Capacitor**
+    *   [Sources: 301, 302]
+
+**Chapter Three: CURRENT ELECTRICITY**
+*   **Introduction**
+*   **Electric Current**
+*   **Electric Currents in Conductors**
+*   **Ohm’s law**
+*   **Drift of Electrons and the Origin of Resistivity**
+*   **Limitations of Ohm’s Law**
+*   **Resistivity of Various Materials**
+*   **Temperature Dependence of Resistivity**
+*   **Electrical Energy, Power**
+*   **Cells, emf, Internal Resistance**
+*   **Cells in Series and in Parallel**
+*   **Kirchhoff’s Rules**
+*   **Wheatstone Bridge**
+    *   [Sources: 303]
+
+**Chapter Four: MOVING CHARGES AND MAGNETISM**
+*   **Introduction**
+*   **Magnetic Force**
+*   **Motion in a Magnetic Field**
+*   **Magnetic Field due to a Current Element, Biot-Savart Law**
+*   **Magnetic Field on the Axis of a Circular Current Loop**
+*   **Ampere’s Circuital Law**
+*   **The Solenoid**
+*   **Force between Two Parallel Currents, the Ampere**
+*   **Torque on Current Loop, Magnetic Dipole**
+*   **The Moving Coil Galvanometer**
+    *   [Sources: 303, 304]
+
+**Chapter Five: MAGNETISM AND MATTER**
+*   **Introduction**
+*   **The Bar Magnet**
+*   **Magnetism and Gauss’s Law**
+*   **Magnetisation and Magnetic Intensity**
+*   **Magnetic Properties of Materials**
+    *   [Sources: 304, 305]
+
+**Chapter Six: ELECTROMAGNETIC INDUCTION**
+*   **Introduction**
+*   **The Experiments of Faraday and Henry**
+*   **Magnetic Flux**
+*   **Faraday’s Law of Induction**
+*   **Lenz’s Law and Conservation of Energy**
+*   **Motional Electromotive Force**
+*   **Inductance**
+*   **AC Generator**
+    *   [Sources: 305]
+
+**Chapter Seven: ALTERNATING CURRENT**
+*   **Introduction**
+*   **AC Voltage Applied to a Resistor**
+*   **Representation of AC Current and Voltage by Rotating Vectors — Phasors**
+*   **AC Voltage Applied to an Inductor**
+*   **AC Voltage Applied to a Capacitor**
+*   **AC Voltage Applied to a Series LCR Circuit**
+*   **Power in AC Circuit: The Power Factor**
+*   **Transformers**
+
+**Chapter Eight: ELECTROMAGNETIC WAVES**
+*   **Introduction**
+*   **Displacement Current**
+*   **Electromagnetic Waves**
+*   **Electromagnetic Spectrum**
+
+**Chapter Nine: Ray Optics and Optical Instruments**
+*   **Reflection of Light by Spherical Mirrors**: Sign convention, focal length, and the mirror equation,,,.
+*   **Refraction**: Refraction through rectangular slabs and apparent depth,.
+*   **Total Internal Reflection**: Optical fibers and prisms,,.
+*   **Refraction at Spherical Surfaces and by Lenses**: Refraction at a spherical surface, lens maker’s formula, thin lens formula, and combination of thin lenses in contact,,,,.
+*   **Refraction through a Prism**: Angle of deviation and dispersion,.
+*   **Optical Instruments**: The microscope and the telescope,,.
+
+**Chapter Ten: Wave Optics**
+*   **Huygens Principle**: Wavefronts and secondary wavelets,.
+*   **Refraction and Reflection of Plane Waves using Huygens Principle**: Derivation of laws of refraction and reflection,.
+*   **Coherent and Incoherent Addition of Waves**: Superposition principle,.
+*   **Interference of Light Waves and Young’s Experiment**: Constructive and destructive interference, fringe width,,.
+*   **Diffraction**: Single slit diffraction pattern,.
+*   **Polarisation**: Transverse nature of light waves,.
+
+**Chapter Eleven: Dual Nature of Radiation and Matter**
+*   **Electron Emission**: Thermionic emission, field emission, and photo-electric emission.
+*   **Photoelectric Effect**: Hertz's observations,.
+*   **Experimental Study of Photoelectric Effect**: Effect of intensity, potential, and frequency on photocurrent.
+*   **Photoelectric Effect and Wave Theory of Light**: Limitations of wave theory.
+*   **Einstein’s Photoelectric Equation**: Energy quantum of radiation (Photon).
+*   **Particle Nature of Light**: The Photon.
+*   **Wave Nature of Matter**: De Broglie wavelength.
+
+**Chapter Twelve: Atoms**
+*   **Alpha-particle Scattering and Rutherford’s Nuclear Model of Atom**: Alpha-particle trajectory and electron orbits,,.
+*   **Atomic Spectra**: Emission and absorption spectra,.
+*   **Bohr Model of the Hydrogen Atom**: Postulates, energy levels, and radii of orbits,,.
+*   **The Line Spectra of the Hydrogen Atom**: Transitions between energy levels.
+*   **De Broglie’s Explanation of Bohr’s Second Postulate of Quantisation**: Angular momentum quantisation.
+
+**Chapter Thirteen: Nuclei**
+*   **Atomic Masses and Composition of Nucleus**: Isotopes, isobars, and isotones,,.
+*   **Size of the Nucleus**: Nuclear radius and density,.
+*   **Mass-Energy and Nuclear Binding Energy**: Mass defect and binding energy per nucleon,.
+*   **Nuclear Force**: Properties of nuclear forces.
+*   **Radioactivity**: Alpha, beta, and gamma decay,.
+*   **Nuclear Energy**: Fission and fusion (energy generation in stars),,.
+
+**Chapter Fourteen: Semiconductor Electronics: Materials, Devices and Simple Circuits**
+*   **Classification of Metals, Conductors and Semiconductors**: Based on conductivity and energy bands,.
+*   **Intrinsic Semiconductor**: Pure semiconductors (Si, Ge),.
+*   **Extrinsic Semiconductor**: n-type and p-type doping,.
+*   **p-n Junction**: Formation and depletion region,.
+*   **Semiconductor Diode**: Forward and reverse bias characteristics,,.
+*   **Application of Junction Diode as a Rectifier**: Half-wave and full-wave rectification.

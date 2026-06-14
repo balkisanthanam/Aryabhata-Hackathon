@@ -1,24 +1,30 @@
 """
 Local test script for OnDemand Image Extraction Azure Function
 """
-import requests
 import json
+import os
 from datetime import datetime
-from PIL import Image
 import io
+
+import requests
+from PIL import Image
 
 # Local function URL
 FUNCTION_URL = "http://localhost:7071/api/extract_image"
+TEST_PDF_BLOB_URL = os.getenv("TEST_PDF_BLOB_URL", "<PDF_BLOB_URL>")
 
 # Test data
 test_payload = {
-    "pdf_blob_url": "https://<YOUR_STORAGE>.blob.core.windows.net/feedback/11/Physics/keph204.pdf",
+    "pdf_blob_url": TEST_PDF_BLOB_URL,
     "exercise_name": "EXERCISES",
     "problem_number": "11.8"
 }
 
 def test_extraction():
     """Test the image extraction endpoint"""
+    if TEST_PDF_BLOB_URL == "<PDF_BLOB_URL>":
+        raise SystemExit("Set TEST_PDF_BLOB_URL before running this script.")
+
     print("=" * 60)
     print("Testing OnDemand Image Extraction Function")
     print("=" * 60)
@@ -85,7 +91,7 @@ def test_missing_fields():
     print("=" * 60)
     
     invalid_payload = {
-        "pdf_blob_url": "https://<YOUR_STORAGE>.blob.core.windows.net/feedback/11/Maths/kemh106.pdf"
+        "pdf_blob_url": TEST_PDF_BLOB_URL
         # Missing exercise_name and problem_number
     }
     

@@ -1,0 +1,35 @@
+Extract the complete concept hierarchy from this NCERT chapter.
+Return ONLY valid JSON with no markdown fences.
+
+For each concept node return:
+{
+  "node_key": "C1",
+  "parent_node_key": null,
+  "concept_title": "...",
+  "content_type": "concept|definition|theorem|formula|worked_example",
+  "description": "...",
+  "key_formulas": ["\\mu = \\sqrt{n(n+2)}", "F = ma"],
+  "embedding_text": "...",
+  "ncert_solved_example": "...",
+  "has_figure": true,
+  "chunk_text": "...",
+  "chunk_index": 1
+}
+
+Rules:
+- Every node MUST have embedding_text in plain English.
+- key_formulas may contain LaTeX but embedding_text must not be LaTeX.
+- JSON escaping: ALL backslashes in LaTeX strings must be double-escaped because the output is JSON. Write \\phi not \phi, \\frac not \frac, \\theta not \theta. The key_formulas example above demonstrates this: every backslash is doubled.
+- Set description, key_formulas, ncert_solved_example to null (not empty string) when not applicable for the content_type.
+- EXHAUSTIVE EXTRACTION: You MUST create at least one node for every numbered section and subsection heading in the chapter. Never merge, skip, or absorb a numbered heading into its parent node.
+- EXHAUSTIVE EXAMPLES: You MUST create a separate node (content_type: worked_example) for every Worked Example or Example box in the chapter. Do not skip or merge any example for any reason.
+- Each distinct formula is a separate node.
+- node_key must match regex [A-Za-z0-9_]+ for each individual segment. When building dotted paths like C1.S1.M1, each segment between dots must independently match this regex. No spaces, hyphens, or special characters anywhere in the path. Use dots for hierarchy levels and never use underscores as path separators. Correct: C1.NatureOfMatter.States. Incorrect: C1_NatureOfMatter_States.
+- parent_node_key must be null for root nodes and otherwise reference an existing node_key using the same dotted-path format.
+- Formal proofs in Mathematics should use content_type "worked_example" with the proof steps in ncert_solved_example.
+- Lemmas, corollaries, and axioms should use content_type "theorem". Geometric constructions should use content_type "worked_example".
+- For Chemistry: each key named reaction that has a distinct balanced equation is its own node with content_type: formula; place the balanced equation in LaTeX in key_formulas; describe the reaction conditions or mechanism in description. Only reactions mentioned in passing without a balanced equation may remain in the parent concept's description. IUPAC names go into concept_title. Organic structures should be described verbally in embedding_text (no SMILES or structural notation in embedding_text).
+- If has_figure is true, write a plain-English description of the figure into embedding_text.
+- Do not create separate figure-only nodes. Set has_figure to true on the concept node that the figure illustrates. Set has_figure to false when no figure is present.
+- chunk_text should be a concise, retrieval-optimised summary of the node (2-4 sentences). For mathematical proofs and long derivations, summarise the key logical steps rather than transcribing every algebraic manipulation.
+- Do not output markdown, commentary, or explanatory text.

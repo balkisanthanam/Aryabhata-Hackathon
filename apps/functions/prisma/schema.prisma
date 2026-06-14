@@ -54,7 +54,8 @@ model questiondata {
   content          Json
   solution         Json?
   exercisedata     exercisedata       @relation(fields: [exerciseid], references: [exerciseid], onDelete: NoAction, onUpdate: NoAction)
-  userexercisedata userexercisedata[]
+  userexercisedata     userexercisedata[]
+  ncert_jee_similarity ncert_jee_similarity[]
 
   @@unique([exerciseid, question_ref], map: "uq_questiondata_exercise_ref")
   @@index([question_ref], map: "ix_questiondata_questionref")
@@ -76,14 +77,243 @@ model userexercisedata {
 }
 
 model userprofiledata {
-  userid           Int                @id @default(autoincrement())
-  username         String             @db.VarChar(500)
-  class            String             @db.VarChar(100)
-  board            String             @db.VarChar(100)
-  goal             String?            @db.VarChar(1000)
-  email            String?            @db.VarChar(500)
-  userexercisedata userexercisedata[]
+  userid               Int                    @id @default(autoincrement())
+  username             String                 @db.VarChar(500)
+  class                String                 @db.VarChar(100)
+  board                String                 @db.VarChar(100)
+  goal                 String?                @db.VarChar(1000)
+  email                String?                @db.VarChar(500)
+  userexercisedata     userexercisedata[]
+  solution_evaluations solution_evaluations[]
 
   @@index([email], map: "ix_userprofiledata_email")
   @@index([username], map: "ix_userprofiledata_username")
+}
+
+model solution_evaluations {
+  id                String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userid            Int
+  class             String?  @db.VarChar(100)
+  board             String?  @db.VarChar(100)
+  subject           String   @db.VarChar(50)
+  chapter_id        Int?
+  chapter_title     String?  @db.VarChar(255)
+  chapter_number    String?  @db.VarChar(50)
+  pdffileurl        String?  @db.VarChar(500)
+  status            String   @default("PENDING")
+  problem_text_ref  String?  @db.VarChar(500)
+  problem_image_url String?
+  student_work_url  String
+  feedback_json     Json?
+  pipeline_steps    Json?
+  current_step      String?  @db.VarChar(100)
+  created_at        DateTime @default(now()) @db.Timestamptz(6)
+  updated_at        DateTime @default(now()) @db.Timestamptz(6)
+  userprofiledata   userprofiledata @relation(fields: [userid], references: [userid], onDelete: NoAction, onUpdate: NoAction)
+
+  @@index([userid], map: "ix_evaluations_student_userid")
+  @@index([status], map: "ix_evaluations_student_status")
+  @@index([userid, status], map: "ix_evaluations_student_userid_status")
+}
+
+// ============================================================
+// JEE Ascent — M1d new models
+// Added: 2026-03-21
+// Do NOT edit existing models above this line.
+//
+// FK strategy for references to pre-existing tables
+// (chapterdata, userprofiledata): declared as plain Int fields
+// without @relation to avoid touching existing models.
+// DB-level FK constraints are enforced by the SQL migration.
+// ============================================================
+
+// exam_papers and exam_answer_keys were created by
+// JEEMainDownloadScripts.sql (Python-managed tables).
+// Models added here to support Prisma FK relations from JEE Ascent tables.
+
+model exam_papers {
+  id                  Int                    @id @default(autoincrement())
+  examname            String?                @db.VarChar(255)
+  papername           String?                @db.VarChar(500)
+  year                Int?
+  dateofexam          DateTime?              @db.Date
+  shift               String?                @db.VarChar(50)
+  filename            String?                @db.VarChar(500)
+  blob_url            String?                @db.VarChar(500)
+  paper_format        String?                @db.VarChar(50)
+  extraction_status   String?                @db.VarChar(20)
+  jee_question_bank   jee_question_bank[]
+  jee_question_papers jee_question_papers?
+}
+
+model exam_answer_keys {
+  id                  Int                   @id @default(autoincrement())
+  title               String?               @db.VarChar(500)
+  year                Int?
+  session             String?               @db.VarChar(50)
+  key_type            String?               @db.VarChar(20)
+  blob_url            String?               @db.VarChar(500)
+  filename            String?               @db.VarChar(500)
+  extraction_status   String?               @db.VarChar(20)
+  jee_answer_mappings jee_answer_mappings[]
+}
+
+model ncert_concept_hierarchy {
+  id                       Int                       @id @default(autoincrement())
+  chapter_id               Int?                      // FK to chapterdata(chapterid) — DB constraint in SQL migration
+  parent_id                Int?
+  concept_title            String
+  description              String?
+  key_formulas             String?
+  embedding_text           String?
+  ncert_solved_example     String?
+  content_type             String?
+  path                     Unsupported("ltree")?
+  figure_url               String?
+  chunk_text               String?
+  chunk_index              Int?
+  class                    Int?
+  subject                  String?
+  tsv_content              Unsupported("tsvector")?
+  created_at               DateTime                  @default(now()) @db.Timestamptz(6)
+  parent                   ncert_concept_hierarchy?  @relation("ConceptParent", fields: [parent_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  children                 ncert_concept_hierarchy[] @relation("ConceptParent")
+  ncert_concept_embeddings ncert_concept_embeddings?
+  jee_question_tags        jee_question_tags[]
+
+  @@index([chapter_id], map: "idx_ncert_concept_chapter")
+  @@index([class, subject], map: "idx_ncert_concept_class_subject")
+}
+
+model ncert_concept_embeddings {
+  id                      Int                       @id @default(autoincrement())
+  concept_id              Int?                      @unique
+  embedding               Unsupported("vector(768)")?
+  created_at              DateTime                  @default(now()) @db.Timestamptz(6)
+  ncert_concept_hierarchy ncert_concept_hierarchy?  @relation(fields: [concept_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model jee_answer_mappings {
+  nta_question_id   String            @id
+  correct_option_id String?
+  source_key_id     Int?
+  created_at        DateTime          @default(now()) @db.Timestamptz(6)
+  exam_answer_keys  exam_answer_keys? @relation(fields: [source_key_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model jee_question_bank {
+  id                      Int                      @id @default(autoincrement())
+  nta_question_id         String?
+  exam_paper_id           Int?
+  year                    Int?
+  dateofexam              DateTime?                @db.Date
+  shift                   String?
+  subject                 String?
+  section                 String?
+  tier                    Int?                     @default(3)
+  question_content        Json?
+  answer_key              String?
+  solution                Json?
+  difficulty              String?
+  difficulty_confidence   Float?
+  pattern_label           String?
+  is_generated            Boolean                  @default(false)
+  review_status           String?                  @default("APPROVED")
+  source                  String?                  @default("NTA_EXTRACTED")
+  created_at              DateTime                 @default(now()) @db.Timestamptz(6)
+  exam_papers             exam_papers?             @relation(fields: [exam_paper_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  jee_question_tags       jee_question_tags[]
+  jee_question_embeddings jee_question_embeddings?
+  user_accent_attempts    user_accent_attempts[]
+  ncert_jee_similarity    ncert_jee_similarity[]
+
+  @@index([subject], map: "idx_jee_qbank_subject")
+  @@index([year], map: "idx_jee_qbank_year")
+  @@index([tier], map: "idx_jee_qbank_tier")
+  @@index([nta_question_id], map: "idx_jee_qbank_nta_id")
+  @@index([exam_paper_id], map: "idx_jee_qbank_paper")
+}
+
+model jee_question_papers {
+  id              Int          @id @default(autoincrement())
+  exam_paper_id   Int?         @unique
+  year            Int?
+  session         String?
+  shift           String?
+  subject_counts  Json?
+  total_questions Int?
+  paper_format    String?
+  created_at      DateTime     @default(now()) @db.Timestamptz(6)
+  exam_papers     exam_papers? @relation(fields: [exam_paper_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model jee_question_tags {
+  id                      Int                       @id @default(autoincrement())
+  question_id             Int?
+  concept_id              Int?
+  similarity_score        Float?
+  created_at              DateTime                  @default(now()) @db.Timestamptz(6)
+  jee_question_bank       jee_question_bank?        @relation(fields: [question_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  ncert_concept_hierarchy ncert_concept_hierarchy?  @relation(fields: [concept_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@unique([question_id, concept_id])
+  @@index([question_id], map: "idx_jee_qtags_question")
+  @@index([concept_id], map: "idx_jee_qtags_concept")
+}
+
+model jee_question_embeddings {
+  id                Int               @id @default(autoincrement())
+  question_id       Int?              @unique
+  embedding         Unsupported("vector(768)")?
+  embed_text        String?
+  created_at        DateTime          @default(now()) @db.Timestamptz(6)
+  jee_question_bank jee_question_bank? @relation(fields: [question_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model user_accent_progress {
+  id                  Int       @id @default(autoincrement())
+  user_id             Int?      // FK to userprofiledata(userid) — DB constraint in SQL migration
+  chapter_id          Int?      // FK to chapterdata(chapterid) — DB constraint in SQL migration
+  current_tier        Int?      @default(2)
+  confidence          Float?    @default(0)
+  questions_attempted Int?      @default(0)
+  skip_rate           Float?    @default(0)
+  avg_time_factor     Float?    @default(0)
+  tier_unlocked_at    DateTime? @db.Timestamptz(6)
+  created_at          DateTime  @default(now()) @db.Timestamptz(6)
+  updated_at          DateTime  @default(now()) @db.Timestamptz(6)
+
+  @@unique([user_id, chapter_id])
+  @@index([user_id], map: "idx_user_accent_progress_user")
+}
+
+model user_accent_attempts {
+  id                 Int               @id @default(autoincrement())
+  user_id            Int?              // FK to userprofiledata(userid) — DB constraint in SQL migration
+  question_id        Int?
+  chapter_id         Int?              // FK to chapterdata(chapterid) — DB constraint in SQL migration
+  tier               Int?
+  time_spent_seconds Int?
+  was_skipped        Boolean           @default(false)
+  was_correct        Boolean?
+  attempted_at       DateTime          @default(now()) @db.Timestamptz(6)
+  created_at         DateTime          @default(now()) @db.Timestamptz(6)
+  jee_question_bank  jee_question_bank? @relation(fields: [question_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@index([user_id], map: "idx_user_accent_attempts_user")
+  @@index([question_id], map: "idx_user_accent_attempts_question")
+}
+
+model ncert_jee_similarity {
+  id                Int                @id @default(autoincrement())
+  ncert_question_id Int?
+  jee_question_id   Int?
+  similarity_score  Float?
+  created_at        DateTime           @default(now()) @db.Timestamptz(6)
+  questiondata      questiondata?      @relation(fields: [ncert_question_id], references: [questionid])
+  jee_question_bank jee_question_bank? @relation(fields: [jee_question_id], references: [id])
+
+  @@unique([ncert_question_id, jee_question_id])
+  @@index([ncert_question_id])
+  @@index([jee_question_id])
 }

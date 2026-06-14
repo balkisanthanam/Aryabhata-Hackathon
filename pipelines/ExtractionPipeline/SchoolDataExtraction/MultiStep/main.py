@@ -50,6 +50,7 @@ def run_stage2_solver(
     prompt_template_path: Optional[Path] = None,
     output_dir: Optional[Path] = None,
     use_cache: bool = True,
+    use_smart_context: bool = False,
     config: Optional[PipelineConfig] = None,
     batch_size: int = 5,
 ) -> SolverResponse:
@@ -148,7 +149,7 @@ def run_stage2_solver(
                     chapter_name=chapter_name,
                 )
                 
-                batch_response = engine.solve(batch_request, filled_prompt, use_cache=use_cache)
+                batch_response = engine.solve(batch_request, filled_prompt, use_cache=use_cache, use_smart_context=use_smart_context)
                 
                 all_solutions.extend(batch_response.solutions)
                 all_raw_responses.append(f"\n\n# === BATCH {batch_num} ({', '.join(batch_questions)}) ===\n\n{batch_response.raw_response}")
@@ -178,7 +179,7 @@ def run_stage2_solver(
             logger.info(f"All batches complete: {len(all_solutions)} total solutions in {total_time:.2f}s")
         else:
             # Single request (no batching needed)
-            response = engine.solve(request, filled_prompt, use_cache=use_cache)
+            response = engine.solve(request, filled_prompt, use_cache=use_cache, use_smart_context=use_smart_context)
         
         # Save results
         output_path = engine.save_response(response)
@@ -548,10 +549,51 @@ Examples:
     )
     
     parser.add_argument(
+        "--use-smart-context",
+        action="store_true",
+        help="[Stage 2/3] Use localized vector context & critique loop instead of Full PDF"
+    )
+    
+    parser.add_argument(
         "--batch-size",
         type=int,
         default=5,
         help="[Stage 2/3] Number of questions per batch (default: 5). Set to 0 to disable batching."
+    )
+
+    parser.add_argument(
+        "--max-workers",
+        type=int,
+        default=2,
+        help="[Stage 3] Max parallel workers for Stage 2 batches (default: 2). Use 1 to disable parallelism."
+    )
+
+    parser.add_argument(
+        "--batch-delay-seconds",
+        type=float,
+        default=15.0,
+        help="[Stage 3] Cool-down after each successful Stage 2 batch (default: 15s)."
+    )
+
+    parser.add_argument(
+        "--quota-cooldown-seconds",
+        type=float,
+        default=90.0,
+        help="[Stage 3] Minimum cool-down after 429 rate-limit responses (default: 90s)."
+    )
+
+    parser.add_argument(
+        "--cancel-cooldown-seconds",
+        type=float,
+        default=45.0,
+        help="[Stage 3] Minimum cool-down after 499 cancellation responses (default: 45s)."
+    )
+
+    parser.add_argument(
+        "--api-timeout-seconds",
+        type=int,
+        default=600,
+        help="[Stage 3] Timeout per model API call in seconds (default: 600)."
     )
     
     # Stage 3 (E2E Pipeline) specific
@@ -682,6 +724,7 @@ Examples:
                 else:
                     print("✓ Database cleanup complete:")
                 
+                print(f"  UserExerciseData rows: {result.get('user_exercise_deleted', 0)}")
                 print(f"  Exercises: {result['exercises_deleted']}")
                 print(f"  Questions: {result['questions_deleted']}")
                 print("  ChapterData: NOT touched")
@@ -915,6 +958,7 @@ Examples:
                 prompt_template_path=prompt_path,
                 output_dir=output_dir,
                 use_cache=not args.no_cache,
+                use_smart_context=args.use_smart_context,
                 batch_size=args.batch_size,
             )
             
@@ -954,13 +998,24 @@ Examples:
         print(f"Mode: {'Local Only' if args.local_only else 'Full (DB + Blob)'}")
         print(f"Force Rerun: {args.force_rerun}")
         print(f"Skip Solutions: {args.skip_solutions}")
+        print(f"Max Workers: {args.max_workers}")
+        print(f"Batch Delay: {args.batch_delay_seconds}s")
+        print(f"Quota Cooldown: {args.quota_cooldown_seconds}s")
+        print(f"Cancel Cooldown: {args.cancel_cooldown_seconds}s")
+        print(f"API Timeout: {args.api_timeout_seconds}s")
         print(f"Managed Identity: {'No' if args.no_managed_identity else 'Yes'}")
         print("="*60 + "\n")
         
         try:
             from e2e_pipeline import E2EPipeline
+            config = PipelineConfig.from_env()
+            config.batch_delay_seconds = args.batch_delay_seconds
+            config.quota_cooldown_seconds = args.quota_cooldown_seconds
+            config.cancellation_cooldown_seconds = args.cancel_cooldown_seconds
+            config.api_timeout_seconds = args.api_timeout_seconds
             
             pipeline = E2EPipeline(
+                config=config,
                 use_managed_identity=not args.no_managed_identity,
                 local_only=args.local_only
             )
@@ -974,7 +1029,9 @@ Examples:
                 output_dir=output_dir,
                 force_rerun=args.force_rerun,
                 skip_solutions=args.skip_solutions,
-                batch_size=args.batch_size
+                batch_size=args.batch_size,
+                max_workers=args.max_workers,
+                use_smart_context=args.use_smart_context,
             )
             
             # Print summary
@@ -995,6 +1052,19 @@ Examples:
             logger.error(f"E2E Pipeline failed: {e}")
             import traceback
             traceback.print_exc()
+            print("\n" + "="*60)
+            print("Pipeline Interrupted")
+            print("="*60)
+            print(f"  Error: {e}")
+            print(f"  Saved state: {output_dir / f'{pdf_path.stem}_pipeline_state.json'}")
+            print(f"  Saved solutions: {output_dir / f'{pdf_path.stem}_solutions.json'}")
+            print("  Next step: re-run the same command to resume from the last checkpoint")
+            print(
+                f"  Resume command: python main.py --stage 3 --pdf input/{pdf_path.name} "
+                f"--class {args.class_level} --subject \"{args.subject}\" "
+                f"--batch-size {args.batch_size} --max-workers {args.max_workers}"
+            )
+            print("="*60 + "\n")
             sys.exit(1)
 
 

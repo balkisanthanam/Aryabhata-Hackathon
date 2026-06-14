@@ -1,19 +1,24 @@
 """
 Debug test script - shows raw Gemini response without extraction
 """
-import requests
 import json
+import os
 from datetime import datetime
+
+import requests
 
 # Local function URL
 FUNCTION_URL = "http://localhost:7071/api/extract_image"
 
 # Test data
 test_payload = {
-    "pdf_blob_url": "https://<YOUR_STORAGE>.blob.core.windows.net/feedback/11/Maths/kemh108.pdf",
+    "pdf_blob_url": os.getenv("TEST_PDF_BLOB_URL", "<PDF_BLOB_URL>"),
     "exercise_name": "Exercise 8.1",
     "problem_number": "12"
 }
+
+if test_payload["pdf_blob_url"] == "<PDF_BLOB_URL>":
+    raise SystemExit("Set TEST_PDF_BLOB_URL before running this script.")
 
 print("=" * 70)
 print("DEBUG MODE: Testing OnDemand Image Extraction")

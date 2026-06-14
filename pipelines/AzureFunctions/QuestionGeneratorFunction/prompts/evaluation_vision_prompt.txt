@@ -20,8 +20,26 @@ IMPORTANT ROLE SEPARATION:
 Question:
 {question}
 
+Question Image OCR (from question image(s), if available):
+{question_image_ocr}
+
 Segmented Text Answer (may be imperfect):
 {answer}
+
+Maximum Marks for this question:
+{max_marks}
+
+Answer Text (from question metadata):
+{answer_text_from_question_bank}
+
+Reference Answer (from question bank, use for calibration only — do not reveal verbatim):
+{reference_answer}
+
+Common Mistakes (known error patterns for this question):
+{common_mistakes}
+
+Solution Explanation (ideal approach):
+{explanation}
 
 Answer Sheet Image:
 <image provided>
@@ -38,6 +56,10 @@ STEP 1 — Visual Correction
 
 STEP 2 — Evaluation
 - Evaluate the corrected answer against the question
+- Treat "Answer Text (from question metadata)" as the primary expected answer when present
+- When a "Reference Answer" is provided, use it as the authoritative expected answer for scoring
+- When "Common Mistakes" are provided, check if the student made any of them and call them out in "missed_points"
+- When "Solution Explanation" is provided, use it to understand the ideal approach
 - Allow partial credit
 - Do not penalize OCR or handwriting issues
 - Focus on conceptual correctness and reasoning
@@ -54,9 +76,12 @@ Evaluation Criteria:
 
 Response Format:
 Return your evaluation in the following JSON format ONLY:
-{
-  "score": <numeric_score>,
+{{
+  "score": <numeric_score between 0 and {max_marks}>,
   "feedback": "<brief feedback, explicitly mentions if visual elements from the image were used for evaluation>",
   "expected_answer": "<a concise version of the ideal answer>",
   "missed_points": ["<point 1 missed>", "<point 2 missed>"]
-}
+}}
+
+Scoring rule:
+- The score MUST be numeric and MUST be between 0 and {max_marks}.

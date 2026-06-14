@@ -6,7 +6,7 @@ This module provides Azure Blob Storage operations with:
 - Connection string fallback for local development
 - Upload images and return public URLs
 
-Storage Account: <YOUR_STORAGE_ACCOUNT>
+Storage Account: stevaluationstorage
 Container: onlineresources
 """
 
@@ -51,7 +51,7 @@ class BlobClient:
     """
     
     # Default configuration
-    DEFAULT_ACCOUNT = os.environ.get("AZURE_STORAGE_ACCOUNT", "<YOUR_STORAGE_ACCOUNT>")
+    DEFAULT_ACCOUNT = "stevaluationstorage"
     DEFAULT_CONTAINER = "onlineresources"
     
     def __init__(
@@ -112,6 +112,17 @@ class BlobClient:
             logger.error(f"Failed to connect to blob storage: {e}")
             raise
     
+    def download_blob(self, blob_path: str, local_path: str) -> bool:
+        try:
+            container_client = self._get_container_client()
+            blob_client = container_client.get_blob_client(blob_path)
+            with open(local_path, 'wb') as f:
+                f.write(blob_client.download_blob().readall())
+            return True
+        except Exception as e:
+            logger.error(f"Failed to download blob {blob_path}: {e}")
+            return False
+
     def upload_image(
         self,
         local_path: Path,
@@ -153,6 +164,17 @@ class BlobClient:
             logger.error(f"Failed to upload {local_path}: {e}")
             raise
     
+    def download_blob(self, blob_path: str, local_path: str) -> bool:
+        try:
+            container_client = self._get_container_client()
+            blob_client = container_client.get_blob_client(blob_path)
+            with open(local_path, 'wb') as f:
+                f.write(blob_client.download_blob().readall())
+            return True
+        except Exception as e:
+            logger.error(f"Failed to download blob {blob_path}: {e}")
+            return False
+
     def upload_images_batch(
         self,
         uploads: List[tuple],  # List of (local_path, blob_path) tuples
@@ -348,3 +370,4 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"Error: {e}")
         exit(1)
+

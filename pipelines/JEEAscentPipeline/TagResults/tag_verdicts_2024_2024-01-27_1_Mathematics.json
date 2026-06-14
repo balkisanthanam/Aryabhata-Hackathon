@@ -1,0 +1,283 @@
+{
+  "exported_at": "2026-04-07T08:37:01.593Z",
+  "filters": {
+    "year": "2024",
+    "date": "2024-01-27",
+    "shift": "1",
+    "subject": "Mathematics"
+  },
+  "summary": {
+    "total_pairs": 63,
+    "reviewed": 33,
+    "correct": 28,
+    "wrong": 3,
+    "can_be_better": 2,
+    "accuracy_pct": 84.8
+  },
+  "verdicts": [
+    {
+      "question_id": 209,
+      "nta_question_id": "533543378",
+      "concept_id": 2130,
+      "concept_title": "One-One (Injective) Function",
+      "similarity_score": 1,
+      "verdict": "correct"
+    },
+    {
+      "question_id": 209,
+      "nta_question_id": "533543378",
+      "concept_id": 2131,
+      "concept_title": "Onto (Surjective) Function",
+      "similarity_score": 1,
+      "verdict": "correct"
+    },
+    {
+      "question_id": 209,
+      "nta_question_id": "533543378",
+      "concept_id": 2105,
+      "concept_title": "Types of Functions",
+      "similarity_score": 0.8,
+      "verdict": "correct"
+    },
+    {
+      "question_id": 209,
+      "nta_question_id": "533543378",
+      "concept_id": 1873,
+      "concept_title": "Definition of Function",
+      "similarity_score": 0.6,
+      "verdict": "correct"
+    },
+    {
+      "question_id": 210,
+      "nta_question_id": "533543377",
+      "concept_id": 2141,
+      "concept_title": "Reflexive, Symmetric, and Transitive Relations",
+      "similarity_score": 1,
+      "verdict": "correct"
+    },
+    {
+      "question_id": 210,
+      "nta_question_id": "533543377",
+      "concept_id": 2106,
+      "concept_title": "Types of Relations",
+      "similarity_score": 0.9,
+      "verdict": "correct"
+    },
+    {
+      "question_id": 210,
+      "nta_question_id": "533543377",
+      "concept_id": 1657,
+      "concept_title": "Subsets",
+      "similarity_score": 0.7,
+      "verdict": "correct"
+    },
+    {
+      "question_id": 210,
+      "nta_question_id": "533543377",
+      "concept_id": 1884,
+      "concept_title": "Definition of Relation",
+      "similarity_score": 0.6,
+      "verdict": "correct"
+    },
+    {
+      "question_id": 211,
+      "nta_question_id": "533543379",
+      "concept_id": 1940,
+      "concept_title": "Complex Numbers and Quadratic Equations",
+      "similarity_score": 1,
+      "verdict": "correct"
+    },
+    {
+      "question_id": 211,
+      "nta_question_id": "533543379",
+      "concept_id": 1655,
+      "concept_title": "Finite and Infinite Sets",
+      "similarity_score": 0.6,
+      "verdict": "can_be_better"
+    },
+    {
+      "question_id": 212,
+      "nta_question_id": "533543380",
+      "concept_id": 2325,
+      "concept_title": "Example 12: Multiplying Two Matrices",
+      "similarity_score": 1,
+      "verdict": "correct"
+    },
+    {
+      "question_id": 212,
+      "nta_question_id": "533543380",
+      "concept_id": 2287,
+      "concept_title": "Invertible Matrices",
+      "similarity_score": 0.9,
+      "verdict": "correct"
+    },
+    {
+      "question_id": 212,
+      "nta_question_id": "533543380",
+      "concept_id": 1925,
+      "concept_title": "Example 14: Prove Tangent Product Identity",
+      "similarity_score": 0.8,
+      "verdict": "wrong"
+    },
+    {
+      "question_id": 212,
+      "nta_question_id": "533543380",
+      "concept_id": 2305,
+      "concept_title": "Properties of multiplication of matrices",
+      "similarity_score": 0.7,
+      "verdict": "wrong"
+    },
+    {
+      "question_id": 213,
+      "nta_question_id": "533543382",
+      "concept_id": 2036,
+      "concept_title": "Binomial theorem for any positive integer n",
+      "similarity_score": 1,
+      "verdict": "correct"
+    },
+    {
+      "question_id": 213,
+      "nta_question_id": "533543382",
+      "concept_id": 2026,
+      "concept_title": "Binomial Theorem",
+      "similarity_score": 0.7,
+      "verdict": "correct"
+    },
+    {
+      "question_id": 214,
+      "nta_question_id": "533543383",
+      "concept_id": 2038,
+      "concept_title": "Sequences and Series",
+      "similarity_score": 1,
+      "verdict": "correct"
+    },
+    {
+      "question_id": 214,
+      "nta_question_id": "533543383",
+      "concept_id": 2040,
+      "concept_title": "Sequences",
+      "similarity_score": 0.7,
+      "verdict": "correct"
+    },
+    {
+      "question_id": 214,
+      "nta_question_id": "533543383",
+      "concept_id": 1655,
+      "concept_title": "Finite and Infinite Sets",
+      "similarity_score": 0.5,
+      "verdict": "wrong"
+    },
+    {
+      "question_id": 215,
+      "nta_question_id": "533543385",
+      "concept_id": 1769,
+      "concept_title": "Derivative of polynomials and trigonometric functions",
+      "similarity_score": 0.9,
+      "verdict": "correct"
+    },
+    {
+      "question_id": 215,
+      "nta_question_id": "533543385",
+      "concept_id": 2378,
+      "concept_title": "Continuity",
+      "similarity_score": 0.7,
+      "verdict": "correct"
+    },
+    {
+      "question_id": 217,
+      "nta_question_id": "533543387",
+      "concept_id": 2507,
+      "concept_title": "Definite Integral",
+      "similarity_score": 1,
+      "verdict": "correct"
+    },
+    {
+      "question_id": 217,
+      "nta_question_id": "533543387",
+      "concept_id": 2503,
+      "concept_title": "Methods of Integration",
+      "similarity_score": 0.9,
+      "verdict": "correct"
+    },
+    {
+      "question_id": 218,
+      "nta_question_id": "533543384",
+      "concept_id": 2386,
+      "concept_title": "Continuity at a Point",
+      "similarity_score": 1,
+      "verdict": "correct"
+    },
+    {
+      "question_id": 218,
+      "nta_question_id": "533543384",
+      "concept_id": 1901,
+      "concept_title": "Greatest Integer Function",
+      "similarity_score": 0.9,
+      "verdict": "correct"
+    },
+    {
+      "question_id": 218,
+      "nta_question_id": "533543384",
+      "concept_id": 2396,
+      "concept_title": "Example 3: Continuity of the Modulus Function",
+      "similarity_score": 0.8,
+      "verdict": "correct"
+    },
+    {
+      "question_id": 218,
+      "nta_question_id": "533543384",
+      "concept_id": 2378,
+      "concept_title": "Continuity",
+      "similarity_score": 0.7,
+      "verdict": "correct"
+    },
+    {
+      "question_id": 219,
+      "nta_question_id": "533543386",
+      "concept_id": 2470,
+      "concept_title": "Example 23: Shortest Distance to a Parabola",
+      "similarity_score": 1,
+      "verdict": "correct"
+    },
+    {
+      "question_id": 219,
+      "nta_question_id": "533543386",
+      "concept_id": 1712,
+      "concept_title": "Example 3: Finding centre and radius from expanded equation",
+      "similarity_score": 0.9,
+      "verdict": "correct"
+    },
+    {
+      "question_id": 219,
+      "nta_question_id": "533543386",
+      "concept_id": 1714,
+      "concept_title": "Standard equations of parabola",
+      "similarity_score": 0.8,
+      "verdict": "correct"
+    },
+    {
+      "question_id": 219,
+      "nta_question_id": "533543386",
+      "concept_id": 1703,
+      "concept_title": "Circle",
+      "similarity_score": 0.7,
+      "verdict": "correct"
+    },
+    {
+      "question_id": 220,
+      "nta_question_id": "533543390",
+      "concept_id": 1703,
+      "concept_title": "Circle",
+      "similarity_score": 0.9,
+      "verdict": "correct"
+    },
+    {
+      "question_id": 220,
+      "nta_question_id": "533543390",
+      "concept_id": 1711,
+      "concept_title": "Example 2: Equation of a circle with given centre and radius",
+      "similarity_score": 0.8,
+      "verdict": "can_be_better"
+    }
+  ]
+}

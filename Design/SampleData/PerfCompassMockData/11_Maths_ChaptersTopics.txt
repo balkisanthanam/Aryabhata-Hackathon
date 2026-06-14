@@ -1,0 +1,91 @@
+### **Chapter 1: Sets**
+*   **Sets and their Representations:** Definition of a set, Roster (tabular) form, and Set-builder form.
+*   **The Empty Set:** Definition of the null/void set.
+*   **Finite and Infinite Sets:** Distinction between sets with definite and indefinite numbers of elements.
+*   **Equal Sets:** Definition of equality between sets.
+*   **Subsets:** Definition of subsets, Proper subsets, Intervals as subsets of Real numbers (Open, Closed).
+*   **Universal Set:** Concept of the basic set relevant to a context.
+*   **Venn Diagrams:** Pictorial representation of relationships between sets.
+*   **Operations on Sets:** Union of sets, Intersection of sets, Difference of sets.
+*   **Complement of a Set:** Definition and properties (De Morgan’s laws).
+
+### **Chapter 2: Relations and Functions**
+*   **Cartesian Products of Sets:** Ordered pairs and definition of Cartesian product.
+*   **Relations:** Definition, Domain, Codomain, and Range.
+*   **Functions:** Definition as a special type of relation, Images, and Preimages.
+*   **Some Functions and their Graphs:** Identity, Constant, Polynomial, Rational, Modulus, Signum, and Greatest integer functions.
+*   **Algebra of Real Functions:** Addition, Subtraction, Multiplication by a scalar, Multiplication of two real functions, and Quotient.
+
+### **Chapter 3: Trigonometric Functions**
+*   **Angles:** Degree measure, Radian measure, and the relation between them.
+*   **Trigonometric Functions:** Definition based on a unit circle, Sign of trigonometric functions in different quadrants, Domain and Range.
+*   **Trigonometric Functions of Sum and Difference of Two Angles:** Identities for $\cos(x \pm y)$, $\sin(x \pm y)$, $\tan(x \pm y)$, $\cot(x \pm y)$.
+*   **Multiple Angle Identities:** Formulas for $2x$ and $3x$ (e.g., $\cos 2x$, $\sin 3x$).
+*   **Sum to Product and Product to Sum Identities:** Formulas converting sums of sines/cosines into products and vice versa.
+
+### **Chapter 4: Complex Numbers and Quadratic Equations**
+*   **Complex Numbers:** Definition ($a + ib$), Real and Imaginary parts.
+*   **Algebra of Complex Numbers:** Addition, Difference, Multiplication, and Division.
+*   **Power of $i$:** Properties of $i$ and square roots of negative real numbers.
+*   **The Modulus and the Conjugate:** Definitions and properties.
+*   **Argand Plane and Polar Representation:** Geometric representation of complex numbers.
+
+### **Chapter 5: Linear Inequalities**
+*   **Inequalities:** Definition and examples of numerical and literal inequalities.
+*   **Algebraic Solutions of Linear Inequalities in One Variable:** Rules for solving inequalities and graphical representation on a number line.
+
+### **Chapter 6: Permutations and Combinations**
+*   **Fundamental Principle of Counting:** Multiplication principle for events occurring in succession.
+*   **Permutations:** Arrangement of distinct objects, Factorial notation ($n!$), Formula $nPr$, Permutations when all objects are not distinct.
+*   **Combinations:** Selection of objects, Formula $nCr$, Relationship between Permutations and Combinations ($nP_r = nC_r \times r!$).
+
+### **Chapter 7: Binomial Theorem**
+*   **Binomial Theorem for Positive Integral Indices:** Expansion formula involving combinations, Pascal’s triangle.
+*   **General and Middle Terms:** Observations regarding the number of terms and indices.
+
+### **Chapter 8: Sequences and Series**
+*   **Sequences:** Definition, Finite and Infinite sequences.
+*   **Series:** Notation using sigma ($\sum$).
+*   **Geometric Progression (G.P.):** General term, Sum to $n$ terms, Geometric Mean (G.M.).
+*   **Relationship Between A.M. and G.M.:** Arithmetic Mean $\ge$ Geometric Mean.
+*   **Infinite G.P. and its Sum:** Formula for the sum to infinity.
+
+### **Chapter 9: Straight Lines**
+*   **Slope of a Line:** Calculation from coordinates, Conditions for parallelism and perpendicularity, Angle between two lines.
+*   **Various Forms of the Equation of a Line:** Horizontal/Vertical, Point-slope, Two-point, Slope-intercept, Intercept form.
+*   **Distance of a Point From a Line:** Perpendicular distance formula.
+*   **Distance between two parallel lines:** Formula.
+
+### **Chapter 10: Conic Sections**
+*   **Sections of a Cone:** Geometric generation of Circle, Ellipse, Parabola, and Hyperbola.
+*   **Circle:** Standard equation given centre and radius.
+*   **Parabola:** Standard equations, Focus, Directrix, Axis, Vertex, Latus rectum.
+*   **Ellipse:** Standard equations, Foci, Major/Minor axes, Vertices, Eccentricity, Latus rectum.
+*   **Hyperbola:** Standard equations, Foci, Transverse/Conjugate axes, Eccentricity, Latus rectum.
+
+### **Chapter 11: Introduction to Three Dimensional Geometry**
+*   **Coordinate Axes and Planes:** $x, y, z$ axes and coordinate planes, Octants.
+*   **Coordinates of a Point in Space:** Representation as a triplet $(x, y, z)$.
+*   **Distance between Two Points:** Distance formula in 3D.
+
+### **Chapter 12: Limits and Derivatives**
+*   **Intuitive Idea of Derivatives:** Concept of rate of change and tangent slopes.
+*   **Limits:** Left hand and Right hand limits, Existence of limit.
+*   **Algebra of Limits:** Sum, Difference, Product, and Quotient of limits.
+*   **Limits of Polynomials and Rational Functions:** Evaluation methods.
+*   **Limits of Trigonometric Functions:** Sandwich Theorem and special limits like $\lim_{x\to 0} (\sin x / x) = 1$.
+*   **Derivatives:** Definition (First Principle), Algebra of derivatives (Product Rule, Quotient Rule), Derivatives of polynomials and trigonometric functions.
+*   **Limits Involving Exponential and Logarithmic Functions:** Introduction to $e$ and logarithmic limits.
+
+### **Chapter 13: Statistics**
+*   **Measures of Dispersion:** Need for dispersion beyond central tendency.
+*   **Range:** Maximum value minus minimum value.
+*   **Mean Deviation:** For ungrouped data and grouped data (Discrete/Continuous frequency distribution) about Mean and Median.
+*   **Variance and Standard Deviation:** Calculation for ungrouped and grouped data.
+*   **Shortcut Method:** Step-deviation method for Variance and Standard Deviation.
+
+### **Chapter 14: Probability**
+*   **Event:** Occurrence, Types (Impossible, Sure, Simple, Compound).
+*   **Algebra of Events:** Complementary event ('not A'), 'A or B', 'A and B', Mutually exclusive events, Exhaustive events.
+*   **Axiomatic Approach to Probability:** Axioms, Probability of an event, Probabilities of equally likely outcomes.
+*   **Addition Theorems:** Probability of 'A or B' ($P(A \cup B)$) and 'not A'.

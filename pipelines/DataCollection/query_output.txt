@@ -1,0 +1,43 @@
++ Using Entra ID token
+
+--- chapterdata ---
+(1, 'Maths', '11', '1', 'Sets')
+(2, 'Maths', '11', '2', 'Relations and Functions')
+(3, 'Maths', '11', '3', 'Trigonometric Functions')
+(4, 'Maths', '11', '4', 'Complex Numbers and Quadratic Equations')
+(5, 'Maths', '11', '5', 'Linear Inequalities')
+
+--- exercisedata ---
+(28, 30, 'EXERCISES')
+(29, 31, 'EXERCISES')
+(30, 32, 'EXERCISES')
+(31, 29, 'EXERCISES')
+(32, 34, 'EXERCISES')
+
+--- ncert_concept_hierarchy ---
+(2575, 'Electrolytic Cells and Electrolysis', 52)
+(2576, 'Conductivity of Selected Materials at 298.15 K', 52)
+(2577, 'Worked Example 2.10', 52)
+(2578, 'Products of Electrolysis', 52)
+(2579, 'Standard Electrode Potentials at 298 K', 52)
+
+--- jee_question_bank ---
+(96, 'Chemistry', 2024, 3, 'NTA_EXTRACTED')
+(97, 'Chemistry', 2024, 3, 'NTA_EXTRACTED')
+(98, 'Chemistry', 2024, 3, 'NTA_EXTRACTED')
+(238, 'Physics', 2024, 3, 'NTA_EXTRACTED')
+(240, 'Physics', 2024, 3, 'NTA_EXTRACTED')
+
+--- exam_papers ---
+(6, 2024, '2', None, 'PENDING')
+(7, 2024, '1', None, 'PENDING')
+(8, 2024, '1', None, 'PENDING')
+(9, 2024, '2', None, 'PENDING')
+(3, 2024, '2', None, 'EXTRACTED')
+
+--- exam_answer_keys ---
+(3, 'Subject (English) – Display of Provisional Answer Keys and Question Paper with Recorded Responses for Answer Key Challenge for Joint Entrance Examination (Main) – 2022 Session 2 (July 2022)', 2022, 'Session 2')
+(4, 'PUBLIC NOTICE 03 July 2022 Sub: Extension for Duration of Display of Provisional Answer Keys and Question Paper with Recorded Responses for Answer Key Challenge for JEE (Main) – 2022 Session 1 – Reg.', 2022, 'Session 1')
+(10, 'NATIONAL TESTING AGENCY JEE (Main) MARCH – 2021 FINAL ANSWER KEY AS ON 23.03.2021', 2021, 'All')
+(7, 'JEE (Main) FEB – 2021 FINAL ANSWER KEY', 2021, 'FEB')
+(15, 'Final Answer Keys for Paper 1 (B.E./B.Tech.) of the JEE (Main) - 2024 Session 1 held on 27, 29, 30, 31 January 2024 and 01 February 2024', 2024, 'Session 1')

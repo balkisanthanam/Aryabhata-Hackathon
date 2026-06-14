@@ -1,0 +1,79 @@
+**Chapter 1: Relations and Functions**,
+*   **Types of Relations:** Empty, Universal, Reflexive, Symmetric, Transitive, and Equivalence relations,,.
+*   **Types of Functions:** One-one (Injective), Onto (Surjective), and Bijective functions,,,.
+*   **Composition of Functions and Invertible Function:** Concepts of composite functions and conditions for a function to be invertible,,.
+
+**Chapter 2: Inverse Trigonometric Functions**,
+*   **Basic Concepts:** Restrictions on domains and ranges to ensure existence of inverses,.
+*   **Principal Value Branches:** Domain and range (principal value branches) for sine, cosine, cosecant, secant, tangent, and cotangent inverses,.
+*   **Properties of Inverse Trigonometric Functions:** Elementary properties and graphical representations,.
+
+**Chapter 3: Matrices**,
+*   **Matrix:** Definition, order of a matrix, and equality of matrices,,.
+*   **Types of Matrices:** Column, Row, Square, Diagonal, Scalar, Identity, and Zero matrices,,,,,.
+*   **Operations on Matrices:** Addition, multiplication by a scalar, difference, and multiplication of matrices,,.
+*   **Transpose of a Matrix:** Definition and properties,.
+*   **Symmetric and Skew Symmetric Matrices:** Definitions and properties,,.
+*   **Invertible Matrices:** Concept of inverse matrices,.
+
+**Chapter 4: Determinants**,
+*   **Determinant:** Definition and expansion along rows or columns,,.
+*   **Area of a Triangle:** Using determinants to find the area,.
+*   **Minors and Cofactors:** Definitions and expansion using cofactors,,.
+*   **Adjoint and Inverse of a Matrix:** Definition of adjoint and conditions for existence of an inverse,,.
+*   **Applications of Determinants and Matrices:** Consistency of systems of linear equations and solving them using the inverse of a matrix,.
+
+**Chapter 5: Continuity and Differentiability**,
+*   **Continuity:** Definition and algebra of continuous functions,,.
+*   **Differentiability:** Concept of derivatives and standard rules (product, quotient, chain rule),,.
+*   **Exponential and Logarithmic Functions:** Definitions and derivatives,,,.
+*   **Logarithmic Differentiation:** Techniques for differentiating complex functions using logarithms,.
+*   **Derivatives of Functions in Parametric Forms:** Differentiation when variables are linked by a third variable,.
+*   **Second Order Derivative:** Finding the derivative of a derivative,.
+
+**Chapter 6: Application of Derivatives**,
+*   **Rate of Change of Quantities:** Determining how one quantity changes with respect to another,,.
+*   **Increasing and Decreasing Functions:** Using derivatives to determine intervals of increase or decrease,,.
+*   **Maxima and Minima:** Finding local and absolute maximum and minimum values and turning points,,.
+
+**Chapter 7: Integrals**
+*   **Integration as an Inverse Process of Differentiation:** Introduction to finding functions given their derivatives.
+*   **Methods of Integration:** Techniques including integration by substitution, integration using trigonometric identities, integration by partial fractions, and integration by parts.
+*   **Integrals of Some Particular Functions:** Standard formulae for specific types of integrals.
+*   **Definite Integral:** Introduction to definite integrals and their properties.
+*   **Fundamental Theorem of Calculus:** The connection between indefinite and definite integrals, including the area function.
+*   **Evaluation of Definite Integrals by Substitution:** Methods to evaluate definite integrals by changing variables.
+
+**Chapter 8: Application of Integrals**
+*   **Area under Simple Curves:** Finding the area bounded by curves, lines, and axes using definite integrals.
+
+**Chapter 9: Differential Equations**
+*   **Basic Concepts:** Understanding the order and degree of differential equations.
+*   **General and Particular Solutions:** Distinguishing between solutions with arbitrary constants (general) and those with specific values (particular).
+*   **Methods of Solving First Order, First Degree Differential Equations:**
+    *   Differential equations with variables separable.
+    *   Homogeneous differential equations.
+    *   Linear differential equations.
+
+**Chapter 10: Vector Algebra**
+*   **Some Basic Concepts:** Definition of scalars, vectors, magnitude, and direction.
+*   **Types of Vectors:** Zero vector, unit vector, coinitial vectors, collinear vectors, and equal vectors.
+*   **Addition of Vectors:** Geometric and algebraic properties of adding vectors.
+*   **Multiplication of a Vector by a Scalar:** Components of vectors, position vectors, and section formulas.
+*   **Product of Two Vectors:** Scalar (dot) product and vector (cross) product.
+
+**Chapter 11: Three Dimensional Geometry**
+*   **Direction Cosines and Direction Ratios of a Line:** Defining the orientation of a line in space.
+*   **Equation of a Line in Space:** Vector and Cartesian equations of lines.
+*   **Angle between Two Lines:** Calculating the angle between intersecting lines.
+*   **Shortest Distance between Two Lines:** Finding the distance between skew and parallel lines.
+
+**Chapter 12: Linear Programming**
+*   **Linear Programming Problem and its Mathematical Formulation:** Formulating real-life optimization problems mathematically.
+*   **Graphical method of solving linear programming problems:** Using graphs to find the optimal solution within a feasible region (Corner Point Method).
+
+**Chapter 13: Probability**
+*   **Conditional Probability:** Probability of an event occurring given that another event has already occurred.
+*   **Multiplication Theorem on Probability:** Calculating the probability of simultaneous occurrence of events.
+*   **Independent Events:** Conditions under which the occurrence of one event does not affect another.
+*   **Bayes' Theorem:** Finding reverse probabilities based on conditional probability and partitions of sample space.

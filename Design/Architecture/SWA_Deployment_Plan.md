@@ -185,12 +185,12 @@ After SWA is created, add database credentials:
 
 | Name | Value |
 |------|-------|
-| `DB_USER` | `<YOUR_ENTRA_USER>@<YOUR_TENANT>.onmicrosoft.com` |
-| `DB_HOST` | `<YOUR_PG_SERVER>.postgres.database.azure.com` |
-| `DB_NAME` | `postgres` |
+| `DB_USER` | `<DB_USER>` |
+| `DB_HOST` | `<DB_HOST>` |
+| `DB_NAME` | `<DB_NAME>` |
 | `DB_PORT` | `5432` |
-| `AZURE_STORAGE_ACCOUNT_NAME` | `<YOUR_STORAGE_ACCOUNT>` |
-| `AZURE_STORAGE_KEY` | `<YOUR_STORAGE_KEY>` |
+| `AZURE_STORAGE_ACCOUNT_NAME` | `<AZURE_STORAGE_ACCOUNT_NAME>` |
+| `AZURE_STORAGE_KEY` | `<AZURE_STORAGE_KEY>` |
 
 Click **"Save"** after adding all variables.
 
@@ -203,7 +203,7 @@ Click **"Save"** after adding all variables.
 SWA managed functions use **outbound IPs** that change. Options:
 
 **Option A: Allow Azure Services (Recommended for testing)**
-1. Go to Azure Portal → `<YOUR_PG_SERVER>` PostgreSQL
+1. Go to Azure Portal → `<DB_SERVER_NAME>` PostgreSQL
 2. Click **"Networking"**
 3. Enable **"Allow public access from any Azure service within Azure to this server"**
 4. Click **Save**

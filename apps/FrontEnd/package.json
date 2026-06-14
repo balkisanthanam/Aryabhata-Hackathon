@@ -1,0 +1,43 @@
+{
+  "name": "aryabhata-frontend",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@azure/storage-blob": "^12.26.0",
+    "axios": "^1.13.2",
+    "buffer": "^6.0.3",
+    "clsx": "^2.1.1",
+    "events": "^3.3.0",
+    "framer-motion": "^11.5.4",
+    "katex": "^0.16.11",
+    "lucide-react": "^0.436.0",
+    "papaparse": "^5.4.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-markdown": "^9.0.1",
+    "react-router-dom": "^6.26.1",
+    "recharts": "^3.8.1",
+    "rehype-katex": "^7.0.1",
+    "tailwind-merge": "^2.5.2",
+    "zustand": "^4.5.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.4",
+    "@types/papaparse": "^5.3.14",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.45",
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5.5.3",
+    "vite": "^5.4.1"
+  }
+}

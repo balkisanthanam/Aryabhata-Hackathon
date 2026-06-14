@@ -3,3 +3,5 @@ requests>=2.31.0
 pathlib
 psycopg2-binary>=2.9.0
 python-dotenv>=1.0.0
+azure-storage-blob>=12.19.0
+azure-identity>=1.15.0

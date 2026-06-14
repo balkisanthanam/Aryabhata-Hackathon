@@ -1,4 +1,4 @@
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Navbar } from '../components/layout/Navbar';
 import { UnderConstruction } from '../components/common/UnderConstruction';
@@ -7,6 +7,7 @@ import { useUserStore } from '../store/useUserStore';
 
 export const PracticeDashboard = () => {
     const [searchParams, setSearchParams] = useSearchParams();
+    const navigate = useNavigate();
     const userClass = useUserStore(state => state.userClass);
     const userBoard = useUserStore(state => state.board);
 
@@ -214,7 +215,7 @@ export const PracticeDashboard = () => {
                                                         <span className="material-symbols-outlined text-lg">menu_book</span> NCERT Problems
                                                     </Link>
                                                     <button
-                                                        onClick={() => setShowAscentPopup(true)}
+                                                        onClick={() => navigate(`/accent/${chapter.id}`)}
                                                         className="flex items-center justify-center gap-2 px-3 py-2.5 rounded-lg bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-orange-50 hover:text-orange-600 dark:hover:bg-gray-700 transition-all text-sm font-bold font-sans border border-gray-200 dark:border-gray-700"
                                                     >
                                                         <span className="material-symbols-outlined text-lg">trending_up</span> JEE Ascent

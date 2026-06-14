@@ -17,28 +17,28 @@ export interface Chapter {
 }
 
 export const ChapterData: Chapter[] = [
-    { id: 15, class: 11, subject: "Physics", chapterNumber: 1, title: "Units and Measurement", pdfUrl: "https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Physics/keph101.pdf", board: "CBSE" },
-    { id: 16, class: 11, subject: "Physics", chapterNumber: 2, title: "Motion in a Straight Line", pdfUrl: "https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Physics/keph102.pdf", board: "CBSE" },
-    { id: 17, class: 11, subject: "Physics", chapterNumber: 3, title: "Motion in a Plane", pdfUrl: "https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Physics/keph103.pdf", board: "CBSE" },
-    { id: 18, class: 11, subject: "Physics", chapterNumber: 4, title: "Laws of Motion", pdfUrl: "https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Physics/keph104.pdf", board: "CBSE" },
-    { id: 19, class: 11, subject: "Physics", chapterNumber: 5, title: "Work, Energy and Power", pdfUrl: "https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Physics/keph105.pdf", board: "CBSE" },
-    { id: 20, class: 11, subject: "Physics", chapterNumber: 6, title: "Systems of Particles and Rotational Motion", pdfUrl: "https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Physics/keph106.pdf", board: "CBSE" },
-    { id: 21, class: 11, subject: "Physics", chapterNumber: 7, title: "Gravitation", pdfUrl: "https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Physics/keph107.pdf", board: "CBSE" },
-    { id: 22, class: 11, subject: "Physics", chapterNumber: 8, title: "Mechanical Properties of Solids", pdfUrl: "https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Physics/keph201.pdf", board: "CBSE" },
-    { id: 23, class: 11, subject: "Physics", chapterNumber: 9, title: "Mechanical Properties of Fluids", pdfUrl: "https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Physics/keph202.pdf", board: "CBSE" },
-    { id: 24, class: 11, subject: "Physics", chapterNumber: 10, title: "Thermal Properties of Matter", pdfUrl: "https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Physics/keph203.pdf", board: "CBSE" },
-    { id: 25, class: 11, subject: "Physics", chapterNumber: 11, title: "Thermodynamics", pdfUrl: "https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Physics/keph204.pdf", board: "CBSE" },
-    { id: 26, class: 11, subject: "Physics", chapterNumber: 12, title: "Kinetic Theory", pdfUrl: "https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Physics/keph205.pdf", board: "CBSE" },
-    { id: 27, class: 11, subject: "Physics", chapterNumber: 13, title: "Oscillations", pdfUrl: "https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Physics/keph206.pdf", board: "CBSE" },
-    { id: 28, class: 11, subject: "Physics", chapterNumber: 14, title: "Waves", pdfUrl: "https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Physics/keph207.pdf", board: "CBSE" },
+    { id: 15, class: 11, subject: "Physics", chapterNumber: 1, title: "Units and Measurement", pdfUrl: "https://kalidasa.blob.core.windows.net/Feedback/11/Physics/keph101.pdf", board: "CBSE" },
+    { id: 16, class: 11, subject: "Physics", chapterNumber: 2, title: "Motion in a Straight Line", pdfUrl: "https://kalidasa.blob.core.windows.net/Feedback/11/Physics/keph102.pdf", board: "CBSE" },
+    { id: 17, class: 11, subject: "Physics", chapterNumber: 3, title: "Motion in a Plane", pdfUrl: "https://kalidasa.blob.core.windows.net/Feedback/11/Physics/keph103.pdf", board: "CBSE" },
+    { id: 18, class: 11, subject: "Physics", chapterNumber: 4, title: "Laws of Motion", pdfUrl: "https://kalidasa.blob.core.windows.net/Feedback/11/Physics/keph104.pdf", board: "CBSE" },
+    { id: 19, class: 11, subject: "Physics", chapterNumber: 5, title: "Work, Energy and Power", pdfUrl: "https://kalidasa.blob.core.windows.net/Feedback/11/Physics/keph105.pdf", board: "CBSE" },
+    { id: 20, class: 11, subject: "Physics", chapterNumber: 6, title: "Systems of Particles and Rotational Motion", pdfUrl: "https://kalidasa.blob.core.windows.net/Feedback/11/Physics/keph106.pdf", board: "CBSE" },
+    { id: 21, class: 11, subject: "Physics", chapterNumber: 7, title: "Gravitation", pdfUrl: "https://kalidasa.blob.core.windows.net/Feedback/11/Physics/keph107.pdf", board: "CBSE" },
+    { id: 22, class: 11, subject: "Physics", chapterNumber: 8, title: "Mechanical Properties of Solids", pdfUrl: "https://kalidasa.blob.core.windows.net/Feedback/11/Physics/keph201.pdf", board: "CBSE" },
+    { id: 23, class: 11, subject: "Physics", chapterNumber: 9, title: "Mechanical Properties of Fluids", pdfUrl: "https://kalidasa.blob.core.windows.net/Feedback/11/Physics/keph202.pdf", board: "CBSE" },
+    { id: 24, class: 11, subject: "Physics", chapterNumber: 10, title: "Thermal Properties of Matter", pdfUrl: "https://kalidasa.blob.core.windows.net/Feedback/11/Physics/keph203.pdf", board: "CBSE" },
+    { id: 25, class: 11, subject: "Physics", chapterNumber: 11, title: "Thermodynamics", pdfUrl: "https://kalidasa.blob.core.windows.net/Feedback/11/Physics/keph204.pdf", board: "CBSE" },
+    { id: 26, class: 11, subject: "Physics", chapterNumber: 12, title: "Kinetic Theory", pdfUrl: "https://kalidasa.blob.core.windows.net/Feedback/11/Physics/keph205.pdf", board: "CBSE" },
+    { id: 27, class: 11, subject: "Physics", chapterNumber: 13, title: "Oscillations", pdfUrl: "https://kalidasa.blob.core.windows.net/Feedback/11/Physics/keph206.pdf", board: "CBSE" },
+    { id: 28, class: 11, subject: "Physics", chapterNumber: 14, title: "Waves", pdfUrl: "https://kalidasa.blob.core.windows.net/Feedback/11/Physics/keph207.pdf", board: "CBSE" },
 ];
 
 export const SampleQuestion = {
     "has_figure": true,
     "figure_info": [{
-        "url": "https://<YOUR_STORAGE>.blob.core.windows.net/onlineresources/questions/11/Physics/ch_11/figure_11_8.png",
+        "url": "https://stevaluationstorage.blob.core.windows.net/onlineresources/questions/11/Physics/ch_11/figure_11_8.png",
         "type": "GRAPH",
-        "local_path": "",
+        "local_path": "C:\\Bala\\Coding\\AryaBhatta\\pipelines\\ExtractionPipeline\\SchoolDataExtraction\\MultiStep\\Output\\cropped_images\\keph204\\q11_8_fig.png",
         "description": "A P-V diagram showing a thermodynamic cycle involving points D, E, and F."
     }],
     "page_number": 18,

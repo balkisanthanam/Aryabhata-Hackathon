@@ -1,0 +1,80 @@
+On your push back, here are my comments and question.
+4. If i understood your comment, the rich quality of the graphs (concept and problem) and ability to correctly pick the right nodes in the graph are key to providing the teacher level conceptual pivot experience. Am i right? If so yes
+5. Hmm yes. This was my big fear too. However i thought these philosophies would be applicable and win over a new student trying out in the 1st session itself:
+	a) Adapts to the pace & Knowledge of the student. A student needing explanation of a concept from book or citing an example from book can be done. Or if the student picks up, the teacher agent can give hints & take hands off to ask student to revert after doing. Or go slow outright, b) Strictly rooting the answer to CBSE and JEE syllabus (helps in conformance and style), c) Uses effective Follow ups to re-inforce or step-up
+	Wouldn't these give an impression of a Teacher who is trained to be a experienced JEE/CBSE teacher. While Gemini, ChatGPT or Claude can do a far erudite and elaborate job, they won't come across as a specialist. Sure we cannot be just a problem solver with optics. But won't these be a differentiator?
+6. Yes the personas were ideation stage ones. I need help in picking the right ones
+7. As teacher persona, i will pick these two:
+	a) My son goes to a Physics private Tuition with a Teacher (not with any institute like those in Kota, Allen etc.). She is a good NCERT + JEE + JEE Advanced techer. She doesn't dump problems. She teaches, makes students do problems of quality (not quantity), helps students understand and solve
+	b) My son also goes to Maths tuition with Ahaguru. They follow a similar philosophy of teaching and not cramming problems.
+	The difference we can get with our Teacher Agent is that it can be personal and elaborate, as tuitions and coaching have limitations.
+	I also feel this is a good topic for a deep research. Are you equipped in this Code CLI format to do Deep research? If not i can ask in the Claude app and/or Gemini to do deep research and share here.
+8. From your comment, it looks like we should not have free style diagrams as a V1 initiative. Sure drawing is cumbersome. We can push out drawing. But i have two use case doubts for human writing:
+	a) if say we have a picture and asking users to annotate if the need arises (say it is a triangle and we are asking users to identify which edge? Sure this we can ask users to type in. So optional
+	b) Let's say we the answer to a pop quiz on a formula is Sum(x^2 + ..) = dF(x)/dx etc. Isn't this better to be input by hand than asking the user to type in.
+	My point is free body diagram is a problem, but asking users to key
+9. Hey that's why i was proposing Agentic Harness - Graph, user memory, session memory and bulk of agents are predominantly software right? Model is the central piece engine. One of the reasons why i am pushing hard on the JEEAscent pipeline - you can check its progress, we are in the process of generating JEE Gold and next we will do NCERT Gold, towards creating a small solution engine with Gemini 3.1 Pro as a teacher. My objective is to get a model like Gemma 4, fine tuned to work at par on solution alone Vs Gemini 3.1 Pro. On Audio and OCR also create focused models only to solve what we want. The only big component that needs a GPU will be the Chat LLM - sure that's needed. But by reducing its scope to as optimal as possible, rest all are agent harness. Can't this be achieved? The price point i have roughly in mind is ₹120/month per student for say n solutions (we can set n to be something like 20). Above that they pay extra.
+10. I guess that was part of idea building with GPT. We can park.
+11. The reason i chose Teacher agent that helps on problem to start is this. Today there are so many brick-mortar solution to teach. Some are trying AI augmentation. But with all these quality teachers are still less. Beyond class teaching, students have doubts on problems and getting meaningful clarification, i thought is a gap. This is to start. Can we stick with this for long? I don't think so. We need to evolve to a proper Teacher agent. Who would be the audience for a teacher in a crowded Prep market in India. Even with this, India has a huge rural and less affording market. This needs more research surely. But we should evolve.
+	Also after problem 1, 2, we need to show real differentiation with memory. Is that possible? Need to chat and build real use cases.
+12. I wrote answer to a previous question without seeing this point. But we seem to be converging?
+13. Once we do functionality discussion, let's do a broad picture architecture discussion. In that the complexity will evolve. Let's have some timebound. Let's also articulate external needs (dependencies) like say Content. Based on that we can fix the MVP. I don't want to rush to development, without doing a thorough discussion to clarity on functionality and full design.
+	Also how feasible is it to do this only with Claude Max ;)? What's the team i need.
+
+----------------------------------------
+
+#4 Hey let me try to understand this problem. I maybe outright wrong in this. Please correct me i that case.
+	I thought Graph is another type of index, sure a more complex one. The index is through embedding, yes the graph might need n^2 comparisons to form a graph. But after that it is embedding or BM25 lookup.
+	How does the cost workout?
+	Let's elaborate this well, since this seems to be the key.
+
+#5 Hmm. you are saying on Session 1 having a wow is difficult and it is only from subsequent sessions that the students would start noticing the difference. Your point on the Arjun-type of persona, if it happens will be good Serendipity. I am wondering if this is good to make the student comeback, esp if it is a B2C app? if it is B2B, sure we can get external factors to influence. But i feel we should push for a B2C kind of pull as that would force us to push for the differentiator.
+	Let me also think more. But will concept graph and problem graphs help?
+
+#6 If i understand you correct, we will have something like boiler plate templates for distinct personas. But they can be inter-woven depending on observation on the fly?
+
+#7 I have attached a deep research report from Gemini. Can you please check? I found it to be good. Can you evaluate?
+I will sit with my son and gather more data on his Physics Tuition
+
+#8 I accept your recommendation of Voice + text + math keyboard. But this means we need a good Voice input story right?
+
+#9 Yes i agree, we are on the edge even if executed completely as we know today, and may miss also. But if we demonstrate this nimbleness, even if it exceeds at a small scale, it is ok. We can iterate further, get more funds etc.
+
+#11 I thought further on this. We seem to concur similarly. Your points A to D are great. Here are my thoughts that should encompass A to D.
+	The Teacher Agent will be a comprehensive JEE Coach through Problems. The students can start a conversation with "Coach me with problems on Thermodynamics". The Teacher will assume that the student has been taught the theory and has the basics. The Teacher starts with problems of varying complexities to gauge the nature, competency and understanding of the chapter. It will then take the Student through increasing complexity of problems till the student reaches the desired level in that Chapter. The student can do this over multiple sessions at his/her pace. The Teacher can approach this problem as one after the other, periodic sets, final chapter test, etc.
+	Adhoc Problem solving will offcourse be another use case that the Teacher Agent supports.
+	The above should give a lot of scope for Teacher Agent to differentiate.
+	One question may come - "why don't we start with tutoring?". That will require a lot more thinking and an enormous step up of functionality. There are multiple alternatives as well. Hence sticking to complimentary positioning.
+
+	But the biggest limitation for this is Content. The problems we have scrapped so far, even if we create a proper Problem graph with rich annotations, will be limited. We need content like those that are there in Cengage books for instance.
+
+#13 Yes i agree with this assessment
+
+
+
+
+
+
+Would be good if we update the definition on the functionality and other aspects we discussed in detail in the doc, so that they are not lost. Can you help update the doc? (Append better?).
+Can you also update your memory?
+
+--------------------------------
+
+
+On MVP Scope: 
+-------------
+I would say let's go with your plan. But let's call this demo/proto. This will help demonstrate to potential students and other interest groups.
+
+Graph Scope
+------------
+In parallel, i am trying to ingest more and more questions from JEE and NCERT. I am also thinking, we will crawl and collect. 
+In essence we should plan for new records being ingested on an ongoing basis
+Doubt: For Traps, reviews, will we be able to derive them? Isn't this from actual student performances? Got this doubt just now.
+
+I am scratching my head on how to author the editorial though. let us chat separately on that when we do that.
+
+Voice
+------
+how about this? I will sample a handful of formulas in Physics/Maths and ask my son to read it - record. I will run through Gemini multimodal ASR and test. How does it look?
+
+

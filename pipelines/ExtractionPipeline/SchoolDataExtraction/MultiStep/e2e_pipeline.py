@@ -22,6 +22,7 @@ Usage:
 import json
 import argparse
 import logging
+import time
 from pathlib import Path
 from typing import Optional, Dict, Any, List
 from dataclasses import dataclass, field, asdict
@@ -36,6 +37,10 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger(__name__)
 
 
+class Stage2CheckpointError(RuntimeError):
+    """Raised when Stage 2 stops after saving a partial checkpoint."""
+
+
 @dataclass
 class PipelineState:
     """State tracking for resumable pipeline runs."""
@@ -46,6 +51,8 @@ class PipelineState:
     stage1_complete: bool = False
     stage2_complete: bool = False
     db_ingestion_complete: bool = False
+    completion_state: str = "in_progress"
+    validation_summary: Dict[str, Any] = field(default_factory=dict)
     
     # IDs for resumability
     chapter_id: Optional[int] = None
@@ -229,6 +236,8 @@ class E2EPipeline:
         force_rerun: bool = False,
         skip_solutions: bool = False,
         batch_size: int = 5,
+        max_workers: int = 2,
+        use_smart_context: bool = False,
     ) -> PipelineState:
         """
         Run the complete E2E pipeline.
@@ -243,6 +252,7 @@ class E2EPipeline:
             force_rerun: Re-process even if data exists
             skip_solutions: Skip Stage 2 (solution generation)
             batch_size: Questions per batch for Stage 2
+            max_workers: Max parallel workers for Stage 2 batches (default: 2)
             
         Returns:
             PipelineState with results and IDs
@@ -252,6 +262,17 @@ class E2EPipeline:
         
         # Initialize or load state
         state_path = output_dir / f"{pdf_path.stem}_pipeline_state.json"
+        
+        if force_rerun:
+            logger.info("force_rerun is True. Clearing previous state and output files...")
+            if state_path.exists():
+                state_path.unlink()
+            sol_path = output_dir / f"{pdf_path.stem}_solutions.json"
+            if sol_path.exists():
+                sol_path.unlink()
+            ext_path = output_dir / f"{pdf_path.stem}_extraction.json"
+            if ext_path.exists():
+                ext_path.unlink()
         
         if state_path.exists() and not force_rerun:
             state = PipelineState.load(state_path)
@@ -322,15 +343,21 @@ class E2EPipeline:
                 logger.info("STAGE 2: Solution Generation")
                 logger.info("=" * 60)
                 
-                # Get all questions to solve
+                # Get all questions to solve exactly as uniquely prefixed IDs
+                all_questions = []
                 if extraction_result:
-                    all_questions = [q.question_id for q in extraction_result.questions]
+                    for ex in extraction_result.exercise_sections:
+                        safe_title = ex.title.upper().replace(' ', '_').replace('.', '_')
+                        for q in ex.questions:
+                            all_questions.append(f"{safe_title}_Q{q.question_id}")
                 elif state.extraction_json_path:
                     with open(state.extraction_json_path, 'r', encoding='utf-8') as f:
                         extraction_data = json.load(f)
-                    all_questions = [q['question_id'] for q in extraction_data.get('questions', [])]
-                else:
-                    all_questions = []
+                    for list_ex in extraction_data.get('exercises', []):
+                        safe_title = list_ex.get('exercise_title', '').upper().replace(' ', '_').replace('.', '_')
+                        for q_dict in list_ex.get('questions', []):
+                            if 'question_id' in q_dict:
+                                all_questions.append(f"{safe_title}_Q{q_dict['question_id']}")
                 
                 # Filter out already-solved questions (for resume)
                 already_solved = set(state.solved_questions or [])
@@ -340,19 +367,46 @@ class E2EPipeline:
                     logger.info(f"Resuming Stage 2: {len(already_solved)} questions already solved, {len(questions_to_solve)} remaining")
                 
                 if questions_to_solve:
-                    solver_result = self._run_stage2_incremental(
-                        pdf_path=pdf_path,
-                        questions=questions_to_solve,
-                        class_level=class_level,
-                        board=board,
-                        subject=subject,
-                        chapter_name=chapter_name,
-                        chapter_number=state.chapter_number,
-                        output_dir=output_dir,
-                        batch_size=batch_size,
-                        state=state,
-                        state_path=state_path
-                    )
+                    try:
+                        solver_result = self._run_stage2_incremental(
+                            pdf_path=pdf_path,
+                            questions=questions_to_solve,
+                            class_level=class_level,
+                            board=board,
+                            subject=subject,
+                            chapter_name=chapter_name,
+                            chapter_number=state.chapter_number,
+                            output_dir=output_dir,
+                            batch_size=batch_size,
+                            max_workers=max_workers,
+                            use_smart_context=use_smart_context,
+                            state=state,
+                            state_path=state_path
+                        )
+                    except Stage2CheckpointError as e:
+                        solutions_path = output_dir / f"{pdf_path.stem}_solutions.json"
+                        if solutions_path.exists():
+                            state.solutions_json_path = str(solutions_path)
+                            state.save(state_path)
+
+                            if not self.local_only and state.question_ids:
+                                try:
+                                    with open(solutions_path, 'r', encoding='utf-8') as f:
+                                        solutions_data = json.load(f)
+                                    self._update_solutions_from_json(solutions_data, state)
+                                    logger.info("Partial solutions synced to database after Stage 2 interruption")
+                                except Exception as sync_error:
+                                    logger.warning(f"Partial solution sync failed: {sync_error}")
+
+                        remaining_count = max(0, len(all_questions) - len(state.solved_questions or []))
+                        resume_cmd = (
+                            f"python main.py --stage 3 --pdf input/{pdf_path.name} "
+                            f"--class {class_level} --subject \"{subject}\" "
+                            f"--batch-size {batch_size} --max-workers {max_workers}"
+                        )
+                        raise RuntimeError(
+                            f"{e} Remaining questions: {remaining_count}. Resume with: {resume_cmd}"
+                        ) from e
                     
                     state.solutions_json_path = str(output_dir / f"{pdf_path.stem}_solutions.json")
                     state.stage2_complete = True
@@ -394,8 +448,35 @@ class E2EPipeline:
                             solutions_data = json.load(f)
                         self._update_solutions_from_json(solutions_data, state)
                         logger.info(f"Solutions sync complete")
+
+            # ===== VALIDATE DB COMPLETENESS =====
+            if not self.local_only and state.chapter_id:
+                expected_exercise_count = len(extraction_result.exercise_sections) if extraction_result else len(state.exercise_ids)
+                expected_question_count = sum(len(ex.questions) for ex in extraction_result.exercise_sections) if extraction_result else len(state.question_ids)
+                expected_solution_count = len(state.solved_questions) if not skip_solutions else 0
+
+                validation = self._validate_db_ingestion(
+                    chapter_id=state.chapter_id,
+                    expected_exercise_count=expected_exercise_count,
+                    expected_question_count=expected_question_count,
+                    expected_solution_count=expected_solution_count,
+                    validate_solutions=not skip_solutions,
+                )
+                state.validation_summary = validation
+
+                if not validation['is_complete']:
+                    state.completion_state = 'incomplete'
+                    state.completed_at = datetime.now().isoformat()
+                    state.save(state_path)
+                    raise RuntimeError(
+                        "DB validation failed: "
+                        f"exercises expected={validation['expected_exercise_count']} actual={validation['actual_exercise_count']}, "
+                        f"questions expected={validation['expected_question_count']} actual={validation['actual_question_count']}, "
+                        f"solutions expected={validation['expected_solution_count']} actual={validation['actual_solution_count']}"
+                    )
             
             # ===== COMPLETE =====
+            state.completion_state = 'complete'
             state.completed_at = datetime.now().isoformat()
             state.save(state_path)
             
@@ -406,14 +487,56 @@ class E2EPipeline:
             logger.info(f"  Solutions: {state.solutions_json_path}")
             if not self.local_only:
                 logger.info(f"  Database: ChapterId={state.chapter_id}, Exercises={len(state.exercise_ids)}")
+                if state.validation_summary:
+                    logger.info(f"  Validation: {state.validation_summary}")
             logger.info("=" * 60)
             
             return state
             
         except Exception as e:
+            if state.completion_state == 'in_progress':
+                state.completion_state = 'incomplete'
             logger.error(f"Pipeline failed: {e}")
             state.save(state_path)
             raise
+
+    def _validate_db_ingestion(
+        self,
+        chapter_id: int,
+        expected_exercise_count: int,
+        expected_question_count: int,
+        expected_solution_count: int,
+        validate_solutions: bool = True,
+    ) -> Dict[str, Any]:
+        """Validate DB counts for a chapter after ingestion and solution sync."""
+        actual_counts = self.db_client.get_chapter_content_counts(chapter_id)
+        exercises_match = actual_counts['exercise_count'] == expected_exercise_count
+        questions_match = actual_counts['question_count'] == expected_question_count
+        solutions_match = True
+
+        if validate_solutions:
+            solutions_match = actual_counts['solution_count'] == expected_solution_count
+
+        validation = {
+            'chapter_id': chapter_id,
+            'expected_exercise_count': expected_exercise_count,
+            'actual_exercise_count': actual_counts['exercise_count'],
+            'expected_question_count': expected_question_count,
+            'actual_question_count': actual_counts['question_count'],
+            'expected_solution_count': expected_solution_count,
+            'actual_solution_count': actual_counts['solution_count'],
+            'exercises_match': exercises_match,
+            'questions_match': questions_match,
+            'solutions_match': solutions_match,
+            'is_complete': exercises_match and questions_match and solutions_match,
+        }
+
+        if validation['is_complete']:
+            logger.info(f"DB validation passed for ChapterId={chapter_id}: {validation}")
+        else:
+            logger.error(f"DB validation failed for ChapterId={chapter_id}: {validation}")
+
+        return validation
     
     def _run_stage1(
         self,
@@ -502,6 +625,11 @@ class E2EPipeline:
             
             # Process questions in this exercise
             for question in exercise.questions:
+                # Ensure question ID is globally unique by prepending exercise info
+                # Replace spaces and dots to make it a clean ID (e.g. "EXERCISE_2_1_Q1")
+                safe_title = exercise.title.upper().replace(' ', '_').replace('.', '_')
+                unique_q_id = f"{safe_title}_Q{question.question_id}"
+                
                 # Upload figure if needed and build figure_info
                 figure_info = []
                 if question.visual_required and question.visual_data.cropped_image_path:
@@ -513,7 +641,7 @@ class E2EPipeline:
                             class_level=class_level,
                             subject=subject,
                             chapter_number=chapter_number,
-                            question_ref=question.question_id
+                            question_ref=unique_q_id
                         )
                         figure_url = self.blob_client.upload_image(local_path, blob_path)
                         figure_info.append({
@@ -547,10 +675,10 @@ class E2EPipeline:
                 # Upsert question with Content JSONB
                 question_id = self.db_client.upsert_question(
                     exercise_id=exercise_id,
-                    question_ref=question.question_id,
+                    question_ref=unique_q_id,
                     content=content
                 )
-                state.question_ids[question.question_id] = question_id
+                state.question_ids[unique_q_id] = question_id
         
         logger.info(f"Ingested {len(state.exercise_ids)} exercises, {len(state.question_ids)} questions")
     
@@ -564,17 +692,21 @@ class E2EPipeline:
         chapter_name: Optional[str],
         chapter_number: Optional[str],
         output_dir: Path,
-        batch_size: int
+        batch_size: int,
+        use_smart_context: bool = False,
     ) -> SolverResponse:
         """Run Stage 2 solution generation."""
         # Load prompt template
         prompt_path = Path(__file__).parent / "tutor_prompt.md"
         prompt_template = self.solver_engine.load_prompt_template(prompt_path)
+        
+        context_desc = "excerpts or smart context from a textbook chapter." if use_smart_context else "a textbook chapter (PDF)."
         filled_prompt = self.solver_engine.fill_prompt(
             prompt_template,
             class_level=class_level,
             board=board,
-            subject=subject
+            subject=subject,
+            CONTEXT_DESCRIPTION=context_desc
         )
         
         # Create request
@@ -600,12 +732,14 @@ class E2EPipeline:
                 chapter_name=chapter_name,
                 prompt_template_path=prompt_path,
                 output_dir=output_dir,
-                batch_size=batch_size
+                batch_size=batch_size,
+                use_smart_context=use_smart_context,
             )
         else:
             response = self.solver_engine.solve(
                 request=request,
-                system_prompt=filled_prompt
+                system_prompt=filled_prompt,
+                use_smart_context=use_smart_context,
             )
         
         # Save solutions
@@ -627,6 +761,8 @@ class E2EPipeline:
         chapter_number: Optional[str],
         output_dir: Path,
         batch_size: int,
+        max_workers: int,
+        use_smart_context: bool,
         state: PipelineState,
         state_path: Path
     ) -> SolverResponse:
@@ -637,15 +773,28 @@ class E2EPipeline:
         if the process is interrupted.
         """
         from solver_engine import SolverRequest, SolverResponse
+
+        def _load_solution_dicts(data: dict) -> List[dict]:
+            """Load saved solution rows from either legacy or grouped JSON format."""
+            if isinstance(data.get('solutions'), list):
+                return data.get('solutions', [])
+
+            solution_rows: List[dict] = []
+            for exercise in data.get('exercises', []):
+                solution_rows.extend(exercise.get('solutions', []))
+            return solution_rows
         
         # Load prompt template
         prompt_path = Path(__file__).parent / "tutor_prompt.md"
         prompt_template = self.solver_engine.load_prompt_template(prompt_path)
+        
+        context_desc = "excerpts or smart context from a textbook chapter." if use_smart_context else "a textbook chapter (PDF)."
         filled_prompt = self.solver_engine.fill_prompt(
             prompt_template,
             class_level=class_level,
             board=board,
-            subject=subject
+            subject=subject,
+            CONTEXT_DESCRIPTION=context_desc
         )
         
         # Output path for solutions
@@ -658,7 +807,13 @@ class E2EPipeline:
             try:
                 with open(output_path, 'r', encoding='utf-8') as f:
                     existing_data = json.load(f)
-                existing_solutions_dicts = existing_data.get('solutions', [])
+                loaded_solution_rows = _load_solution_dicts(existing_data)
+                existing_solutions_dicts = [
+                    row for row in loaded_solution_rows
+                    if isinstance(row, dict)
+                    and row.get('question_id')
+                    and row.get('question_id') not in ('unknown', 'raw_response')
+                ]
                 existing_raw_response = existing_data.get('raw_response', '')
                 logger.info(f"Loaded {len(existing_solutions_dicts)} existing solutions for merging")
             except Exception as e:
@@ -678,7 +833,12 @@ class E2EPipeline:
         total_time = 0.0
         model_used = None
         
-        for batch_idx, batch_questions in enumerate(batches):
+        import threading
+        from concurrent.futures import ThreadPoolExecutor, as_completed
+        state_lock = threading.Lock()
+        
+        def process_batch(batch_idx: int, batch_questions: List[str]):
+            nonlocal total_time, model_used
             batch_num = batch_idx + 1
             logger.info(f"\n{'='*40}")
             logger.info(f"Processing Batch {batch_num}/{len(batches)}: {batch_questions}")
@@ -696,51 +856,108 @@ class E2EPipeline:
                     chapter_number=chapter_number
                 )
                 
-                batch_response = self.solver_engine.solve(batch_request, filled_prompt, use_cache=True)
+                batch_response = self.solver_engine.solve(batch_request, filled_prompt, use_cache=True, use_smart_context=use_smart_context)
                 
-                # Collect results
-                new_solutions.extend(batch_response.solutions)
-                all_raw_responses.append(f"\n\n# === BATCH {batch_num} ({', '.join(batch_questions)}) ===\n\n{batch_response.raw_response}")
-                total_time += batch_response.processing_time_seconds
-                model_used = batch_response.model_used
-                
-                # Update solved questions in state
-                for sol in batch_response.solutions:
-                    if sol.question_id not in state.solved_questions:
-                        state.solved_questions.append(sol.question_id)
-                
-                # Save solutions incrementally - merge existing dicts with new solution dicts
-                all_solutions_dicts = existing_solutions_dicts + [s.to_dict() for s in new_solutions]
-                save_data = {
-                    "metadata": {
-                        "pdf_file": str(pdf_path.name),
-                        "chapter_number": chapter_number,
-                        "questions_requested": list(set(state.solved_questions)),
-                        "class": class_level,
-                        "board": board,
-                        "subject": subject,
-                        "chapter": chapter_name,
-                        "model": model_used,
-                        "processing_time_seconds": total_time,
-                        "timestamp": datetime.now().isoformat(),
-                    },
-                    "solutions": all_solutions_dicts,
-                    "raw_response": "".join(all_raw_responses),
-                }
-                with open(output_path, 'w', encoding='utf-8') as f:
-                    json.dump(save_data, f, indent=2, ensure_ascii=False)
-                
-                # Save state checkpoint
-                state.save(state_path)
-                
-                logger.info(f"✓ Batch {batch_num} complete: {len(batch_response.solutions)} solutions")
-                logger.info(f"  Checkpoint saved: {len(all_solutions_dicts)} total solutions, {len(state.solved_questions)} questions solved")
-                
+                with state_lock:
+                    # Collect results
+                    new_solutions.extend(batch_response.solutions)
+                    all_raw_responses.append(f"\n\n# === BATCH {batch_num} ({', '.join(batch_questions)}) ===\n\n{batch_response.raw_response}")
+                    total_time += batch_response.processing_time_seconds
+                    model_used = batch_response.model_used
+                    
+                    # Update solved questions in state
+                    for sol in batch_response.solutions:
+                        if sol.question_id not in state.solved_questions:
+                            state.solved_questions.append(sol.question_id)
+                    
+                    # Save solutions incrementally
+                    all_solutions_dicts = existing_solutions_dicts + [s.to_dict() for s in new_solutions]
+                    
+                    # Group solutions by exercise using the prepended prefix (e.g. EXERCISE_2_1_Q1)
+                    from collections import defaultdict
+                    import re
+                    
+                    exercise_map = defaultdict(list)
+                    for sol_dict in all_solutions_dicts:
+                        q_id = sol_dict.get("question_id", "unknown")
+                        # Look for something like EXERCISE_2_1 or MISCELLANEOUS_EXERCISE before _Q
+                        match = re.search(r'^([A-Z0-9_]+)_Q', q_id, re.IGNORECASE)
+                        if match:
+                            ex_title = match.group(1).replace('_', ' ')
+                        else:
+                            ex_title = "OTHER"
+                        exercise_map[ex_title].append(sol_dict)
+                        
+                    formatted_exercises = []
+                    for title, sols in exercise_map.items():
+                        formatted_exercises.append({
+                            "exercise_title": title,
+                            "solutions": sols
+                        })
+                        
+                    save_data = {
+                        "metadata": {
+                            "pdf_file": str(pdf_path.name),
+                            "chapter_number": chapter_number,
+                            "questions_requested": list(set(state.solved_questions)),
+                            "class": class_level,
+                            "board": board,
+                            "subject": subject,
+                            "chapter": chapter_name,
+                            "model": model_used,
+                            "processing_time_seconds": total_time,
+                            "timestamp": datetime.now().isoformat(),
+                        },
+                        "exercises": formatted_exercises,
+                        "raw_response": "".join(all_raw_responses),
+                    }
+                    with open(output_path, 'w', encoding='utf-8') as f:
+                        json.dump(save_data, f, indent=2, ensure_ascii=False)
+                    
+                    # Save state checkpoint
+                    state.save(state_path)
+                    
+                    logger.info(f"✓ Batch {batch_num} complete: {len(batch_response.solutions)} solutions")
+                    logger.info(f"  Checkpoint saved: {len(all_solutions_dicts)} total solutions, {len(state.solved_questions)} questions solved")
+                    
             except Exception as e:
                 logger.error(f"Batch {batch_num} failed: {e}")
                 logger.info(f"Progress saved: {len(existing_solutions_dicts) + len(new_solutions)} solutions from previous batches")
-                logger.info(f"Resume by re-running the same command")
-                raise
+                logger.info("Resume by re-running the same command")
+                raise e
+                
+        # Run batches in parallel with configurable worker limit
+        worker_count = min(max(1, max_workers), len(batches)) if batches else 1
+        logger.info(f"Stage 2 worker pool size: {worker_count}")
+
+        try:
+            if worker_count == 1:
+                for idx, batch in enumerate(batches):
+                    process_batch(idx, batch)
+                    if idx < len(batches) - 1 and self.config.batch_delay_seconds > 0:
+                        logger.info(
+                            f"Cooling down for {self.config.batch_delay_seconds:.1f}s before next batch"
+                        )
+                        time.sleep(self.config.batch_delay_seconds)
+            else:
+                with ThreadPoolExecutor(max_workers=worker_count) as executor:
+                    futures = [executor.submit(process_batch, idx, batch) for idx, batch in enumerate(batches)]
+                    for future in as_completed(futures):
+                        try:
+                            future.result()
+                        except Exception as e:
+                            for pending in futures:
+                                pending.cancel()
+                            executor.shutdown(wait=False, cancel_futures=True)
+                            logger.error(f"Pipeline thread failed: {e}")
+                            raise
+        except Exception as e:
+            saved_count = len(state.solved_questions or [])
+            total_count = len(questions)
+            raise Stage2CheckpointError(
+                f"Stage 2 interrupted after checkpointing {saved_count}/{total_count} questions. "
+                f"Partial results are saved in {output_path}. Re-run the same command to resume."
+            ) from e
         
         # Build final merged response (for DB update, needs Solution objects)
         # Combine existing solutions (can be skipped for DB since they were already updated)
@@ -930,8 +1147,19 @@ class E2EPipeline:
         Handles sub-part consolidation like _update_solutions_in_db.
         """
         from collections import defaultdict
-        
-        solutions = solutions_data.get("solutions", [])
+
+        # Current saved format groups solutions under exercises[].solutions.
+        # Keep backward compatibility with any older top-level solutions format.
+        solutions = []
+        if isinstance(solutions_data.get("solutions"), list):
+            solutions = solutions_data.get("solutions", [])
+        else:
+            for exercise in solutions_data.get("exercises", []):
+                solutions.extend(exercise.get("solutions", []))
+
+        if not solutions:
+            logger.warning("No solutions found in JSON for database update")
+            return
         
         # Group solutions by parent question ID
         parent_solutions = defaultdict(list)
@@ -1057,7 +1285,7 @@ Examples:
     parser.add_argument("--no-managed-identity", action="store_true", help="Don't use Azure Managed Identity")
     
     # Metadata arguments
-    parser.add_argument("--class", dest="class_level", default="11", help="Class level (default: 11)")
+    parser.add_argument("--class-level", dest="class_level", default="11", help="Class level (default: 11)")
     parser.add_argument("--board", default="CBSE", help="Education board (default: CBSE)")
     parser.add_argument("--subject", default="Physics", help="Subject (default: Physics)")
     parser.add_argument("--chapter-name", help="Chapter name for metadata")
@@ -1066,6 +1294,7 @@ Examples:
     parser.add_argument("--force-rerun", action="store_true", help="Re-process even if data exists")
     parser.add_argument("--skip-solutions", action="store_true", help="Skip Stage 2 (solution generation)")
     parser.add_argument("--batch-size", type=int, default=5, help="Questions per batch for Stage 2")
+    parser.add_argument("--max-workers", type=int, default=2, help="Max parallel workers for Stage 2 batches")
     parser.add_argument("--output-dir", type=Path, help="Output directory")
     
     args = parser.parse_args()
@@ -1092,7 +1321,8 @@ Examples:
         output_dir=output_dir,
         force_rerun=args.force_rerun,
         skip_solutions=args.skip_solutions,
-        batch_size=args.batch_size
+        batch_size=args.batch_size,
+        max_workers=args.max_workers,
     )
     
     print(f"\nPipeline complete!")

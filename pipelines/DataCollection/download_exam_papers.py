@@ -70,10 +70,21 @@ class ExamPaperDownloader:
         print("✓ Chrome driver ready")
     
     def connect_to_database(self):
-        """Connect to PostgreSQL database"""
+        """Connect to PostgreSQL database using Entra ID token (az login) or password fallback."""
         try:
             print("Connecting to database...")
-            self.db_conn = psycopg2.connect(**self.db_params)
+            conn_params = dict(self.db_params)
+
+            # Use Entra ID token if no password is set (preferred: az login)
+            if not conn_params.get('password'):
+                from azure.identity import DefaultAzureCredential
+                credential = DefaultAzureCredential()
+                token = credential.get_token("https://ossrdbms-aad.database.windows.net/.default")
+                conn_params['password'] = token.token
+                conn_params['sslmode'] = 'require'
+                print("✓ Using Entra ID token for database authentication")
+
+            self.db_conn = psycopg2.connect(**conn_params)
             self.db_cursor = self.db_conn.cursor()
             print("✓ Database connection established")
             return True
@@ -83,15 +94,18 @@ class ExamPaperDownloader:
                   f"port={self.db_params['port']}, database={self.db_params['database']}")
             return False
     
-    def insert_record(self, exam_name, paper_name, year, date_of_exam, shift, filename):
-        """Insert a record into the database"""
+    def insert_record(self, exam_name, paper_name, year, date_of_exam, shift, filename, blob_url=None):
+        """Insert a record into the database, updating blob_url if row already exists."""
         try:
             query = """
-                INSERT INTO exam_papers (ExamName, PaperName, Year, DateOfExam, Shift, FileName)
-                VALUES (%s, %s, %s, %s, %s, %s)
-                ON CONFLICT DO NOTHING
+                INSERT INTO exam_papers (ExamName, PaperName, Year, DateOfExam, Shift, FileName, blob_url, extraction_status)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, 'PENDING')
+                ON CONFLICT (ExamName, Year, DateOfExam, Shift) DO UPDATE
+                    SET blob_url = EXCLUDED.blob_url,
+                        filename = EXCLUDED.filename
+                    WHERE exam_papers.blob_url IS NULL
             """
-            self.db_cursor.execute(query, (exam_name, paper_name, year, date_of_exam, shift, filename))
+            self.db_cursor.execute(query, (exam_name, paper_name, year, date_of_exam, shift, filename, blob_url))
             self.db_conn.commit()
             print(f"✓ Database record inserted for {filename}")
             return True
@@ -99,6 +113,39 @@ class ExamPaperDownloader:
             print(f"✗ Database insert failed: {e}")
             self.db_conn.rollback()
             return False
+
+    def upload_to_blob(self, local_path: str, year: int) -> 'str | None':
+        """Upload a downloaded PDF to Azure Blob Storage. Returns blob URL or None on failure."""
+        try:
+            import sys
+            sys.path.insert(0, str(Path(__file__).parent.parent / 'ExtractionPipeline' / 'SchoolDataExtraction' / 'MultiStep'))
+            from blob_client import get_blob_client
+
+            client = get_blob_client()
+            blob_path = f"jeedata/{year}/{Path(local_path).name}"
+            blob_url = client.upload_image(Path(local_path), blob_path, content_type="application/pdf")
+            print(f"✓ Uploaded to blob: {blob_url}")
+            return blob_url
+        except Exception as e:
+            print(f"⚠ Blob upload failed (non-fatal, continuing): {e}")
+            return None
+
+    def _with_backoff(self, fn, max_retries=4, base_delay=2.0, max_delay=60.0):
+        """Call fn() with exponential backoff + ±20% jitter. Returns result or raises last exception."""
+        import random
+        last_exc = None
+        for attempt in range(max_retries):
+            try:
+                return fn()
+            except Exception as e:
+                last_exc = e
+                if attempt == max_retries - 1:
+                    break
+                delay = min(base_delay * (2 ** attempt), max_delay)
+                delay *= (0.8 + 0.4 * random.random())  # ±20% jitter
+                print(f"⚠ Attempt {attempt + 1} failed: {e}. Retrying in {delay:.1f}s...")
+                time.sleep(delay)
+        raise last_exc
     
     def sanitize_filename(self, filename):
         """Sanitize filename for Windows"""
@@ -190,12 +237,43 @@ class ExamPaperDownloader:
     
     def should_skip_paper(self, paper_name):
         """Check if paper should be skipped based on name"""
-        skip_keywords = ['arch', 'planning']
-        paper_lower = paper_name.lower()
-        for keyword in skip_keywords:
+        paper_lower = paper_name.lower().strip()
+
+        # Skip Architecture/Planning papers
+        for keyword in ['arch', 'planning']:
             if keyword in paper_lower:
                 print(f"⏭ Skipping paper (contains '{keyword}'): {paper_name}")
                 return True
+
+        # If paper explicitly contains "english", always keep it.
+        # Covers: "BTech English", "Session 2_BTech_English_Hindi", "_English_Hindi" etc.
+        if 'english' in paper_lower:
+            return False
+
+        # Skip non-English language papers.
+        # Strategy: blocklist known regional language names and bilingual E* codes.
+        # Papers with no language suffix (e.g. "BTech") or explicit "English" suffix are kept.
+        regional_languages = [
+            'hindi', 'assamese', 'bengali', 'gujarati', 'kannada',
+            'malayalam', 'marathi', 'odiya', 'odia', 'punjabi',
+            'tamil', 'telugu', 'urdu'
+        ]
+        for lang in regional_languages:
+            if lang in paper_lower:
+                print(f"⏭ Skipping non-English paper ({lang}): {paper_name}")
+                return True
+
+        # Skip 2021-era bilingual E* codes (e.g. "BTech EA", "BTech ETE")
+        # These are English + regional language bilingual papers
+        if re.search(r'\bE[A-Z]{1,3}\b', paper_name):
+            print(f"⏭ Skipping bilingual E-code paper: {paper_name}")
+            return True
+
+        # Skip standalone Hindi abbreviation (e.g. "BTech H")
+        if paper_lower.endswith(' h'):
+            print(f"⏭ Skipping Hindi abbreviated paper: {paper_name}")
+            return True
+
         return False
     
     def get_table_rows(self):
@@ -464,21 +542,29 @@ class ExamPaperDownloader:
                     if self.should_skip_paper(paper_name):
                         continue
                     
-                    # Download the file
-                    filename = self.download_file(data['download_element'], paper_name, year)
-                    
+                    # Download the file (with exponential backoff on failure)
+                    download_element = data['download_element']
+                    filename = self._with_backoff(
+                        lambda: self.download_file(download_element, paper_name, year)
+                    )
+
                     if filename:
-                        # Insert into database
+                        # Upload PDF to Azure Blob Storage
+                        local_pdf = str(self.download_dir / filename)
+                        blob_url = self.upload_to_blob(local_pdf, int(year))
+
+                        # Insert (or update) database record
                         self.insert_record(
                             exam_name=data['exam_name'],
                             paper_name=paper_name,
                             year=int(year),
                             date_of_exam=data['date_of_exam'],
                             shift=data['shift'],
-                            filename=filename
+                            filename=filename,
+                            blob_url=blob_url
                         )
                         total_downloaded += 1
-                        
+
                         # Wait between downloads to avoid overwhelming the server
                         time.sleep(3)
                     
@@ -522,8 +608,17 @@ class ExamPaperDownloader:
             # Navigate to the page
             self.navigate_to_page()
             
-            # Get all available years
-            years = self.get_available_years()
+            # Get years to process (env override takes precedence)
+            years_override = os.getenv('YEARS_TO_DOWNLOAD', '').strip()
+            if years_override:
+                years = [y.strip() for y in years_override.split(',') if y.strip() and y.strip().isdigit()]
+                if years:
+                    print(f"✓ YEARS_TO_DOWNLOAD override applied: {', '.join(years)}")
+                else:
+                    print("⚠ YEARS_TO_DOWNLOAD is set but invalid; falling back to available years from site.")
+                    years = self.get_available_years()
+            else:
+                years = self.get_available_years()
             
             if not years:
                 print("✗ No years found")

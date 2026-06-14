@@ -1,4 +1,4 @@
--- Table creation script for ChapterData
+﻿-- Table creation script for ChapterData
 CREATE TABLE ChapterData (
     ChapterId SERIAL PRIMARY KEY,
     Class VARCHAR(100) NOT NULL,
@@ -54,47 +54,90 @@ ALTER TABLE QuestionData ADD CONSTRAINT UQ_QuestionData_Exercise_Ref
 
 -- Insert statements for ChapterData
 -- Class 11 - Maths
-INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Maths', 1, 'Sets', 'https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Maths/kemh101.pdf');
-INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Maths', 2, 'Relations and Functions', 'https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Maths/kemh102.pdf');
-INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Maths', 3, 'Trigonometric Functions', 'https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Maths/kemh103.pdf');
-INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Maths', 4, 'Complex Numbers and Quadratic Equations', 'https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Maths/kemh104.pdf');
-INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Maths', 5, 'Linear Inequalities', 'https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Maths/kemh105.pdf');
-INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Maths', 6, 'Permutations and Combinations', 'https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Maths/kemh106.pdf');
-INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Maths', 7, 'Binomial Theorem', 'https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Maths/kemh107.pdf');
-INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Maths', 8, 'Sequences and Series', 'https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Maths/kemh108.pdf');
-INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Maths', 9, 'Straight Lines', 'https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Maths/kemh109.pdf');
-INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Maths', 10, 'Conic Sections', 'https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Maths/kemh110.pdf');
-INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Maths', 11, 'Introduction to Three Dimensional Geometry', 'https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Maths/kemh111.pdf');
-INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Maths', 12, 'Limits and Derivatives', 'https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Maths/kemh112.pdf');
-INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Maths', 13, 'Statistics', 'https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Maths/kemh113.pdf');
-INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Maths', 14, 'Probability', 'https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Maths/kemh114.pdf');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('11', 'Maths', 1, 'Sets', 'https://kalidasa.blob.core.windows.net/feedback/11/Maths/kemh101.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('11', 'Maths', 2, 'Relations and Functions', 'https://kalidasa.blob.core.windows.net/feedback/11/Maths/kemh102.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('11', 'Maths', 3, 'Trigonometric Functions', 'https://kalidasa.blob.core.windows.net/feedback/11/Maths/kemh103.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('11', 'Maths', 4, 'Complex Numbers and Quadratic Equations', 'https://kalidasa.blob.core.windows.net/feedback/11/Maths/kemh104.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('11', 'Maths', 5, 'Linear Inequalities', 'https://kalidasa.blob.core.windows.net/feedback/11/Maths/kemh105.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('11', 'Maths', 6, 'Permutations and Combinations', 'https://kalidasa.blob.core.windows.net/feedback/11/Maths/kemh106.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('11', 'Maths', 7, 'Binomial Theorem', 'https://kalidasa.blob.core.windows.net/feedback/11/Maths/kemh107.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('11', 'Maths', 8, 'Sequences and Series', 'https://kalidasa.blob.core.windows.net/feedback/11/Maths/kemh108.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('11', 'Maths', 9, 'Straight Lines', 'https://kalidasa.blob.core.windows.net/feedback/11/Maths/kemh109.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('11', 'Maths', 10, 'Conic Sections', 'https://kalidasa.blob.core.windows.net/feedback/11/Maths/kemh110.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('11', 'Maths', 11, 'Introduction to Three Dimensional Geometry', 'https://kalidasa.blob.core.windows.net/feedback/11/Maths/kemh111.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('11', 'Maths', 12, 'Limits and Derivatives', 'https://kalidasa.blob.core.windows.net/feedback/11/Maths/kemh112.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('11', 'Maths', 13, 'Statistics', 'https://kalidasa.blob.core.windows.net/feedback/11/Maths/kemh113.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('11', 'Maths', 14, 'Probability', 'https://kalidasa.blob.core.windows.net/feedback/11/Maths/kemh114.pdf','CBSE');
 
 -- Class 11 - Physics
-INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Physics', 1, 'Units and Measurement', 'https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Physics/keph101.pdf');
-INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Physics', 2, 'Motion in a Straight Line', 'https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Physics/keph102.pdf');
-INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Physics', 3, 'Motion in a Plane', 'https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Physics/keph103.pdf');
-INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Physics', 4, 'Laws of Motion', 'https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Physics/keph104.pdf');
-INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Physics', 5, 'Work, Energy and Power', 'https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Physics/keph105.pdf');
-INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Physics', 6, 'Systems of Particles and Rotational Motion', 'https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Physics/keph106.pdf');
-INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Physics', 7, 'Gravitation', 'https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Physics/keph107.pdf');
-INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Physics', 8, 'Mechanical Properties of Solids', 'https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Physics/keph201.pdf');
-INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Physics', 9, 'Mechanical Properties of Fluids', 'https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Physics/keph202.pdf');
-INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Physics', 10, 'Thermal Properties of Matter', 'https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Physics/keph203.pdf');
-INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Physics', 11, 'Thermodynamics', 'https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Physics/keph204.pdf');
-INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Physics', 12, 'Kinetic Theory', 'https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Physics/keph205.pdf');
-INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Physics', 13, 'Oscillations', 'https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Physics/keph206.pdf');
-INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Physics', 14, 'Waves', 'https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Physics/keph207.pdf');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('11', 'Physics', 1, 'Units and Measurement', 'https://kalidasa.blob.core.windows.net/feedback/11/Physics/keph101.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('11', 'Physics', 2, 'Motion in a Straight Line', 'https://kalidasa.blob.core.windows.net/feedback/11/Physics/keph102.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('11', 'Physics', 3, 'Motion in a Plane', 'https://kalidasa.blob.core.windows.net/feedback/11/Physics/keph103.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('11', 'Physics', 4, 'Laws of Motion', 'https://kalidasa.blob.core.windows.net/feedback/11/Physics/keph104.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('11', 'Physics', 5, 'Work, Energy and Power', 'https://kalidasa.blob.core.windows.net/feedback/11/Physics/keph105.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('11', 'Physics', 6, 'Systems of Particles and Rotational Motion', 'https://kalidasa.blob.core.windows.net/feedback/11/Physics/keph106.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('11', 'Physics', 7, 'Gravitation', 'https://kalidasa.blob.core.windows.net/feedback/11/Physics/keph107.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('11', 'Physics', 8, 'Mechanical Properties of Solids', 'https://kalidasa.blob.core.windows.net/feedback/11/Physics/keph201.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('11', 'Physics', 9, 'Mechanical Properties of Fluids', 'https://kalidasa.blob.core.windows.net/feedback/11/Physics/keph202.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('11', 'Physics', 10, 'Thermal Properties of Matter', 'https://kalidasa.blob.core.windows.net/feedback/11/Physics/keph203.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Physics', 11, 'Thermodynamics', 'https://kalidasa.blob.core.windows.net/feedback/11/Physics/keph204.pdf');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Physics', 12, 'Kinetic Theory', 'https://kalidasa.blob.core.windows.net/feedback/11/Physics/keph205.pdf');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Physics', 13, 'Oscillations', 'https://kalidasa.blob.core.windows.net/feedback/11/Physics/keph206.pdf');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Physics', 14, 'Waves', 'https://kalidasa.blob.core.windows.net/feedback/11/Physics/keph207.pdf');
 
 -- Class 11 - Chemistry
-INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Chemistry', 1, 'Some Basic Concepts of Chemistry', 'https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Chemistry/kech101.pdf');
-INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Chemistry', 2, 'Structure of Atom', 'https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Chemistry/kech102.pdf');
-INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Chemistry', 3, 'Classification of Elements and Periodicity in Properties', 'https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Chemistry/kech103.pdf');
-INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Chemistry', 4, 'Chemical Bonding and Molecular Structure', 'https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Chemistry/kech104.pdf');
-INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Chemistry', 5, 'Thermodynamics', 'https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Chemistry/kech105.pdf');
-INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Chemistry', 6, 'Equilibrium', 'https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Chemistry/kech106.pdf');
-INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Chemistry', 7, 'Redox Reactions', 'https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Chemistry/kech201.pdf');
-INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Chemistry', 8, 'Organic Chemistry - Some Basic Principles and Techniques', 'https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Chemistry/kech202.pdf');
-INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Chemistry', 9, 'Hydrocarbons', 'https://<YOUR_STORAGE>.blob.core.windows.net/Feedback/11/Chemistry/kech203.pdf');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Chemistry', 1, 'Some Basic Concepts of Chemistry', 'https://kalidasa.blob.core.windows.net/feedback/11/Chemistry/kech101.pdf');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Chemistry', 2, 'Structure of Atom', 'https://kalidasa.blob.core.windows.net/feedback/11/Chemistry/kech102.pdf');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Chemistry', 3, 'Classification of Elements and Periodicity in Properties', 'https://kalidasa.blob.core.windows.net/feedback/11/Chemistry/kech103.pdf');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Chemistry', 4, 'Chemical Bonding and Molecular Structure', 'https://kalidasa.blob.core.windows.net/feedback/11/Chemistry/kech104.pdf');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Chemistry', 5, 'Thermodynamics', 'https://kalidasa.blob.core.windows.net/feedback/11/Chemistry/kech105.pdf');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Chemistry', 6, 'Equilibrium', 'https://kalidasa.blob.core.windows.net/feedback/11/Chemistry/kech106.pdf');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Chemistry', 7, 'Redox Reactions', 'https://kalidasa.blob.core.windows.net/feedback/11/Chemistry/kech201.pdf');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Chemistry', 8, 'Organic Chemistry - Some Basic Principles and Techniques', 'https://kalidasa.blob.core.windows.net/feedback/11/Chemistry/kech202.pdf');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL) VALUES ('11', 'Chemistry', 9, 'Hydrocarbons', 'https://kalidasa.blob.core.windows.net/feedback/11/Chemistry/kech203.pdf');
+
+-- Class 12 Maths
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('12', 'Maths', '1', 'Relations and Functions', 'https://kalidasa.blob.core.windows.net/feedback/12/Maths/lemh101.pdf', 'CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('12', 'Maths', '2', 'Inverse Trigonometric Functions', 'https://kalidasa.blob.core.windows.net/feedback/12/Maths/lemh102.pdf', 'CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('12', 'Maths', '3', 'Matrices', 'https://kalidasa.blob.core.windows.net/feedback/12/Maths/lemh103.pdf', 'CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('12', 'Maths', '4', 'Determinants', 'https://kalidasa.blob.core.windows.net/feedback/12/Maths/lemh104.pdf', 'CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('12', 'Maths', '5', 'Continuity and Differentiability', 'https://kalidasa.blob.core.windows.net/feedback/12/Maths/lemh105.pdf', 'CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('12', 'Maths', '6', 'Application of Derivatives', 'https://kalidasa.blob.core.windows.net/feedback/12/Maths/lemh106.pdf', 'CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('12', 'Maths', '7', 'Integrals', 'https://kalidasa.blob.core.windows.net/feedback/12/Maths/lemh201.pdf', 'CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('12', 'Maths', '8', 'Application of Integrals', 'https://kalidasa.blob.core.windows.net/feedback/12/Maths/lemh202.pdf', 'CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('12', 'Maths', '9', 'Differential Equations', 'https://kalidasa.blob.core.windows.net/feedback/12/Maths/lemh203.pdf', 'CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('12', 'Maths', '10', 'Vector Algebra', 'https://kalidasa.blob.core.windows.net/feedback/12/Maths/lemh204.pdf', 'CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('12', 'Maths', '11', 'Three Dimensional Geometry', 'https://kalidasa.blob.core.windows.net/feedback/12/Maths/lemh205.pdf', 'CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('12', 'Maths', '12', 'Linear Programming', 'https://kalidasa.blob.core.windows.net/feedback/12/Maths/lemh206.pdf', 'CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('12', 'Maths', '13', 'Probability', 'https://kalidasa.blob.core.windows.net/feedback/12/Maths/lemh207.pdf', 'CBSE');
+
+--Class 12 Chemistry
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('12', 'Chemistry', '1', 'Solutions', 'https://kalidasa.blob.core.windows.net/feedback/12/Chemistry/lech101.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('12', 'Chemistry', '2', 'Electrochemistry', 'https://kalidasa.blob.core.windows.net/feedback/12/Chemistry/lech102.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('12', 'Chemistry', '3', 'Chemical Kinetics', 'https://kalidasa.blob.core.windows.net/feedback/12/Chemistry/lech103.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('12', 'Chemistry', '4', 'The d- and f-Block Elements', 'https://kalidasa.blob.core.windows.net/feedback/12/Chemistry/lech104.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('12', 'Chemistry', '5', 'Coordination Compounds', 'https://kalidasa.blob.core.windows.net/feedback/12/Chemistry/lech105.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('12', 'Chemistry', '6', 'Haloalkanes and Haloarenes', 'https://kalidasa.blob.core.windows.net/feedback/12/Chemistry/lech201.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('12', 'Chemistry', '7', 'Alcohols, Phenols and Ethers', 'https://kalidasa.blob.core.windows.net/feedback/12/Chemistry/lech202.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('12', 'Chemistry', '8', 'Aldehydes, Ketones and Carboxylic Acids', 'https://kalidasa.blob.core.windows.net/feedback/12/Chemistry/lech203.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('12', 'Chemistry', '9', 'Amines', 'https://kalidasa.blob.core.windows.net/feedback/12/Chemistry/lech204.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('12', 'Chemistry', '10', 'Biomolecules', 'https://kalidasa.blob.core.windows.net/feedback/12/Chemistry/lech205.pdf','CBSE');
+
+--Class 12 Physics
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('12', 'Physics', '1', 'ELECTRIC CHARGES AND FIELDS', 'https://kalidasa.blob.core.windows.net/feedback/12/Physics/leph2ps.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('12', 'Physics', '2', 'ELECTROSTATIC POTENTIAL AND CAPACITANCE', 'https://kalidasa.blob.core.windows.net/feedback/12/Physics/leph2ps.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('12', 'Physics', '3', 'CURRENT ELECTRICITY', 'https://kalidasa.blob.core.windows.net/feedback/12/Physics/leph2ps.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('12', 'Physics', '4', 'MOVING CHARGES AND MAGNETISM', 'https://kalidasa.blob.core.windows.net/feedback/12/Physics/leph2ps.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('12', 'Physics', '5', 'MAGNETISM AND MATTER', 'https://kalidasa.blob.core.windows.net/feedback/12/Physics/leph2ps.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('12', 'Physics', '6', 'ELECTROMAGNETIC INDUCTION', 'https://kalidasa.blob.core.windows.net/feedback/12/Physics/leph2ps.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('12', 'Physics', '7', 'ALTERNATING CURRENT', 'https://kalidasa.blob.core.windows.net/feedback/12/Physics/leph2ps.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('12', 'Physics', '8', 'ELECTROMAGNETIC WAVES', 'https://kalidasa.blob.core.windows.net/feedback/12/Physics/leph2ps.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('12', 'Physics', '9', 'RAY OPTICS AND OPTICAL INSTRUMENTS', 'https://kalidasa.blob.core.windows.net/feedback/12/Physics/leph201.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('12', 'Physics', '10', 'WAVE OPTICS', 'https://kalidasa.blob.core.windows.net/feedback/12/Physics/leph202.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('12', 'Physics', '11', 'DUAL NATURE OF RADIATION AND MATTER', 'https://kalidasa.blob.core.windows.net/feedback/12/Physics/leph203.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('12', 'Physics', '12', 'ATOMS', 'https://kalidasa.blob.core.windows.net/feedback/12/Physics/leph204.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('12', 'Physics', '13', 'NUCLEI', 'https://kalidasa.blob.core.windows.net/feedback/12/Physics/leph205.pdf','CBSE');
+INSERT INTO ChapterData (Class, Subject, ChapterNumber, ChapterTitle, PDFFileURL, board) VALUES ('12', 'Physics', '14', 'SEMICONDUCTOR ELECTRONICS: MATERIALS, DEVICES AND SIMPLE CIRCUITS', 'https://kalidasa.blob.core.windows.net/feedback/12/Physics/leph206.pdf','CBSE');
 
 
 -- Update existing ChapterData records to set Board = 'CBSE'
@@ -135,6 +178,9 @@ INSERT INTO ClassSubjectData (Class, Subject, Board) VALUES ('11', 'Maths', 'CBS
 INSERT INTO ClassSubjectData (Class, Subject, Board) VALUES ('11', 'Physics', 'CBSE');
 INSERT INTO ClassSubjectData (Class, Subject, Board) VALUES ('11', 'Chemistry', 'CBSE');
 
+INSERT INTO ClassSubjectData (Class, Subject, Board) VALUES ('12', 'Maths', 'CBSE');
+INSERT INTO ClassSubjectData (Class, Subject, Board) VALUES ('12', 'Physics', 'CBSE');
+INSERT INTO ClassSubjectData (Class, Subject, Board) VALUES ('12', 'Chemistry', 'CBSE');
 
 -- Create ENUM type for status
 CREATE TYPE solution_evaluation_status AS ENUM ('PENDING', 'PROCESSING', 'COMPLETED', 'FAILED');
@@ -147,8 +193,8 @@ CREATE TABLE solution_evaluations (
     board VARCHAR(100),
     subject VARCHAR(50) NOT NULL, -- Physics, Chemistry, etc.
     chapter_id INT NULL REFERENCES ChapterData(ChapterId), -- Reference to NCERT chapter
-    chapter_title VARCHAR(255) NOT NULL,
-    chapter_number INT NOT NULL,
+    chapter_title VARCHAR(255) NULL,   -- Resolved by orchestrator when text_ref is used
+    chapter_number VARCHAR(50) NULL,   -- Resolved by orchestrator when text_ref is used
     pdffileurl VARCHAR(500),
     status solution_evaluation_status NOT NULL DEFAULT 'PENDING',
     
@@ -163,8 +209,8 @@ CREATE TABLE solution_evaluations (
     created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
     
-    -- Ensure at least one problem reference is provided
-    CONSTRAINT chk_problem_input CHECK (problem_text_ref IS NOT NULL OR problem_image_url IS NOT NULL)
+    -- Text reference is always required; image reference is optional (textbook page photo for context)
+    CONSTRAINT chk_problem_input CHECK (problem_text_ref IS NOT NULL)
 );
 
 -- Optimized Indexes
@@ -185,4 +231,24 @@ CREATE TRIGGER trg_solution_evaluations_updated_at
     BEFORE UPDATE ON solution_evaluations
     FOR EACH ROW
     EXECUTE FUNCTION update_solution_evaluation_updated_at();
+
+-- Align chapter_number type with ChapterData.ChapterNumber (VARCHAR(50))
+ALTER TABLE solution_evaluations ALTER COLUMN chapter_number TYPE VARCHAR(50);
+
+-- Pipeline micro-state checkpointing columns
+ALTER TABLE solution_evaluations
+    ADD COLUMN IF NOT EXISTS pipeline_steps JSONB NULL,
+    ADD COLUMN IF NOT EXISTS current_step VARCHAR(100) NULL;
+
+-- Optional indexes for pipeline observability (uncomment when needed)
+-- CREATE INDEX ix_evaluations_current_step ON solution_evaluations(current_step) WHERE status = 'PROCESSING';
+-- CREATE INDEX ix_evaluations_pipeline_steps ON solution_evaluations USING GIN (pipeline_steps);
+
+-- v4: text_ref is always required; drop the old OR constraint, add the new one
+ALTER TABLE solution_evaluations
+  DROP CONSTRAINT IF EXISTS solution_evaluations_input_check;
+
+ALTER TABLE solution_evaluations
+  ADD CONSTRAINT solution_evaluations_input_check
+  CHECK (problem_text_ref IS NOT NULL);
 
