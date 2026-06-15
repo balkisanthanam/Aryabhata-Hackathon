@@ -46,6 +46,7 @@ build/
 !.env.example
 !**/.env.example
 SANITIZATION_TRACKER.md
+LOCAL_HACKATHON_SANITIZATION_NOTES.md
 
 # -----------------------------------------
 # Logs
